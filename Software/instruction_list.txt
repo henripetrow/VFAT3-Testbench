@@ -1,0 +1,47 @@
+# List of the desired instructions. Nonencoded.
+# 1 BC -> 20 ns
+# 4 BC -> 100 ns
+# 40 BC -> 1 us
+# Slow control:
+# Syntax: 'Time' Write 'Address' 'Value'
+#         'Time' Read 'Address'
+# FCC:
+# Syntax:
+#	  'Time' Send 'Command'
+#	  'Time' Send_Repeat 'Command' 'nr of repeat' 'interval'
+
+#100 Send Reset 0
+#k Write threshold something
+#k Write selftriggering 1			
+# calculate if BCd is large enough for the transaction
+#1 Write 12 13
+#k Write CalPulse something
+#10 Send_Repeat LV1A 5 10
+#k Write CalPulse to something+1
+#k Send CalPulse 10 80
+#10 Send_Repeat CalPulse 5 10
+#1 Set CalPulse to something+2
+#1 Send SConly
+#1 Read 12
+
+
+100 Send Reset
+1 Write 12 34
+1 Write 13 34
+1 Write 14 34
+1 Write 15 34
+1 Send_Repeat Calpulse 30 50
+1 Write 12 34
+1 Send_Repeat Calpulse 30 50
+1 Write 12 34
+1 Send_Repeat Calpulse 30 50
+1 Write 12 34
+1 Send_Repeat Calpulse 30 50
+1 Write 12 34
+1 Send_Repeat Calpulse 30 50
+1 Write 12 34
+1 Send_Repeat Calpulse 30 50
+1 Write 12 34
+1 Send_Repeat Calpulse 30 50
+1 Write 12 34
+1 Send_Repeat Calpulse 30 50
