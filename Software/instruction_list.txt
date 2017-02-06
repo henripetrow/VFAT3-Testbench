@@ -1,47 +1,43 @@
-# List of the desired instructions. Nonencoded.
+# List of the desired instructions.
 # 1 BC -> 20 ns
 # 4 BC -> 100 ns
 # 40 BC -> 1 us
 # Slow control:
-# Syntax: 'Time' Write 'Address' 'Value'
+# Syntax: 'Time' Write 'Reg' 'Value/Increment(if in a repeat)'
 #         'Time' Read 'Address'
 # FCC:
 # Syntax:
 #	  'Time' Send 'Command'
-#	  'Time' Send_Repeat 'Command' 'nr of repeat' 'interval'
-
-#100 Send Reset 0
-#k Write threshold something
-#k Write selftriggering 1			
-# calculate if BCd is large enough for the transaction
-#1 Write 12 13
-#k Write CalPulse something
-#10 Send_Repeat LV1A 5 10
-#k Write CalPulse to something+1
-#k Send CalPulse 10 80
-#10 Send_Repeat CalPulse 5 10
-#1 Set CalPulse to something+2
-#1 Send SConly
-#1 Read 12
+#	  'Time' Send_Repeat 'Command' '# times to repeat' 'interval'
+# Repeat:
+# Syntax:
+#         'Time' Repeat '# times to repeat'
+#         'Time' End_Repeat
 
 
-100 Send Reset
-1 Write 12 34
-1 Write 13 34
-1 Write 14 34
-1 Write 15 34
-1 Send_Repeat Calpulse 30 50
-1 Write 12 34
-1 Send_Repeat Calpulse 30 50
-1 Write 12 34
-1 Send_Repeat Calpulse 30 50
-1 Write 12 34
-1 Send_Repeat Calpulse 30 50
-1 Write 12 34
-1 Send_Repeat Calpulse 30 50
-1 Write 12 34
-1 Send_Repeat Calpulse 30 50
-1 Write 12 34
-1 Send_Repeat Calpulse 30 50
-1 Write 12 34
-1 Send_Repeat Calpulse 30 50
+
+
+
+# Set selftrigger
+1 Write ST 1
+# Set Latency
+1 Write LAT 500
+
+# Set up Calpulse
+1 Write CAL_DAC 30
+1 Write CAL_DUR 300
+
+# Set Threshold
+1 Write ZCC_DAC 55
+
+# set RUN
+1 Write RUN 2
+
+
+1 Send_Repeat CalPulse 1000 50
+1 Repeat 200
+1 Write CAL_DAC 1 1
+1 Send_Repeat CalPulse 1000 50
+1 End_Repeat
+
+

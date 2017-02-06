@@ -1,3 +1,5 @@
+
+
 SC0 = "SC0"
 SC1 = "SC1"
 
@@ -21,6 +23,14 @@ def HDLC_package(ipbus_package):
     hdlc_pack.extend(address)
     hdlc_pack.extend(control)
     hdlc_pack.extend(ipbus_package)
+    crc = crc_remainder(hdlc_pack[8:])
+    crc_bin = bin(crc)
+    crc_bin = crc_bin[2:]
+    crc_len = len(crc_bin)
+    crc_bin = (16-crc_len)*'0' + crc_bin
+    crc_bin = list(crc_bin)
+    crc_bin = [int(i) for i in crc_bin]
+    hdlc_pack.extend(crc_bin)
     hdlc_pack.extend(flag)
     return hdlc_pack
 
@@ -47,7 +57,7 @@ def IPbus14_package(addr,data,wrds,typ,trans_ID):
     address = dec_to_bin_with_stuffing(addr, 32)
 
     # Data. 32 bits.
-    data = dec_to_bin_with_stuffing(data, 32)
+    # data = dec_to_bin_with_stuffing(data, 32)
    
     if typ == 0: # Read
         type_ID = [0,0,0,0]
@@ -76,6 +86,29 @@ def IPbus14_package(addr,data,wrds,typ,trans_ID):
         type_ID = [0,1,0,1]
         
     return ipbus_pack
+
+def crc_remainder(input_package):
+    polynomial_bitstring = 4129
+    crc = 65535
+    input_package = ''.join(str(e) for e in input_package)
+    input_package_len = len(input_package)/8
+    for j in range(0,input_package_len):
+        input_bitstring = input_package[(j*8):((j+1)*8)]
+        for i in range(7,-1,-1):
+
+            crc_bin = bin(crc)
+            crc_bin = crc_bin[2:]
+            crc_len = len(crc_bin)
+            crc_bin = (16-crc_len)*'0' + crc_bin
+
+            if int(input_bitstring[i],2)^int(crc_bin[-1],2) == 1:
+                crc_bin = crc_bin[1:]+'0'
+                crc = int(crc_bin,2)
+                crc =crc^polynomial_bitstring
+            else:
+                crc_bin = crc_bin[1:]+'0'
+                crc = int(crc_bin,2)
+    return crc
 
 
 #ipbus = IPbus14_package(8,0,1,0,0)
