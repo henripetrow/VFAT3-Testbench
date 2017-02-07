@@ -7,9 +7,11 @@ from SC_encode import *
 
 
 class instruction_object:
+
+
     def __init__(self):
         self.instruction_list = []
-        self.humanreadable = 0
+        self.humanreadable = 1
         open("./data/FPGA_instruction_list.dat", 'w').close()
         open("./data/datapacket_register_changes.dat", "w").close()
 
@@ -48,8 +50,7 @@ class instruction_object:
                 data = 0
                 addr = line[2]
 
-                ipbus = IPbus14_package(addr,data,1,0,0)
-                paketti = HDLC_package(ipbus)
+                ipbus = IPbus14_package(addr,data,1,0,BCcounter)
                 crc = crc_remainder(paketti)
                 paketti.append(crc)
                 paketti = binary_to_sc(paketti)
@@ -108,7 +109,8 @@ class instruction_object:
                 for x in register[addr].reg_array:
                    data.extend(dec_to_bin_with_stuffing(x[0], x[1]))
 
-                ipbus = IPbus14_package(addr,data,1,1,0)
+                data.reverse()
+                ipbus = IPbus14_package(addr,data,1,1,BCcounter)
                 paketti = HDLC_package(ipbus)
 
  
