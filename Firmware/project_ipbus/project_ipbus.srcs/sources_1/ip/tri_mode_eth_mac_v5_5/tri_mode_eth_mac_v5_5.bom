@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<BillOfMaterials Version="1" Minor="2">
+	<IPInstance name="tri_mode_eth_mac_v5_5">
+		<FileSets>
+			<FileSet generator="xmdf_to_bom">
+				<File name="tri_mode_eth_mac_v5_5/doc/pg051-tri-mode-eth-mac.pdf" type="ignore" timestamp="Wed Feb 08 10:04:18 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/doc/tri_mode_eth_mac_readme.txt" type="ignore" timestamp="Wed Feb 08 10:04:18 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/doc/tri_mode_eth_mac_v5_5_vinfo.html" type="ignore" timestamp="Wed Feb 08 10:04:18 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/axi_ipif/tri_mode_eth_mac_v5_5_address_decoder.v" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/axi_ipif/tri_mode_eth_mac_v5_5_address_decoder.vhd" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/axi_ipif/tri_mode_eth_mac_v5_5_axi4_lite_ipif_wrapper.v" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/axi_ipif/tri_mode_eth_mac_v5_5_axi4_lite_ipif_wrapper.vhd" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/axi_ipif/tri_mode_eth_mac_v5_5_axi_lite_ipif.v" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/axi_ipif/tri_mode_eth_mac_v5_5_axi_lite_ipif.vhd" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/axi_ipif/tri_mode_eth_mac_v5_5_counter_f.v" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/axi_ipif/tri_mode_eth_mac_v5_5_counter_f.vhd" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/axi_ipif/tri_mode_eth_mac_v5_5_ipif_pkg.vhd" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/axi_ipif/tri_mode_eth_mac_v5_5_pselect_f.v" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/axi_ipif/tri_mode_eth_mac_v5_5_pselect_f.vhd" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/axi_ipif/tri_mode_eth_mac_v5_5_slave_attachment.v" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/axi_ipif/tri_mode_eth_mac_v5_5_slave_attachment.vhd" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/common/tri_mode_eth_mac_v5_5_reset_sync.v" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/common/tri_mode_eth_mac_v5_5_reset_sync.vhd" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/common/tri_mode_eth_mac_v5_5_sync_block.v" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/common/tri_mode_eth_mac_v5_5_sync_block.vhd" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/control/tri_mode_eth_mac_v5_5_config_vector_sm.v" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/control/tri_mode_eth_mac_v5_5_config_vector_sm.vhd" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/fifo/tri_mode_eth_mac_v5_5_rx_client_fifo.v" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/fifo/tri_mode_eth_mac_v5_5_rx_client_fifo.vhd" type="ignore" timestamp="Wed Feb 08 10:02:49 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/fifo/tri_mode_eth_mac_v5_5_ten_100_1g_eth_fifo.v" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/fifo/tri_mode_eth_mac_v5_5_ten_100_1g_eth_fifo.vhd" type="ignore" timestamp="Wed Feb 08 10:02:49 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/fifo/tri_mode_eth_mac_v5_5_tx_client_fifo.v" type="ignore" timestamp="Wed Feb 08 10:02:50 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/fifo/tri_mode_eth_mac_v5_5_tx_client_fifo.vhd" type="ignore" timestamp="Wed Feb 08 10:02:49 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/pat_gen/tri_mode_eth_mac_v5_5_address_swap.v" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/pat_gen/tri_mode_eth_mac_v5_5_address_swap.vhd" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/pat_gen/tri_mode_eth_mac_v5_5_axi_mux.v" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/pat_gen/tri_mode_eth_mac_v5_5_axi_mux.vhd" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/pat_gen/tri_mode_eth_mac_v5_5_axi_pat_check.v" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/pat_gen/tri_mode_eth_mac_v5_5_axi_pat_check.vhd" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/pat_gen/tri_mode_eth_mac_v5_5_axi_pat_gen.v" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/pat_gen/tri_mode_eth_mac_v5_5_axi_pat_gen.vhd" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/pat_gen/tri_mode_eth_mac_v5_5_axi_pipe.v" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/pat_gen/tri_mode_eth_mac_v5_5_axi_pipe.vhd" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/pat_gen/tri_mode_eth_mac_v5_5_basic_pat_gen.v" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/pat_gen/tri_mode_eth_mac_v5_5_basic_pat_gen.vhd" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/tri_mode_eth_mac_v5_5_block.v" type="ignore" timestamp="Wed Feb 08 10:02:50 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/tri_mode_eth_mac_v5_5_block.vhd" type="ignore" timestamp="Wed Feb 08 10:02:50 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/tri_mode_eth_mac_v5_5_example_design.ucf" type="ignore" timestamp="Wed Feb 08 10:02:50 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/tri_mode_eth_mac_v5_5_example_design.v" type="ignore" timestamp="Wed Feb 08 10:02:50 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/tri_mode_eth_mac_v5_5_example_design.vhd" type="ignore" timestamp="Wed Feb 08 10:02:50 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/tri_mode_eth_mac_v5_5_fifo_block.v" type="ignore" timestamp="Wed Feb 08 10:02:50 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/tri_mode_eth_mac_v5_5_fifo_block.vhd" type="ignore" timestamp="Wed Feb 08 10:02:50 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/example_design/tri_mode_eth_mac_v5_5_mod.v" type="ignore" timestamp="Wed Feb 08 10:02:50 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/implement/implement.bat" type="ignore" timestamp="Wed Feb 08 10:02:49 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/implement/implement.sh" type="ignore" timestamp="Wed Feb 08 10:02:49 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/implement/xst.prj" type="ignore" timestamp="Wed Feb 08 10:02:49 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/implement/xst.scr" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/simulation/demo_tb.v" type="ignore" timestamp="Wed Feb 08 10:02:50 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/simulation/demo_tb.vhd" type="ignore" timestamp="Wed Feb 08 10:02:50 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/simulation/functional/simulate_mti.do" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/simulation/functional/simulate_ncsim.sh" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/simulation/functional/simulate_vcs.sh" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/simulation/functional/ucli_commands.key" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/simulation/functional/vcs_session.tcl" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/simulation/functional/wave_mti.do" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/simulation/functional/wave_ncsim.sv" type="ignore" timestamp="Wed Feb 08 10:02:51 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/simulation/tri_mode_eth_mac_v5_5_frame_typ.v" type="ignore" timestamp="Wed Feb 08 10:02:50 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5/tri_mode_eth_mac_readme.txt" type="ignore" timestamp="Sun Oct 13 18:09:19 2013" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5.asy" type="asy" timestamp="Wed Feb 08 10:04:18 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5.ngc" type="ngc" timestamp="Wed Feb 08 10:04:14 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5.v" type="verilog" timestamp="Wed Feb 08 10:04:17 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5.veo" type="veo" timestamp="Wed Feb 08 10:04:15 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5.vhd" type="vhdl" timestamp="Wed Feb 08 10:04:16 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5.vho" type="vho" timestamp="Wed Feb 08 10:04:15 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5.xco" type="xco" timestamp="Wed Feb 08 10:02:48 2017" checksum="0">
+				</File>
+				<File name="tri_mode_eth_mac_v5_5_xmdf.tcl" type="ignore" timestamp="Wed Feb 08 10:04:18 2017" checksum="0">
+				</File>
+			</FileSet>
+		</FileSets>
+	</IPInstance>
+</BillOfMaterials>
+

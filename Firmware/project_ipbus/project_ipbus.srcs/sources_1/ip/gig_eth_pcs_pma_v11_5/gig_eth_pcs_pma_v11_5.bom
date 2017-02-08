@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<BillOfMaterials Version="1" Minor="2">
+	<IPInstance name="gig_eth_pcs_pma_v11_5">
+		<FileSets>
+			<FileSet generator="xmdf_to_bom">
+				<File name="gig_eth_pcs_pma_v11_5/doc/gig_eth_pcs_pma_v11_5_vinfo.html" type="ignore" timestamp="Wed Feb 08 10:01:40 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/doc/pg047-gig-eth-pcs-pma.pdf" type="ignore" timestamp="Wed Feb 08 10:01:40 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/gig_eth_pcs_pma_v11_5_block.v" type="ignore" timestamp="Wed Feb 08 10:00:51 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/gig_eth_pcs_pma_v11_5_block.vhd" type="ignore" timestamp="Wed Feb 08 10:00:49 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/gig_eth_pcs_pma_v11_5_example_design.ucf" type="ignore" timestamp="Wed Feb 08 10:00:50 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/gig_eth_pcs_pma_v11_5_example_design.v" type="ignore" timestamp="Wed Feb 08 10:00:51 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/gig_eth_pcs_pma_v11_5_example_design.vhd" type="ignore" timestamp="Wed Feb 08 10:00:50 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/gig_eth_pcs_pma_v11_5_mod.v" type="ignore" timestamp="Wed Feb 08 10:00:45 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/gig_eth_pcs_pma_v11_5_reset_sync.v" type="ignore" timestamp="Wed Feb 08 10:00:44 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/gig_eth_pcs_pma_v11_5_reset_sync.vhd" type="ignore" timestamp="Wed Feb 08 10:00:44 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/gig_eth_pcs_pma_v11_5_sync_block.v" type="ignore" timestamp="Wed Feb 08 10:00:44 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/gig_eth_pcs_pma_v11_5_sync_block.vhd" type="ignore" timestamp="Wed Feb 08 10:00:44 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/gig_eth_pcs_pma_v11_5_tx_elastic_buffer.v" type="ignore" timestamp="Wed Feb 08 10:00:49 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/gig_eth_pcs_pma_v11_5_tx_elastic_buffer.vhd" type="ignore" timestamp="Wed Feb 08 10:00:46 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/transceiver/gig_eth_pcs_pma_v11_5_gtwizard.v" type="ignore" timestamp="Wed Feb 08 10:00:47 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/transceiver/gig_eth_pcs_pma_v11_5_gtwizard.vhd" type="ignore" timestamp="Wed Feb 08 10:00:47 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/transceiver/gig_eth_pcs_pma_v11_5_gtwizard.xco" type="ignore" timestamp="Wed Feb 08 10:00:47 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/transceiver/gig_eth_pcs_pma_v11_5_gtwizard_gt.v" type="ignore" timestamp="Wed Feb 08 10:00:47 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/transceiver/gig_eth_pcs_pma_v11_5_gtwizard_gt.vhd" type="ignore" timestamp="Wed Feb 08 10:00:47 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/transceiver/gig_eth_pcs_pma_v11_5_gtwizard_init.v" type="ignore" timestamp="Wed Feb 08 10:00:48 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/transceiver/gig_eth_pcs_pma_v11_5_gtwizard_init.vhd" type="ignore" timestamp="Wed Feb 08 10:00:48 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/transceiver/gig_eth_pcs_pma_v11_5_rx_startup_fsm.v" type="ignore" timestamp="Wed Feb 08 10:00:48 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/transceiver/gig_eth_pcs_pma_v11_5_rx_startup_fsm.vhd" type="ignore" timestamp="Wed Feb 08 10:00:49 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/transceiver/gig_eth_pcs_pma_v11_5_transceiver.v" type="ignore" timestamp="Wed Feb 08 10:00:52 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/transceiver/gig_eth_pcs_pma_v11_5_transceiver.vhd" type="ignore" timestamp="Wed Feb 08 10:00:52 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/transceiver/gig_eth_pcs_pma_v11_5_tx_startup_fsm.v" type="ignore" timestamp="Wed Feb 08 10:00:48 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/example_design/transceiver/gig_eth_pcs_pma_v11_5_tx_startup_fsm.vhd" type="ignore" timestamp="Wed Feb 08 10:00:48 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/gig_eth_pcs_pma_readme.txt" type="ignore" timestamp="Sun Oct 13 18:37:00 2013" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/implement/example_design_xst.xcf" type="ignore" timestamp="Wed Feb 08 10:00:51 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/implement/implement.bat" type="ignore" timestamp="Wed Feb 08 10:00:51 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/implement/implement.sh" type="ignore" timestamp="Wed Feb 08 10:00:53 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/implement/xst.prj" type="ignore" timestamp="Wed Feb 08 10:00:45 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/implement/xst.scr" type="ignore" timestamp="Wed Feb 08 10:00:45 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/simulation/demo_tb.v" type="ignore" timestamp="Wed Feb 08 10:00:44 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/simulation/demo_tb.vhd" type="ignore" timestamp="Wed Feb 08 10:00:44 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/simulation/functional/simulate_mti.do" type="ignore" timestamp="Wed Feb 08 10:00:44 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/simulation/functional/simulate_ncsim.sh" type="ignore" timestamp="Wed Feb 08 10:00:44 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/simulation/functional/simulate_vcs.sh" type="ignore" timestamp="Wed Feb 08 10:00:44 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/simulation/functional/ucli_commands.key" type="ignore" timestamp="Wed Feb 08 10:00:44 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/simulation/functional/vcs_session.tcl" type="ignore" timestamp="Wed Feb 08 10:00:44 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/simulation/functional/wave_mti.do" type="ignore" timestamp="Wed Feb 08 10:00:44 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/simulation/functional/wave_ncsim.sv" type="ignore" timestamp="Wed Feb 08 10:00:45 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/simulation/stimulus_tb.v" type="ignore" timestamp="Wed Feb 08 10:00:44 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5/simulation/stimulus_tb.vhd" type="ignore" timestamp="Wed Feb 08 10:00:44 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5.asy" type="asy" timestamp="Wed Feb 08 10:01:40 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5.ngc" type="ngc" timestamp="Wed Feb 08 10:01:37 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5.v" type="verilog" timestamp="Wed Feb 08 10:01:40 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5.veo" type="veo" timestamp="Wed Feb 08 10:01:37 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5.vhd" type="vhdl" timestamp="Wed Feb 08 10:01:39 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5.vho" type="vho" timestamp="Wed Feb 08 10:01:37 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5.xco" type="xco" timestamp="Wed Feb 08 10:00:40 2017" checksum="0">
+				</File>
+				<File name="gig_eth_pcs_pma_v11_5_xmdf.tcl" type="ignore" timestamp="Wed Feb 08 10:01:40 2017" checksum="0">
+				</File>
+			</FileSet>
+		</FileSets>
+	</IPInstance>
+</BillOfMaterials>
+

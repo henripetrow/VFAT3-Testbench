@@ -1,0 +1,48 @@
+##############################################################
+#
+# Vivado 2016.3
+# Date: Wed Feb 08 09:38:05 2017
+#
+##############################################################
+#
+#  This file contains the customisation parameters for a
+#  Xilinx IP GUI. It is strongly recommended
+#  that you do not manually alter this file as it may cause
+#  unexpected and unsupported behavior.
+#
+##############################################################
+# BEGIN Project Options
+SET addpads=false
+SET asysymbol=true
+SET busformat=BusFormatAngleBracketNotRipped
+SET createndf=false
+SET designentry=VHDL
+SET device=xc7k325t
+SET devicefamily=kintex7
+SET flowvendor=Other
+SET formalverification=false
+SET foundationsym=false
+SET implementationfiletype=Ngc
+SET package=ffg900
+SET removerpms=false
+SET simulationfiles=Behavioral
+SET speedgrade=-2
+SET verilogsim=true
+SET vhdlsim=true
+# END Project Options
+# BEGIN Select
+SELECT Ethernet_1000BASE-X_PCS/PMA_or_SGMII xilinx.com:ip:gig_eth_pcs_pma:11.5
+# END Select
+# BEGIN Parameters
+CSET auto_negotiation=false
+CSET component_name=gig_eth_pcs_pma_v11_5
+CSET enable_1588=false
+CSET management_interface=false
+CSET physical_interface=Transceiver
+CSET sgmii_mode=10_100_1000
+CSET sgmii_phy_mode=false
+CSET standard=1000BASEX
+CSET timing_sim=false
+CSET transceiver_tile=A
+# END Parameters
+GENERATE
