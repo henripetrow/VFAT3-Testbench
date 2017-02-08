@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Vivado/ipbus/newtest/impact.xsl
+OUTFILE=/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Vivado/ipbus/newtest/impact.xsl
+FAMILY=None
+PART=None
+WORKINGDIR=/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Vivado/ipbus/newtest
+LICENSE=iMPACT
+USER_INFO=iMPACT
