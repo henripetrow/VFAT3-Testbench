@@ -1,0 +1,679 @@
+#-----------------------------------------------------------
+# Vivado v2014.3.1 (64-bit)
+# SW Build 1034051 on Fri Oct  3 17:14:12 MDT 2014
+# IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
+# Start of session at: Thu Feb 09 13:21:10 2017
+# Process ID: 7864
+# Log file: C:/VivadoProject/project_test/project_test.runs/temac_gbe_v9_0_synth_1/temac_gbe_v9_0.vds
+# Journal file: C:/VivadoProject/project_test/project_test.runs/temac_gbe_v9_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source temac_gbe_v9_0.tcl
+# set_param gui.test TreeTableDev
+# debug::add_scope template.lib 1
+# set_msg_config -id {HDL 9-1061} -limit 100000
+# set_msg_config -id {HDL 9-1654} -limit 100000
+# create_project -in_memory -part xc7k325tffg900-2
+# set_param project.compositeFile.enableAutoGeneration 0
+# set_param synth.vivado.isSynthRun true
+# set_msg_config -id {IP_Flow 19-2162} -severity warning -new_severity info
+# set_property webtalk.parent_dir C:/VivadoProject/project_test/project_test.cache/wt [current_project]
+# set_property parent.project_path C:/VivadoProject/project_test/project_test.xpr [current_project]
+# set_property default_lib xil_defaultlib [current_project]
+# set_property target_language VHDL [current_project]
+# read_ip C:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/temac_gbe_v9_0.xci
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2014.3/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'temac_gbe_v9_0' generated file not found 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/temac_gbe_v9_0.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'temac_gbe_v9_0' generated file not found 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/temac_gbe_v9_0_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'temac_gbe_v9_0' generated file not found 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/temac_gbe_v9_0_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'temac_gbe_v9_0' generated file not found 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/temac_gbe_v9_0_funcsim.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'temac_gbe_v9_0' generated file not found 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/temac_gbe_v9_0_funcsim.vhdl'. Please regenerate to continue.
+# set_property is_locked true [get_files C:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/temac_gbe_v9_0.xci]
+# read_xdc dont_touch.xdc
+# set_property used_in_implementation false [get_files dont_touch.xdc]
+# catch { write_hwdef -file temac_gbe_v9_0.hwdef }
+INFO: [Vivado_Tcl 4-279] hardware handoff file cannot be generated as there is no block diagram instance in the design
+# synth_design -top temac_gbe_v9_0 -part xc7k325tffg900-2 -mode out_of_context
+Command: synth_design -top temac_gbe_v9_0 -part xc7k325tffg900-2 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-1223] The version limit for your license is '2014.12' and will expire in -771 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+WARNING: [Synth 8-2507] parameter declaration becomes local in tri_mode_ethernet_mac_v8_3_ipic_mux with formal parameter declaration list [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_lite/tri_mode_ethernet_mac_v8_3_ipic_mux.v:185]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tri_mode_ethernet_mac_v8_3_ipic_mux with formal parameter declaration list [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_lite/tri_mode_ethernet_mac_v8_3_ipic_mux.v:186]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tri_mode_ethernet_mac_v8_3_ipic_mux with formal parameter declaration list [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_lite/tri_mode_ethernet_mac_v8_3_ipic_mux.v:187]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tri_mode_ethernet_mac_v8_3_ipic_mux with formal parameter declaration list [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_lite/tri_mode_ethernet_mac_v8_3_ipic_mux.v:188]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tri_mode_ethernet_mac_v8_3_ipic_mux with formal parameter declaration list [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_lite/tri_mode_ethernet_mac_v8_3_ipic_mux.v:189]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tri_mode_ethernet_mac_v8_3_ipic_mux with formal parameter declaration list [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_lite/tri_mode_ethernet_mac_v8_3_ipic_mux.v:190]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tri_mode_ethernet_mac_v8_3_ipic_mux with formal parameter declaration list [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_lite/tri_mode_ethernet_mac_v8_3_ipic_mux.v:191]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tri_mode_ethernet_mac_v8_3_ipic_mux with formal parameter declaration list [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_lite/tri_mode_ethernet_mac_v8_3_ipic_mux.v:192]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 261.172 ; gain = 98.891
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-2048] function get_addr_bits does not always return a value [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/axi_ipif/temac_gbe_v9_0_slave_attachment.vhd:243]
+INFO: [Synth 8-638] synthesizing module 'temac_gbe_v9_0' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0.vhd:128]
+INFO: [Synth 8-3491] module 'temac_gbe_v9_0_block' declared at 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_block.vhd:100' bound to instance 'U0' of component 'temac_gbe_v9_0_block' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0.vhd:204]
+INFO: [Synth 8-638] synthesizing module 'temac_gbe_v9_0_block' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_block.vhd:162]
+INFO: [Synth 8-3491] module 'tri_mode_ethernet_mac_v8_3' declared at 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/tri_mode_ethernet_mac_v8_3.v:175' bound to instance 'temac_gbe_v9_0_core' of component 'tri_mode_ethernet_mac_v8_3' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_block.vhd:440]
+INFO: [Synth 8-638] synthesizing module 'tri_mode_ethernet_mac_v8_3' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/tri_mode_ethernet_mac_v8_3.v:175]
+INFO: [Synth 8-638] synthesizing module 'tri_mode_ethernet_mac_v8_3_sync_reset' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_reset.vhd:139]
+INFO: [Synth 8-4472] Detected and applied attribute shreg_extract = no [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_reset.vhd:140]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_reset.vhd:140]
+INFO: [Synth 8-4472] Detected and applied attribute shreg_extract = no [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_reset.vhd:141]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_reset.vhd:141]
+INFO: [Synth 8-4472] Detected and applied attribute shreg_extract = no [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_reset.vhd:142]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_reset.vhd:142]
+INFO: [Synth 8-4472] Detected and applied attribute shreg_extract = no [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_reset.vhd:143]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_reset.vhd:143]
+INFO: [Synth 8-4472] Detected and applied attribute shreg_extract = no [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_reset.vhd:144]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_reset.vhd:144]
+INFO: [Synth 8-4472] Detected and applied attribute shreg_extract = no [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_reset.vhd:145]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_reset.vhd:145]
+INFO: [Synth 8-4472] Detected and applied attribute shreg_extract = no [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_reset.vhd:146]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_reset.vhd:146]
+INFO: [Synth 8-256] done synthesizing module 'tri_mode_ethernet_mac_v8_3_sync_reset' (1#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_reset.vhd:139]
+INFO: [Synth 8-638] synthesizing module 'tri_mode_ethernet_mac_v8_3_gmii_mii_tx' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/gmii_mii/tri_mode_ethernet_mac_v8_3_gmii_mii_tx.v:130]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/gmii_mii/tri_mode_ethernet_mac_v8_3_gmii_mii_tx.v:160]
+INFO: [Synth 8-4471] merging register 'hd_tieoff.force_quiet_reg' into 'hd_tieoff.extension_reg_reg' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/gmii_mii/tri_mode_ethernet_mac_v8_3_gmii_mii_tx.v:588]
+INFO: [Synth 8-256] done synthesizing module 'tri_mode_ethernet_mac_v8_3_gmii_mii_tx' (2#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/gmii_mii/tri_mode_ethernet_mac_v8_3_gmii_mii_tx.v:130]
+INFO: [Synth 8-638] synthesizing module 'tri_mode_ethernet_mac_v8_3_gmii_mii_rx' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/gmii_mii/tri_mode_ethernet_mac_v8_3_gmii_mii_rx.v:152]
+INFO: [Synth 8-256] done synthesizing module 'tri_mode_ethernet_mac_v8_3_gmii_mii_rx' (3#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/gmii_mii/tri_mode_ethernet_mac_v8_3_gmii_mii_rx.v:152]
+INFO: [Synth 8-638] synthesizing module 'tri_mode_ethernet_mac_v8_3_ipic_mux' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_lite/tri_mode_ethernet_mac_v8_3_ipic_mux.v:130]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_lite/tri_mode_ethernet_mac_v8_3_ipic_mux.v:312]
+INFO: [Synth 8-256] done synthesizing module 'tri_mode_ethernet_mac_v8_3_ipic_mux' (4#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_lite/tri_mode_ethernet_mac_v8_3_ipic_mux.v:130]
+INFO: [Synth 8-638] synthesizing module 'tri_mode_ethernet_mac_v8_3_tx_axi_intf' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_strm/tri_mode_ethernet_mac_v8_3_tx_axi_intf.v:130]
+INFO: [Synth 8-256] done synthesizing module 'tri_mode_ethernet_mac_v8_3_tx_axi_intf' (5#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_strm/tri_mode_ethernet_mac_v8_3_tx_axi_intf.v:130]
+INFO: [Synth 8-638] synthesizing module 'tri_mode_ethernet_mac_v8_3_rx_axi_intf' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_strm/tri_mode_ethernet_mac_v8_3_rx_axi_intf.v:122]
+INFO: [Synth 8-226] default block is never used [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_strm/tri_mode_ethernet_mac_v8_3_rx_axi_intf.v:191]
+INFO: [Synth 8-256] done synthesizing module 'tri_mode_ethernet_mac_v8_3_rx_axi_intf' (6#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_strm/tri_mode_ethernet_mac_v8_3_rx_axi_intf.v:122]
+INFO: [Synth 8-638] synthesizing module 'tri_mode_ethernet_mac_v8_3_control' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_control.v:124]
+INFO: [Synth 8-638] synthesizing module 'tri_mode_ethernet_mac_v8_3_rx_cntl' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_rx_cntl.v:123]
+INFO: [Synth 8-3936] Found unconnected internal register 'data_valid_shift_reg' and it is trimmed from '9' to '8' bits. [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_rx_cntl.v:272]
+INFO: [Synth 8-256] done synthesizing module 'tri_mode_ethernet_mac_v8_3_rx_cntl' (7#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_rx_cntl.v:123]
+INFO: [Synth 8-638] synthesizing module 'tri_mode_ethernet_mac_v8_3_tx_cntl' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_tx_cntl.v:122]
+INFO: [Synth 8-638] synthesizing module 'LUT4' [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:15821]
+INFO: [Synth 8-256] done synthesizing module 'LUT4' (8#1) [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:15821]
+INFO: [Synth 8-638] synthesizing module 'LUT4__parameterized0' [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:15821]
+INFO: [Synth 8-256] done synthesizing module 'LUT4__parameterized0' (8#1) [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:15821]
+INFO: [Synth 8-638] synthesizing module 'LUT4__parameterized1' [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:15821]
+INFO: [Synth 8-256] done synthesizing module 'LUT4__parameterized1' (8#1) [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:15821]
+INFO: [Synth 8-638] synthesizing module 'LUT4__parameterized2' [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:15821]
+INFO: [Synth 8-256] done synthesizing module 'LUT4__parameterized2' (8#1) [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:15821]
+INFO: [Synth 8-638] synthesizing module 'LUT4__parameterized3' [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:15821]
+INFO: [Synth 8-256] done synthesizing module 'LUT4__parameterized3' (8#1) [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:15821]
+INFO: [Synth 8-256] done synthesizing module 'tri_mode_ethernet_mac_v8_3_tx_cntl' (9#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_tx_cntl.v:122]
+INFO: [Synth 8-638] synthesizing module 'tri_mode_ethernet_mac_v8_3_pfc_tx_cntl' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:121]
+INFO: [Synth 8-226] default block is never used [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:215]
+INFO: [Synth 8-4471] merging register 'priority_fsm[1].pri_state_reg[1][2:0]' into 'priority_fsm[0].pri_state_reg[0][2:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:368]
+INFO: [Synth 8-4471] merging register 'priority_fsm[2].pri_state_reg[2][2:0]' into 'priority_fsm[0].pri_state_reg[0][2:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:368]
+INFO: [Synth 8-4471] merging register 'priority_fsm[3].pri_state_reg[3][2:0]' into 'priority_fsm[0].pri_state_reg[0][2:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:368]
+INFO: [Synth 8-4471] merging register 'priority_fsm[4].pri_state_reg[4][2:0]' into 'priority_fsm[0].pri_state_reg[0][2:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:368]
+INFO: [Synth 8-4471] merging register 'priority_fsm[5].pri_state_reg[5][2:0]' into 'priority_fsm[0].pri_state_reg[0][2:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:368]
+INFO: [Synth 8-4471] merging register 'priority_fsm[6].pri_state_reg[6][2:0]' into 'priority_fsm[0].pri_state_reg[0][2:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:368]
+INFO: [Synth 8-4471] merging register 'priority_fsm[7].pri_state_reg[7][2:0]' into 'priority_fsm[0].pri_state_reg[0][2:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:368]
+INFO: [Synth 8-256] done synthesizing module 'tri_mode_ethernet_mac_v8_3_pfc_tx_cntl' (10#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:121]
+INFO: [Synth 8-638] synthesizing module 'tri_mode_ethernet_mac_v8_3_rx_sync_req' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_rx_sync_req.v:123]
+INFO: [Synth 8-256] done synthesizing module 'tri_mode_ethernet_mac_v8_3_rx_sync_req' (11#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_rx_sync_req.v:123]
+INFO: [Synth 8-638] synthesizing module 'tri_mode_ethernet_mac_v8_3_tx_pause' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_tx_pause.v:129]
+INFO: [Synth 8-638] synthesizing module 'tri_mode_ethernet_mac_v8_3_sync_block' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_block.vhd:143]
+INFO: [Synth 8-113] binding component instance 'data_sync_reg0' to cell 'FDRE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_block.vhd:170]
+INFO: [Synth 8-113] binding component instance 'data_sync_reg1' to cell 'FDRE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_block.vhd:182]
+INFO: [Synth 8-113] binding component instance 'data_sync_reg2' to cell 'FDRE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_block.vhd:194]
+INFO: [Synth 8-113] binding component instance 'data_sync_reg3' to cell 'FDRE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_block.vhd:206]
+INFO: [Synth 8-113] binding component instance 'data_sync_reg4' to cell 'FDRE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_block.vhd:218]
+INFO: [Synth 8-256] done synthesizing module 'tri_mode_ethernet_mac_v8_3_sync_block' (12#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_block.vhd:143]
+INFO: [Synth 8-256] done synthesizing module 'tri_mode_ethernet_mac_v8_3_tx_pause' (13#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_tx_pause.v:129]
+INFO: [Synth 8-256] done synthesizing module 'tri_mode_ethernet_mac_v8_3_control' (14#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_control.v:124]
+INFO: [Synth 8-638] synthesizing module 'tri_mode_ethernet_mac_v8_3_tx' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/tx/tri_mode_ethernet_mac_v8_3_tx.vhd:221]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/tx/tri_mode_ethernet_mac_v8_3_tx.vhd:279]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/tx/tri_mode_ethernet_mac_v8_3_tx.vhd:293]
+INFO: [Synth 8-3491] module 'CRC_64_32' declared at 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc_64_32.vhd:128' bound to instance 'CRCGEN2' of component 'CRC_64_32' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/tx/tri_mode_ethernet_mac_v8_3_tx.vhd:379]
+INFO: [Synth 8-638] synthesizing module 'CRC_64_32' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc_64_32.vhd:137]
+INFO: [Synth 8-3491] module 'CC8CE' declared at 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:127' bound to instance 'CRC1' of component 'CC8CE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc_64_32.vhd:173]
+INFO: [Synth 8-638] synthesizing module 'CC8CE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:136]
+INFO: [Synth 8-113] binding component instance 'X36_1I4' to cell 'MUXCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:193]
+INFO: [Synth 8-113] binding component instance 'X36_1I26' to cell 'MUXCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:199]
+INFO: [Synth 8-113] binding component instance 'X36_1I233' to cell 'MUXCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:205]
+INFO: [Synth 8-113] binding component instance 'X36_1I246' to cell 'MUXCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:211]
+INFO: [Synth 8-113] binding component instance 'X36_1I263' to cell 'FDCE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:217]
+INFO: [Synth 8-113] binding component instance 'X36_1I276' to cell 'FDCE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:224]
+INFO: [Synth 8-113] binding component instance 'X36_1I289' to cell 'FDCE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:231]
+INFO: [Synth 8-113] binding component instance 'X36_1I956' to cell 'LUT2' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:238]
+INFO: [Synth 8-113] binding component instance 'X36_1I923' to cell 'VCC' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:247]
+INFO: [Synth 8-113] binding component instance 'X36_1I886' to cell 'GND' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:250]
+INFO: [Synth 8-113] binding component instance 'X36_1I285' to cell 'MUXCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:253]
+INFO: [Synth 8-113] binding component instance 'X36_1I272' to cell 'MUXCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:259]
+INFO: [Synth 8-113] binding component instance 'X36_1I259' to cell 'MUXCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:265]
+INFO: [Synth 8-113] binding component instance 'X36_1I298' to cell 'MUXCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:271]
+INFO: [Synth 8-113] binding component instance 'X36_1I6' to cell 'XORCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:277]
+INFO: [Synth 8-113] binding component instance 'X36_1I28' to cell 'XORCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:282]
+INFO: [Synth 8-113] binding component instance 'X36_1I226' to cell 'XORCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:287]
+INFO: [Synth 8-113] binding component instance 'X36_1I239' to cell 'XORCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:292]
+INFO: [Synth 8-113] binding component instance 'X36_1I252' to cell 'XORCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:297]
+INFO: [Synth 8-113] binding component instance 'X36_1I265' to cell 'XORCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:302]
+INFO: [Synth 8-113] binding component instance 'X36_1I278' to cell 'XORCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:307]
+INFO: [Synth 8-113] binding component instance 'X36_1I291' to cell 'XORCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:312]
+INFO: [Synth 8-113] binding component instance 'X36_1I237' to cell 'FDCE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:317]
+INFO: [Synth 8-113] binding component instance 'X36_1I250' to cell 'FDCE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:324]
+INFO: [Synth 8-113] binding component instance 'X36_1I224' to cell 'FDCE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:331]
+INFO: [Synth 8-113] binding component instance 'X36_1I35' to cell 'FDCE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:338]
+INFO: [Synth 8-113] binding component instance 'X36_1I36' to cell 'FDCE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:345]
+INFO: [Synth 8-256] done synthesizing module 'CC8CE' (15#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:136]
+INFO: [Synth 8-113] binding component instance 'FF1' to cell 'FDCE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc_64_32.vhd:182]
+INFO: [Synth 8-3491] module 'CC8CE' declared at 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:127' bound to instance 'CRC2' of component 'CC8CE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc_64_32.vhd:190]
+INFO: [Synth 8-113] binding component instance 'FF2' to cell 'FDCE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc_64_32.vhd:199]
+INFO: [Synth 8-3491] module 'CC8CE' declared at 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:127' bound to instance 'CRC3' of component 'CC8CE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc_64_32.vhd:207]
+INFO: [Synth 8-113] binding component instance 'FF3' to cell 'FDCE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc_64_32.vhd:216]
+INFO: [Synth 8-3491] module 'CC8CE' declared at 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc8ce.vhd:127' bound to instance 'CRC4' of component 'CC8CE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc_64_32.vhd:224]
+INFO: [Synth 8-113] binding component instance 'FF4' to cell 'FDCE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc_64_32.vhd:233]
+INFO: [Synth 8-3491] module 'CC2CE' declared at 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc2ce.vhd:127' bound to instance 'CRC5' of component 'CC2CE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc_64_32.vhd:241]
+INFO: [Synth 8-638] synthesizing module 'CC2CE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc2ce.vhd:136]
+INFO: [Synth 8-113] binding component instance 'X36_1I4' to cell 'MUXCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc2ce.vhd:159]
+INFO: [Synth 8-113] binding component instance 'X36_1I956' to cell 'LUT2' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc2ce.vhd:166]
+INFO: [Synth 8-113] binding component instance 'X36_1I923' to cell 'VCC' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc2ce.vhd:176]
+INFO: [Synth 8-113] binding component instance 'X36_1I886' to cell 'GND' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc2ce.vhd:180]
+INFO: [Synth 8-113] binding component instance 'X36_1I298' to cell 'MUXCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc2ce.vhd:184]
+INFO: [Synth 8-113] binding component instance 'X36_1I6' to cell 'XORCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc2ce.vhd:191]
+INFO: [Synth 8-113] binding component instance 'X36_1I28' to cell 'XORCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc2ce.vhd:197]
+INFO: [Synth 8-113] binding component instance 'X36_1I35' to cell 'FDCE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc2ce.vhd:203]
+INFO: [Synth 8-113] binding component instance 'X36_1I36' to cell 'FDCE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc2ce.vhd:210]
+INFO: [Synth 8-256] done synthesizing module 'CC2CE' (16#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/cc2ce.vhd:136]
+INFO: [Synth 8-113] binding component instance 'FF5' to cell 'FDCE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc_64_32.vhd:250]
+INFO: [Synth 8-113] binding component instance 'X36_1I6' to cell 'XORCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc_64_32.vhd:262]
+INFO: [Synth 8-113] binding component instance 'X36_1I36' to cell 'FDCE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc_64_32.vhd:267]
+INFO: [Synth 8-113] binding component instance 'X36_1I4' to cell 'MUXCY' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc_64_32.vhd:274]
+INFO: [Synth 8-113] binding component instance 'X36_1I956' to cell 'LUT2' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc_64_32.vhd:280]
+INFO: [Synth 8-113] binding component instance 'FF6' to cell 'FDCE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc_64_32.vhd:289]
+INFO: [Synth 8-256] done synthesizing module 'CRC_64_32' (17#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc_64_32.vhd:137]
+INFO: [Synth 8-3491] module 'tri_mode_ethernet_mac_v8_3_sync_block' declared at 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_block.vhd:126' bound to instance 'SPEED_0_SYNC' of component 'tri_mode_ethernet_mac_v8_3_sync_block' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/tx/tri_mode_ethernet_mac_v8_3_tx.vhd:530]
+INFO: [Synth 8-638] synthesizing module 'tri_mode_ethernet_mac_v8_3_sync_block__parameterized1' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_block.vhd:143]
+INFO: [Synth 8-113] binding component instance 'data_sync_reg0' to cell 'FDRE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_block.vhd:170]
+INFO: [Synth 8-113] binding component instance 'data_sync_reg1' to cell 'FDRE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_block.vhd:182]
+INFO: [Synth 8-113] binding component instance 'data_sync_reg2' to cell 'FDRE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_block.vhd:194]
+INFO: [Synth 8-113] binding component instance 'data_sync_reg3' to cell 'FDRE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_block.vhd:206]
+INFO: [Synth 8-113] binding component instance 'data_sync_reg4' to cell 'FDRE' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_block.vhd:218]
+INFO: [Synth 8-256] done synthesizing module 'tri_mode_ethernet_mac_v8_3_sync_block__parameterized1' (17#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_block.vhd:143]
+INFO: [Synth 8-3491] module 'tri_mode_ethernet_mac_v8_3_sync_block' declared at 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_block.vhd:126' bound to instance 'SPEED_1_SYNC' of component 'tri_mode_ethernet_mac_v8_3_sync_block' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/tx/tri_mode_ethernet_mac_v8_3_tx.vhd:536]
+INFO: [Synth 8-3491] module 'TX_STATE_MACH' declared at 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/tx/tx_state_mach.vhd:128' bound to instance 'TX_SM1' of component 'TX_STATE_MACH' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/tx/tri_mode_ethernet_mac_v8_3_tx.vhd:645]
+INFO: [Synth 8-638] synthesizing module 'TX_STATE_MACH__parameterized0' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/tx/tx_state_mach.vhd:227]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/tx/tx_state_mach.vhd:381]
+INFO: [Synth 8-3491] module 'CRC32_8' declared at 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc32_8.vhd:160' bound to instance 'CRCGEN' of component 'CRC32_8' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/tx/tx_state_mach.vhd:1936]
+INFO: [Synth 8-638] synthesizing module 'CRC32_8' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc32_8.vhd:172]
+INFO: [Synth 8-256] done synthesizing module 'CRC32_8' (18#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc32_8.vhd:172]
+INFO: [Synth 8-256] done synthesizing module 'TX_STATE_MACH__parameterized0' (19#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/tx/tx_state_mach.vhd:227]
+INFO: [Synth 8-113] binding component instance 'BYTECNTSRL' to cell 'SRL16E' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/tx/tri_mode_ethernet_mac_v8_3_tx.vhd:753]
+INFO: [Synth 8-256] done synthesizing module 'tri_mode_ethernet_mac_v8_3_tx' (20#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/tx/tri_mode_ethernet_mac_v8_3_tx.vhd:221]
+INFO: [Synth 8-638] synthesizing module 'tri_mode_ethernet_mac_v8_3_rx' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:224]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:330]
+INFO: [Synth 8-3491] module 'CRC_64_32' declared at 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc_64_32.vhd:128' bound to instance 'CALCULATE_CRC2' of component 'CRC_64_32' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:411]
+INFO: [Synth 8-3491] module 'tri_mode_ethernet_mac_v8_3_sync_block' declared at 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_block.vhd:126' bound to instance 'SPEED_0_SYNC' of component 'tri_mode_ethernet_mac_v8_3_sync_block' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:555]
+INFO: [Synth 8-3491] module 'tri_mode_ethernet_mac_v8_3_sync_block' declared at 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/tri_mode_ethernet_mac_v8_3_sync_block.vhd:126' bound to instance 'SPEED_1_SYNC' of component 'tri_mode_ethernet_mac_v8_3_sync_block' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:561]
+INFO: [Synth 8-113] binding component instance 'DELAY_BROADCASTADDRESSMATCH' to cell 'SRL16E' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:607]
+INFO: [Synth 8-113] binding component instance 'DELAY_RXD' to cell 'SRL16E' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:711]
+INFO: [Synth 8-113] binding component instance 'DELAY_RXD' to cell 'SRL16E' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:711]
+INFO: [Synth 8-113] binding component instance 'DELAY_RXD' to cell 'SRL16E' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:711]
+INFO: [Synth 8-113] binding component instance 'DELAY_RXD' to cell 'SRL16E' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:711]
+INFO: [Synth 8-113] binding component instance 'DELAY_RXD' to cell 'SRL16E' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:711]
+INFO: [Synth 8-113] binding component instance 'DELAY_RXD' to cell 'SRL16E' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:711]
+INFO: [Synth 8-113] binding component instance 'DELAY_RXD' to cell 'SRL16E' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:711]
+INFO: [Synth 8-113] binding component instance 'DELAY_RXD' to cell 'SRL16E' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:711]
+INFO: [Synth 8-113] binding component instance 'DELAY_RX_DV1' to cell 'SRL16E' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:728]
+INFO: [Synth 8-113] binding component instance 'DELAY_RX_DV2' to cell 'SRL16E' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:741]
+INFO: [Synth 8-113] binding component instance 'DELAY_RX_ERR' to cell 'SRL16E' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:755]
+INFO: [Synth 8-3491] module 'STATE_MACHINES' declared at 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/state_machines.vhd:141' bound to instance 'RX_SM' of component 'STATE_MACHINES' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:854]
+INFO: [Synth 8-638] synthesizing module 'STATE_MACHINES' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/state_machines.vhd:178]
+INFO: [Synth 8-256] done synthesizing module 'STATE_MACHINES' (21#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/state_machines.vhd:178]
+INFO: [Synth 8-3491] module 'DECODE_FRAME' declared at 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/decode_frame.vhd:148' bound to instance 'FRAME_DECODER' of component 'DECODE_FRAME' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:900]
+INFO: [Synth 8-638] synthesizing module 'DECODE_FRAME' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/decode_frame.vhd:189]
+INFO: [Synth 8-256] done synthesizing module 'DECODE_FRAME' (22#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/decode_frame.vhd:189]
+INFO: [Synth 8-3491] module 'CRC32_8' declared at 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/common/crc32_8.vhd:160' bound to instance 'FCS_CHECK' of component 'CRC32_8' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:949]
+INFO: [Synth 8-3491] module 'PARAM_CHECK' declared at 'c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/param_check.vhd:144' bound to instance 'FRAME_CHECKER' of component 'PARAM_CHECK' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:965]
+INFO: [Synth 8-638] synthesizing module 'PARAM_CHECK__parameterized0' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/param_check.vhd:197]
+INFO: [Synth 8-256] done synthesizing module 'PARAM_CHECK__parameterized0' (23#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/param_check.vhd:197]
+INFO: [Synth 8-256] done synthesizing module 'tri_mode_ethernet_mac_v8_3_rx' (24#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/rx/tri_mode_ethernet_mac_v8_3_rx.vhd:224]
+INFO: [Synth 8-638] synthesizing module 'tri_mode_ethernet_mac_v8_3_addr_filter_wrap' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/af/tri_mode_ethernet_mac_v8_3_addr_filter_wrap.v:126]
+INFO: [Synth 8-638] synthesizing module 'tri_mode_ethernet_mac_v8_3_addr_filter' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/af/tri_mode_ethernet_mac_v8_3_addr_filter.v:127]
+INFO: [Synth 8-638] synthesizing module 'RAM64X1D' [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:28398]
+INFO: [Synth 8-256] done synthesizing module 'RAM64X1D' (25#1) [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:28398]
+INFO: [Synth 8-638] synthesizing module 'LUT3' [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:15781]
+INFO: [Synth 8-256] done synthesizing module 'LUT3' (26#1) [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:15781]
+INFO: [Synth 8-638] synthesizing module 'LUT3__parameterized0' [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:15781]
+INFO: [Synth 8-256] done synthesizing module 'LUT3__parameterized0' (26#1) [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:15781]
+INFO: [Synth 8-638] synthesizing module 'LUT3__parameterized1' [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:15781]
+INFO: [Synth 8-256] done synthesizing module 'LUT3__parameterized1' (26#1) [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:15781]
+INFO: [Synth 8-638] synthesizing module 'LUT3__parameterized2' [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:15781]
+INFO: [Synth 8-256] done synthesizing module 'LUT3__parameterized2' (26#1) [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:15781]
+INFO: [Synth 8-638] synthesizing module 'SRL16E' [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:34520]
+INFO: [Synth 8-256] done synthesizing module 'SRL16E' (27#1) [C:/Xilinx/Vivado/2014.3/scripts/rt/data/unisim_comp.v:34520]
+INFO: [Synth 8-4471] merging register 'avb_ram_rd_byte_reg[7:0]' into 'ram_rd_byte_reg[7:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/af/tri_mode_ethernet_mac_v8_3_addr_filter.v:1440]
+INFO: [Synth 8-256] done synthesizing module 'tri_mode_ethernet_mac_v8_3_addr_filter' (28#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/af/tri_mode_ethernet_mac_v8_3_addr_filter.v:127]
+INFO: [Synth 8-256] done synthesizing module 'tri_mode_ethernet_mac_v8_3_addr_filter_wrap' (29#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/af/tri_mode_ethernet_mac_v8_3_addr_filter_wrap.v:126]
+INFO: [Synth 8-256] done synthesizing module 'tri_mode_ethernet_mac_v8_3' (30#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/tri_mode_ethernet_mac_v8_3.v:175]
+INFO: [Synth 8-256] done synthesizing module 'temac_gbe_v9_0_block' (31#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_block.vhd:162]
+INFO: [Synth 8-256] done synthesizing module 'temac_gbe_v9_0' (32#1) [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0.vhd:128]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:50 ; elapsed = 00:00:53 . Memory (MB): peak = 315.973 ; gain = 153.691
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:50 ; elapsed = 00:00:53 . Memory (MB): peak = 315.973 ; gain = 153.691
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 78 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Loading clock regions from C:/Xilinx/Vivado/2014.3/data\parts/xilinx/kintex7/kintex7/xc7k325t/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/Vivado/2014.3/data\parts/xilinx/kintex7/kintex7/xc7k325t/ClockBuffers.xml
+Loading clock placement rules from C:/Xilinx/Vivado/2014.3/data/parts/xilinx/kintex7/ClockPlacerRules.xml
+Loading package pin functions from C:/Xilinx/Vivado/2014.3/data\parts/xilinx/kintex7/PinFunctions.xml...
+Loading package from C:/Xilinx/Vivado/2014.3/data\parts/xilinx/kintex7/kintex7/xc7k325t/ffg900/Package.xml
+Loading io standards from C:/Xilinx/Vivado/2014.3/data\./parts/xilinx/kintex7/IOStandards.xml
+Loading device configuration modes from C:/Xilinx/Vivado/2014.3/data\parts/xilinx/kintex7/ConfigModes.xml
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_board.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_board.xdc] for cell 'U0'
+Parsing XDC File [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0.xdc] for cell 'U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/temac_gbe_v9_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/temac_gbe_v9_0_propImpl.xdc] to anoth XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/VivadoProject/project_test/project_test.runs/temac_gbe_v9_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/VivadoProject/project_test/project_test.runs/temac_gbe_v9_0_synth_1/dont_touch.xdc]
+Parsing XDC File [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_clocks.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_clocks.xdc] for cell 'U0'
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 8 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 670.203 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:59 ; elapsed = 00:01:03 . Memory (MB): peak = 670.203 ; gain = 507.922
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg900-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:59 ; elapsed = 00:01:03 . Memory (MB): peak = 670.203 ; gain = 507.922
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for U0. (constraint file  C:/VivadoProject/project_test/project_test.runs/temac_gbe_v9_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:59 ; elapsed = 00:01:03 . Memory (MB): peak = 670.203 ; gain = 507.922
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'tx_state_reg' in module 'tri_mode_ethernet_mac_v8_3_tx_axi_intf'
+INFO: [Synth 8-4471] merging register 'rx_av_a_tuser_reg' into 'rx_filter_tuser_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_strm/tri_mode_ethernet_mac_v8_3_rx_axi_intf.v:412]
+INFO: [Synth 8-4471] merging register 'rx_av_b_tuser_reg' into 'rx_filter_tuser_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_strm/tri_mode_ethernet_mac_v8_3_rx_axi_intf.v:413]
+INFO: [Synth 8-4471] merging register 'rx_ptp_tuser_reg' into 'rx_filter_tuser_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_strm/tri_mode_ethernet_mac_v8_3_rx_axi_intf.v:414]
+INFO: [Synth 8-4471] merging register 'rx_legacy_tuser_reg' into 'rx_filter_tuser_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/axi_strm/tri_mode_ethernet_mac_v8_3_rx_axi_intf.v:415]
+INFO: [Synth 8-4471] merging register 'priority_counter[1].tvalid_int_reg[1:1]' into 'priority_counter[0].tvalid_int_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_rx_cntl.v:578]
+INFO: [Synth 8-4471] merging register 'priority_counter[2].tvalid_int_reg[2:2]' into 'priority_counter[0].tvalid_int_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_rx_cntl.v:578]
+INFO: [Synth 8-4471] merging register 'priority_counter[3].tvalid_int_reg[3:3]' into 'priority_counter[0].tvalid_int_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_rx_cntl.v:578]
+INFO: [Synth 8-4471] merging register 'priority_counter[4].tvalid_int_reg[4:4]' into 'priority_counter[0].tvalid_int_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_rx_cntl.v:578]
+INFO: [Synth 8-4471] merging register 'priority_counter[5].tvalid_int_reg[5:5]' into 'priority_counter[0].tvalid_int_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_rx_cntl.v:578]
+INFO: [Synth 8-4471] merging register 'priority_counter[6].tvalid_int_reg[6:6]' into 'priority_counter[0].tvalid_int_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_rx_cntl.v:578]
+INFO: [Synth 8-4471] merging register 'priority_counter[7].tvalid_int_reg[7:7]' into 'priority_counter[0].tvalid_int_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_rx_cntl.v:578]
+INFO: [Synth 8-4471] merging register 'priority_fsm[0].priority_req_reg[0:0]' into 'priority_fsm[0].quanta_low_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:369]
+INFO: [Synth 8-4471] merging register 'priority_fsm[1].quanta_low_reg[1:1]' into 'priority_fsm[0].quanta_low_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:370]
+INFO: [Synth 8-4471] merging register 'priority_fsm[1].priority_req_reg[1:1]' into 'priority_fsm[0].quanta_low_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:369]
+INFO: [Synth 8-4471] merging register 'priority_fsm[2].quanta_low_reg[2:2]' into 'priority_fsm[0].quanta_low_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:370]
+INFO: [Synth 8-4471] merging register 'priority_fsm[2].priority_req_reg[2:2]' into 'priority_fsm[0].quanta_low_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:369]
+INFO: [Synth 8-4471] merging register 'priority_fsm[3].quanta_low_reg[3:3]' into 'priority_fsm[0].quanta_low_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:370]
+INFO: [Synth 8-4471] merging register 'priority_fsm[3].priority_req_reg[3:3]' into 'priority_fsm[0].quanta_low_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:369]
+INFO: [Synth 8-4471] merging register 'priority_fsm[4].quanta_low_reg[4:4]' into 'priority_fsm[0].quanta_low_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:370]
+INFO: [Synth 8-4471] merging register 'priority_fsm[4].priority_req_reg[4:4]' into 'priority_fsm[0].quanta_low_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:369]
+INFO: [Synth 8-4471] merging register 'priority_fsm[5].quanta_low_reg[5:5]' into 'priority_fsm[0].quanta_low_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:370]
+INFO: [Synth 8-4471] merging register 'priority_fsm[5].priority_req_reg[5:5]' into 'priority_fsm[0].quanta_low_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:369]
+INFO: [Synth 8-4471] merging register 'priority_fsm[6].quanta_low_reg[6:6]' into 'priority_fsm[0].quanta_low_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:370]
+INFO: [Synth 8-4471] merging register 'priority_fsm[6].priority_req_reg[6:6]' into 'priority_fsm[0].quanta_low_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:369]
+INFO: [Synth 8-4471] merging register 'priority_fsm[7].quanta_low_reg[7:7]' into 'priority_fsm[0].quanta_low_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:370]
+INFO: [Synth 8-4471] merging register 'priority_fsm[7].priority_req_reg[7:7]' into 'priority_fsm[0].quanta_low_reg[0:0]' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/flow_ctrl/tri_mode_ethernet_mac_v8_3_pfc_tx_cntl.v:369]
+INFO: [Synth 8-802] inferred FSM for state register 'legacy_state_reg' in module 'tri_mode_ethernet_mac_v8_3_pfc_tx_cntl'
+INFO: [Synth 8-4471] merging register 'rx_av_a_match_reg' into 'rx_ptp_match_reg' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/af/tri_mode_ethernet_mac_v8_3_addr_filter.v:1124]
+INFO: [Synth 8-4471] merging register 'rx_av_b_match_reg' into 'rx_ptp_match_reg' [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/tri_mode_ethernet_mac_v8_3/hdl/af/tri_mode_ethernet_mac_v8_3_addr_filter.v:1125]
+INFO: [Synth 8-3354] encoded FSM with state register 'tx_state_reg' using encoding 'sequential' in module 'tri_mode_ethernet_mac_v8_3_tx_axi_intf'
+INFO: [Synth 8-3354] encoded FSM with state register 'legacy_state_reg' using encoding 'one-hot' in module 'tri_mode_ethernet_mac_v8_3_pfc_tx_cntl'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:01 ; elapsed = 00:01:05 . Memory (MB): peak = 670.203 ; gain = 507.922
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:01:01 ; elapsed = 00:01:05 . Memory (MB): peak = 670.203 ; gain = 507.922
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:01:02 ; elapsed = 00:01:06 . Memory (MB): peak = 670.203 ; gain = 507.922
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:01:02 ; elapsed = 00:01:06 . Memory (MB): peak = 670.203 ; gain = 507.922
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg1_reg[7] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg1_reg[6] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg1_reg[5] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg1_reg[4] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg1_reg[3] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg1_reg[2] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg1_reg[1] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg1_reg[0] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg2_reg[3] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg2_reg[2] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg2_reg[1] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg2_reg[0] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rx_dv_reg1_reg ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rx_dv_reg2_reg ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rx_er_reg1_reg ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rx_er_reg2_reg ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/sfd_enable_reg ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/muxsel_reg ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg3_reg[3] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg3_reg[2] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg3_reg[1] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg3_reg[0] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg4_reg[3] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg4_reg[2] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg4_reg[1] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rxd_reg4_reg[0] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/nibble_toggle_reg ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rx_dv_reg3_reg ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/sfd_comb_reg1_reg ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/sfd_comb_reg2_reg ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rx_er_reg3_reg ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/rx_er_reg4_reg ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/no_error_reg1_reg ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/no_error_reg2_reg ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/alignment_err_reg_reg ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\gmii_mii_rx_gen/int_sample_now_toggle_reg ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_cs_int_reg[2] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_cs_int_reg[1] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[31] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[30] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[29] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[28] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[27] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[26] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[25] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[24] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[23] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[22] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[21] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[20] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[19] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[18] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[17] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[16] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[15] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[14] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[13] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[12] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[11] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[10] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[9] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[8] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[7] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[6] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[5] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[4] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[3] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[2] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[1] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\ipic_mux_inst/bus2ip_data_int_reg[0] ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\tx_axi_intf.tx_axi_shim/tx_continuation_reg ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/sync_auto_en/data_sync_reg0 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/sync_auto_en/data_sync_reg1 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/sync_auto_en/data_sync_reg2 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/sync_auto_en/data_sync_reg3 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/sync_auto_en/data_sync_reg4 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[0].sync_rx_pen/data_sync_reg0 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[0].sync_rx_pen/data_sync_reg1 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[0].sync_rx_pen/data_sync_reg2 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[0].sync_rx_pen/data_sync_reg3 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[0].sync_rx_pen/data_sync_reg4 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[0].sync_tx_pen/data_sync_reg0 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[0].sync_tx_pen/data_sync_reg1 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[0].sync_tx_pen/data_sync_reg2 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[0].sync_tx_pen/data_sync_reg3 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[0].sync_tx_pen/data_sync_reg4 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[1].sync_rx_pen/data_sync_reg0 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[1].sync_rx_pen/data_sync_reg1 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[1].sync_rx_pen/data_sync_reg2 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[1].sync_rx_pen/data_sync_reg3 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[1].sync_rx_pen/data_sync_reg4 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[1].sync_tx_pen/data_sync_reg0 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[1].sync_tx_pen/data_sync_reg1 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[1].sync_tx_pen/data_sync_reg2 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[1].sync_tx_pen/data_sync_reg3 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[1].sync_tx_pen/data_sync_reg4 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[2].sync_rx_pen/data_sync_reg0 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[2].sync_rx_pen/data_sync_reg1 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[2].sync_rx_pen/data_sync_reg2 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+WARNING: [Synth 8-3332] Sequential element (\flow/ppe_sync[2].sync_rx_pen/data_sync_reg3 ) is unused and will be removed from module tri_mode_ethernet_mac_v8_3.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:01:04 ; elapsed = 00:01:08 . Memory (MB): peak = 670.203 ; gain = 507.922
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:01:04 ; elapsed = 00:01:08 . Memory (MB): peak = 670.203 ; gain = 507.922
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:01:04 ; elapsed = 00:01:08 . Memory (MB): peak = 670.203 ; gain = 507.922
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:01:04 ; elapsed = 00:01:08 . Memory (MB): peak = 670.203 ; gain = 507.922
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:15 ; elapsed = 00:01:19 . Memory (MB): peak = 670.203 ; gain = 507.922
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:15 ; elapsed = 00:01:20 . Memory (MB): peak = 670.203 ; gain = 507.922
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:17 ; elapsed = 00:01:21 . Memory (MB): peak = 670.203 ; gain = 507.922
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:17 ; elapsed = 00:01:21 . Memory (MB): peak = 670.203 ; gain = 507.922
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:17 ; elapsed = 00:01:21 . Memory (MB): peak = 670.203 ; gain = 507.922
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:17 ; elapsed = 00:01:21 . Memory (MB): peak = 670.203 ; gain = 507.922
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |     8|
+|2     |GND      |    10|
+|3     |LUT1     |    27|
+|4     |LUT2     |   140|
+|5     |LUT3     |   125|
+|6     |LUT4     |   184|
+|7     |LUT5     |   154|
+|8     |LUT6     |   292|
+|9     |MUXCY    |    70|
+|10    |MUXCY_L  |    29|
+|11    |MUXF7    |    29|
+|12    |MUXF8    |     1|
+|13    |RAM64X1D |     8|
+|14    |SRL16E   |    16|
+|15    |VCC      |    10|
+|16    |XORCY    |   101|
+|17    |FDCE     |    82|
+|18    |FDPE     |    10|
+|19    |FDRE     |   899|
+|20    |FDSE     |    40|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:17 ; elapsed = 00:01:22 . Memory (MB): peak = 670.203 ; gain = 507.922
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 362 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:01:11 . Memory (MB): peak = 670.203 ; gain = 116.621
+Synthesis Optimization Complete : Time (s): cpu = 00:01:17 ; elapsed = 00:01:22 . Memory (MB): peak = 670.203 ; gain = 507.922
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 146 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_board.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_board.xdc] for cell 'U0'
+Parsing XDC File [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0.xdc] for cell 'U0'
+Parsing XDC File [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_clocks.xdc] for cell 'U0'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_clocks.xdc:5]
+get_clocks: Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1183.297 ; gain = 513.094
+Finished Parsing XDC File [c:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/synth/temac_gbe_v9_0_clocks.xdc] for cell 'U0'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 36 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 28 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 8 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+248 Infos, 109 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:31 ; elapsed = 00:01:34 . Memory (MB): peak = 1184.016 ; gain = 984.664
+# rename_ref -prefix_all temac_gbe_v9_0_
+INFO: [Coretcl 2-1174] Renamed 46 cell refs.
+# write_checkpoint -noxdef temac_gbe_v9_0.dcp
+# catch { report_utilization -file temac_gbe_v9_0_utilization_synth.rpt -pb temac_gbe_v9_0_utilization_synth.pb }
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.100 . Memory (MB): peak = 1184.016 ; gain = 0.000
+# if { [catch {
+#   file copy -force C:/VivadoProject/project_test/project_test.runs/temac_gbe_v9_0_synth_1/temac_gbe_v9_0.dcp C:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/temac_gbe_v9_0.dcp
+# } _RESULT ] } { 
+#   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
+# }
+# if { [catch {
+#   write_verilog -force -mode synth_stub C:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/temac_gbe_v9_0_stub.v
+# } _RESULT ] } { 
+#   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
+# }
+# if { [catch {
+#   write_vhdl -force -mode synth_stub C:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/temac_gbe_v9_0_stub.vhdl
+# } _RESULT ] } { 
+#   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
+# }
+# if { [catch {
+#   write_verilog -force -mode funcsim C:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/temac_gbe_v9_0_funcsim.v
+# } _RESULT ] } { 
+#   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
+# }
+# if { [catch {
+#   write_vhdl -force -mode funcsim C:/VivadoProject/project_test/project_test.srcs/sources_1/ip/temac_gbe_v9_0/temac_gbe_v9_0_funcsim.vhdl
+# } _RESULT ] } { 
+#   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
+# }
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 09 13:22:52 2017...

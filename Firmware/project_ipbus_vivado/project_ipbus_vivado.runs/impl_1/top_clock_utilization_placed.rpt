@@ -1,0 +1,241 @@
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.3.1 (win64) Build 1034051 Fri Oct  3 17:14:12 MDT 2014
+| Date         : Thu Feb 09 13:25:10 2017
+| Host         : DAQ-PC running 64-bit Service Pack 1  (build 7601)
+| Command      : report_clock_utilization -file top_clock_utilization_placed.rpt
+| Design       : top
+| Device       : xc7k325t
+--------------------------------------------------------------------------------------
+
+Clock Utilization Report
+
+Table of Contents
+-----------------
+1. Clock Primitive Utilization
+2. Details of Global Clocks
+3. Details of Regional Clocks
+4. Details of Multi-Regional Clocks
+5. Details of I/O Clocks
+6. Details of Local Clocks
+7. Clock Regions : Key Resource Utilization
+8. Net wise resources used in clock region X1Y4
+9. Net wise resources used in clock region X0Y5
+10. Net wise resources used in clock region X1Y5
+11. Net wise resources used in clock region X0Y6
+
+1. Clock Primitive Utilization
+------------------------------
+
++-------+------+-----------+-----------+
+| Type  | Used | Available | Num Fixed |
++-------+------+-----------+-----------+
+| BUFG  |    3 |        32 |         0 |
+| BUFH  |    3 |       168 |         0 |
+| BUFIO |    0 |        40 |         0 |
+| MMCM  |    2 |        10 |         0 |
+| PLL   |    0 |        10 |         0 |
+| BUFR  |    0 |        40 |         0 |
+| BUFMR |    0 |        20 |         0 |
++-------+------+-----------+-----------+
+
+
+2. Details of Global Clocks
+---------------------------
+
++-------+------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+--------------+-------+---------------+-----------+
+|       |                                                                                                |                                                                                |   Num Loads  |       |               |           |
++-------+------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+------+-------+-------+---------------+-----------+
+| Index | BUFG Cell                                                                                      | Net Name                                                                       | BELs | Sites | Fixed | MaxDelay (ns) | Skew (ns) |
++-------+------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+------+-------+-------+---------------+-----------+
+|     1 | infra/eth/phy/U0/transceiver_inst/gtwizard_inst/U0/gtwizard_i/gt0_GTWIZARD_i/bufg_gtrefclk0_in | infra/eth/phy/U0/transceiver_inst/gtwizard_inst/U0/gtwizard_i/gt0_GTWIZARD_i/C |   15 |     3 |    no |         1.523 |     0.095 |
+|     2 | infra/eth/bufg_fr                                                                              | infra/eth/clk125_fr                                                            |   40 |    15 |    no |         1.659 |     0.307 |
+|     3 | infra/clocks/bufgipb                                                                           | infra/clocks/clko_ipb                                                          |  438 |   181 |    no |         1.526 |     0.286 |
++-------+------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+------+-------+-------+---------------+-----------+
+
+
++-------+---------------------+-------------------------+--------------+-------+---------------+-----------+
+|       |                     |                         |   Num Loads  |       |               |           |
++-------+---------------------+-------------------------+------+-------+-------+---------------+-----------+
+| Index | BUFH Cell           | Net Name                | BELs | Sites | Fixed | MaxDelay (ns) | Skew (ns) |
++-------+---------------------+-------------------------+------+-------+-------+---------------+-----------+
+|     1 | infra/eth/bufh_tx   | infra/eth/CLKIN1        |    1 |     1 |    no |         0.720 |     0.036 |
+|     2 | infra/eth/bufr_62_5 | infra/eth/n_0_bufr_62_5 |  127 |    36 |    no |         0.835 |     0.172 |
+|     3 | infra/eth/bufr_125  | infra/eth/clk125_out    | 3675 |  1054 |    no |         0.829 |     0.234 |
++-------+---------------------+-------------------------+------+-------+-------+---------------+-----------+
+
+
++-------+-------------------+----------------------+--------------+-------+---------------+-----------+
+|       |                   |                      |   Num Loads  |       |               |           |
++-------+-------------------+----------------------+------+-------+-------+---------------+-----------+
+| Index | MMCM Cell         | Net Name             | BELs | Sites | Fixed | MaxDelay (ns) | Skew (ns) |
++-------+-------------------+----------------------+------+-------+-------+---------------+-----------+
+|     1 | infra/clocks/mmcm | infra/clocks/CLKFBIN |    1 |     1 |    no |         0.012 |     0.001 |
+|     2 | infra/clocks/mmcm | infra/clocks/CLKOUT1 |    1 |     1 |    no |         1.698 |     0.085 |
+|     3 | infra/eth/mmcm    | infra/eth/CLKFBIN    |    1 |     1 |    no |         0.012 |     0.001 |
+|     4 | infra/eth/mmcm    | infra/eth/n_4_mmcm   |    1 |     1 |    no |         0.929 |     0.046 |
+|     5 | infra/eth/mmcm    | infra/eth/n_6_mmcm   |    1 |     1 |    no |         0.929 |     0.046 |
++-------+-------------------+----------------------+------+-------+-------+---------------+-----------+
+
+
+3. Details of Regional Clocks
+-----------------------------
+
+4. Details of Multi-Regional Clocks
+-----------------------------------
+
+5. Details of I/O Clocks
+------------------------
+
+6. Details of Local Clocks
+--------------------------
+
++-------+-----------------------------+-------------------------+--------------+-------+---------------+-----------+
+|       |                             |                         |   Num Loads  |       |               |           |
++-------+-----------------------------+-------------------------+------+-------+-------+---------------+-----------+
+| Index | Local Clk Src               | Net Name                | BELs | Sites | Fixed | MaxDelay (ns) | Skew (ns) |
++-------+-----------------------------+-------------------------+------+-------+-------+---------------+-----------+
+|     1 | infra/eth/decoupled_clk_reg | infra/eth/decoupled_clk |  261 |    80 |    no |         0.789 |     0.614 |
++-------+-----------------------------+-------------------------+------+-------+-------+---------------+-----------+
+
+
+7. Clock Regions : Key Resource Utilization
+-------------------------------------------
+
++-------------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+|                   | Global Clock |     BUFRs    |    BUFMRs    |    BUFIOs    |     MMCM     |      PLL     |      GT      |      PCI     |    ILOGIC    |    OLOGIC    |      FF      |     LUTM     |    RAMB18    |    RAMB36    |    DSP48E1   |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+| Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+| X0Y0              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 32000 |    0 |  4600 |    0 |    60 |    0 |    30 |    0 |    60 |
+| X1Y0              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 29600 |    0 |  4800 |    0 |    80 |    0 |    40 |    0 |    60 |
+| X0Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 32000 |    0 |  4600 |    0 |    60 |    0 |    30 |    0 |    60 |
+| X1Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 29600 |    0 |  4800 |    0 |    80 |    0 |    40 |    0 |    60 |
+| X0Y2              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 27200 |    0 |  4600 |    0 |    60 |    0 |    30 |    0 |    60 |
+| X1Y2              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 29600 |    0 |  4800 |    0 |    80 |    0 |    40 |    0 |    60 |
+| X0Y3              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 27200 |    0 |  4600 |    0 |    60 |    0 |    30 |    0 |    60 |
+| X1Y3              |    0 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     5 |    0 |     1 |    0 |     0 |    0 |     0 |    0 | 25200 |    0 |  4200 |    0 |    50 |    0 |    25 |    0 |    60 |
+| X0Y4              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 32000 |    0 |  4600 |    0 |    60 |    0 |    30 |    0 |    60 |
+| X1Y4              |    1 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     5 |    0 |     0 |    0 |     0 |    0 |     0 |    2 | 26400 |    0 |  4400 |    0 |    60 |    0 |    30 |    0 |    60 |
+| X0Y5              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 32000 |    0 |  4600 |    0 |    60 |    0 |    30 |    0 |    60 |
+| X1Y5              |    5 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    1 |     5 |    0 |     0 |    0 |     0 |    0 |     0 | 4422 | 26400 |   92 |  4400 |    0 |    60 |   19 |    30 |    0 |    60 |
+| X0Y6              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 32000 |    0 |  4600 |    0 |    60 |    0 |    30 |    0 |    60 |
+| X1Y6              |    0 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     5 |    0 |     0 |    0 |     0 |    0 |     0 |    0 | 26400 |    0 |  4400 |    0 |    60 |    0 |    30 |    0 |    60 |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+* RAMB36 site can be used as two RAMB18/FIFO18 sites
+
+
+8. Net wise resources used in clock region X1Y4
+-----------------------------------------------
+
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-----------------------+
+| Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs | FFs | LUTMs | DSP48E1s |     Clock Net Name    |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-----------------------+
+| BUFG        |     ---     |   no  |         0 |        0 |       0 |         0 |       0 |       0 |   2 |     0 |        0 | infra/clocks/clko_ipb |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-----------------------+
+
+
+9. Net wise resources used in clock region X0Y5
+-----------------------------------------------
+
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+------------------+
+| Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs | FFs | LUTMs | DSP48E1s |  Clock Net Name  |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+------------------+
+| BUFH        |     ---     |   no  |         1 |        0 |       0 |         0 |       0 |       0 |   0 |     0 |        0 | infra/eth/CLKIN1 |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+------------------+
+
+
+10. Net wise resources used in clock region X1Y5
+------------------------------------------------
+
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------------------------------+
+| Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |                                 Clock Net Name                                 |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------------------------------+
+| BUFG        |     ---     |   no  |         0 |        0 |       0 |         0 |       0 |       0 |    8 |     7 |        0 | infra/eth/phy/U0/transceiver_inst/gtwizard_inst/U0/gtwizard_i/gt0_GTWIZARD_i/C |
+| BUFG        |     ---     |   no  |         0 |        0 |       0 |         0 |       0 |       0 |   38 |     1 |        0 | infra/eth/clk125_fr                                                            |
+| BUFH        |     ---     |   no  |         0 |        0 |       4 |         0 |       0 |       0 |  126 |     0 |        0 | infra/eth/n_0_bufr_62_5                                                        |
+| BUFG        |     ---     |   no  |         0 |        0 |       0 |        18 |       0 |       0 |  418 |     0 |        0 | infra/clocks/clko_ipb                                                          |
+| BUFH        |     ---     |   no  |         0 |        0 |       1 |        18 |       0 |       0 | 3573 |    84 |        0 | infra/eth/clk125_out                                                           |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+--------------------------------------------------------------------------------+
+
+
+11. Net wise resources used in clock region X0Y6
+------------------------------------------------
+
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+---------------------+
+| Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs | FFs | LUTMs | DSP48E1s |    Clock Net Name   |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+---------------------+
+| BUFG        |     ---     |   no  |         1 |        0 |       0 |         0 |       0 |       0 |   0 |     0 |        0 | infra/eth/clk125_fr |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+---------------------+
+
+
+
+# Location of BUFG Primitives 
+set_property LOC BUFGCTRL_X0Y29 [get_cells infra/clocks/bufgipb]
+set_property LOC BUFGCTRL_X0Y31 [get_cells infra/eth/bufg_fr]
+set_property LOC BUFGCTRL_X0Y30 [get_cells infra/eth/phy/U0/transceiver_inst/gtwizard_inst/U0/gtwizard_i/gt0_GTWIZARD_i/bufg_gtrefclk0_in]
+
+# Location of IO Clock Primitives
+
+# Location of MMCM Clock Primitives
+set_property LOC MMCME2_ADV_X0Y6 [get_cells infra/clocks/mmcm]
+set_property LOC MMCME2_ADV_X0Y5 [get_cells infra/eth/mmcm]
+
+# Location of BUFH Clock Primitives
+set_property LOC BUFHCE_X0Y71 [get_cells infra/eth/bufh_tx]
+set_property LOC BUFHCE_X1Y71 [get_cells infra/eth/bufr_125]
+set_property LOC BUFHCE_X1Y70 [get_cells infra/eth/bufr_62_5]
+
+# Location of BUFR Clock Primitives
+
+# Location of BUFMR Clock Primitives
+
+# Location of PLL Clock Primitives
+
+# Location of IO Primitives which is load of clock spine
+
+# Location of clock ports
+set_property LOC IPAD_X1Y75 [get_ports eth_clk_n]
+set_property LOC IPAD_X1Y74 [get_ports eth_clk_p]
+
+# Clock net "infra/clocks/clko_ipb" driven by instance "infra/clocks/bufgipb" located at site "BUFGCTRL_X0Y29"
+#startgroup
+create_pblock CLKAG_infra/clocks/clko_ipb
+add_cells_to_pblock [get_pblocks  CLKAG_infra/clocks/clko_ipb] [get_cells  -filter { IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="infra/clocks/clko_ipb"}]]]
+resize_pblock [get_pblocks CLKAG_infra/clocks/clko_ipb] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X0Y4:CLOCKREGION_X0Y4 CLOCKREGION_X0Y5:CLOCKREGION_X0Y5 CLOCKREGION_X0Y6:CLOCKREGION_X0Y6 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3 CLOCKREGION_X1Y4:CLOCKREGION_X1Y4 CLOCKREGION_X1Y5:CLOCKREGION_X1Y5 CLOCKREGION_X1Y6:CLOCKREGION_X1Y6}
+#endgroup
+
+# Clock net "infra/eth/clk125_fr" driven by instance "infra/eth/bufg_fr" located at site "BUFGCTRL_X0Y31"
+#startgroup
+create_pblock CLKAG_infra/eth/clk125_fr
+add_cells_to_pblock [get_pblocks  CLKAG_infra/eth/clk125_fr] [get_cells  -filter { IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL && NAME!=infra/clocks/mmcm} -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="infra/eth/clk125_fr"}]]]
+resize_pblock [get_pblocks CLKAG_infra/eth/clk125_fr] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X0Y4:CLOCKREGION_X0Y4 CLOCKREGION_X0Y5:CLOCKREGION_X0Y5 CLOCKREGION_X0Y6:CLOCKREGION_X0Y6 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3 CLOCKREGION_X1Y4:CLOCKREGION_X1Y4 CLOCKREGION_X1Y5:CLOCKREGION_X1Y5 CLOCKREGION_X1Y6:CLOCKREGION_X1Y6}
+#endgroup
+
+# Clock net "infra/eth/clk125_out" driven by instance "infra/eth/bufr_125" located at site "BUFHCE_X1Y71"
+#startgroup
+create_pblock CLKAG_infra/eth/clk125_out
+add_cells_to_pblock [get_pblocks  CLKAG_infra/eth/clk125_out] [get_cells  -filter { IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="infra/eth/clk125_out"}]]]
+resize_pblock [get_pblocks CLKAG_infra/eth/clk125_out] -add {CLOCKREGION_X1Y5:CLOCKREGION_X1Y5}
+#endgroup
+
+# Clock net "infra/eth/decoupled_clk" driven by instance "infra/eth/decoupled_clk_reg" located at site "SLICE_X135Y278"
+#startgroup
+create_pblock CLKAG_infra/eth/decoupled_clk
+add_cells_to_pblock [get_pblocks  CLKAG_infra/eth/decoupled_clk] [get_cells  -filter { IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="infra/eth/decoupled_clk"}]]]
+resize_pblock [get_pblocks CLKAG_infra/eth/decoupled_clk] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X0Y4:CLOCKREGION_X0Y4 CLOCKREGION_X0Y5:CLOCKREGION_X0Y5 CLOCKREGION_X0Y6:CLOCKREGION_X0Y6 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3 CLOCKREGION_X1Y4:CLOCKREGION_X1Y4 CLOCKREGION_X1Y5:CLOCKREGION_X1Y5 CLOCKREGION_X1Y6:CLOCKREGION_X1Y6}
+#endgroup
+
+# Clock net "infra/eth/n_0_bufr_62_5" driven by instance "infra/eth/bufr_62_5" located at site "BUFHCE_X1Y70"
+#startgroup
+create_pblock CLKAG_infra/eth/n_0_bufr_62_5
+add_cells_to_pblock [get_pblocks  CLKAG_infra/eth/n_0_bufr_62_5] [get_cells  -filter { IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="infra/eth/n_0_bufr_62_5"}]]]
+resize_pblock [get_pblocks CLKAG_infra/eth/n_0_bufr_62_5] -add {CLOCKREGION_X1Y5:CLOCKREGION_X1Y5}
+#endgroup
+
+# Clock net "infra/eth/phy/U0/transceiver_inst/gtwizard_inst/U0/gtwizard_i/gt0_GTWIZARD_i/C" driven by instance "infra/eth/phy/U0/transceiver_inst/gtwizard_inst/U0/gtwizard_i/gt0_GTWIZARD_i/bufg_gtrefclk0_in" located at site "BUFGCTRL_X0Y30"
+#startgroup
+create_pblock CLKAG_infra/eth/phy/U0/transceiver_inst/gtwizard_inst/U0/gtwizard_i/gt0_GTWIZARD_i/C
+add_cells_to_pblock [get_pblocks  CLKAG_infra/eth/phy/U0/transceiver_inst/gtwizard_inst/U0/gtwizard_i/gt0_GTWIZARD_i/C] [get_cells  -filter { IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="infra/eth/phy/U0/transceiver_inst/gtwizard_inst/U0/gtwizard_i/gt0_GTWIZARD_i/C"}]]]
+resize_pblock [get_pblocks CLKAG_infra/eth/phy/U0/transceiver_inst/gtwizard_inst/U0/gtwizard_i/gt0_GTWIZARD_i/C] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X0Y4:CLOCKREGION_X0Y4 CLOCKREGION_X0Y5:CLOCKREGION_X0Y5 CLOCKREGION_X0Y6:CLOCKREGION_X0Y6 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3 CLOCKREGION_X1Y4:CLOCKREGION_X1Y4 CLOCKREGION_X1Y5:CLOCKREGION_X1Y5 CLOCKREGION_X1Y6:CLOCKREGION_X1Y6}
+#endgroup
