@@ -1,0 +1,290 @@
+Release 14.7 ngdbuild P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
+ise -dd _ngo -sd ipcore_dir -nt timestamp -uc
+/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/ipbus
+/firmware/example_designs/ucf/kc705_basex.ucf -p xc7k325t-ffg900-2
+gig_eth_pcs_pma_v11_5_block.ngc gig_eth_pcs_pma_v11_5_block.ngd
+
+Reading NGO file
+"/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/proj
+ect_ipbus_ise/gig_eth_pcs_pma_v11_5_block.ngc" ...
+Loading design module "ipcore_dir/gig_eth_pcs_pma_v11_5.ngc"...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file
+"/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/ipbu
+s/firmware/example_designs/ucf/kc705_basex.ucf" ...
+ERROR:NgdBuild:981 - Could not find any associations for the following
+   constraint:
+       '<DIFF_TERM=TRUE |>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(7)]'
+ERROR:NgdBuild:981 - Could not find any associations for the following
+   constraint:
+       '<DIFF_TERM=TRUE;>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(8)]'
+Resolving constraint associations...
+Checking Constraint Associations...
+ERROR:ConstraintSystem:59 - Constraint <NET eth/txoutclk TNM_NET=txoutclk;>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(1)]: NET "eth/txoutclk" not
+   found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem:56 - Constraint <TIMESPEC TS_txoutclk = PERIOD txoutclk
+   16ns;>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(2)]: Unable to find an
+   active 'TNM' or 'TimeGrp' constraint named 'txoutclk'.
+
+ERROR:ConstraintSystem:59 - Constraint <NET clocks/rst TIG;>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(4)]: NET "clocks/rst" not
+   found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET clocks/nuke_i TIG;>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(5)]: NET "clocks/nuke_i"
+   not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET gt_clkp LOC=G8 |>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(7)]: NET "gt_clkp" not
+   found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET gt_clkp LOC=G8 |>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(7)]' could not be found and
+   so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <DIFF_TERM=TRUE |>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(7)]: NET "gt_clkp" not
+   found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <TNM_NET=gt_clk;>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(7)]: NET "gt_clkp" not
+   found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET gt_clkn LOC=G7 |>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(8)]: NET "gt_clkn" not
+   found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET gt_clkn LOC=G7 |>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(8)]' could not be found and
+   so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <DIFF_TERM=TRUE;>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(8)]: NET "gt_clkn" not
+   found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem:56 - Constraint <TIMESPEC TS_gt_clk = PERIOD gt_clk
+   8ns;>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(10)]: Unable to find an
+   active 'TNM' or 'TimeGrp' constraint named 'gt_clk'.
+
+ERROR:ConstraintSystem:58 - Constraint <INST eth/phy/*/gtxe2_i
+   LOC=GTXE2_CHANNEL_X0Y10;>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(12)]: INST
+   "eth/phy/*/gtxe2_i" does not match any design objects.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<INST eth/phy/*/gtxe2_i LOC=GTXE2_CHANNEL_X0Y10;>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(12)]' could not be found
+   and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET sfp_los LOC=P19 |>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(14)]: NET "sfp_los" not
+   found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET sfp_los LOC=P19 |>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(14)]' could not be found
+   and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD=LVCMOS25;>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(14)]: NET "sfp_los" not
+   found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET leds<0> LOC=AB8 |>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(16)]: NET "leds<0>" not
+   found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET leds<0> LOC=AB8 |>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(16)]' could not be found
+   and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD=LVCMOS15;>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(16)]: NET "leds<0>" not
+   found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET leds<1> LOC=AA8 |>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(17)]: NET "leds<1>" not
+   found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET leds<1> LOC=AA8 |>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(17)]' could not be found
+   and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD=LVCMOS15;>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(17)]: NET "leds<1>" not
+   found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET leds<2> LOC=AC9 |>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(18)]: NET "leds<2>" not
+   found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET leds<2> LOC=AC9 |>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(18)]' could not be found
+   and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD=LVCMOS15;>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(18)]: NET "leds<2>" not
+   found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET leds<3> LOC=AB9 |>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(19)]: NET "leds<3>" not
+   found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET leds<3> LOC=AB9 |>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(19)]' could not be found
+   and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD=LVCMOS15;>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(19)]: NET "leds<3>" not
+   found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem:191 - The TNM 'txoutclk', does not directly or
+   indirectly drive any flip-flops, latches and/or RAMS and cannot be actively
+   used by the referencing Period constraint 'TS_txoutclk'. If clock manager
+   blocks are directly or indirectly driven, a new TNM constraint will not be
+   derived even though the referencing constraint is a PERIOD constraint unless
+   an output of the clock manager drives flip-flops, latches or RAMs. This TNM
+   is used in the following user PERIOD specification:
+   <TIMESPEC TS_txoutclk = PERIOD txoutclk 16ns;>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(2)]
+
+WARNING:ConstraintSystem:197 - The following specification is invalid because
+   the referenced TNM constraint was removed:
+   <TIMESPEC TS_txoutclk = PERIOD txoutclk 16ns;>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(2)]
+
+WARNING:ConstraintSystem:191 - The TNM 'gt_clk', does not directly or indirectly
+   drive any flip-flops, latches and/or RAMS and cannot be actively used by the
+   referencing Period constraint 'TS_gt_clk'. If clock manager blocks are
+   directly or indirectly driven, a new TNM constraint will not be derived even
+   though the referencing constraint is a PERIOD constraint unless an output of
+   the clock manager drives flip-flops, latches or RAMs. This TNM is used in the
+   following user PERIOD specification:
+   <TIMESPEC TS_gt_clk = PERIOD gt_clk 8ns;>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(10)]
+
+WARNING:ConstraintSystem:197 - The following specification is invalid because
+   the referenced TNM constraint was removed:
+   <TIMESPEC TS_gt_clk = PERIOD gt_clk 8ns;>
+   [/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/i
+   pbus/firmware/example_designs/ucf/kc705_basex.ucf(10)]
+
+Done...
+
+Checking expanded design ...
+WARNING:NgdBuild:440 - FF primitive
+   'transceiver_inst/reclock_txreset/reset_sync2' has unconnected output pin
+WARNING:NgdBuild:440 - FF primitive
+   'transceiver_inst/reclock_rxreset/reset_sync2' has unconnected output pin
+WARNING:NgdBuild:440 - FF primitive
+   'transceiver_inst/gtwizard_inst/gt0_txresetfsm_i/sync_QPLLLOCK/data_sync_reg'
+   has unconnected output pin
+WARNING:NgdBuild:440 - FF primitive
+   'transceiver_inst/gtwizard_inst/gt0_rxresetfsm_i/sync_QPLLLOCK/data_sync_reg'
+   has unconnected output pin
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:    21
+  Number of warnings:  18
+
+Total memory usage is 461044 kilobytes
+
+Total REAL time to NGDBUILD completion:  5 sec
+Total CPU time to NGDBUILD completion:   5 sec
+
+One or more errors were found during NGDBUILD.  No NGD file will be written.
+
+Writing NGDBUILD log file "gig_eth_pcs_pma_v11_5_block.bld"...

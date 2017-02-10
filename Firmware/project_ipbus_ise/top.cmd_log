@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Vivado/ipbus/newtest/top.xst" -ofn "/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Vivado/ipbus/newtest/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc /home/goldenfleece/Dropbox/ULB/MA2/Memoire/Vivado/ipbus/ipbus/firmware/example_designs/ucf/kc705_basex.ucf -p xc7k325t-ffg900-2 top.ngc top.ngd  
+map -intstyle ise -p xc7k325t-ffg900-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt 2 -ir off -pr b -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt 2 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 

@@ -1,0 +1,1147 @@
+#-----------------------------------------------------------
+# Vivado v2014.3.1 (64-bit)
+# SW Build 1034051 on Fri Oct  3 17:14:12 MDT 2014
+# IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
+# Start of session at: Fri Mar 11 14:56:25 2016
+# Process ID: 5668
+# Log file: C:/VivadoProject/kc705_ipbus/kc705_ipbus.runs/gig_eth_pcs_pma_basex_v15_1_synth_1/gig_eth_pcs_pma_basex_v15_1.vds
+# Journal file: C:/VivadoProject/kc705_ipbus/kc705_ipbus.runs/gig_eth_pcs_pma_basex_v15_1_synth_1\vivado.jou
+#-----------------------------------------------------------
+source gig_eth_pcs_pma_basex_v15_1.tcl
+# set_param gui.test TreeTableDev
+# debug::add_scope template.lib 1
+# set_msg_config -id {HDL 9-1061} -limit 100000
+# set_msg_config -id {HDL 9-1654} -limit 100000
+# create_project -in_memory -part xc7k325tffg900-2
+# set_param project.compositeFile.enableAutoGeneration 0
+# set_param synth.vivado.isSynthRun true
+# set_msg_config -id {IP_Flow 19-2162} -severity warning -new_severity info
+# set_property webtalk.parent_dir C:/VivadoProject/kc705_ipbus/kc705_ipbus.cache/wt [current_project]
+# set_property parent.project_path C:/VivadoProject/kc705_ipbus/kc705_ipbus.xpr [current_project]
+# set_property default_lib xil_defaultlib [current_project]
+# set_property target_language VHDL [current_project]
+# read_ip c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_eth_pcs_pma_basex_v15_1.xci
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2014.3/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'gig_eth_pcs_pma_basex_v15_1' generated file not found 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_eth_pcs_pma_basex_v15_1.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'gig_eth_pcs_pma_basex_v15_1' generated file not found 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_eth_pcs_pma_basex_v15_1_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'gig_eth_pcs_pma_basex_v15_1' generated file not found 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_eth_pcs_pma_basex_v15_1_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'gig_eth_pcs_pma_basex_v15_1' generated file not found 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_eth_pcs_pma_basex_v15_1_funcsim.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'gig_eth_pcs_pma_basex_v15_1' generated file not found 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_eth_pcs_pma_basex_v15_1_funcsim.vhdl'. Please regenerate to continue.
+# set_property is_locked true [get_files c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_eth_pcs_pma_basex_v15_1.xci]
+# catch { write_hwdef -file gig_eth_pcs_pma_basex_v15_1.hwdef }
+INFO: [Vivado_Tcl 4-279] hardware handoff file cannot be generated as there is no block diagram instance in the design
+# synth_design -top gig_eth_pcs_pma_basex_v15_1 -part xc7k325tffg900-2 -mode out_of_context
+Command: synth_design -top gig_eth_pcs_pma_basex_v15_1 -part xc7k325tffg900-2 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-1223] The version limit for your license is '2014.12' and will expire in -436 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 250.426 ; gain = 88.348
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'gig_eth_pcs_pma_basex_v15_1' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1.vhd:150]
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_block' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_block.vhd:96' bound to instance 'U0' of component 'gig_eth_pcs_pma_basex_v15_1_block' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1.vhd:215]
+INFO: [Synth 8-638] synthesizing module 'gig_eth_pcs_pma_basex_v15_1_block' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_block.vhd:152]
+	Parameter C_ELABORATION_TRANSIENT_DIR bound to: BlankString - type: string 
+	Parameter C_COMPONENT_NAME bound to: gig_eth_pcs_pma_basex_v15_1 - type: string 
+	Parameter C_FAMILY bound to: kintex7 - type: string 
+	Parameter C_IS_SGMII bound to: 0 - type: bool 
+	Parameter C_USE_TRANSCEIVER bound to: 1 - type: bool 
+	Parameter C_HAS_TEMAC bound to: 1 - type: bool 
+	Parameter C_USE_TBI bound to: 0 - type: bool 
+	Parameter C_USE_LVDS bound to: 0 - type: bool 
+	Parameter C_HAS_AN bound to: 0 - type: bool 
+	Parameter C_HAS_MDIO bound to: 0 - type: bool 
+	Parameter C_SGMII_PHY_MODE bound to: 0 - type: bool 
+	Parameter C_DYNAMIC_SWITCHING bound to: 0 - type: bool 
+	Parameter C_TRANSCEIVER_MODE bound to: A - type: string 
+	Parameter C_SGMII_FABRIC_BUFFER bound to: 1 - type: bool 
+	Parameter C_1588 bound to: 0 - type: integer 
+	Parameter B_SHIFTER_ADDR bound to: 8'b01001110 
+	Parameter RX_GT_NOMINAL_LATENCY bound to: 16'b0000000011001000 
+	Parameter GT_RX_BYTE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'gig_ethernet_pcs_pma_v14_3' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gig_ethernet_pcs_pma_v14_3.vhd:106' bound to instance 'gig_eth_pcs_pma_basex_v15_1_core' of component 'gig_ethernet_pcs_pma_v14_3' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_block.vhd:391]
+INFO: [Synth 8-638] synthesizing module 'gig_ethernet_pcs_pma_v14_3__parameterized0' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gig_ethernet_pcs_pma_v14_3.vhd:216]
+	Parameter C_ELABORATION_TRANSIENT_DIR bound to: BlankString - type: string 
+	Parameter C_COMPONENT_NAME bound to: gig_eth_pcs_pma_basex_v15_1 - type: string 
+	Parameter C_FAMILY bound to: kintex7 - type: string 
+	Parameter C_IS_SGMII bound to: 0 - type: bool 
+	Parameter C_USE_TRANSCEIVER bound to: 1 - type: bool 
+	Parameter C_HAS_TEMAC bound to: 1 - type: bool 
+	Parameter C_USE_TBI bound to: 0 - type: bool 
+	Parameter C_USE_LVDS bound to: 0 - type: bool 
+	Parameter C_HAS_AN bound to: 0 - type: bool 
+	Parameter C_HAS_MDIO bound to: 0 - type: bool 
+	Parameter C_SGMII_PHY_MODE bound to: 0 - type: bool 
+	Parameter C_DYNAMIC_SWITCHING bound to: 0 - type: bool 
+	Parameter C_TRANSCEIVER_MODE bound to: A - type: string 
+	Parameter C_SGMII_FABRIC_BUFFER bound to: 1 - type: bool 
+	Parameter C_1588 bound to: 0 - type: integer 
+	Parameter B_SHIFTER_ADDR bound to: 8'b01001110 
+	Parameter RX_GT_NOMINAL_LATENCY bound to: 16'b0000000011001000 
+	Parameter GT_RX_BYTE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'GPCS_PMA_GEN' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gpcs_pma_gen.vhd:287]
+	Parameter C_FAMILY bound to: kintex7 - type: string 
+	Parameter C_IS_SGMII bound to: 0 - type: bool 
+	Parameter C_USE_TRANSCEIVER bound to: 1 - type: bool 
+	Parameter C_HAS_TEMAC bound to: 1 - type: bool 
+	Parameter C_USE_TBI bound to: 0 - type: bool 
+	Parameter C_USE_LVDS bound to: 0 - type: bool 
+	Parameter C_HAS_AN bound to: 0 - type: bool 
+	Parameter C_HAS_MDIO bound to: 0 - type: bool 
+	Parameter C_SGMII_PHY_MODE bound to: 0 - type: bool 
+	Parameter C_DYNAMIC_SWITCHING bound to: 0 - type: bool 
+	Parameter C_QSGMII bound to: 0 - type: bool 
+	Parameter C_1588 bound to: 0 - type: integer 
+	Parameter RX_GT_NOMINAL_LATENCY bound to: 16'b0000000011001000 
+	Parameter B_SHIFTER_ADDR bound to: 8'b01001110 
+	Parameter GT_RX_BYTE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gpcs_pma_gen.vhd:297]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gpcs_pma_gen.vhd:298]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gpcs_pma_gen.vhd:299]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gpcs_pma_gen.vhd:300]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gpcs_pma_gen.vhd:398]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gpcs_pma_gen.vhd:399]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gpcs_pma_gen.vhd:400]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gpcs_pma_gen.vhd:401]
+INFO: [Synth 8-4472] Detected and applied attribute async_reg = true [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gpcs_pma_gen.vhd:402]
+	Parameter INIT bound to: 16'b0000000000000000 
+INFO: [Synth 8-113] binding component instance 'DELAY_RXDISPERR' to cell 'SRL16' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gpcs_pma_gen.vhd:593]
+	Parameter INIT bound to: 16'b0000000000000000 
+INFO: [Synth 8-113] binding component instance 'DELAY_RXNOTINTABLE' to cell 'SRL16' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gpcs_pma_gen.vhd:608]
+	Parameter C_QSGMII bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'TX' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/tx/tx.vhd:128' bound to instance 'TRANSMITTER' of component 'TX' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gpcs_pma_gen.vhd:905]
+INFO: [Synth 8-638] synthesizing module 'TX__parameterized0' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/tx/tx.vhd:169]
+	Parameter C_QSGMII bound to: 0 - type: bool 
+INFO: [Synth 8-256] done synthesizing module 'TX__parameterized0' (1#1) [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/tx/tx.vhd:169]
+	Parameter INITIALISE bound to: 2'b00 
+INFO: [Synth 8-3491] module 'sync_block' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/sync_block/sync_block.vhd:123' bound to instance 'SYNC_SIGNAL_DETECT' of component 'sync_block' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gpcs_pma_gen.vhd:933]
+INFO: [Synth 8-638] synthesizing module 'sync_block__parameterized0' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/sync_block/sync_block.vhd:139]
+	Parameter INITIALISE bound to: 2'b00 
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg1' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/sync_block/sync_block.vhd:172]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg2' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/sync_block/sync_block.vhd:182]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg3' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/sync_block/sync_block.vhd:192]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg4' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/sync_block/sync_block.vhd:202]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg5' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/sync_block/sync_block.vhd:212]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg6' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/sync_block/sync_block.vhd:222]
+INFO: [Synth 8-256] done synthesizing module 'sync_block__parameterized0' (2#1) [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/sync_block/sync_block.vhd:139]
+INFO: [Synth 8-3491] module 'SYNCHRONISE' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/synchronise/synchronise.vhd:125' bound to instance 'SYNCHRONISATION' of component 'SYNCHRONISE' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gpcs_pma_gen.vhd:942]
+INFO: [Synth 8-638] synthesizing module 'SYNCHRONISE' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/synchronise/synchronise.vhd:158]
+INFO: [Synth 8-256] done synthesizing module 'SYNCHRONISE' (3#1) [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/synchronise/synchronise.vhd:158]
+	Parameter C_FAMILY bound to: kintex7 - type: string 
+	Parameter C_USE_TRANSCEIVER bound to: 1 - type: bool 
+	Parameter C_USE_TBI bound to: 0 - type: bool 
+	Parameter C_USE_LVDS bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'RX' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/rx/rx.vhd:127' bound to instance 'RECEIVER' of component 'RX' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gpcs_pma_gen.vhd:966]
+INFO: [Synth 8-638] synthesizing module 'RX__parameterized0' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/rx/rx.vhd:197]
+	Parameter C_FAMILY bound to: kintex7 - type: string 
+	Parameter C_USE_TRANSCEIVER bound to: 1 - type: bool 
+	Parameter C_USE_TBI bound to: 0 - type: bool 
+	Parameter C_USE_LVDS bound to: 0 - type: bool 
+INFO: [Synth 8-256] done synthesizing module 'RX__parameterized0' (4#1) [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/rx/rx.vhd:197]
+INFO: [Synth 8-256] done synthesizing module 'GPCS_PMA_GEN' (5#1) [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gpcs_pma_gen.vhd:287]
+INFO: [Synth 8-256] done synthesizing module 'gig_ethernet_pcs_pma_v14_3__parameterized0' (6#1) [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_ethernet_pcs_pma_v14_3/hdl/gig_ethernet_pcs_pma_v14_3.vhd:216]
+	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_transceiver' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_transceiver.vhd:69' bound to instance 'transceiver_inst' of component 'gig_eth_pcs_pma_basex_v15_1_transceiver' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_block.vhd:454]
+INFO: [Synth 8-638] synthesizing module 'gig_eth_pcs_pma_basex_v15_1_transceiver__parameterized0' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_transceiver.vhd:155]
+	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
+	Parameter INITIALISE bound to: 2'b00 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_sync_block' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:67' bound to instance 'sync_block_data_valid' of component 'gig_eth_pcs_pma_basex_v15_1_sync_block' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_transceiver.vhd:422]
+INFO: [Synth 8-638] synthesizing module 'gig_eth_pcs_pma_basex_v15_1_sync_block__parameterized0' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:80]
+	Parameter INITIALISE bound to: 2'b00 
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg1' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:113]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg2' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:123]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg3' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:133]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg4' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:143]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg5' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:153]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg6' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:163]
+INFO: [Synth 8-256] done synthesizing module 'gig_eth_pcs_pma_basex_v15_1_sync_block__parameterized0' (7#1) [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:80]
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_reset_wtd_timer' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_reset_wtd_timer.vhd:70' bound to instance 'reset_wtd_timer' of component 'gig_eth_pcs_pma_basex_v15_1_reset_wtd_timer' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_transceiver.vhd:429]
+INFO: [Synth 8-638] synthesizing module 'gig_eth_pcs_pma_basex_v15_1_reset_wtd_timer' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_reset_wtd_timer.vhd:81]
+	Parameter WAIT_TIME bound to: 24'b100011110000110100011000 
+INFO: [Synth 8-256] done synthesizing module 'gig_eth_pcs_pma_basex_v15_1_reset_wtd_timer' (8#1) [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_reset_wtd_timer.vhd:81]
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_reset_sync' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_reset_sync.vhd:66' bound to instance 'reclock_encommaalign' of component 'gig_eth_pcs_pma_basex_v15_1_reset_sync' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_transceiver.vhd:450]
+INFO: [Synth 8-638] synthesizing module 'gig_eth_pcs_pma_basex_v15_1_reset_sync' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_reset_sync.vhd:79]
+	Parameter INITIALISE bound to: 2'b11 
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'reset_sync1' to cell 'FDP' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_reset_sync.vhd:108]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'reset_sync2' to cell 'FDP' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_reset_sync.vhd:119]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'reset_sync3' to cell 'FDP' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_reset_sync.vhd:130]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'reset_sync4' to cell 'FDP' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_reset_sync.vhd:141]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'reset_sync5' to cell 'FDP' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_reset_sync.vhd:152]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'reset_sync6' to cell 'FDP' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_reset_sync.vhd:163]
+INFO: [Synth 8-256] done synthesizing module 'gig_eth_pcs_pma_basex_v15_1_reset_sync' (9#1) [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_reset_sync.vhd:79]
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_reset_sync' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_reset_sync.vhd:66' bound to instance 'reclock_txreset' of component 'gig_eth_pcs_pma_basex_v15_1_reset_sync' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_transceiver.vhd:459]
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_reset_sync' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_reset_sync.vhd:66' bound to instance 'reclock_rxreset' of component 'gig_eth_pcs_pma_basex_v15_1_reset_sync' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_transceiver.vhd:468]
+	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_GTWIZARD' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard.vhd:72' bound to instance 'gtwizard_inst' of component 'gig_eth_pcs_pma_basex_v15_1_GTWIZARD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_transceiver.vhd:653]
+INFO: [Synth 8-638] synthesizing module 'gig_eth_pcs_pma_basex_v15_1_GTWIZARD__parameterized0' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard.vhd:214]
+	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
+	Parameter EXAMPLE_SIM_GTRESET_SPEEDUP bound to: TRUE - type: string 
+	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
+	Parameter STABLE_CLOCK_PERIOD bound to: 5 - type: integer 
+	Parameter EXAMPLE_USE_CHIPSCOPE bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_GTWIZARD_init' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_init.vhd:75' bound to instance 'U0' of component 'gig_eth_pcs_pma_basex_v15_1_GTWIZARD_init' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard.vhd:369]
+INFO: [Synth 8-638] synthesizing module 'gig_eth_pcs_pma_basex_v15_1_GTWIZARD_init__parameterized0' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_init.vhd:223]
+	Parameter EXAMPLE_SIM_GTRESET_SPEEDUP bound to: TRUE - type: string 
+	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
+	Parameter STABLE_CLOCK_PERIOD bound to: 5 - type: integer 
+	Parameter EXAMPLE_USE_CHIPSCOPE bound to: 0 - type: integer 
+	Parameter WRAPPER_SIM_GTRESET_SPEEDUP bound to: TRUE - type: string 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_GTWIZARD_multi_gt' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_multi_gt.vhd:73' bound to instance 'gtwizard_i' of component 'gig_eth_pcs_pma_basex_v15_1_GTWIZARD_multi_gt' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_init.vhd:551]
+INFO: [Synth 8-638] synthesizing module 'gig_eth_pcs_pma_basex_v15_1_GTWIZARD_multi_gt__parameterized0' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_multi_gt.vhd:218]
+	Parameter WRAPPER_SIM_GTRESET_SPEEDUP bound to: TRUE - type: string 
+	Parameter RX_DFE_KL_CFG2_IN bound to: 32'b00110000000100010100100010101100 
+	Parameter PMA_RSV_IN bound to: 32'b00000000000000011000010010000000 
+	Parameter GT_SIM_GTRESET_SPEEDUP bound to: TRUE - type: string 
+	Parameter RX_DFE_KL_CFG2_IN bound to: 806439084 - type: integer 
+	Parameter PMA_RSV_IN bound to: 99456 - type: integer 
+	Parameter PCS_RSVD_ATTR_IN bound to: 48'b000000000000000000000000000000000000000000000000 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_GTWIZARD_GT' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_gt.vhd:72' bound to instance 'gt0_GTWIZARD_i' of component 'gig_eth_pcs_pma_basex_v15_1_GTWIZARD_GT' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_multi_gt.vhd:400]
+INFO: [Synth 8-638] synthesizing module 'gig_eth_pcs_pma_basex_v15_1_GTWIZARD_GT__parameterized0' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_gt.vhd:212]
+	Parameter GT_SIM_GTRESET_SPEEDUP bound to: TRUE - type: string 
+	Parameter RX_DFE_KL_CFG2_IN bound to: 806439084 - type: integer 
+	Parameter PMA_RSV_IN bound to: 99456 - type: integer 
+	Parameter PCS_RSVD_ATTR_IN bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter ALIGN_COMMA_DOUBLE bound to: FALSE - type: string 
+	Parameter ALIGN_COMMA_ENABLE bound to: 10'b0001111111 
+	Parameter ALIGN_COMMA_WORD bound to: 2 - type: integer 
+	Parameter ALIGN_MCOMMA_DET bound to: TRUE - type: string 
+	Parameter ALIGN_MCOMMA_VALUE bound to: 10'b1010000011 
+	Parameter ALIGN_PCOMMA_DET bound to: TRUE - type: string 
+	Parameter ALIGN_PCOMMA_VALUE bound to: 10'b0101111100 
+	Parameter CBCC_DATA_SOURCE_SEL bound to: DECODED - type: string 
+	Parameter CHAN_BOND_KEEP_ALIGN bound to: FALSE - type: string 
+	Parameter CHAN_BOND_MAX_SKEW bound to: 1 - type: integer 
+	Parameter CHAN_BOND_SEQ_1_1 bound to: 10'b0000000000 
+	Parameter CHAN_BOND_SEQ_1_2 bound to: 10'b0000000000 
+	Parameter CHAN_BOND_SEQ_1_3 bound to: 10'b0000000000 
+	Parameter CHAN_BOND_SEQ_1_4 bound to: 10'b0000000000 
+	Parameter CHAN_BOND_SEQ_1_ENABLE bound to: 4'b1111 
+	Parameter CHAN_BOND_SEQ_2_1 bound to: 10'b0000000000 
+	Parameter CHAN_BOND_SEQ_2_2 bound to: 10'b0000000000 
+	Parameter CHAN_BOND_SEQ_2_3 bound to: 10'b0000000000 
+	Parameter CHAN_BOND_SEQ_2_4 bound to: 10'b0000000000 
+	Parameter CHAN_BOND_SEQ_2_ENABLE bound to: 4'b1111 
+	Parameter CHAN_BOND_SEQ_2_USE bound to: FALSE - type: string 
+	Parameter CHAN_BOND_SEQ_LEN bound to: 1 - type: integer 
+	Parameter CLK_CORRECT_USE bound to: TRUE - type: string 
+	Parameter CLK_COR_KEEP_IDLE bound to: FALSE - type: string 
+	Parameter CLK_COR_MAX_LAT bound to: 36 - type: integer 
+	Parameter CLK_COR_MIN_LAT bound to: 33 - type: integer 
+	Parameter CLK_COR_PRECEDENCE bound to: TRUE - type: string 
+	Parameter CLK_COR_REPEAT_WAIT bound to: 0 - type: integer 
+	Parameter CLK_COR_SEQ_1_1 bound to: 10'b0110111100 
+	Parameter CLK_COR_SEQ_1_2 bound to: 10'b0001010000 
+	Parameter CLK_COR_SEQ_1_3 bound to: 10'b0000000000 
+	Parameter CLK_COR_SEQ_1_4 bound to: 10'b0000000000 
+	Parameter CLK_COR_SEQ_1_ENABLE bound to: 4'b1111 
+	Parameter CLK_COR_SEQ_2_1 bound to: 10'b0110111100 
+	Parameter CLK_COR_SEQ_2_2 bound to: 10'b0010110101 
+	Parameter CLK_COR_SEQ_2_3 bound to: 10'b0000000000 
+	Parameter CLK_COR_SEQ_2_4 bound to: 10'b0000000000 
+	Parameter CLK_COR_SEQ_2_ENABLE bound to: 4'b1111 
+	Parameter CLK_COR_SEQ_2_USE bound to: TRUE - type: string 
+	Parameter CLK_COR_SEQ_LEN bound to: 2 - type: integer 
+	Parameter CPLL_CFG bound to: 24'b101111000000011111011100 
+	Parameter CPLL_FBDIV bound to: 4 - type: integer 
+	Parameter CPLL_FBDIV_45 bound to: 5 - type: integer 
+	Parameter CPLL_INIT_CFG bound to: 24'b000000000000000000011110 
+	Parameter CPLL_LOCK_CFG bound to: 16'b0000000111101000 
+	Parameter CPLL_REFCLK_DIV bound to: 1 - type: integer 
+	Parameter DEC_MCOMMA_DETECT bound to: TRUE - type: string 
+	Parameter DEC_PCOMMA_DETECT bound to: TRUE - type: string 
+	Parameter DEC_VALID_COMMA_ONLY bound to: FALSE - type: string 
+	Parameter DMONITOR_CFG bound to: 24'b000000000000101000000000 
+	Parameter ES_CONTROL bound to: 6'b000000 
+	Parameter ES_ERRDET_EN bound to: FALSE - type: string 
+	Parameter ES_EYE_SCAN_EN bound to: TRUE - type: string 
+	Parameter ES_HORZ_OFFSET bound to: 12'b000000000000 
+	Parameter ES_PMA_CFG bound to: 10'b0000000000 
+	Parameter ES_PRESCALE bound to: 5'b00000 
+	Parameter ES_QUALIFIER bound to: 80'b00000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ES_QUAL_MASK bound to: 80'b00000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ES_SDATA_MASK bound to: 80'b00000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ES_VERT_OFFSET bound to: 9'b000000000 
+	Parameter FTS_DESKEW_SEQ_ENABLE bound to: 4'b1111 
+	Parameter FTS_LANE_DESKEW_CFG bound to: 4'b1111 
+	Parameter FTS_LANE_DESKEW_EN bound to: FALSE - type: string 
+	Parameter GEARBOX_MODE bound to: 3'b000 
+	Parameter IS_CPLLLOCKDETCLK_INVERTED bound to: 1'b0 
+	Parameter IS_DRPCLK_INVERTED bound to: 1'b0 
+	Parameter IS_GTGREFCLK_INVERTED bound to: 1'b0 
+	Parameter IS_RXUSRCLK2_INVERTED bound to: 1'b0 
+	Parameter IS_RXUSRCLK_INVERTED bound to: 1'b0 
+	Parameter IS_TXPHDLYTSTCLK_INVERTED bound to: 1'b0 
+	Parameter IS_TXUSRCLK2_INVERTED bound to: 1'b0 
+	Parameter IS_TXUSRCLK_INVERTED bound to: 1'b0 
+	Parameter OUTREFCLK_SEL_INV bound to: 2'b11 
+	Parameter PCS_PCIE_EN bound to: FALSE - type: string 
+	Parameter PCS_RSVD_ATTR bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter PD_TRANS_TIME_FROM_P2 bound to: 12'b000000111100 
+	Parameter PD_TRANS_TIME_NONE_P2 bound to: 8'b00011001 
+	Parameter PD_TRANS_TIME_TO_P2 bound to: 8'b01100100 
+	Parameter PMA_RSV bound to: 99456 - type: integer 
+	Parameter PMA_RSV2 bound to: 16'b0010000001010000 
+	Parameter PMA_RSV3 bound to: 2'b00 
+	Parameter PMA_RSV4 bound to: 32'b00000000000000000000000000000000 
+	Parameter RXBUFRESET_TIME bound to: 5'b00001 
+	Parameter RXBUF_ADDR_MODE bound to: FULL - type: string 
+	Parameter RXBUF_EIDLE_HI_CNT bound to: 4'b1000 
+	Parameter RXBUF_EIDLE_LO_CNT bound to: 4'b0000 
+	Parameter RXBUF_EN bound to: TRUE - type: string 
+	Parameter RXBUF_RESET_ON_CB_CHANGE bound to: TRUE - type: string 
+	Parameter RXBUF_RESET_ON_COMMAALIGN bound to: FALSE - type: string 
+	Parameter RXBUF_RESET_ON_EIDLE bound to: FALSE - type: string 
+	Parameter RXBUF_RESET_ON_RATE_CHANGE bound to: TRUE - type: string 
+	Parameter RXBUF_THRESH_OVFLW bound to: 61 - type: integer 
+	Parameter RXBUF_THRESH_OVRD bound to: FALSE - type: string 
+	Parameter RXBUF_THRESH_UNDFLW bound to: 8 - type: integer 
+	Parameter RXCDRFREQRESET_TIME bound to: 5'b00001 
+	Parameter RXCDRPHRESET_TIME bound to: 5'b00001 
+	Parameter RXCDR_CFG bound to: 72'b000000110000000000000000001000111111111101000000000010000000000000100000 
+	Parameter RXCDR_FR_RESET_ON_EIDLE bound to: 1'b0 
+	Parameter RXCDR_HOLD_DURING_EIDLE bound to: 1'b0 
+	Parameter RXCDR_LOCK_CFG bound to: 6'b010101 
+	Parameter RXCDR_PH_RESET_ON_EIDLE bound to: 1'b0 
+	Parameter RXDFELPMRESET_TIME bound to: 7'b0001111 
+	Parameter RXDLY_CFG bound to: 16'b0000000000011111 
+	Parameter RXDLY_LCFG bound to: 12'b000000110000 
+	Parameter RXDLY_TAP_CFG bound to: 16'b0000000000000000 
+	Parameter RXGEARBOX_EN bound to: FALSE - type: string 
+	Parameter RXISCANRESET_TIME bound to: 5'b00001 
+	Parameter RXLPM_HF_CFG bound to: 14'b00000011110000 
+	Parameter RXLPM_LF_CFG bound to: 14'b00000011110000 
+	Parameter RXOOB_CFG bound to: 7'b0000110 
+	Parameter RXOUT_DIV bound to: 4 - type: integer 
+	Parameter RXPCSRESET_TIME bound to: 5'b00001 
+	Parameter RXPHDLY_CFG bound to: 24'b000010000100000000100000 
+	Parameter RXPH_CFG bound to: 24'b000000000000000000000000 
+	Parameter RXPH_MONITOR_SEL bound to: 5'b00000 
+	Parameter RXPMARESET_TIME bound to: 5'b00011 
+	Parameter RXPRBS_ERR_LOOPBACK bound to: 1'b1 
+	Parameter RXSLIDE_AUTO_WAIT bound to: 7 - type: integer 
+	Parameter RXSLIDE_MODE bound to: OFF - type: string 
+	Parameter RX_BIAS_CFG bound to: 12'b000000000100 
+	Parameter RX_BUFFER_CFG bound to: 6'b000000 
+	Parameter RX_CLK25_DIV bound to: 5 - type: integer 
+	Parameter RX_CLKMUX_PD bound to: 1'b1 
+	Parameter RX_CM_SEL bound to: 2'b11 
+	Parameter RX_CM_TRIM bound to: 3'b010 
+	Parameter RX_DATA_WIDTH bound to: 20 - type: integer 
+	Parameter RX_DDI_SEL bound to: 6'b000000 
+	Parameter RX_DEBUG_CFG bound to: 12'b000000000000 
+	Parameter RX_DEFER_RESET_BUF_EN bound to: TRUE - type: string 
+	Parameter RX_DFE_GAIN_CFG bound to: 24'b000000100000111111101010 
+	Parameter RX_DFE_H2_CFG bound to: 12'b000000000000 
+	Parameter RX_DFE_H3_CFG bound to: 12'b000001000000 
+	Parameter RX_DFE_H4_CFG bound to: 11'b00011110000 
+	Parameter RX_DFE_H5_CFG bound to: 11'b00011100000 
+	Parameter RX_DFE_KL_CFG bound to: 13'b0000011111110 
+	Parameter RX_DFE_KL_CFG2 bound to: 806439084 - type: integer 
+	Parameter RX_DFE_LPM_CFG bound to: 16'b0000100101010100 
+	Parameter RX_DFE_LPM_HOLD_DURING_EIDLE bound to: 1'b0 
+	Parameter RX_DFE_UT_CFG bound to: 17'b10001111000000000 
+	Parameter RX_DFE_VP_CFG bound to: 17'b00011111100000011 
+	Parameter RX_DFE_XYD_CFG bound to: 13'b0000000000000 
+	Parameter RX_DISPERR_SEQ_MATCH bound to: TRUE - type: string 
+	Parameter RX_INT_DATAWIDTH bound to: 0 - type: integer 
+	Parameter RX_OS_CFG bound to: 13'b0000010000000 
+	Parameter RX_SIG_VALID_DLY bound to: 10 - type: integer 
+	Parameter RX_XCLK_SEL bound to: RXREC - type: string 
+	Parameter SAS_MAX_COM bound to: 64 - type: integer 
+	Parameter SAS_MIN_COM bound to: 36 - type: integer 
+	Parameter SATA_BURST_SEQ_LEN bound to: 4'b0101 
+	Parameter SATA_BURST_VAL bound to: 3'b100 
+	Parameter SATA_CPLL_CFG bound to: VCO_3000MHZ - type: string 
+	Parameter SATA_EIDLE_VAL bound to: 3'b100 
+	Parameter SATA_MAX_BURST bound to: 8 - type: integer 
+	Parameter SATA_MAX_INIT bound to: 21 - type: integer 
+	Parameter SATA_MAX_WAKE bound to: 7 - type: integer 
+	Parameter SATA_MIN_BURST bound to: 4 - type: integer 
+	Parameter SATA_MIN_INIT bound to: 12 - type: integer 
+	Parameter SATA_MIN_WAKE bound to: 4 - type: integer 
+	Parameter SHOW_REALIGN_COMMA bound to: TRUE - type: string 
+	Parameter SIM_CPLLREFCLK_SEL bound to: 3'b001 
+	Parameter SIM_RECEIVER_DETECT_PASS bound to: TRUE - type: string 
+	Parameter SIM_RESET_SPEEDUP bound to: TRUE - type: string 
+	Parameter SIM_TX_EIDLE_DRIVE_LEVEL bound to: X - type: string 
+	Parameter SIM_VERSION bound to: 4.0 - type: string 
+	Parameter TERM_RCAL_CFG bound to: 5'b10000 
+	Parameter TERM_RCAL_OVRD bound to: 1'b0 
+	Parameter TRANS_TIME_RATE bound to: 8'b00001110 
+	Parameter TST_RSV bound to: 32'b00000000000000000000000000000000 
+	Parameter TXBUF_EN bound to: TRUE - type: string 
+	Parameter TXBUF_RESET_ON_RATE_CHANGE bound to: TRUE - type: string 
+	Parameter TXDLY_CFG bound to: 16'b0000000000011111 
+	Parameter TXDLY_LCFG bound to: 12'b000000110000 
+	Parameter TXDLY_TAP_CFG bound to: 16'b0000000000000000 
+	Parameter TXGEARBOX_EN bound to: FALSE - type: string 
+	Parameter TXOUT_DIV bound to: 4 - type: integer 
+	Parameter TXPCSRESET_TIME bound to: 5'b00001 
+	Parameter TXPHDLY_CFG bound to: 24'b000010000100000000100000 
+	Parameter TXPH_CFG bound to: 16'b0000011110000000 
+	Parameter TXPH_MONITOR_SEL bound to: 5'b00000 
+	Parameter TXPMARESET_TIME bound to: 5'b00001 
+	Parameter TX_CLK25_DIV bound to: 5 - type: integer 
+	Parameter TX_CLKMUX_PD bound to: 1'b1 
+	Parameter TX_DATA_WIDTH bound to: 20 - type: integer 
+	Parameter TX_DEEMPH0 bound to: 5'b00000 
+	Parameter TX_DEEMPH1 bound to: 5'b00000 
+	Parameter TX_DRIVE_MODE bound to: DIRECT - type: string 
+	Parameter TX_EIDLE_ASSERT_DELAY bound to: 3'b110 
+	Parameter TX_EIDLE_DEASSERT_DELAY bound to: 3'b100 
+	Parameter TX_INT_DATAWIDTH bound to: 0 - type: integer 
+	Parameter TX_LOOPBACK_DRIVE_HIZ bound to: FALSE - type: string 
+	Parameter TX_MAINCURSOR_SEL bound to: 1'b0 
+	Parameter TX_MARGIN_FULL_0 bound to: 7'b1001110 
+	Parameter TX_MARGIN_FULL_1 bound to: 7'b1001001 
+	Parameter TX_MARGIN_FULL_2 bound to: 7'b1000101 
+	Parameter TX_MARGIN_FULL_3 bound to: 7'b1000010 
+	Parameter TX_MARGIN_FULL_4 bound to: 7'b1000000 
+	Parameter TX_MARGIN_LOW_0 bound to: 7'b1000110 
+	Parameter TX_MARGIN_LOW_1 bound to: 7'b1000100 
+	Parameter TX_MARGIN_LOW_2 bound to: 7'b1000010 
+	Parameter TX_MARGIN_LOW_3 bound to: 7'b1000000 
+	Parameter TX_MARGIN_LOW_4 bound to: 7'b1000000 
+	Parameter TX_PREDRIVER_MODE bound to: 1'b0 
+	Parameter TX_QPI_STATUS_EN bound to: 1'b0 
+	Parameter TX_RXDETECT_CFG bound to: 16'b0001100000110010 
+	Parameter TX_RXDETECT_REF bound to: 3'b100 
+	Parameter TX_XCLK_SEL bound to: TXOUT - type: string 
+	Parameter UCODEER_CLR bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'gtxe2_i' to cell 'GTXE2_CHANNEL' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_gt.vhd:325]
+INFO: [Synth 8-113] binding component instance 'bufg_gtrefclk0_in' to cell 'BUFG' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_gt.vhd:913]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg1' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_gt.vhd:958]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg2' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_gt.vhd:968]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg3' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_gt.vhd:978]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg4' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_gt.vhd:988]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg5' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_gt.vhd:998]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg6' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_gt.vhd:1008]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'ack_sync_reg1' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_gt.vhd:1019]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'ack_sync_reg2' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_gt.vhd:1029]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'ack_sync_reg3' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_gt.vhd:1039]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'ack_sync_reg4' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_gt.vhd:1049]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'ack_sync_reg5' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_gt.vhd:1059]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'ack_sync_reg6' to cell 'FD' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_gt.vhd:1069]
+INFO: [Synth 8-256] done synthesizing module 'gig_eth_pcs_pma_basex_v15_1_GTWIZARD_GT__parameterized0' (10#1) [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_gt.vhd:212]
+INFO: [Synth 8-256] done synthesizing module 'gig_eth_pcs_pma_basex_v15_1_GTWIZARD_multi_gt__parameterized0' (11#1) [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_multi_gt.vhd:218]
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_reset_sync' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_reset_sync.vhd:66' bound to instance 'cpll_reset_sync' of component 'gig_eth_pcs_pma_basex_v15_1_reset_sync' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_init.vhd:715]
+	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
+	Parameter STABLE_CLOCK_PERIOD bound to: 5 - type: integer 
+	Parameter RETRY_COUNTER_BITWIDTH bound to: 8 - type: integer 
+	Parameter TX_QPLL_USED bound to: 0 - type: bool 
+	Parameter RX_QPLL_USED bound to: 0 - type: bool 
+	Parameter PHASE_ALIGNMENT_MANUAL bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_TX_STARTUP_FSM' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_tx_startup_fsm.vhd:76' bound to instance 'gt0_txresetfsm_i' of component 'gig_eth_pcs_pma_basex_v15_1_TX_STARTUP_FSM' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_init.vhd:722]
+INFO: [Synth 8-638] synthesizing module 'gig_eth_pcs_pma_basex_v15_1_TX_STARTUP_FSM__parameterized0' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_tx_startup_fsm.vhd:123]
+	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
+	Parameter STABLE_CLOCK_PERIOD bound to: 5 - type: integer 
+	Parameter RETRY_COUNTER_BITWIDTH bound to: 8 - type: integer 
+	Parameter TX_QPLL_USED bound to: 0 - type: bool 
+	Parameter RX_QPLL_USED bound to: 0 - type: bool 
+	Parameter PHASE_ALIGNMENT_MANUAL bound to: 0 - type: bool 
+	Parameter INITIALISE bound to: 2'b00 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_sync_block' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:67' bound to instance 'sync_run_phase_alignment_int' of component 'gig_eth_pcs_pma_basex_v15_1_sync_block' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_tx_startup_fsm.vhd:281]
+	Parameter INITIALISE bound to: 2'b00 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_sync_block' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:67' bound to instance 'sync_tx_fsm_reset_done_int' of component 'gig_eth_pcs_pma_basex_v15_1_sync_block' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_tx_startup_fsm.vhd:289]
+	Parameter INITIALISE bound to: 2'b00 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_sync_block' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:67' bound to instance 'sync_TXRESETDONE' of component 'gig_eth_pcs_pma_basex_v15_1_sync_block' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_tx_startup_fsm.vhd:306]
+	Parameter INITIALISE bound to: 2'b00 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_sync_block' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:67' bound to instance 'sync_time_out_wait_bypass' of component 'gig_eth_pcs_pma_basex_v15_1_sync_block' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_tx_startup_fsm.vhd:314]
+	Parameter INITIALISE bound to: 2'b00 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_sync_block' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:67' bound to instance 'sync_mmcm_lock_reclocked' of component 'gig_eth_pcs_pma_basex_v15_1_sync_block' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_tx_startup_fsm.vhd:322]
+	Parameter INITIALISE bound to: 2'b00 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_sync_block' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:67' bound to instance 'sync_cplllock' of component 'gig_eth_pcs_pma_basex_v15_1_sync_block' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_tx_startup_fsm.vhd:342]
+INFO: [Synth 8-256] done synthesizing module 'gig_eth_pcs_pma_basex_v15_1_TX_STARTUP_FSM__parameterized0' (12#1) [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_tx_startup_fsm.vhd:123]
+	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
+	Parameter EQ_MODE bound to: DFE - type: string 
+	Parameter STABLE_CLOCK_PERIOD bound to: 5 - type: integer 
+	Parameter RETRY_COUNTER_BITWIDTH bound to: 8 - type: integer 
+	Parameter TX_QPLL_USED bound to: 0 - type: bool 
+	Parameter RX_QPLL_USED bound to: 0 - type: bool 
+	Parameter PHASE_ALIGNMENT_MANUAL bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_RX_STARTUP_FSM' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_rx_startup_fsm.vhd:74' bound to instance 'gt0_rxresetfsm_i' of component 'gig_eth_pcs_pma_basex_v15_1_RX_STARTUP_FSM' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_init.vhd:761]
+INFO: [Synth 8-638] synthesizing module 'gig_eth_pcs_pma_basex_v15_1_RX_STARTUP_FSM__parameterized0' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_rx_startup_fsm.vhd:128]
+	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
+	Parameter EQ_MODE bound to: DFE - type: string 
+	Parameter STABLE_CLOCK_PERIOD bound to: 5 - type: integer 
+	Parameter RETRY_COUNTER_BITWIDTH bound to: 8 - type: integer 
+	Parameter TX_QPLL_USED bound to: 0 - type: bool 
+	Parameter RX_QPLL_USED bound to: 0 - type: bool 
+	Parameter PHASE_ALIGNMENT_MANUAL bound to: 0 - type: bool 
+	Parameter INITIALISE bound to: 2'b00 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_sync_block' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:67' bound to instance 'sync_run_phase_alignment_int' of component 'gig_eth_pcs_pma_basex_v15_1_sync_block' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_rx_startup_fsm.vhd:343]
+	Parameter INITIALISE bound to: 2'b00 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_sync_block' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:67' bound to instance 'sync_tx_fsm_reset_done_int' of component 'gig_eth_pcs_pma_basex_v15_1_sync_block' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_rx_startup_fsm.vhd:351]
+	Parameter INITIALISE bound to: 2'b00 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_sync_block' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:67' bound to instance 'sync_RXRESETDONE' of component 'gig_eth_pcs_pma_basex_v15_1_sync_block' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_rx_startup_fsm.vhd:368]
+	Parameter INITIALISE bound to: 2'b00 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_sync_block' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:67' bound to instance 'sync_time_out_wait_bypass' of component 'gig_eth_pcs_pma_basex_v15_1_sync_block' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_rx_startup_fsm.vhd:376]
+	Parameter INITIALISE bound to: 2'b00 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_sync_block' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:67' bound to instance 'sync_mmcm_lock_reclocked' of component 'gig_eth_pcs_pma_basex_v15_1_sync_block' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_rx_startup_fsm.vhd:384]
+	Parameter INITIALISE bound to: 2'b00 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_sync_block' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:67' bound to instance 'sync_data_valid' of component 'gig_eth_pcs_pma_basex_v15_1_sync_block' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_rx_startup_fsm.vhd:392]
+	Parameter INITIALISE bound to: 2'b00 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_sync_block' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:67' bound to instance 'sync_cplllock' of component 'gig_eth_pcs_pma_basex_v15_1_sync_block' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_rx_startup_fsm.vhd:412]
+INFO: [Synth 8-256] done synthesizing module 'gig_eth_pcs_pma_basex_v15_1_RX_STARTUP_FSM__parameterized0' (13#1) [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_rx_startup_fsm.vhd:128]
+	Parameter INITIALISE bound to: 2'b00 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_sync_block' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:67' bound to instance 'sync_block_gtrxreset' of component 'gig_eth_pcs_pma_basex_v15_1_sync_block' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_init.vhd:807]
+INFO: [Synth 8-256] done synthesizing module 'gig_eth_pcs_pma_basex_v15_1_GTWIZARD_init__parameterized0' (14#1) [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard_init.vhd:223]
+INFO: [Synth 8-256] done synthesizing module 'gig_eth_pcs_pma_basex_v15_1_GTWIZARD__parameterized0' (15#1) [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_gtwizard.vhd:214]
+INFO: [Synth 8-256] done synthesizing module 'gig_eth_pcs_pma_basex_v15_1_transceiver__parameterized0' (16#1) [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_transceiver.vhd:155]
+	Parameter INITIALISE bound to: 2'b00 
+INFO: [Synth 8-3491] module 'gig_eth_pcs_pma_basex_v15_1_sync_block' declared at 'c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_sync_block.vhd:67' bound to instance 'sync_block_reset_done' of component 'gig_eth_pcs_pma_basex_v15_1_sync_block' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_block.vhd:546]
+INFO: [Synth 8-113] binding component instance 'rxrecclkbufh' to cell 'BUFH' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_block.vhd:560]
+INFO: [Synth 8-256] done synthesizing module 'gig_eth_pcs_pma_basex_v15_1_block' (17#1) [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_block.vhd:152]
+INFO: [Synth 8-256] done synthesizing module 'gig_eth_pcs_pma_basex_v15_1' (18#1) [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1.vhd:150]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 291.348 ; gain = 129.270
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 291.348 ; gain = 129.270
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 140 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Loading clock regions from C:/Xilinx/Vivado/2014.3/data\parts/xilinx/kintex7/kintex7/xc7k325t/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/Vivado/2014.3/data\parts/xilinx/kintex7/kintex7/xc7k325t/ClockBuffers.xml
+Loading clock placement rules from C:/Xilinx/Vivado/2014.3/data/parts/xilinx/kintex7/ClockPlacerRules.xml
+Loading package pin functions from C:/Xilinx/Vivado/2014.3/data\parts/xilinx/kintex7/PinFunctions.xml...
+Loading package from C:/Xilinx/Vivado/2014.3/data\parts/xilinx/kintex7/kintex7/xc7k325t/ffg900/Package.xml
+Loading io standards from C:/Xilinx/Vivado/2014.3/data\./parts/xilinx/kintex7/IOStandards.xml
+Loading device configuration modes from C:/Xilinx/Vivado/2014.3/data\parts/xilinx/kintex7/ConfigModes.xml
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_ooc.xdc]
+Finished Parsing XDC File [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_ooc.xdc]
+Parsing XDC File [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_eth_pcs_pma_basex_v15_1_board.xdc]
+Finished Parsing XDC File [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_eth_pcs_pma_basex_v15_1_board.xdc]
+Parsing XDC File [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1.xdc]
+Finished Parsing XDC File [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 140 instances were transformed.
+  FD => FDRE: 114 instances
+  FDP => FDPE: 24 instances
+  SRL16 => SRL16E: 2 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.037 . Memory (MB): peak = 657.367 ; gain = 0.848
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 657.367 ; gain = 495.289
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg900-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 657.367 ; gain = 495.289
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 657.367 ; gain = 495.289
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'STATE_reg' in module 'SYNCHRONISE'
+INFO: [Synth 8-802] inferred FSM for state register 'USE_ROCKET_IO.TX_RST_SM_reg' in module 'GPCS_PMA_GEN'
+INFO: [Synth 8-802] inferred FSM for state register 'USE_ROCKET_IO.RX_RST_SM_reg' in module 'GPCS_PMA_GEN'
+INFO: [Synth 8-802] inferred FSM for state register 'tx_state_reg' in module 'gig_eth_pcs_pma_basex_v15_1_TX_STARTUP_FSM__parameterized0'
+INFO: [Synth 8-4471] merging register 'CPLL_RESET_reg' into 'QPLL_RESET_reg' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_rx_startup_fsm.vhd:508]
+INFO: [Synth 8-4471] merging register 'RXLPMLFHOLD_reg' into 'QPLL_RESET_reg' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_rx_startup_fsm.vhd:519]
+INFO: [Synth 8-4471] merging register 'RXLPMHFHOLD_reg' into 'QPLL_RESET_reg' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_rx_startup_fsm.vhd:520]
+INFO: [Synth 8-4471] merging register 'recclk_mon_count_reset_reg' into 'adapt_count_reset_reg' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_rx_startup_fsm.vhd:265]
+INFO: [Synth 8-4471] merging register 'RXDFELFHOLD_reg' into 'RXDFEAGCHOLD_reg' [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/transceiver/gig_eth_pcs_pma_basex_v15_1_rx_startup_fsm.vhd:518]
+INFO: [Synth 8-802] inferred FSM for state register 'rx_state_reg' in module 'gig_eth_pcs_pma_basex_v15_1_RX_STARTUP_FSM__parameterized0'
+INFO: [Synth 8-3354] encoded FSM with state register 'STATE_reg' using encoding 'sequential' in module 'SYNCHRONISE'
+INFO: [Synth 8-3354] encoded FSM with state register 'USE_ROCKET_IO.RX_RST_SM_reg' using encoding 'sequential' in module 'GPCS_PMA_GEN'
+INFO: [Synth 8-3354] encoded FSM with state register 'USE_ROCKET_IO.TX_RST_SM_reg' using encoding 'sequential' in module 'GPCS_PMA_GEN'
+INFO: [Synth 8-3354] encoded FSM with state register 'tx_state_reg' using encoding 'sequential' in module 'gig_eth_pcs_pma_basex_v15_1_TX_STARTUP_FSM__parameterized0'
+INFO: [Synth 8-3354] encoded FSM with state register 'rx_state_reg' using encoding 'sequential' in module 'gig_eth_pcs_pma_basex_v15_1_RX_STARTUP_FSM__parameterized0'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 657.367 ; gain = 495.289
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     14 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 4     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 3     
++---XORs : 
+	   2 Input      1 Bit         XORs := 6     
++---Registers : 
+	              128 Bit    Registers := 1     
+	               96 Bit    Registers := 1     
+	               16 Bit    Registers := 6     
+	               14 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 16    
+	                7 Bit    Registers := 4     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 22    
+	                1 Bit    Registers := 171   
++---Muxes : 
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 14    
+	   4 Input      8 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	  31 Input      4 Bit        Muxes := 1     
+	  15 Input      4 Bit        Muxes := 2     
+	  10 Input      4 Bit        Muxes := 1     
+	  14 Input      4 Bit        Muxes := 1     
+	  11 Input      4 Bit        Muxes := 1     
+	  17 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 77    
+	   4 Input      1 Bit        Muxes := 2     
+	  15 Input      1 Bit        Muxes := 2     
+	  11 Input      1 Bit        Muxes := 15    
+	  12 Input      1 Bit        Muxes := 17    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module gig_eth_pcs_pma_basex_v15_1 
+Detailed RTL Component Info : 
+Module TX__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 3     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 4     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 21    
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 4     
+	   4 Input      8 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 17    
+	   4 Input      1 Bit        Muxes := 2     
+Module sync_block__parameterized0 
+Detailed RTL Component Info : 
+Module SYNCHRONISE 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	  31 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module RX__parameterized0 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 6     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 61    
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 12    
+Module GPCS_PMA_GEN 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 20    
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 4     
+	  15 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 7     
+	  15 Input      1 Bit        Muxes := 2     
+Module gig_ethernet_pcs_pma_v14_3__parameterized0 
+Detailed RTL Component Info : 
+Module gig_eth_pcs_pma_basex_v15_1_sync_block__parameterized0 
+Detailed RTL Component Info : 
+Module gig_eth_pcs_pma_basex_v15_1_reset_wtd_timer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module gig_eth_pcs_pma_basex_v15_1_reset_sync 
+Detailed RTL Component Info : 
+Module gig_eth_pcs_pma_basex_v15_1_GTWIZARD_GT__parameterized0 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	              128 Bit    Registers := 1     
+	               96 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
+Module gig_eth_pcs_pma_basex_v15_1_GTWIZARD_multi_gt__parameterized0 
+Detailed RTL Component Info : 
+Module gig_eth_pcs_pma_basex_v15_1_TX_STARTUP_FSM__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                1 Bit    Registers := 20    
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	  10 Input      4 Bit        Muxes := 1     
+	  14 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 13    
+	  11 Input      1 Bit        Muxes := 15    
+Module gig_eth_pcs_pma_basex_v15_1_RX_STARTUP_FSM__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 23    
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	  11 Input      4 Bit        Muxes := 1     
+	  17 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 20    
+	  12 Input      1 Bit        Muxes := 17    
+Module gig_eth_pcs_pma_basex_v15_1_GTWIZARD_init__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     14 Bit       Adders := 1     
++---Registers : 
+	               14 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module gig_eth_pcs_pma_basex_v15_1_GTWIZARD__parameterized0 
+Detailed RTL Component Info : 
+Module gig_eth_pcs_pma_basex_v15_1_transceiver__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 4     
+	                8 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 18    
+	                1 Bit    Registers := 17    
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module gig_eth_pcs_pma_basex_v15_1_block 
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 657.367 ; gain = 495.289
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3917] design gig_eth_pcs_pma_basex_v15_1 has port status_vector[15] driven by constant 0
+INFO: [Synth 8-3917] design gig_eth_pcs_pma_basex_v15_1 has port status_vector[14] driven by constant 0
+INFO: [Synth 8-3917] design gig_eth_pcs_pma_basex_v15_1 has port status_vector[13] driven by constant 0
+INFO: [Synth 8-3917] design gig_eth_pcs_pma_basex_v15_1 has port status_vector[11] driven by constant 0
+INFO: [Synth 8-3917] design gig_eth_pcs_pma_basex_v15_1 has port status_vector[10] driven by constant 0
+INFO: [Synth 8-3917] design gig_eth_pcs_pma_basex_v15_1 has port status_vector[9] driven by constant 0
+INFO: [Synth 8-3917] design gig_eth_pcs_pma_basex_v15_1 has port status_vector[8] driven by constant 0
+INFO: [Synth 8-3917] design gig_eth_pcs_pma_basex_v15_1 has port status_vector[7] driven by constant 0
+WARNING: [Synth 8-3331] design gig_eth_pcs_pma_basex_v15_1 has unconnected port rxuserclk
+WARNING: [Synth 8-3331] design gig_eth_pcs_pma_basex_v15_1 has unconnected port rxuserclk2
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 657.367 ; gain = 495.289
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 657.367 ; gain = 495.289
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/TX_CONFIG_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/recclk_mon_restart_count_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/recclk_mon_restart_count_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/DUPLEX_MODE_RSLVD_REG_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/STATUS_VECTOR_reg[12] )
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/STATUS_VECTOR_reg[12] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/NO_MANAGEMENT.CONFIGURATION_VECTOR_REG_reg[4] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/NO_MANAGEMENT.CONFIGURATION_VECTOR_REG_reg[0] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/TX_CONFIG_reg[15] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/TX_CONFIG_reg[14] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/TX_CONFIG_reg[13] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/TX_CONFIG_reg[12] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/TX_CONFIG_reg[11] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/TX_CONFIG_reg[10] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/TX_CONFIG_reg[9] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/TX_CONFIG_reg[8] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/TX_CONFIG_reg[7] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/TX_CONFIG_reg[6] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/TX_CONFIG_reg[5] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/TX_CONFIG_reg[4] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/TX_CONFIG_reg[3] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/TX_CONFIG_reg[2] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/TX_CONFIG_reg[1] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/TX_CONFIG_reg[0] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/CONFIG_DATA_reg[7] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/CONFIG_DATA_reg[5] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/CONFIG_DATA_reg[4] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/CONFIG_DATA_reg[1] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/RECEIVER/RX_INVALID_REG1_reg ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/RECEIVER/RX_INVALID_REG2_reg ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/transceiver_inst/rxbufstatus_reg_reg[1] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/transceiver_inst/rxbufstatus_reg_reg[0] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/USE_ROCKET_IO.NO_1588.RXBUFSTATUS_INT_reg[0] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/transceiver_inst/txbufstatus_reg_reg[0] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/DUPLEX_MODE_RSLVD_REG_reg ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/recclk_mon_restart_count_reg[1] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/recclk_mon_restart_count_reg[0] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/time_out_100us_reg ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/transceiver_inst/rxrundisp_reg_reg[1] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/transceiver_inst/rxrundisp_reg_reg[0] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/transceiver_inst/rxrundisp_double_reg[1] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/transceiver_inst/rxrundisp_double_reg[0] ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/TRANSMITTER/CONFIG_K28p5_reg ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/RECEIVER/FROM_IDLE_D_reg ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/RECEIVER/K28p5_REG2_reg ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+INFO: [Synth 8-3332] Sequential element (\U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/RECEIVER/FROM_RX_K_reg ) is unused and will be removed from module gig_eth_pcs_pma_basex_v15_1.
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 657.367 ; gain = 495.289
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 657.367 ; gain = 495.289
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 657.367 ; gain = 495.289
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 657.367 ; gain = 495.289
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 657.367 ; gain = 495.289
+---------------------------------------------------------------------------------
+INFO: [Synth 8-139] cannot merge instances \U0/transceiver_inst/gtwizard_inst/U0/gt0_txresetfsm_i/sync_mmcm_lock_reclocked/data_sync_reg1  and \U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/sync_mmcm_lock_reclocked/data_sync_reg1  because of non-equivalent assertions
+INFO: [Synth 8-139] cannot merge instances \U0/transceiver_inst/gtwizard_inst/U0/gt0_txresetfsm_i/sync_cplllock/data_sync_reg1  and \U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/sync_cplllock/data_sync_reg1  because of non-equivalent assertions
+INFO: [Synth 8-139] cannot merge instances \U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/sync_mmcm_lock_reclocked/data_sync_reg1  and \U0/transceiver_inst/gtwizard_inst/U0/gt0_txresetfsm_i/sync_mmcm_lock_reclocked/data_sync_reg1  because of non-equivalent assertions
+INFO: [Synth 8-139] cannot merge instances \U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/sync_cplllock/data_sync_reg1  and \U0/transceiver_inst/gtwizard_inst/U0/gt0_txresetfsm_i/sync_cplllock/data_sync_reg1  because of non-equivalent assertions
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 657.367 ; gain = 495.289
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-139] cannot merge instances \U0/transceiver_inst/gtwizard_inst/U0/gt0_txresetfsm_i/sync_mmcm_lock_reclocked/data_sync_reg1  and \U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/sync_mmcm_lock_reclocked/data_sync_reg1  because of non-equivalent assertions
+INFO: [Synth 8-139] cannot merge instances \U0/transceiver_inst/gtwizard_inst/U0/gt0_txresetfsm_i/sync_cplllock/data_sync_reg1  and \U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/sync_cplllock/data_sync_reg1  because of non-equivalent assertions
+INFO: [Synth 8-139] cannot merge instances \U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/sync_mmcm_lock_reclocked/data_sync_reg1  and \U0/transceiver_inst/gtwizard_inst/U0/gt0_txresetfsm_i/sync_mmcm_lock_reclocked/data_sync_reg1  because of non-equivalent assertions
+INFO: [Synth 8-139] cannot merge instances \U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/sync_cplllock/data_sync_reg1  and \U0/transceiver_inst/gtwizard_inst/U0/gt0_txresetfsm_i/sync_cplllock/data_sync_reg1  because of non-equivalent assertions
+INFO: [Synth 8-139] cannot merge instances \U0/transceiver_inst/gtwizard_inst/U0/gt0_txresetfsm_i/sync_mmcm_lock_reclocked/data_sync_reg1  and \U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/sync_mmcm_lock_reclocked/data_sync_reg1  because of non-equivalent assertions
+INFO: [Synth 8-139] cannot merge instances \U0/transceiver_inst/gtwizard_inst/U0/gt0_txresetfsm_i/sync_cplllock/data_sync_reg1  and \U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/sync_cplllock/data_sync_reg1  because of non-equivalent assertions
+INFO: [Synth 8-139] cannot merge instances \U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/sync_mmcm_lock_reclocked/data_sync_reg1  and \U0/transceiver_inst/gtwizard_inst/U0/gt0_txresetfsm_i/sync_mmcm_lock_reclocked/data_sync_reg1  because of non-equivalent assertions
+INFO: [Synth 8-139] cannot merge instances \U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/sync_cplllock/data_sync_reg1  and \U0/transceiver_inst/gtwizard_inst/U0/gt0_txresetfsm_i/sync_cplllock/data_sync_reg1  because of non-equivalent assertions
+INFO: [Synth 8-139] cannot merge instances \U0/transceiver_inst/gtwizard_inst/U0/gt0_txresetfsm_i/sync_mmcm_lock_reclocked/data_sync_reg1  and \U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/sync_mmcm_lock_reclocked/data_sync_reg1  because of non-equivalent assertions
+INFO: [Synth 8-139] cannot merge instances \U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/sync_mmcm_lock_reclocked/data_sync_reg1  and \U0/transceiver_inst/gtwizard_inst/U0/gt0_txresetfsm_i/sync_mmcm_lock_reclocked/data_sync_reg1  because of non-equivalent assertions
+INFO: [Synth 8-139] cannot merge instances \U0/transceiver_inst/gtwizard_inst/U0/gt0_txresetfsm_i/sync_cplllock/data_sync_reg1  and \U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/sync_cplllock/data_sync_reg1  because of non-equivalent assertions
+INFO: [Synth 8-139] cannot merge instances \U0/transceiver_inst/gtwizard_inst/U0/gt0_rxresetfsm_i/sync_cplllock/data_sync_reg1  and \U0/transceiver_inst/gtwizard_inst/U0/gt0_txresetfsm_i/sync_cplllock/data_sync_reg1  because of non-equivalent assertions
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 657.367 ; gain = 495.289
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 657.367 ; gain = 495.289
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 657.367 ; gain = 495.289
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 657.367 ; gain = 495.289
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register:
++----------------------------+----------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name                 | RTL Name                                                                               | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++----------------------------+----------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|gig_eth_pcs_pma_basex_v15_1 | U0/gig_eth_pcs_pma_basex_v15_1_core/gpcs_pma_inst/RECEIVER/RXDATA_REG5_reg[7]          | 5      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|gig_eth_pcs_pma_basex_v15_1 | U0/transceiver_inst/gtwizard_inst/U0/gtwizard_i/gt0_GTWIZARD_i/cpllpd_wait_reg[95]     | 96     | 1     | NO           | NO                 | YES               | 0      | 3       | 
+|gig_eth_pcs_pma_basex_v15_1 | U0/transceiver_inst/gtwizard_inst/U0/gtwizard_i/gt0_GTWIZARD_i/cpllreset_wait_reg[127] | 128    | 1     | NO           | NO                 | YES               | 0      | 4       | 
++----------------------------+----------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |BUFG          |     1|
+|2     |BUFH          |     1|
+|3     |CARRY4        |    38|
+|4     |GTXE2_CHANNEL |     1|
+|5     |LUT1          |   142|
+|6     |LUT2          |    65|
+|7     |LUT3          |    71|
+|8     |LUT4          |    67|
+|9     |LUT5          |    74|
+|10    |LUT6          |   119|
+|11    |MUXF7         |     4|
+|12    |SRL16         |     2|
+|13    |SRL16E        |     8|
+|14    |SRLC32E       |     7|
+|15    |FD            |   114|
+|16    |FDCE          |    16|
+|17    |FDP           |    24|
+|18    |FDPE          |     2|
+|19    |FDRE          |   510|
+|20    |FDSE          |    22|
++------+--------------+------+
+
+Report Instance Areas: 
++------+-----------------------------------------+--------------------------------------------------------------+------+
+|      |Instance                                 |Module                                                        |Cells |
++------+-----------------------------------------+--------------------------------------------------------------+------+
+|1     |top                                      |                                                              |  1288|
+|2     |  U0                                     |gig_eth_pcs_pma_basex_v15_1_block                             |  1288|
+|3     |    gig_eth_pcs_pma_basex_v15_1_core     |gig_ethernet_pcs_pma_v14_3__parameterized0                    |   383|
+|4     |      gpcs_pma_inst                      |GPCS_PMA_GEN                                                  |   383|
+|5     |        RECEIVER                         |RX__parameterized0                                            |   149|
+|6     |        SYNCHRONISATION                  |SYNCHRONISE                                                   |    33|
+|7     |        SYNC_SIGNAL_DETECT               |sync_block__parameterized0                                    |     7|
+|8     |        TRANSMITTER                      |TX__parameterized0                                            |   125|
+|9     |    sync_block_reset_done                |gig_eth_pcs_pma_basex_v15_1_sync_block__parameterized0        |     6|
+|10    |    transceiver_inst                     |gig_eth_pcs_pma_basex_v15_1_transceiver__parameterized0       |   898|
+|11    |      gtwizard_inst                      |gig_eth_pcs_pma_basex_v15_1_GTWIZARD__parameterized0          |   655|
+|12    |        U0                               |gig_eth_pcs_pma_basex_v15_1_GTWIZARD_init__parameterized0     |   655|
+|13    |          cpll_reset_sync                |gig_eth_pcs_pma_basex_v15_1_reset_sync_3                      |     7|
+|14    |          gt0_rxresetfsm_i               |gig_eth_pcs_pma_basex_v15_1_RX_STARTUP_FSM__parameterized0    |   323|
+|15    |            sync_RXRESETDONE             |gig_eth_pcs_pma_basex_v15_1_sync_block__parameterized0_11     |     6|
+|16    |            sync_cplllock                |gig_eth_pcs_pma_basex_v15_1_sync_block__parameterized0_12     |    10|
+|17    |            sync_data_valid              |gig_eth_pcs_pma_basex_v15_1_sync_block__parameterized0_13     |    12|
+|18    |            sync_mmcm_lock_reclocked     |gig_eth_pcs_pma_basex_v15_1_sync_block__parameterized0_14     |     8|
+|19    |            sync_run_phase_alignment_int |gig_eth_pcs_pma_basex_v15_1_sync_block__parameterized0_15     |     6|
+|20    |            sync_time_out_wait_bypass    |gig_eth_pcs_pma_basex_v15_1_sync_block__parameterized0_16     |     6|
+|21    |            sync_tx_fsm_reset_done_int   |gig_eth_pcs_pma_basex_v15_1_sync_block__parameterized0_17     |     6|
+|22    |          gt0_txresetfsm_i               |gig_eth_pcs_pma_basex_v15_1_TX_STARTUP_FSM__parameterized0    |   241|
+|23    |            sync_TXRESETDONE             |gig_eth_pcs_pma_basex_v15_1_sync_block__parameterized0_5      |     6|
+|24    |            sync_cplllock                |gig_eth_pcs_pma_basex_v15_1_sync_block__parameterized0_6      |    13|
+|25    |            sync_mmcm_lock_reclocked     |gig_eth_pcs_pma_basex_v15_1_sync_block__parameterized0_7      |     8|
+|26    |            sync_run_phase_alignment_int |gig_eth_pcs_pma_basex_v15_1_sync_block__parameterized0_8      |     6|
+|27    |            sync_time_out_wait_bypass    |gig_eth_pcs_pma_basex_v15_1_sync_block__parameterized0_9      |     6|
+|28    |            sync_tx_fsm_reset_done_int   |gig_eth_pcs_pma_basex_v15_1_sync_block__parameterized0_10     |     6|
+|29    |          gtwizard_i                     |gig_eth_pcs_pma_basex_v15_1_GTWIZARD_multi_gt__parameterized0 |    29|
+|30    |            gt0_GTWIZARD_i               |gig_eth_pcs_pma_basex_v15_1_GTWIZARD_GT__parameterized0       |    29|
+|31    |          sync_block_gtrxreset           |gig_eth_pcs_pma_basex_v15_1_sync_block__parameterized0_4      |     6|
+|32    |      reclock_encommaalign               |gig_eth_pcs_pma_basex_v15_1_reset_sync                        |     6|
+|33    |      reclock_rxreset                    |gig_eth_pcs_pma_basex_v15_1_reset_sync_0                      |     6|
+|34    |      reclock_txreset                    |gig_eth_pcs_pma_basex_v15_1_reset_sync_1                      |     6|
+|35    |      reset_wtd_timer                    |gig_eth_pcs_pma_basex_v15_1_reset_wtd_timer                   |    78|
+|36    |      sync_block_data_valid              |gig_eth_pcs_pma_basex_v15_1_sync_block__parameterized0_2      |     6|
++------+-----------------------------------------+--------------------------------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 657.367 ; gain = 495.289
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:39 . Memory (MB): peak = 657.367 ; gain = 91.352
+Synthesis Optimization Complete : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 657.367 ; gain = 495.289
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 178 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_ooc.xdc]
+Finished Parsing XDC File [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1_ooc.xdc]
+Parsing XDC File [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_eth_pcs_pma_basex_v15_1_board.xdc]
+Finished Parsing XDC File [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_eth_pcs_pma_basex_v15_1_board.xdc]
+Parsing XDC File [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1.xdc]
+Finished Parsing XDC File [c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/synth/gig_eth_pcs_pma_basex_v15_1.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 140 instances were transformed.
+  FD => FDRE: 114 instances
+  FDP => FDPE: 24 instances
+  SRL16 => SRL16E: 2 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+212 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 657.367 ; gain = 458.184
+# rename_ref -prefix_all gig_eth_pcs_pma_basex_v15_1_
+INFO: [Coretcl 2-1174] Renamed 35 cell refs.
+# write_checkpoint -noxdef gig_eth_pcs_pma_basex_v15_1.dcp
+# catch { report_utilization -file gig_eth_pcs_pma_basex_v15_1_utilization_synth.rpt -pb gig_eth_pcs_pma_basex_v15_1_utilization_synth.pb }
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.082 . Memory (MB): peak = 657.367 ; gain = 0.000
+# if { [catch {
+#   file copy -force C:/VivadoProject/kc705_ipbus/kc705_ipbus.runs/gig_eth_pcs_pma_basex_v15_1_synth_1/gig_eth_pcs_pma_basex_v15_1.dcp c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_eth_pcs_pma_basex_v15_1.dcp
+# } _RESULT ] } { 
+#   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
+# }
+# if { [catch {
+#   write_verilog -force -mode synth_stub c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_eth_pcs_pma_basex_v15_1_stub.v
+# } _RESULT ] } { 
+#   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
+# }
+# if { [catch {
+#   write_vhdl -force -mode synth_stub c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_eth_pcs_pma_basex_v15_1_stub.vhdl
+# } _RESULT ] } { 
+#   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
+# }
+# if { [catch {
+#   write_verilog -force -mode funcsim c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_eth_pcs_pma_basex_v15_1_funcsim.v
+# } _RESULT ] } { 
+#   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
+# }
+# if { [catch {
+#   write_vhdl -force -mode funcsim c:/VivadoProject/kc705_ipbus/kc705_ipbus.srcs/sources_1/ip/gig_eth_pcs_pma_basex_v15_1/gig_eth_pcs_pma_basex_v15_1_funcsim.vhdl
+# } _RESULT ] } { 
+#   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
+# }
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 11 14:57:17 2016...

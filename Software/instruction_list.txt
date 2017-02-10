@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # List of the desired instructions.
 # 1 BC -> 20 ns
 # 4 BC -> 100 ns
@@ -37,3 +38,34 @@
 
 
 
+=======
+# List of the desired instructions.
+# 1 BC -> 20 ns
+# 4 BC -> 100 ns
+# 40 BC -> 1 us
+# Slow control:
+# Syntax: 'Time' Write 'Reg' 'Value/Increment(if in a repeat)'
+#         'Time' Read 'Address'
+# FCC:
+# Syntax:
+#	  'Time' Send 'Command'
+#	  'Time' Send_Repeat 'Command' '# times to repeat' 'interval'
+# Repeat:
+# Syntax:
+#         'Time' Repeat '# times to repeat'
+#         'Time' End_Repeat
+
+
+
+#20 Write cal0 1
+#200 Write ST 1
+
+200 Write RUN 1
+200 Send RunMode
+
+1000 Send Calpulse
+100 Send LV1A
+
+
+
+>>>>>>> 85a685027fd756c5ee9a98d099b377513beace32

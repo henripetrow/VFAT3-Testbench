@@ -1,0 +1,5 @@
+# compile vhdl design source files
+vhdl work  "../../../project_ipbus_vivado.srcs/sim_1/new/top_tb.vhd"
+
+# Do not sort compile order
+nosort
