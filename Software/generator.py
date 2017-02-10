@@ -6,7 +6,7 @@ from instruction_object import *
 repeat_flag = 0
 repeat_times = 1
 
-
+transid = 3                                         ### Check that it is not too big.!!
 BCcounter = 0
 
 instruction_list = instruction_object()
@@ -48,7 +48,9 @@ with open('instruction_list.txt', 'r') as f:
                     print "-Write to Slow Control. Register: %s, Data: %s" % (split_line[2], split_line[3])
                     instruction_list.clear()
                     instruction_list.add("WRITE", BCd, reg, value)
-                    BCcounter = instruction_list.write_to_file(BCcounter)
+                    values = instruction_list.write_to_file(BCcounter,transid)
+                    BCcounter = values[0]
+                    transid = values[1]
                     instruction_list.clear()
 
 
@@ -69,7 +71,9 @@ with open('instruction_list.txt', 'r') as f:
                 else:
                     instruction_list.clear()
                     instruction_list.add("READ", BCd, addr, 0)
-                    BCcounter = instruction_list.write_to_file(BCcounter)
+                    values = instruction_list.write_to_file(BCcounter,transid)
+                    BCcounter = values[0]
+                    transid = values[1]
                     instruction_list.clear()
 
 
@@ -83,7 +87,9 @@ with open('instruction_list.txt', 'r') as f:
                 else:
                     instruction_list.clear()
                     instruction_list.add("FCC", BCd, command, 0)
-                    BCcounter = instruction_list.write_to_file(BCcounter)
+                    values = instruction_list.write_to_file(BCcounter,transid)
+                    BCcounter = values[0]
+                    transid = values[1]
                     instruction_list.clear()
 
             # Start a repeat loop.
@@ -101,7 +107,9 @@ with open('instruction_list.txt', 'r') as f:
             elif split_line[1] == "End_Repeat":
                 repeat_flag = 0
                 for i in xrange(repeat_times):
-                    BCcounter = instruction_list.write_to_file(BCcounter)
+                    values = instruction_list.write_to_file(BCcounter,transid)
+                    BCcounter = values[0]
+                    transid = values[1]
                 instruction_list.clear()
                 repeat_times = 0
                 print "Ending repeat"
@@ -134,7 +142,9 @@ with open('instruction_list.txt', 'r') as f:
                     instruction_list.add("FCC", BCd, command, 0)
                     for i in xrange(repeat-1):
 			instruction_list.add("FCC", interval, command, 0)
-                    BCcounter = instruction_list.write_to_file(BCcounter)
+                    values = instruction_list.write_to_file(BCcounter,transid)
+                    BCcounter = values[0]
+                    transid = values[1]
                     instruction_list.clear()
 
 

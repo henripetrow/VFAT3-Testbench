@@ -1,3 +1,9 @@
+############################################
+# Created by Henri Petrow 2017
+# Lappeenranta University of Technology
+###########################################
+
+
 from VFAT3_registers import *
 from SC_encode import *
 
@@ -7,7 +13,6 @@ from SC_encode import *
 
 
 class instruction_object:
-
 
     def __init__(self):
         self.instruction_list = []
@@ -28,12 +33,11 @@ class instruction_object:
 
 
 
-    def write_to_file(self, BCcounter):
+    def write_to_file(self, BCcounter,transaction_ID):
         for line in self.instruction_list:
             command_type = line[0]
             BCd = line[1]
-
-
+  
             if command_type == "FCC":
                 command = line[2]
                 if self.humanreadable == 0:
@@ -49,8 +53,9 @@ class instruction_object:
             if command_type == "READ":
                 data = 0
                 addr = line[2]
-
-                ipbus = IPbus14_package(addr,data,1,0,BCcounter)
+                transaction_ID += 1
+                ipbus = IPbus14_package(addr,data,1,0,transaction_ID)
+                paketti = HDLC_package(ipbus)
                 crc = crc_remainder(paketti)
                 paketti.append(crc)
                 paketti = binary_to_sc(paketti)
@@ -72,7 +77,7 @@ class instruction_object:
                     BCcounter = BCcounter + 1
 
 
-            if command_type == "WRITE" or command_type == "WRITE_REPEAT":
+            if command_type == "WRITE" or command_type == "WRITE_REPEAT":   			########## Need a read repeat.
 
                 reg = line[2]
 
@@ -99,24 +104,28 @@ class instruction_object:
                 if new_value < 0 or new_value > 2**(size)-1:
                     print "-IGNORED: Value out of the range of the register: %d" % new_value
                     continue
-                if new_value == current_value:
-                    print "-IGNORED: New value: %d is the same as the current value: %d" % (new_value,current_value)
-                    continue
+               # if new_value == current_value:
+                #    print "-IGNORED: New value: %d is the same as the current value: %d" % (new_value,current_value)
+                 #   continue
 
                 register[addr].reg_array[variable][0] = new_value
                 
                 data = []
+                data_intermediate = []
                 for x in register[addr].reg_array:
-                   data.extend(dec_to_bin_with_stuffing(x[0], x[1]))
-
+                   data_intermediate = dec_to_bin_with_stuffing(x[0], x[1])
+                   data_intermediate.reverse()
+                   data.extend(data_intermediate)
+                BCcounter = BCcounter + BCd
                 data.reverse()
-                ipbus = IPbus14_package(addr,data,1,1,BCcounter)
+                transaction_ID += 1
+                ipbus = IPbus14_package(addr,data,1,1,transaction_ID)
                 paketti = HDLC_package(ipbus)
 
  
 
                 paketti = binary_to_sc(paketti)
-                BCcounter = BCcounter + BCd
+
 
                 if self.humanreadable == 1:
                     BCvalue = BCd
@@ -137,7 +146,7 @@ class instruction_object:
                     else:
                         self.write("00000000000001%s\n" % FCC_LUT[paketti[x]])    # Rest instructions will be written with increment 1
                     BCcounter = BCcounter + 1
-        return BCcounter
+        return BCcounter, transaction_ID
 
 
 

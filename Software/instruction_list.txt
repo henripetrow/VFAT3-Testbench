@@ -16,14 +16,24 @@
 
 
 
-#20 Write cal0 1
-#200 Write ST 1
+
+
 
 200 Write RUN 1
-200 Send RunMode
 
-1000 Send Calpulse
-100 Send LV1A
+200 Write Monitor_Sel 4
+200 Write PRE_I_BSF 0
+
+200 Repeat 63
+200 Write PRE_I_BLCC 4
+200 Read 131072
+200 Read 131073
+200 End_Repeat
+
+
+
+
+
 
 
 

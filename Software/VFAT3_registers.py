@@ -2,10 +2,10 @@ register = [None]*65536
 
 class GBL_CFG_CH:
     def __init__(self):
-        self.cal = [1,1]
-        self.mask = [1,1]
-        self.zcc_dac = [4,7]
-        self.arm_dac = [5,7]
+        self.cal = [0,1]
+        self.mask = [0,1]
+        self.zcc_dac = [0,7]
+        self.arm_dac = [0,7]
 
         self.reg_array = [self.cal,self.mask,self.zcc_dac,self.arm_dac]
 
@@ -82,7 +82,7 @@ register[132] = GBL_CFG_CTR_3()
 
 class GBL_CFG_CTR_4:
     def __init__(self):
-        self.empty1 = [0, 1]
+        self.empty1 = [0, 6]
         self.VREF_ADC = [1,2]
         self.Mon_Gain = [0,1]
         self.empty2 = [0, 1]
@@ -250,9 +250,11 @@ class ADC_READ_0:
     def __init__(self):
         self.ADC_0 = 0
 
+
 class ADC_READ_1:
     def __init__(self):
         self.ADC_1 = 0
+
 
 
 
