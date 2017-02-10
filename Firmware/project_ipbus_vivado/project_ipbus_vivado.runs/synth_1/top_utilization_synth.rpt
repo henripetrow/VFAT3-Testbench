@@ -1,11 +1,11 @@
-Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2014.3.1 (win64) Build 1034051 Fri Oct  3 17:14:12 MDT 2014
-| Date         : Thu Feb 09 13:24:02 2017
-| Host         : DAQ-PC running 64-bit Service Pack 1  (build 7601)
+| Tool Version : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
+| Date         : Thu Feb 09 16:23:26 2017
+| Host         : Shinsekai running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
-| Device       : xc7k325t
+| Device       : 7k325tffg900-2
 | Design State : Synthesized
 -------------------------------------------------------------------------------------------------
 
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 2433 |     0 |    203800 |  1.19 |
-|   LUT as Logic             | 2368 |     0 |    203800 |  1.16 |
-|   LUT as Memory            |   65 |     0 |     64000 |  0.10 |
+| Slice LUTs*                | 2451 |     0 |    203800 |  1.20 |
+|   LUT as Logic             | 2388 |     0 |    203800 |  1.17 |
+|   LUT as Memory            |   63 |     0 |     64000 |  0.10 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
-|     LUT as Shift Register  |   65 |     0 |           |       |
-| Slice Registers            | 3179 |     0 |    407600 |  0.77 |
-|   Register as Flip Flop    | 3179 |     0 |    407600 |  0.77 |
+|     LUT as Shift Register  |   63 |     0 |           |       |
+| Slice Registers            | 3202 |     0 |    407600 |  0.79 |
+|   Register as Flip Flop    | 3202 |     0 |    407600 |  0.79 |
 |   Register as Latch        |    0 |     0 |    407600 |  0.00 |
 | F7 Muxes                   |    3 |     0 |    101900 | <0.01 |
 | F8 Muxes                   |    0 |     0 |     50950 |  0.00 |
@@ -57,9 +57,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 48    |          Yes |           - |        Reset |
-| 388   |          Yes |         Set |            - |
-| 2743  |          Yes |       Reset |            - |
+| 45    |          Yes |           - |        Reset |
+| 410   |          Yes |         Set |            - |
+| 2747  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -69,8 +69,8 @@ Table of Contents
 +-------------------+------+-------+-----------+-------+
 |     Site Type     | Used | Fixed | Available | Util% |
 +-------------------+------+-------+-----------+-------+
-| Block RAM Tile    |   19 |     0 |       445 |  4.26 |
-|   RAMB36/FIFO*    |   19 |     0 |       445 |  4.26 |
+| Block RAM Tile    |   19 |     0 |       445 |  4.27 |
+|   RAMB36/FIFO*    |   19 |     0 |       445 |  4.27 |
 |     RAMB36E1 only |   19 |       |           |       |
 |   RAMB18          |    0 |     0 |       890 |  0.00 |
 +-------------------+------+-------+-----------+-------+
@@ -101,7 +101,7 @@ Table of Contents
 | OUT_FIFO                    |    0 |     0 |        40 |  0.00 |
 | IN_FIFO                     |    0 |     0 |        40 |  0.00 |
 | IDELAYCTRL                  |    0 |     0 |        10 |  0.00 |
-| IBUFGDS                     |    0 |     0 |       480 |  0.00 |
+| IBUFDS                      |    0 |     0 |       480 |  0.00 |
 | GTXE2_COMMON                |    0 |     0 |         4 |  0.00 |
 | GTXE2_CHANNEL               |    0 |     0 |        16 |  0.00 |
 | PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |        40 |  0.00 |
@@ -125,7 +125,7 @@ Table of Contents
 | MMCME2_ADV |    2 |     0 |        10 | 20.00 |
 | PLLE2_ADV  |    0 |     0 |        10 |  0.00 |
 | BUFMRCE    |    0 |     0 |        20 |  0.00 |
-| BUFHCE     |    3 |     0 |       168 |  1.78 |
+| BUFHCE     |    3 |     0 |       168 |  1.79 |
 | BUFR       |    0 |     0 |        40 |  0.00 |
 +------------+------+-------+-----------+-------+
 
@@ -154,17 +154,17 @@ Table of Contents
 +-------------+------+---------------------+
 |   Ref Name  | Used | Functional Category |
 +-------------+------+---------------------+
-| FDRE        | 2743 |        Flop & Latch |
-| LUT6        |  933 |                 LUT |
-| LUT5        |  679 |                 LUT |
-| LUT2        |  432 |                 LUT |
-| FDSE        |  388 |        Flop & Latch |
-| LUT3        |  368 |                 LUT |
-| LUT4        |  195 |                 LUT |
-| LUT1        |  174 |                 LUT |
+| FDRE        | 2747 |        Flop & Latch |
+| LUT6        |  864 |                 LUT |
+| LUT5        |  587 |                 LUT |
+| LUT3        |  492 |                 LUT |
+| LUT2        |  468 |                 LUT |
+| FDSE        |  410 |        Flop & Latch |
+| LUT4        |  304 |                 LUT |
+| LUT1        |  175 |                 LUT |
 | CARRY4      |  101 |          CarryLogic |
-| SRL16E      |   62 |  Distributed Memory |
-| FDCE        |   48 |        Flop & Latch |
+| SRL16E      |   60 |  Distributed Memory |
+| FDCE        |   45 |        Flop & Latch |
 | RAMB36E1    |   19 |        Block Memory |
 | OBUF        |    5 |                  IO |
 | IBUF        |    5 |                  IO |
