@@ -81,7 +81,6 @@ def IPbus14_package(addr,data,wrds,typ,trans_ID):
 
     # Transaction_ID. 8 bits.
     transaction_ID = dec_to_bin_with_stuffing(trans_ID, 8)
-    transaction_ID = [1,0,0,0,0,0,0,0]
 
     ipbus_pack.extend(info_code)
 
@@ -105,10 +104,15 @@ def IPbus14_package(addr,data,wrds,typ,trans_ID):
         type_ID = [1,0,0,0,]
         ipbus_pack.extend(type_ID)
         ipbus_pack.extend(transaction_ID)
+        print(transaction_ID)
         ipbus_pack.extend(words)
+        print(words)
         ipbus_pack.extend(protocol_version)
+        print(protocol_version)
         ipbus_pack.extend(address)
+        print(address)
         ipbus_pack.extend(data)
+        print(data)
         ipbus_pack.extend(filler_16bits)
 
         
@@ -138,8 +142,7 @@ def crc_remainder(input_package):
         input_bitstring = input_package[(j*8):((j+1)*8)]
         input_bitstring.reverse()
         input_bitstring = ''.join(str(e) for e in input_bitstring)
-        print('Here')
-        print(input_bitstring)
+
 
 
 
@@ -150,7 +153,7 @@ def crc_remainder(input_package):
             crc_bin = crc_bin[2:]			#
             crc_len = len(crc_bin)			#
             crc_bin = (16-crc_len)*'0' + crc_bin	#
-            print(crc_bin)
+ 
 
             if int(input_bitstring[i],2)^int(crc_bin[0],2) == 1:
 
