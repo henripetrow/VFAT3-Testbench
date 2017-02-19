@@ -6,4 +6,4 @@
 
 tk_data_rd              0x50000000  ffffffff  	1  	1
 
-test			0x00000008  ffffffff  	1  	1
+test			0x00000002  ffffffff  	1  	1
