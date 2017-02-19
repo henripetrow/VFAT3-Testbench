@@ -169,7 +169,7 @@ begin
 		
 	udp_en <= cfg(80) or enable;
 
-	rarp_en <= cfg(81) or RARP_select;
+	rarp_en <= '0';--cfg(81) or RARP_select;
 
 	stretch_rx: entity work.stretcher port map(
 		clk => mac_clk,
@@ -182,6 +182,8 @@ begin
 		d => pkt_tx_i,
 		q => pkt_tx_led
 	);
+	
+	
 	
 	pkt_rx <= pkt_rx_i;
 	pkt_tx <= pkt_tx_i;

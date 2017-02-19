@@ -113,7 +113,7 @@ begin
 		);
 		
 	mac_addr <= X"020ddba11599"; -- Careful here, arbitrary addresses do not always work
-	ip_addr <= X"c0a80008"; -- 192.168.0.8
+	ip_addr <= X"c0a81ec1"; -- 192.168.30.193
 
 -- ipbus slaves live in the entity below, and can expose top-level ports
 -- The ipbus fabric is instantiated within.

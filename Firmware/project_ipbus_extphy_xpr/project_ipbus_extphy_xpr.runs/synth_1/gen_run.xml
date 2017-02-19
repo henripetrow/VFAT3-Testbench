@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1487241436">
+<GenRun Id="synth_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1487370845">
   <File Type="RDS-PROPCONSTRS" Name="top_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="top.tcl"/>
   <File Type="RDS-RDS" Name="top.vds"/>
@@ -10,14 +10,14 @@
   <File Type="VDS-TIMING-PB" Name="top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../ipbus_extphy/ipcore_dir/tri_mode_eth_mac_v5_4.xco">
+    <File Path="$PPRDIR/../../../../Vivado/IPBUS/ipbus_extphy/ipcore_dir/tri_mode_eth_mac_v5_4.xco">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../ipbus_extphy/ipcore_dir/mac_fifo_axi4.xco">
+    <File Path="$PPRDIR/../../../../Vivado/IPBUS/ipbus_extphy/ipcore_dir/mac_fifo_axi4.xco">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -192,7 +192,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../ipbus_extphy/ipcore_dir/emac_hostbus_decl.vhd">
+    <File Path="$PPRDIR/../../../../Vivado/IPBUS/ipbus_extphy/ipcore_dir/emac_hostbus_decl.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -216,8 +216,10 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../ipbus/firmware/slaves/hdl/ipbus_peephole_ram.vhd">
+    <File Path="$PSRCDIR/sources_1/imports/hdl/ipbus_peephole_ram.vhd">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../ipbus/firmware/slaves/hdl/ipbus_peephole_ram.vhd"/>
+        <Attr Name="ImportTime" Val="1485967396"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -288,7 +290,25 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../project_ipbus_extphy/import_ise_summary.txt"/>
+    <File Path="$PPRDIR/../../../../Vivado/IPBUS/project_ipbus_extphy/import_ise_summary.txt"/>
+    <File Path="$PSRCDIR/sources_1/new/fifo_out.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/fifo_in.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/slave_vfat3.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="top"/>
@@ -301,7 +321,7 @@
         <Attr Name="UserDisabled" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../../../../../AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc">
+    <File Path="$PPRDIR/../../../../../../../../AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

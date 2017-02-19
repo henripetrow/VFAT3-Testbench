@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="17" Path="C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Vivado/IPBUS/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.xpr">
+<Project Version="7" Minor="17" Path="C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="0722f66df8c9482dbaabf27812ab0afe"/>
@@ -54,21 +54,14 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../ipbus_extphy/ipcore_dir/tri_mode_eth_mac_v5_4.xco">
+      <File Path="$PPRDIR/../../../../Vivado/IPBUS/ipbus_extphy/ipcore_dir/tri_mode_eth_mac_v5_4.xco">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="tri_mode_eth_mac_v5_4.xco" FileRelPathName="tri_mode_eth_mac_v5_4.vhd"/>
-        <CompFileExtendedInfo CompFileName="tri_mode_eth_mac_v5_4.xco" FileRelPathName="tri_mode_eth_mac_v5_4.veo"/>
-        <CompFileExtendedInfo CompFileName="tri_mode_eth_mac_v5_4.xco" FileRelPathName="tri_mode_eth_mac_v5_4.ngc"/>
-        <CompFileExtendedInfo CompFileName="tri_mode_eth_mac_v5_4.xco" FileRelPathName="tri_mode_eth_mac_v5_4.vho"/>
-        <CompFileExtendedInfo CompFileName="tri_mode_eth_mac_v5_4.xco" FileRelPathName="tri_mode_eth_mac_v5_4.v"/>
-        <CompFileExtendedInfo CompFileName="tri_mode_eth_mac_v5_4.xco" FileRelPathName="tri_mode_eth_mac_v5_4.asy"/>
-        <CompFileExtendedInfo CompFileName="tri_mode_eth_mac_v5_4.xco" FileRelPathName="tri_mode_eth_mac_v5_4.xml"/>
       </File>
-      <File Path="$PPRDIR/../ipbus_extphy/ipcore_dir/mac_fifo_axi4.xco">
+      <File Path="$PPRDIR/../../../../Vivado/IPBUS/ipbus_extphy/ipcore_dir/mac_fifo_axi4.xco">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -243,7 +236,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../ipbus_extphy/ipcore_dir/emac_hostbus_decl.vhd">
+      <File Path="$PPRDIR/../../../../Vivado/IPBUS/ipbus_extphy/ipcore_dir/emac_hostbus_decl.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -267,8 +260,10 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../ipbus/firmware/slaves/hdl/ipbus_peephole_ram.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/hdl/ipbus_peephole_ram.vhd">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../ipbus/firmware/slaves/hdl/ipbus_peephole_ram.vhd"/>
+          <Attr Name="ImportTime" Val="1485967396"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -339,7 +334,25 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../project_ipbus_extphy/import_ise_summary.txt"/>
+      <File Path="$PPRDIR/../../../../Vivado/IPBUS/project_ipbus_extphy/import_ise_summary.txt"/>
+      <File Path="$PSRCDIR/sources_1/new/fifo_out.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/fifo_in.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/slave_vfat3.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="top"/>
@@ -352,7 +365,7 @@
           <Attr Name="UserDisabled" Val="1"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../../../../../AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc">
+      <File Path="$PPRDIR/../../../../../../../../AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>

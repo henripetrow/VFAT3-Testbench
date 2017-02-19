@@ -25,7 +25,7 @@ end slaves;
 
 architecture rtl of slaves is
 
-	constant NSLV: positive := 6;
+	constant NSLV: positive := 7;
 	signal ipbw: ipb_wbus_array(NSLV-1 downto 0);
 	signal ipbr, ipbr_d: ipb_rbus_array(NSLV-1 downto 0);
 	signal ctrl_reg: std_logic_vector(31 downto 0);
@@ -119,6 +119,14 @@ begin
 			reset => ipb_rst,
 			ipbus_in => ipbw(5),
 			ipbus_out => ipbr(5)
+		);
+		
+	slave_vfat3: entity work.slave_vfat3
+		port map(
+			clk => ipb_clk,
+			reset => ipb_rst,
+			ipbus_in => ipbw(6),
+			ipbus_out => ipbr(6)
 		);
 
 end rtl;
