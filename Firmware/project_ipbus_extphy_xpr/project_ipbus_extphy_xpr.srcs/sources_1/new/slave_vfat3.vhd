@@ -24,7 +24,10 @@ use ieee.numeric_std.all;
 use work.ipbus.all;
 
 entity slave_vfat3 is
-	generic(data_width : natural := 32);
+	generic(
+		packet_width 	: natural := 32;
+		data_width 		: natural := 4
+		);
 	port(
 		clk: in STD_LOGIC;
 		reset: in STD_LOGIC;
@@ -37,7 +40,7 @@ end slave_vfat3;
 architecture rtl of slave_vfat3 is
 
 	signal data_out_fifo	: std_logic_vector(data_width - 1 downto 0);
-	signal data_in_fifo		: std_logic_vector(data_width - 1 downto 0);
+	signal data_in_fifo		: std_logic_vector(packet_width - 1 downto 0);
 	signal fifo_in_full		: std_logic;
 	signal fifo_in_empty	: std_logic;
 	signal fifo_out_full	: std_logic;
@@ -54,11 +57,11 @@ begin
 			clk => clk,
 			reset => reset,
 			ipbus_in => ipbus_in,
+			ipbus_out => ipbus_out,
 			data_out => data_out_fifo,
 			full_flag => fifo_in_full,
 			empty_flag => fifo_in_empty,
-			write_en => fifo_in_w_en,
-			read_en => fifo_in_r_en
+			clk40 => clk -- should be the 40MHz clock !
 		);
 		
 	fifo_out: entity work.fifo_out

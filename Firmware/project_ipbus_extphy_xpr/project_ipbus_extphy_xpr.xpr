@@ -60,6 +60,13 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="tri_mode_eth_mac_v5_4.xco" FileRelPathName="tri_mode_eth_mac_v5_4.v"/>
+        <CompFileExtendedInfo CompFileName="tri_mode_eth_mac_v5_4.xco" FileRelPathName="tri_mode_eth_mac_v5_4.asy"/>
+        <CompFileExtendedInfo CompFileName="tri_mode_eth_mac_v5_4.xco" FileRelPathName="tri_mode_eth_mac_v5_4.vhd"/>
+        <CompFileExtendedInfo CompFileName="tri_mode_eth_mac_v5_4.xco" FileRelPathName="tri_mode_eth_mac_v5_4.ngc"/>
+        <CompFileExtendedInfo CompFileName="tri_mode_eth_mac_v5_4.xco" FileRelPathName="tri_mode_eth_mac_v5_4.vho"/>
+        <CompFileExtendedInfo CompFileName="tri_mode_eth_mac_v5_4.xco" FileRelPathName="tri_mode_eth_mac_v5_4.veo"/>
+        <CompFileExtendedInfo CompFileName="tri_mode_eth_mac_v5_4.xco" FileRelPathName="tri_mode_eth_mac_v5_4.xml"/>
       </File>
       <File Path="$PPRDIR/../../../../Vivado/IPBUS/ipbus_extphy/ipcore_dir/mac_fifo_axi4.xco">
         <FileInfo>
