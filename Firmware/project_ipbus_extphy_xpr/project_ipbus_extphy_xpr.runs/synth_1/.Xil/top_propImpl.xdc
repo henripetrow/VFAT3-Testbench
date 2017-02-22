@@ -3,8 +3,6 @@ set_property src_info {type:XDC file:1 line:11 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN AD12 [get_ports sysclk_p]
 set_property src_info {type:XDC file:1 line:15 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN AD11 [get_ports sysclk_n]
-set_property src_info {type:XDC file:1 line:31 export:INPUT save:INPUT read:READ} [current_design]
-set_false_path -from [all_fanout -endpoints_only -only_cells -flat -from [get_nets clk125]] -to [all_fanout -endpoints_only -flat -from [get_nets ipb_clk]]
 set_property src_info {type:XDC file:1 line:38 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN AB8 [get_ports {leds[0]}]
 set_property src_info {type:XDC file:1 line:42 export:INPUT save:INPUT read:READ} [current_design]

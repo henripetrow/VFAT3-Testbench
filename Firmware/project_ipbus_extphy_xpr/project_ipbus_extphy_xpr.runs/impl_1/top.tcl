@@ -52,6 +52,7 @@ set rc [catch {
   create_msg_db write_bitstream.pb
   open_checkpoint top_routed.dcp
   set_property webtalk.parent_dir C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.cache/wt [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   catch { write_mem_info -force top.mmi }
   write_bitstream -force -no_partial_bitfile top.bit 
   catch { write_sysdef -hwdef top.hwdef -bitfile top.bit -meminfo top.mmi -file top.sysdef }
