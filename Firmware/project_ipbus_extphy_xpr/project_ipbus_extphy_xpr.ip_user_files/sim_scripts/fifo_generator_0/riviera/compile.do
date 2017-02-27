@@ -4,10 +4,12 @@ vlib riviera
 vlib riviera/xil_defaultlib
 vlib riviera/xpm
 vlib riviera/fifo_generator_v13_1_2
+vlib riviera/work
 
 vmap xil_defaultlib riviera/xil_defaultlib
 vmap xpm riviera/xpm
 vmap fifo_generator_v13_1_2 riviera/fifo_generator_v13_1_2
+vmap work riviera/work
 
 vlog -work xil_defaultlib  -sv2k12 \
 "D:/Xilinx/Vivado/2016.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
@@ -25,8 +27,8 @@ vcom -work fifo_generator_v13_1_2 -93 \
 vlog -work fifo_generator_v13_1_2  -v2k5 \
 "../../../ipstatic/hdl/fifo_generator_v13_1_rfs.v" \
 
-vlog -work xil_defaultlib  -v2k5 \
+vlog -work work  -v2k5 \
 "../../../../project_ipbus_extphy_xpr.srcs/sources_1/ip/fifo_generator_0/sim/fifo_generator_0.v" \
 
-vlog -work xil_defaultlib "glbl.v"
+vlog -work work "glbl.v"
 

@@ -18,7 +18,8 @@ entity slaves is
 		eth_err_ctrl: out std_logic_vector(35 downto 0);
 		eth_err_stat: in std_logic_vector(47 downto 0) := X"000000000000";
 		pkt_rx: in std_logic := '0';
-		pkt_tx: in std_logic := '0'
+		pkt_tx: in std_logic := '0';
+		leds:	out std_logic_vector (7 downto 0)
 	);
 
 end slaves;
@@ -120,13 +121,15 @@ begin
 			ipbus_in => ipbw(5),
 			ipbus_out => ipbr(5)
 		);
-		
+
+ -- MY SLAVE
 	slave_vfat3: entity work.slave_vfat3
 		port map(
 			clk => ipb_clk,
 			reset => ipb_rst,
 			ipbus_in => ipbw(6),
-			ipbus_out => ipbr(6)
+			ipbus_out => ipbr(6),
+			leds		=> leds
 		);
 
 end rtl;

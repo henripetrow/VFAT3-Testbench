@@ -54,9 +54,8 @@
 ------------- Begin Cut here for COMPONENT Declaration ------ COMP_TAG
 COMPONENT fifo_generator_0
   PORT (
-    rst : IN STD_LOGIC;
-    wr_clk : IN STD_LOGIC;
-    rd_clk : IN STD_LOGIC;
+    clk : IN STD_LOGIC;
+    srst : IN STD_LOGIC;
     din : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     wr_en : IN STD_LOGIC;
     rd_en : IN STD_LOGIC;
@@ -65,7 +64,8 @@ COMPONENT fifo_generator_0
     almost_full : OUT STD_LOGIC;
     wr_ack : OUT STD_LOGIC;
     empty : OUT STD_LOGIC;
-    almost_empty : OUT STD_LOGIC
+    almost_empty : OUT STD_LOGIC;
+    valid : OUT STD_LOGIC
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
@@ -76,9 +76,8 @@ END COMPONENT;
 ------------- Begin Cut here for INSTANTIATION Template ----- INST_TAG
 your_instance_name : fifo_generator_0
   PORT MAP (
-    rst => rst,
-    wr_clk => wr_clk,
-    rd_clk => rd_clk,
+    clk => clk,
+    srst => srst,
     din => din,
     wr_en => wr_en,
     rd_en => rd_en,
@@ -87,7 +86,8 @@ your_instance_name : fifo_generator_0
     almost_full => almost_full,
     wr_ack => wr_ack,
     empty => empty,
-    almost_empty => almost_empty
+    almost_empty => almost_empty,
+    valid => valid
   );
 -- INST_TAG_END ------ End INSTANTIATION Template ---------
 

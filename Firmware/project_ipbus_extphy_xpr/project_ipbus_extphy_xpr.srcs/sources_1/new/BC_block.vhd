@@ -30,15 +30,17 @@ entity BC_block is
 		BC_width	: natural := 12
 	);
 	port(
-		rst 				: in std_logic;
-		clk 				: in std_logic;
-		BC					: out std_logic_vector(BC_width - 1 downto 0);
-		reset_BC			: in std_logic
+		rst 		: in std_logic;
+		clk 		: in std_logic;
+		BC			: out std_logic_vector(BC_width - 1 downto 0);
+		BCd			: out std_logic_vector(BC_width - 1 downto 0);
+		reset_BCd	: in std_logic
 	);
 end BC_block;
 
 architecture rtl of BC_block is
 		signal BC_int : std_logic_vector(BC_width - 1 downto 0);
+		signal BCd_int : std_logic_vector(BC_width - 1 downto 0);
 begin
 	
 	process(clk, rst)
@@ -48,15 +50,23 @@ begin
 			if rst = '1' then
 				BC_int <= (others => '0');
 				BC <= (others => '0');
+				BCd_int <= (others => '0');
+				BCd <= (others => '0');
 			else
-				if reset_BC = '0' then
-					BC_int <= std_logic_vector(unsigned(BC_int) + 1);
+				BC_int <= std_logic_vector(unsigned(BC_int) + 1);
+				if reset_BCd = '0' then
+					BCd_int <= std_logic_vector(unsigned(BCd_int) + 1);
+					
+					-- Still have to manage the overflow
+					
+					
 				else
 					BC_int <= (others => '0');
 				end if;					
 			end if; --if rst
 			
 			BC <= BC_int;
+			BCd <= BCd_int;
 			
 		end if; --if rising edge
 	end process;

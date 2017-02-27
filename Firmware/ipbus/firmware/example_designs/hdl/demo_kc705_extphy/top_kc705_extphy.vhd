@@ -14,7 +14,8 @@ use work.ipbus.ALL;
 
 entity top is port(
 	sysclk_p, sysclk_n: in STD_LOGIC;
-	leds: out STD_LOGIC_VECTOR(3 downto 0);
+	swb: in STD_LOGIC;
+	leds: out STD_LOGIC_VECTOR(7 downto 0);
 	gmii_gtx_clk, gmii_tx_en, gmii_tx_er : out STD_LOGIC;
 	gmii_txd : out STD_LOGIC_VECTOR(7 downto 0);
 	gmii_rx_clk, gmii_rx_dv, gmii_rx_er: in STD_LOGIC;
@@ -53,7 +54,7 @@ begin
 			onehz => onehz
 		);
 		
-	leds <= (pkt_rx_led, pkt_tx_led, locked, onehz);
+	--leds <= (pkt_rx_led, pkt_tx_led, locked, onehz);
 	
 --	Ethernet MAC core and PHY interface
 -- In this version, consists of hard MAC core and GMII interface to external PHY
@@ -113,7 +114,7 @@ begin
 		);
 		
 	mac_addr <= X"020ddba11599"; -- Careful here, arbitrary addresses do not always work
-	ip_addr <= X"c0a81ec1"; -- 192.168.30.193
+	ip_addr <= X"c0a800de"; -- 192.168.0.222
 
 -- ipbus slaves live in the entity below, and can expose top-level ports
 -- The ipbus fabric is instantiated within.
@@ -125,8 +126,16 @@ begin
 		ipb_out => ipb_master_in,
 		rst_out => sys_rst,
 		pkt_rx => pkt_rx,
-		pkt_tx => pkt_tx
+		pkt_tx => pkt_tx,
+		leds	=> leds
 	);
-
+	
+--	switch_button: entity work.switch port map(
+--		clk => ipb_clk,
+--		rst => rst_ipb,
+--		swb => swb,
+--		leds => leds
+--	);
+	
 end rtl;
 

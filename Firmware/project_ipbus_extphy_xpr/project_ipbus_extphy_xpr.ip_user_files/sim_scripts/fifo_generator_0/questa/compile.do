@@ -4,10 +4,12 @@ vlib msim
 vlib msim/xil_defaultlib
 vlib msim/xpm
 vlib msim/fifo_generator_v13_1_2
+vlib msim/work
 
 vmap xil_defaultlib msim/xil_defaultlib
 vmap xpm msim/xpm
 vmap fifo_generator_v13_1_2 msim/fifo_generator_v13_1_2
+vmap work msim/work
 
 vlog -work xil_defaultlib -64 -sv \
 "D:/Xilinx/Vivado/2016.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
@@ -25,8 +27,8 @@ vcom -work fifo_generator_v13_1_2 -64 -93 \
 vlog -work fifo_generator_v13_1_2 -64 \
 "../../../ipstatic/hdl/fifo_generator_v13_1_rfs.v" \
 
-vlog -work xil_defaultlib -64 \
+vlog -work work -64 \
 "../../../../project_ipbus_extphy_xpr.srcs/sources_1/ip/fifo_generator_0/sim/fifo_generator_0.v" \
 
-vlog -work xil_defaultlib "glbl.v"
+vlog -work work "glbl.v"
 

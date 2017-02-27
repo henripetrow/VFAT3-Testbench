@@ -14,7 +14,7 @@
 -makelib ies/fifo_generator_v13_1_2 \
   "../../../ipstatic/hdl/fifo_generator_v13_1_rfs.v" \
 -endlib
--makelib ies/xil_defaultlib \
+-makelib ies/work \
   "../../../../project_ipbus_extphy_xpr.srcs/sources_1/ip/fifo_generator_0/sim/fifo_generator_0.v" \
 -endlib
 -makelib ies/xil_defaultlib \

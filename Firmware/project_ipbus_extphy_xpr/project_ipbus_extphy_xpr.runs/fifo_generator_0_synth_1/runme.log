@@ -9,44 +9,42 @@
     ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 source fifo_generator_0.tcl -notrace
-Starting RTL Elaboration : Time (s): cpu = 00:00:38 ; elapsed = 00:00:44 . Memory (MB): peak = 343.688 ; gain = 133.711
+Starting RTL Elaboration : Time (s): cpu = 00:00:40 ; elapsed = 00:00:47 . Memory (MB): peak = 343.031 ; gain = 132.973
 INFO: [Synth 8-638] synthesizing module 'fifo_generator_0' [c:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/ip/fifo_generator_0/synth/fifo_generator_0.vhd:76]
-INFO: [Synth 8-256] done synthesizing module 'fifo_generator_0' (27#1) [c:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/ip/fifo_generator_0/synth/fifo_generator_0.vhd:76]
-Finished RTL Elaboration : Time (s): cpu = 00:01:53 ; elapsed = 00:02:02 . Memory (MB): peak = 554.086 ; gain = 344.109
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:53 ; elapsed = 00:02:02 . Memory (MB): peak = 554.086 ; gain = 344.109
+INFO: [Synth 8-256] done synthesizing module 'fifo_generator_0' (26#1) [c:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/ip/fifo_generator_0/synth/fifo_generator_0.vhd:76]
+Finished RTL Elaboration : Time (s): cpu = 00:03:39 ; elapsed = 00:03:54 . Memory (MB): peak = 554.266 ; gain = 344.207
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:03:40 ; elapsed = 00:03:55 . Memory (MB): peak = 554.266 ; gain = 344.207
 INFO: [Device 21-403] Loading part xc7k325tffg900-2
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 678.930 ; gain = 0.000
-Finished Constraint Validation : Time (s): cpu = 00:02:04 ; elapsed = 00:02:14 . Memory (MB): peak = 678.930 ; gain = 468.953
-Finished Loading Part and Timing Information : Time (s): cpu = 00:02:04 ; elapsed = 00:02:14 . Memory (MB): peak = 678.930 ; gain = 468.953
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:04 ; elapsed = 00:02:14 . Memory (MB): peak = 678.930 ; gain = 468.953
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:04 ; elapsed = 00:02:14 . Memory (MB): peak = 678.930 ; gain = 468.953
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:05 ; elapsed = 00:02:15 . Memory (MB): peak = 678.930 ; gain = 468.953
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:14 ; elapsed = 00:02:25 . Memory (MB): peak = 678.930 ; gain = 468.953
-Finished Timing Optimization : Time (s): cpu = 00:02:15 ; elapsed = 00:02:25 . Memory (MB): peak = 691.961 ; gain = 481.984
-Finished Technology Mapping : Time (s): cpu = 00:02:15 ; elapsed = 00:02:25 . Memory (MB): peak = 700.008 ; gain = 490.031
-Finished IO Insertion : Time (s): cpu = 00:02:15 ; elapsed = 00:02:26 . Memory (MB): peak = 700.008 ; gain = 490.031
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:15 ; elapsed = 00:02:26 . Memory (MB): peak = 700.008 ; gain = 490.031
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:15 ; elapsed = 00:02:26 . Memory (MB): peak = 700.008 ; gain = 490.031
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:15 ; elapsed = 00:02:26 . Memory (MB): peak = 700.008 ; gain = 490.031
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:15 ; elapsed = 00:02:26 . Memory (MB): peak = 700.008 ; gain = 490.031
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:15 ; elapsed = 00:02:26 . Memory (MB): peak = 700.008 ; gain = 490.031
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 670.488 ; gain = 0.012
+Finished Constraint Validation : Time (s): cpu = 00:04:23 ; elapsed = 00:04:41 . Memory (MB): peak = 670.488 ; gain = 460.430
+Finished Loading Part and Timing Information : Time (s): cpu = 00:04:23 ; elapsed = 00:04:41 . Memory (MB): peak = 670.488 ; gain = 460.430
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:04:23 ; elapsed = 00:04:41 . Memory (MB): peak = 670.488 ; gain = 460.430
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:04:25 ; elapsed = 00:04:43 . Memory (MB): peak = 670.488 ; gain = 460.430
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:04:27 ; elapsed = 00:04:45 . Memory (MB): peak = 670.488 ; gain = 460.430
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:05:08 ; elapsed = 00:05:27 . Memory (MB): peak = 677.141 ; gain = 467.082
+Finished Timing Optimization : Time (s): cpu = 00:05:08 ; elapsed = 00:05:28 . Memory (MB): peak = 687.719 ; gain = 477.660
+Finished Technology Mapping : Time (s): cpu = 00:05:08 ; elapsed = 00:05:28 . Memory (MB): peak = 697.367 ; gain = 487.309
+Finished IO Insertion : Time (s): cpu = 00:05:11 ; elapsed = 00:05:30 . Memory (MB): peak = 697.367 ; gain = 487.309
+Finished Renaming Generated Instances : Time (s): cpu = 00:05:11 ; elapsed = 00:05:30 . Memory (MB): peak = 697.367 ; gain = 487.309
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:05:11 ; elapsed = 00:05:30 . Memory (MB): peak = 697.367 ; gain = 487.309
+Finished Renaming Generated Ports : Time (s): cpu = 00:05:11 ; elapsed = 00:05:30 . Memory (MB): peak = 697.367 ; gain = 487.309
+Finished Handling Custom Attributes : Time (s): cpu = 00:05:11 ; elapsed = 00:05:30 . Memory (MB): peak = 697.367 ; gain = 487.309
+Finished Renaming Generated Nets : Time (s): cpu = 00:05:11 ; elapsed = 00:05:30 . Memory (MB): peak = 697.367 ; gain = 487.309
 
 Report Cell Usage: 
 +------+---------+------+
 |      |Cell     |Count |
 +------+---------+------+
-|1     |LUT1     |     2|
-|2     |LUT2     |    32|
-|3     |LUT3     |     9|
-|4     |LUT4     |    39|
-|5     |LUT5     |    12|
-|6     |LUT6     |    11|
+|1     |LUT1     |     3|
+|2     |LUT2     |     7|
+|3     |LUT3     |     5|
+|4     |LUT4     |    34|
+|5     |LUT5     |     4|
+|6     |LUT6     |     8|
 |7     |MUXCY    |    30|
 |8     |RAMB36E1 |     1|
-|9     |FDCE     |   145|
-|10    |FDPE     |    27|
-|11    |FDRE     |     4|
+|9     |FDRE     |    61|
+|10    |FDSE     |     7|
 +------+---------+------+
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:15 ; elapsed = 00:02:26 . Memory (MB): peak = 700.008 ; gain = 490.031
-get_clocks: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1163.098 ; gain = 442.656
-synth_design: Time (s): cpu = 00:02:09 ; elapsed = 00:02:16 . Memory (MB): peak = 1163.098 ; gain = 903.313
+Finished Writing Synthesis Report : Time (s): cpu = 00:05:11 ; elapsed = 00:05:30 . Memory (MB): peak = 697.367 ; gain = 487.309
+synth_design: Time (s): cpu = 00:05:01 ; elapsed = 00:05:16 . Memory (MB): peak = 719.129 ; gain = 459.223

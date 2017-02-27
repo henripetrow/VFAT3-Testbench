@@ -37,7 +37,11 @@ package body ipbus_addr_decode is
 		elsif std_match(addr, "------------------10--------000-") then
 			sel := 5; -- pram / base 0x00002000 / mask 0x0000300e
 		-- END automatic generated VHDL
-
+		
+		elsif std_match(addr, "------------------11--------000-") then
+			sel := 6; -- vfat3 / base 0x00003000 / mask 0x0000300e
+		
+		
                 else
                         sel := 99;
                 end if;

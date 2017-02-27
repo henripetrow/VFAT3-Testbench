@@ -35,11 +35,12 @@ entity buffer_vfat3 is
 		rst 				: in std_logic;
 		clk 				: in std_logic;
 		BC					: in std_logic_vector(BC_width - 1 downto 0);
+		BCd					: in std_logic_vector(BC_width - 1 downto 0);
 		data_in 			: in std_logic_vector(data_width - 1 downto 0);
 		fifo_empty 			: in std_logic;
 		data_out 			: out std_logic_vector(cmd_width - 1 downto 0);
 		trigger				: out std_logic;
-		reset_BC			: out std_logic
+		reset_BCd			: out std_logic
 	);
 end buffer_vfat3;
 
@@ -98,7 +99,7 @@ begin
 							-- reads either BCd from data 1 [31 -> 20] or BCd from data 2 [15 -> 4]
 						    data_out <= buf(data1_to_be_read * (BC_width + cmd_width) + (cmd_width - 1) downto data1_to_be_read * (BC_width + cmd_width));
 						    -- transmits either data 1 [19 -> 16] or data 2 [3 -> 0]
-						    reset_BC <= '1';
+						    reset_BCd <= '1';
 						    
 						    if data1_to_be_read = 0 then
 						    	read_complete <= '1';
