@@ -10,14 +10,14 @@
   <File Type="VDS-TIMING-PB" Name="top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../../../../../Dropbox/ULB/MA2/Memoire/Vivado/IPBUS/ipbus_extphy/ipcore_dir/tri_mode_eth_mac_v5_4.xco">
+    <File Path="$PPRDIR/../../../../Vivado/IPBUS/ipbus_extphy/ipcore_dir/tri_mode_eth_mac_v5_4.xco">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../../../Dropbox/ULB/MA2/Memoire/Vivado/IPBUS/ipbus_extphy/ipcore_dir/mac_fifo_axi4.xco">
+    <File Path="$PPRDIR/../../../../Vivado/IPBUS/ipbus_extphy/ipcore_dir/mac_fifo_axi4.xco">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -192,7 +192,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../../../Dropbox/ULB/MA2/Memoire/Vivado/IPBUS/ipbus_extphy/ipcore_dir/emac_hostbus_decl.vhd">
+    <File Path="$PPRDIR/../../../../Vivado/IPBUS/ipbus_extphy/ipcore_dir/emac_hostbus_decl.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -216,7 +216,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../../../Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/imports/hdl/ipbus_peephole_ram.vhd">
+    <File Path="$PSRCDIR/sources_1/imports/hdl/ipbus_peephole_ram.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../ipbus/firmware/slaves/hdl/ipbus_peephole_ram.vhd"/>
         <Attr Name="ImportTime" Val="1485967396"/>
@@ -290,44 +290,44 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../../../Dropbox/ULB/MA2/Memoire/Vivado/IPBUS/project_ipbus_extphy/import_ise_summary.txt"/>
-    <File Path="$PPRDIR/../../../../../Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/slave_vfat3.vhd">
+    <File Path="$PPRDIR/../../../../Vivado/IPBUS/project_ipbus_extphy/import_ise_summary.txt"/>
+    <File Path="$PSRCDIR/sources_1/new/slave_vfat3.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../../../Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/buffer_vfat3.vhd">
+    <File Path="$PSRCDIR/sources_1/new/buffer_vfat3.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../../../Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/BC_block.vhd">
+    <File Path="$PSRCDIR/sources_1/new/BC_block.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../../../Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/control.vhd">
+    <File Path="$PSRCDIR/sources_1/new/control.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../../../Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/switch.vhd">
+    <File Path="$PSRCDIR/sources_1/new/switch.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../../../Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/LUT.vhd">
+    <File Path="$PSRCDIR/sources_1/new/LUT.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../../../Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/filling.vhd">
+    <File Path="$PSRCDIR/sources_1/new/filling.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -340,7 +340,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../../../Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci">
+    <File Path="$PSRCDIR/sources_1/ip/fifo_generator_0/fifo_generator_0.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -359,7 +359,7 @@
         <Attr Name="UserDisabled" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../../../AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc">
+    <File Path="$PPRDIR/../../../../../../../../AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -370,9 +370,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

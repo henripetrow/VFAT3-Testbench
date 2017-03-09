@@ -33,6 +33,10 @@ entity slave_vfat3 is
 	port(
 		clk			: in STD_LOGIC;
 		reset		: in STD_LOGIC;
+		clk40		: in STD_LOGIC;
+		rst40 		: in STD_LOGIC;
+		clk320 		: in STD_LOGIC;
+		rst320 		: in STD_LOGIC;
 		ipbus_in	: in ipb_wbus;
 		ipbus_out	: out ipb_rbus;
 		leds		: out STD_LOGIC_VECTOR(7 DOWNTO 0)
@@ -58,9 +62,11 @@ architecture rtl of slave_vfat3 is
 	signal fifo_out_valid		: std_logic;
 	signal fifo_in_a_full		: std_logic;
 	signal fifo_in_a_empty		: std_logic;
+	signal fifo_out_a_empty		: std_logic;
+	signal fifo_out_a_full		: std_logic;
+	signal fifo_out_w_ack		: std_logic;
 	signal reset_fifo			: std_logic;
 	
-	signal clk40				: std_logic; -- temporary !!!1
 	signal counter_rst			: std_logic_vector(3 downto 0) := "0000";
 	
 	signal command				: std_logic_vector(cmd_width - 1 downto 0);
@@ -70,12 +76,12 @@ architecture rtl of slave_vfat3 is
 	
 	component fifo_generator_0 is
 		PORT (
-	    	clk     		: IN  std_logic := '0';
-	     	--rd_clk      	: IN  std_logic := '0';
+	    	wr_clk     		: IN  std_logic := '0';
+	     	rd_clk      	: IN  std_logic := '0';
 	        wr_ack			: OUT std_logic := '0';
 	        almost_full  	: OUT std_logic := '0';
 	        almost_empty	: OUT std_logic := '1';
-	        srst          	: IN  std_logic := '0';
+	        rst          	: IN  std_logic := '0';
 	        wr_en        	: IN  std_logic := '0';
 	        rd_en        	: IN  std_logic := '0';
 	        din          	: IN  std_logic_vector(32-1 DOWNTO 0) := (OTHERS => '0');
@@ -95,18 +101,23 @@ begin
 			rst 			=> reset,
 			ipbus_in 		=> ipbus_in,
 			ipbus_out 		=> ipbus_out,
-			write_fifo_en	=> fifo_in_w_en,
-			read_fifo_en 	=> fifo_in_r_en,
+			fifo_in_w_en	=> fifo_in_w_en,
+			fifo_out_r_en 	=> fifo_out_r_en,
+			fifo_out_valid	=> fifo_out_valid,
 			data_to_fifo 	=> fifo_in_data_in,
 			data_from_fifo 	=> fifo_in_data_out,
-			fifo_valid 		=> fifo_in_valid,
+			fifo_in_valid 	=> fifo_in_valid,
 			leds			=> leds
 		);
+		
+		fifo_out_data_in <= fifo_in_data_out;
+		fifo_out_w_en <= fifo_in_valid;
+		fifo_in_r_en <= not reset_fifo;
 	fifo_in: fifo_generator_0
 		port map(
-			srst 	=> reset_fifo,
-		    clk 	=> clk,
-		    --rd_clk 	=> clk40, !!!!
+			rst 	=> reset_fifo,
+		    wr_clk 	=> clk,
+		    rd_clk 	=> clk40,-- !!!!
 		    din		=> fifo_in_data_in,--ipbus_in.ipb_wdata,
 		    wr_en 	=> fifo_in_w_en,
 		    rd_en 	=> fifo_in_r_en,
@@ -128,38 +139,25 @@ begin
 				else
 					reset_fifo <= reset;
 				end if;
-				
-				if fifo_in_valid = '1' then
-					leds(3) <= '1';
-				end if;
-				if fifo_in_empty = '1' then
-					leds(2) <= '1';
-				end if;
-				if fifo_in_full = '0' then
-					leds(1) <= '1';
-				end if;
-				if reset_fifo = '1' then
-					leds(0) <= '1';
-				end if;
 			end if;
 		end process;
 		
---	fifo_out: fifo_generator_0
---		port map(
---			srst 	=> reset,
---		    clk 	=> clk40,
---		    --rd_clk 	=> clk,
---		    din 	=> fifo_out_data_in,
---		    wr_en 	=> ipbus_in.ipb_strobe,
---		    rd_en 	=> fifo_out_r_en,
---		    dout 	=> ipbus_out.ipb_rdata,
---		    full 	=> fifo_out_full,
---		    --almost_full => ,
---		    wr_ack	=> ipbus_out.ipb_ack,
---		    empty 	=> fifo_out_empty,
---		    valid	=> fifo_out_valid
---		    --almost_empty =>
---		);
+	fifo_out: fifo_generator_0
+		port map(
+			rst 	=> reset,
+		    wr_clk 	=> clk40,
+		    rd_clk 	=> clk,
+		    din 	=> fifo_out_data_in,
+		    wr_en 	=> fifo_out_w_en,
+		    rd_en 	=> fifo_out_r_en,
+		    dout 	=> fifo_out_data_out,
+		    full 	=> fifo_out_full,
+		    almost_full => fifo_out_a_full,
+		    wr_ack	=> fifo_out_w_ack,
+		    empty 	=> fifo_out_empty,
+		    valid	=> fifo_out_valid,
+		    almost_empty => fifo_out_a_empty
+		);
 		
 --	buffer_in: entity work.buffer_vfat3
 --		port map(

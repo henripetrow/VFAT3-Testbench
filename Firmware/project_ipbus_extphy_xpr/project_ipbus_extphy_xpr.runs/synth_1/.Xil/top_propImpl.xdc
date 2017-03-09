@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc rfile:../../../../../../../../AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc rfile:../../../../../../../../../../../AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:11 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN AD12 [get_ports sysclk_p]
 set_property src_info {type:XDC file:1 line:15 export:INPUT save:INPUT read:READ} [current_design]

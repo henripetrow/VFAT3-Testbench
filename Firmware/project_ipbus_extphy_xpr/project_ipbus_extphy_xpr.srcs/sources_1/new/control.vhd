@@ -33,12 +33,13 @@ entity control is
 		clk 			: in std_logic;
 		rst 			: in std_logic;
 		ipbus_in 		: in ipb_wbus;
-		fifo_valid 		: in std_logic;
+		fifo_out_valid 	: in std_logic;
+		fifo_in_valid	: in std_logic;
 		data_from_fifo 	: in std_logic_vector (data_width - 1 downto 0);
 		ipbus_out 		: out ipb_rbus;
 		data_to_fifo 	: out std_logic_vector (data_width - 1 downto 0);
-		write_fifo_en 	: out std_logic;
-		read_fifo_en 	: out std_logic;
+		fifo_in_w_en 	: out std_logic;
+		fifo_out_r_en 	: out std_logic;
 		leds			: out std_logic_vector(7 downto 0)
 	);
 end control;
@@ -57,8 +58,8 @@ begin
 				state 			<= IDLE;
 				ipbus_out 		<= (ipb_ack => '0', ipb_err => '0', ipb_rdata => (others => '0'));
 				data_to_fifo 	<= (others => '0');
-				write_fifo_en 	<= '0';
-				read_fifo_en 	<= '0';
+				fifo_in_w_en 	<= '0';
+				fifo_out_r_en 	<= '0';
 				leds			<= (others => '0');
 			else
 				case state is
@@ -72,32 +73,29 @@ begin
 					when W =>
 						leds(6) <= '1';
 						data_to_fifo <= ipbus_in.ipb_wdata;
-						write_fifo_en <= '1';
+						fifo_in_w_en <= '1';
 						ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => (others => '0'));
 						state <= RESET;
 					when R =>
 						leds(5) <= '1';
-						read_fifo_en <= '1';
+						fifo_out_r_en <= '1';
 						state <= ACK;
 					when ACK =>				
-						if fifo_valid = '1' then
+						if fifo_out_valid = '1' then
 							leds(4) <= '1';
 							ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => data_from_fifo);
 							state <= RESET;
---						elsif fifo_valid = '0' then
---							ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => (others => '1'));
---							state <= RESET;
 						end if;
 					when RESET =>
 						data_to_fifo <= (others => '0');
-						write_fifo_en <= '0';
-						read_fifo_en <= '0';
+						fifo_in_w_en <= '0';
+						fifo_out_r_en <= '0';
 						ipbus_out.ipb_ack <= '0';
 						state <= IDLE;
 					when others =>
 						data_to_fifo <= (others => '0');
-						write_fifo_en <= '0';
-						read_fifo_en <= '0';
+						fifo_in_w_en <= '0';
+						fifo_out_r_en <= '0';
 						ipbus_out <= (ipb_ack => '0', ipb_err => '0', ipb_rdata => (others => '0'));
 						state <= IDLE;
 				end case;

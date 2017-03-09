@@ -54,8 +54,9 @@
 
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module fifo_generator_0 (
-  clk,
-  srst,
+  rst,
+  wr_clk,
+  rd_clk,
   din,
   wr_en,
   rd_en,
@@ -68,9 +69,11 @@ module fifo_generator_0 (
   valid
 );
 
-(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 core_clk CLK" *)
-input wire clk;
-input wire srst;
+input wire rst;
+(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 write_clk CLK" *)
+input wire wr_clk;
+(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 read_clk CLK" *)
+input wire rd_clk;
 (* X_INTERFACE_INFO = "xilinx.com:interface:fifo_write:1.0 FIFO_WRITE WR_DATA" *)
 input wire [31 : 0] din;
 (* X_INTERFACE_INFO = "xilinx.com:interface:fifo_write:1.0 FIFO_WRITE WR_EN" *)
@@ -91,7 +94,7 @@ output wire almost_empty;
 output wire valid;
 
   fifo_generator_v13_1_2 #(
-    .C_COMMON_CLOCK(1),
+    .C_COMMON_CLOCK(0),
     .C_SELECT_XPM(0),
     .C_COUNT_TYPE(0),
     .C_DATA_COUNT_WIDTH(10),
@@ -101,7 +104,7 @@ output wire valid;
     .C_DOUT_WIDTH(32),
     .C_ENABLE_RLOCS(0),
     .C_FAMILY("kintex7"),
-    .C_FULL_FLAGS_RST_VAL(0),
+    .C_FULL_FLAGS_RST_VAL(1),
     .C_HAS_ALMOST_EMPTY(1),
     .C_HAS_ALMOST_FULL(1),
     .C_HAS_BACKUP(0),
@@ -111,14 +114,14 @@ output wire valid;
     .C_HAS_OVERFLOW(0),
     .C_HAS_RD_DATA_COUNT(0),
     .C_HAS_RD_RST(0),
-    .C_HAS_RST(0),
-    .C_HAS_SRST(1),
+    .C_HAS_RST(1),
+    .C_HAS_SRST(0),
     .C_HAS_UNDERFLOW(0),
     .C_HAS_VALID(1),
     .C_HAS_WR_ACK(1),
     .C_HAS_WR_DATA_COUNT(0),
     .C_HAS_WR_RST(0),
-    .C_IMPLEMENTATION_TYPE(0),
+    .C_IMPLEMENTATION_TYPE(2),
     .C_INIT_WR_PNTR_VAL(0),
     .C_MEMORY_TYPE(1),
     .C_MIF_FILE_NAME("BlankString"),
@@ -130,8 +133,8 @@ output wire valid;
     .C_PROG_EMPTY_THRESH_ASSERT_VAL(2),
     .C_PROG_EMPTY_THRESH_NEGATE_VAL(3),
     .C_PROG_EMPTY_TYPE(0),
-    .C_PROG_FULL_THRESH_ASSERT_VAL(1022),
-    .C_PROG_FULL_THRESH_NEGATE_VAL(1021),
+    .C_PROG_FULL_THRESH_ASSERT_VAL(1021),
+    .C_PROG_FULL_THRESH_NEGATE_VAL(1020),
     .C_PROG_FULL_TYPE(0),
     .C_RD_DATA_COUNT_WIDTH(10),
     .C_RD_DEPTH(1024),
@@ -296,12 +299,12 @@ output wire valid;
   ) inst (
     .backup(1'D0),
     .backup_marker(1'D0),
-    .clk(clk),
-    .rst(1'D0),
-    .srst(srst),
-    .wr_clk(1'D0),
+    .clk(1'D0),
+    .rst(rst),
+    .srst(1'D0),
+    .wr_clk(wr_clk),
     .wr_rst(1'D0),
-    .rd_clk(1'D0),
+    .rd_clk(rd_clk),
     .rd_rst(1'D0),
     .din(din),
     .wr_en(wr_en),
