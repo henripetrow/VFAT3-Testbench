@@ -1,0 +1,44 @@
+leds(3) <= locked; ( = dmc_locked and wiz_locked)
+
+process(clk) 
+	begin
+		if rising_edge(clk) then
+			leds(1) <= '1';
+			if counter_rst < "1010" then -- need to maintain reset on FIFO a few clk cycles first
+				reset_fifo <= '1';
+				counter_rst <= std_logic_vector(unsigned(counter_rst) + 1);
+			else
+				leds(0) <= '1';
+--				if fifo_in_empty = '1' then
+--					leds(1) <= '1';
+--				end if;
+				reset_fifo <= reset;
+			end if;
+		end if;
+	end process;
+	
+	
+case state is
+	when IDLE =>
+		leds(7) <= '1';
+		if ipbus_in.ipb_strobe = '1' and ipbus_in.ipb_write = '1' then
+			state <= W;
+		elsif ipbus_in.ipb_strobe = '1' and ipbus_in.ipb_write = '0' then
+			state <= R;
+		end if;
+	when W =>
+		leds(6) <= '1';
+		data_to_fifo <= ipbus_in.ipb_wdata;
+		w_fifo_in_en <= '1';
+		ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => (others => '0'));
+		state <= RESET;
+	when R =>
+		leds(5) <= '1';
+		r_fifo_out_en <= '1';
+		state <= ACK;
+	when ACK =>	
+		if fifo_out_valid = '1' then
+			leds(4) <= '1';
+			ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => data_from_fifo);
+			state <= RESET;
+		end if;

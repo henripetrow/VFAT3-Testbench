@@ -8,3 +8,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==tri_mode_eth_ma
 
 # IP: C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Vivado/IPBUS/ipbus_extphy/ipcore_dir/mac_fifo_axi4.xco
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mac_fifo_axi4 || ORIG_REF_NAME==mac_fifo_axi4}]
+
+# IP: C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==fifo_generator_0 || ORIG_REF_NAME==fifo_generator_0}]
+
+# IP: ip/clk_wiz_0/clk_wiz_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==clk_wiz_0 || ORIG_REF_NAME==clk_wiz_0}]

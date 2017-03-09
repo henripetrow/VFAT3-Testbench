@@ -27,7 +27,7 @@ end top;
 
 architecture rtl of top is
 
-	signal clk125, clk200, ipb_clk, locked, rst_125, rst_ipb, onehz : STD_LOGIC;
+	signal clk125, clk200, clk40, clk320,ipb_clk, locked, rst_125, rst_ipb, rst40, rst320, onehz : STD_LOGIC;
 	signal mac_tx_data, mac_rx_data: std_logic_vector(7 downto 0);
 	signal mac_tx_valid, mac_tx_last, mac_tx_error, mac_tx_ready, mac_rx_valid, mac_rx_last, mac_rx_error: std_logic;
 	signal ipb_master_out : ipb_wbus;
@@ -46,15 +46,20 @@ begin
 			sysclk_n => sysclk_n,
 			clko_125 => clk125,
 			clko_200 => clk200,
+			clko_320 => clk320,
+			clko_40 => clk40,
 			clko_ipb => ipb_clk,
 			locked => locked,
 			nuke => sys_rst,
 			rsto_125 => rst_125,
 			rsto_ipb => rst_ipb,
+			rsto_40 => rst40,
+			rsto_320 => rst320,
 			onehz => onehz
 		);
 		
 	--leds <= (pkt_rx_led, pkt_tx_led, locked, onehz);
+	leds(1) <= locked;
 	
 --	Ethernet MAC core and PHY interface
 -- In this version, consists of hard MAC core and GMII interface to external PHY
@@ -122,6 +127,10 @@ begin
 	slaves: entity work.slaves port map(
 		ipb_clk => ipb_clk,
 		ipb_rst => rst_ipb,
+		clk40 => clk40,
+		clk320 => clk320,
+		rst40 => rst40,
+		rst320 => rst320,
 		ipb_in => ipb_master_out,
 		ipb_out => ipb_master_in,
 		rst_out => sys_rst,

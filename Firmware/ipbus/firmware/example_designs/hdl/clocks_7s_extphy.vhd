@@ -19,10 +19,14 @@ entity clocks_7s_extphy is port(
 	clko_125: out std_logic;
 	clko_200: out std_logic;
 	clko_ipb: out std_logic;
+	clko_40: out std_logic;
+	clko_320: out std_logic;
 	locked: out std_logic;
 	nuke: in std_logic;
 	rsto_125: out std_logic;
 	rsto_ipb: out std_logic;
+	rsto_320: out std_logic;
+	rsto_40: out std_logic;
 	onehz: out std_logic
 	);
 
@@ -30,11 +34,20 @@ end clocks_7s_extphy;
 
 architecture rtl of clocks_7s_extphy is
 	
-	signal dcm_locked, sysclk, clk_ipb_i, clk_125_i, clkfb, clk_ipb_b, clk_125_b: std_logic;
+	signal dcm_locked, sysclk, clk_ipb_i, clk_125_i, clkfb, clk_ipb_b, clk_125_b, clk40, clk320, wiz_locked: std_logic;
 	signal d17, d17_d: std_logic;
 	signal nuke_i, nuke_d, nuke_d2: std_logic := '0';
-	signal rst, rst_ipb, rst_125: std_logic := '1';
-
+	signal rst, rst_ipb, rst_125, rst40, rst320: std_logic := '1';
+	
+	component clk_wiz_0 is
+	port(
+		clk_in1 : in std_logic;
+		clk_out1 : out std_logic;
+		clk_out2 : out std_logic;
+		reset : in std_logic;
+		locked : out std_logic
+	);
+	end component;
 begin
 
 	ibufgds0: IBUFGDS port map(
@@ -83,6 +96,16 @@ begin
 		d28 => onehz
 	);
 	
+	clk_wiz: clk_wiz_0 port map(
+		clk_in1 => sysclk,
+		clk_out1 => clk40,
+		clk_out2 => clk320,
+		reset => '0',
+		locked => wiz_locked
+	);
+	
+	clko_40 <= clk40;
+	clko_320 <= clk320;
 	process(sysclk)
 	begin
 		if rising_edge(sysclk) then
@@ -95,7 +118,7 @@ begin
 		end if;
 	end process;
 	
-	locked <= dcm_locked;
+	locked <= dcm_locked and wiz_locked; -- if locked <= dcm_locked; everything crashes wtf
 
 	process(clk_ipb_b)
 	begin
@@ -115,6 +138,24 @@ begin
 	end process;
 	
 	rsto_125 <= rst_125;
+	
+	process(clk40)
+	begin
+		if rising_edge(clk40) then
+			rst40 <= rst;
+		end if;
+	end process;
+	
+	rsto_40 <= rst40;
+	
+	process(clk320)
+	begin
+		if rising_edge(clk320) then
+			rst320 <= rst;
+		end if;
+	end process;
+	
+	rsto_320 <= rst320;
 			
 end rtl;
 

@@ -12,6 +12,10 @@ entity slaves is
 	port(
 		ipb_clk: in std_logic;
 		ipb_rst: in std_logic;
+		clk40: in std_logic;
+		clk320: in std_logic;
+		rst40: in std_logic;
+		rst320: in std_logic;
 		ipb_in: in ipb_wbus;
 		ipb_out: out ipb_rbus;
 		rst_out: out std_logic;
@@ -127,6 +131,10 @@ begin
 		port map(
 			clk => ipb_clk,
 			reset => ipb_rst,
+			clk40 => clk40,
+			rst40 => rst40,
+			clk320 => clk320,
+			rst320 => rst320,
 			ipbus_in => ipbw(6),
 			ipbus_out => ipbr(6),
 			leds		=> leds
