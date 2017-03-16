@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date             : Thu Mar 09 18:43:56 2017
+| Date             : Thu Mar 16 09:16:42 2017
 | Host             : Shinsekai running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.458 |
-| Dynamic (W)              | 0.293 |
+| Total On-Chip Power (W)  | 0.456 |
+| Dynamic (W)              | 0.291 |
 | Device Static (W)        | 0.165 |
 | Effective TJA (C/W)      | 1.8   |
 | Max Ambient (C)          | 84.2  |
@@ -49,21 +49,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.027 |       10 |       --- |             --- |
-| Slice Logic              |     0.007 |     8052 |       --- |             --- |
-|   LUT as Logic           |     0.006 |     2959 |    203800 |            1.45 |
-|   Register               |    <0.001 |     4142 |    407600 |            1.02 |
-|   CARRY4                 |    <0.001 |      158 |     50950 |            0.31 |
-|   LUT as Shift Register  |    <0.001 |       51 |     64000 |            0.08 |
+| Clocks                   |     0.026 |       10 |       --- |             --- |
+| Slice Logic              |     0.007 |     8200 |       --- |             --- |
+|   LUT as Logic           |     0.006 |     3003 |    203800 |            1.47 |
+|   Register               |    <0.001 |     4209 |    407600 |            1.03 |
+|   CARRY4                 |    <0.001 |      162 |     50950 |            0.32 |
+|   LUT as Shift Register  |    <0.001 |       52 |     64000 |            0.08 |
 |   F7/F8 Muxes            |    <0.001 |       22 |    203800 |            0.01 |
 |   LUT as Distributed RAM |    <0.001 |        8 |     64000 |            0.01 |
-|   Others                 |     0.000 |      209 |       --- |             --- |
-| Signals                  |     0.009 |     6041 |       --- |             --- |
-| Block RAM                |     0.018 |       20 |       445 |            4.49 |
+|   Others                 |     0.000 |      214 |       --- |             --- |
+| Signals                  |     0.008 |     6165 |       --- |             --- |
+| Block RAM                |     0.018 |       21 |       445 |            4.72 |
 | MMCM                     |     0.210 |        2 |        10 |           20.00 |
 | I/O                      |     0.023 |       33 |       500 |            6.60 |
 | Static Power             |     0.165 |          |           |                 |
-| Total                    |     0.458 |          |           |                 |
+| Total                    |     0.456 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.131 |       0.061 |      0.070 |
+| Vccint    |       1.000 |     0.129 |       0.059 |      0.070 |
 | Vccaux    |       1.800 |     0.152 |       0.124 |      0.028 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.004 |       0.003 |      0.001 |
@@ -82,7 +82,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.003 |       0.001 |      0.002 |
+| Vccbram   |       1.000 |     0.004 |       0.002 |      0.002 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -150,12 +150,12 @@ Table of Contents
 +----------------------------------------------------------------------------------------------------+-----------+
 | Name                                                                                               | Power (W) |
 +----------------------------------------------------------------------------------------------------+-----------+
-| top                                                                                                |     0.293 |
-|   clocks                                                                                           |     0.219 |
+| top                                                                                                |     0.291 |
+|   clocks                                                                                           |     0.218 |
 |     clk_wiz                                                                                        |     0.103 |
 |       inst                                                                                         |     0.103 |
 |     clkdiv                                                                                         |     0.003 |
-|   eth                                                                                              |     0.018 |
+|   eth                                                                                              |     0.017 |
 |     emac0                                                                                          |     0.005 |
 |       U0/trimac_top/TRI_SPEED.TRIMAC_INST                                                          |     0.005 |
 |     fifo                                                                                           |     0.002 |
@@ -168,7 +168,7 @@ Table of Contents
 |     trans                                                                                          |     0.003 |
 |       iface                                                                                        |     0.001 |
 |       sm                                                                                           |     0.001 |
-|     udp_if                                                                                         |     0.041 |
+|     udp_if                                                                                         |     0.040 |
 |       ARP                                                                                          |    <0.001 |
 |       IPADDR                                                                                       |    <0.001 |
 |       RARP_block                                                                                   |    <0.001 |
@@ -193,7 +193,7 @@ Table of Contents
 |       tx_main                                                                                      |     0.002 |
 |       tx_ram_selector                                                                              |    <0.001 |
 |       tx_transactor                                                                                |     0.002 |
-|   slaves                                                                                           |     0.004 |
+|   slaves                                                                                           |     0.003 |
 |     fabric                                                                                         |    <0.001 |
 |     slave0                                                                                         |    <0.001 |
 |     slave1                                                                                         |    <0.001 |
@@ -201,13 +201,15 @@ Table of Contents
 |     slave3                                                                                         |    <0.001 |
 |     slave4                                                                                         |    <0.001 |
 |     slave5                                                                                         |    <0.001 |
-|     slave_vfat3                                                                                    |     0.003 |
+|     slave_vfat3                                                                                    |     0.002 |
+|       BC_block                                                                                     |    <0.001 |
+|       buffer_in                                                                                    |    <0.001 |
 |       control_block                                                                                |    <0.001 |
-|       fifo_in                                                                                      |     0.002 |
-|         U0                                                                                         |     0.002 |
-|           inst_fifo_gen                                                                            |     0.002 |
-|             gconvfifo.rf                                                                           |     0.002 |
-|               grf.rf                                                                               |     0.002 |
+|       fifo_in                                                                                      |    <0.001 |
+|         U0                                                                                         |    <0.001 |
+|           inst_fifo_gen                                                                            |    <0.001 |
+|             gconvfifo.rf                                                                           |    <0.001 |
+|               grf.rf                                                                               |    <0.001 |
 |                 gntv_or_sync_fifo.gcx.clkx                                                         |    <0.001 |
 |                   gnxpm_cdc.gsync_stage[1].rd_stg_inst                                             |    <0.001 |
 |                   gnxpm_cdc.gsync_stage[1].wr_stg_inst                                             |    <0.001 |
@@ -217,20 +219,19 @@ Table of Contents
 |                   gras.rsts                                                                        |    <0.001 |
 |                     c0                                                                             |    <0.001 |
 |                     c1                                                                             |    <0.001 |
-|                   grhf.rhf                                                                         |    <0.001 |
 |                   rpntr                                                                            |    <0.001 |
 |                 gntv_or_sync_fifo.gl0.wr                                                           |    <0.001 |
 |                   gwas.wsts                                                                        |    <0.001 |
 |                     c1                                                                             |    <0.001 |
 |                     c2                                                                             |    <0.001 |
 |                   wpntr                                                                            |    <0.001 |
-|                 gntv_or_sync_fifo.mem                                                              |     0.001 |
-|                   gbm.gbmg.gbmga.ngecc.bmg                                                         |     0.001 |
-|                     inst_blk_mem_gen                                                               |     0.001 |
-|                       gnbram.gnativebmg.native_blk_mem_gen                                         |     0.001 |
-|                         valid.cstr                                                                 |     0.001 |
-|                           ramloop[0].ram.r                                                         |     0.001 |
-|                             prim_noinit.ram                                                        |     0.001 |
+|                 gntv_or_sync_fifo.mem                                                              |    <0.001 |
+|                   gbm.gbmg.gbmga.ngecc.bmg                                                         |    <0.001 |
+|                     inst_blk_mem_gen                                                               |    <0.001 |
+|                       gnbram.gnativebmg.native_blk_mem_gen                                         |    <0.001 |
+|                         valid.cstr                                                                 |    <0.001 |
+|                           ramloop[0].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
 |                 rstblk                                                                             |    <0.001 |
 |                   ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[1].rrst_inst                         |    <0.001 |
 |                   ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[1].wrst_inst                         |    <0.001 |
@@ -257,6 +258,13 @@ Table of Contents
 |                     c1                                                                             |    <0.001 |
 |                     c2                                                                             |    <0.001 |
 |                   wpntr                                                                            |    <0.001 |
+|                 gntv_or_sync_fifo.mem                                                              |    <0.001 |
+|                   gbm.gbmg.gbmga.ngecc.bmg                                                         |    <0.001 |
+|                     inst_blk_mem_gen                                                               |    <0.001 |
+|                       gnbram.gnativebmg.native_blk_mem_gen                                         |    <0.001 |
+|                         valid.cstr                                                                 |    <0.001 |
+|                           ramloop[0].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
 |                 rstblk                                                                             |    <0.001 |
 |                   ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[1].rrst_inst                         |    <0.001 |
 |                   ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[1].wrst_inst                         |    <0.001 |

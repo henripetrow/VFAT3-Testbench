@@ -50,14 +50,10 @@ begin
 				data_out <= "00000000";
 				even <= '0';
 			else
-				even <= not even; -- toggle to send filler 1's and 0's alternately and preserve DC balance
+				even <= not even; -- toggle to send filler 1's and 0's alternately and preserve DC balance when no data
 				case data_in is
-					when "0000" => -- fillers
-						if even <= '1' then
-							data_out <= "00000000"; -- A
-						else
-							data_out <= "11111111"; -- P
-						end if;
+					when "0000" => -- A -- CCA
+						data_out <= "00010111";
 					when "0001" => -- B -- EC0
 						data_out <= "00001111";
 					when "0010" => -- C -- BC0
@@ -86,8 +82,15 @@ begin
 						data_out <= "11001100";
 					when "1110" => -- O -- EC0+BC0
 						data_out <= "11110000";
-					when "1111" => -- P -- should not be used
-						data_out <= "11111111";						
+					when "1111" => -- P -- CCB
+						data_out <= "11101000";
+					when others =>
+						-- fillers
+						if even <= '1' then
+							data_out <= "00000000"; -- A
+						else
+							data_out <= "11111111"; -- P
+						end if;						
 				end case;
 			end if; --if rst
 		end if; --if rising edge

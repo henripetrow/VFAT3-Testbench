@@ -32,14 +32,14 @@ entity BC_block is
 	port(
 		rst 		: in std_logic;
 		clk 		: in std_logic;
-		BC			: out std_logic_vector(BC_width - 1 downto 0);
 		BCd			: out std_logic_vector(BC_width - 1 downto 0);
-		reset_BCd	: in std_logic
+		reset_BCd	: in std_logic;
+		start_BCd	: in std_logic;
+		leds		: out std_logic_vector(7 downto 0)
 	);
 end BC_block;
 
 architecture rtl of BC_block is
-		signal BC_int : std_logic_vector(BC_width - 1 downto 0);
 		signal BCd_int : std_logic_vector(BC_width - 1 downto 0);
 begin
 	
@@ -48,24 +48,22 @@ begin
 	begin
 		if rising_edge(clk) then
 			if rst = '1' then
-				BC_int <= (others => '0');
-				BC <= (others => '0');
 				BCd_int <= (others => '0');
 				BCd <= (others => '0');
 			else
-				BC_int <= std_logic_vector(unsigned(BC_int) + 1);
-				if reset_BCd = '0' then
-					BCd_int <= std_logic_vector(unsigned(BCd_int) + 1);
-					
-					-- Still have to manage the overflow
-					
-					
-				else
-					BC_int <= (others => '0');
-				end if;					
+				if start_BCd = '1' then
+					leds(0) <= '1';
+					if reset_BCd = '0' then
+						BCd_int <= std_logic_vector(unsigned(BCd_int) + 1);
+					else
+						BCd_int <= (others => '0');
+					end if;
+					if BCd_int = "111111111111" then
+						BCd_int <= (others => '0');
+					end if;		
+				end if;
 			end if; --if rst
 			
-			BC <= BC_int;
 			BCd <= BCd_int;
 			
 		end if; --if rising edge

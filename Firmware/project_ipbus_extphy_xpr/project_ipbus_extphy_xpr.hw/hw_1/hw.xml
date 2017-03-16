@@ -10,6 +10,10 @@
       <Properties Property="PROBES.FILE" value=""/>
       <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/top.bit"/>
     </Object>
+    <Object name="xc7k325t_0_1" gui_info="">
+      <Properties Property="PROBES.FILE" value=""/>
+      <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/backup bitstream/loopback working at 40.bit"/>
+    </Object>
   </ObjectList>
   <probeset name="hw project" active="false"/>
 </hwsession>

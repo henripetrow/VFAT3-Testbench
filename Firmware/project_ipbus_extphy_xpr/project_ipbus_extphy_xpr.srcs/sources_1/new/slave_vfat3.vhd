@@ -70,9 +70,15 @@ architecture rtl of slave_vfat3 is
 	signal counter_rst			: std_logic_vector(3 downto 0) := "0000";
 	
 	signal command				: std_logic_vector(cmd_width - 1 downto 0);
-	signal BC					: std_logic_vector(BC_width - 1 downto 0);
 	signal BCd					: std_logic_vector(BC_width - 1 downto 0);
 	signal reset_BCd			: std_logic;
+	signal start_BCd			: std_logic;
+	signal buffer_valid			: std_logic;
+	
+	signal data_bus_out			: std_logic_vector(8 - 1 downto 0);
+	signal data_to_vfat3		: std_logic;
+	signal data_bus_in			: std_logic_vector(8 - 1 downto 0);
+	signal data_from_vfat3		: std_logic;
 	
 	component fifo_generator_0 is
 		PORT (
@@ -90,9 +96,27 @@ architecture rtl of slave_vfat3 is
 	        empty        	: OUT std_logic := '1';
 	        valid			: OUT std_logic := '0'
 		);
-	
 	  end component;
+	  
+	  component selectio_wiz_ser is
+	  	PORT (
+	  		data_out_from_device 	: IN std_logic_vector(7 downto 0);
+	  		data_out_to_pins 		: OUT std_logic;
+	  		clk_in 					: IN std_logic;
+	  		clk_div_in 				: IN std_logic;
+	  		io_reset 				: IN std_logic
+	  	);
+		end component;
 	
+		component selectio_wiz_des is
+	  		PORT (
+	  			data_out_from_device 	: IN std_logic_vector(7 downto 0);
+	  		  	data_out_to_pins 		: OUT std_logic;
+	  		  	clk_in 					: IN std_logic;
+	  		  	clk_div_in 				: IN std_logic;
+	  		  	io_reset 				: IN std_logic
+	  		);
+	  	end component;
 begin
 	
 	control_block: entity work.control
@@ -105,20 +129,21 @@ begin
 			fifo_out_r_en 	=> fifo_out_r_en,
 			fifo_out_valid	=> fifo_out_valid,
 			data_to_fifo 	=> fifo_in_data_in,
-			data_from_fifo 	=> fifo_in_data_out,
+			data_from_fifo 	=> fifo_out_data_out,
 			fifo_in_valid 	=> fifo_in_valid,
 			leds			=> leds
 		);
 		
-		fifo_out_data_in <= fifo_in_data_out;
-		fifo_out_w_en <= fifo_in_valid;
-		fifo_in_r_en <= not reset_fifo;
+--	fifo_out_data_in <= fifo_in_data_out; --fifo loopback testing
+--	fifo_out_w_en <= fifo_in_valid;
+--	fifo_in_r_en <= not reset_fifo;
+		
 	fifo_in: fifo_generator_0
 		port map(
 			rst 	=> reset_fifo,
 		    wr_clk 	=> clk,
 		    rd_clk 	=> clk40,-- !!!!
-		    din		=> fifo_in_data_in,--ipbus_in.ipb_wdata,
+		    din		=> fifo_in_data_in,
 		    wr_en 	=> fifo_in_w_en,
 		    rd_en 	=> fifo_in_r_en,
 		    dout 	=> fifo_in_data_out,
@@ -159,28 +184,49 @@ begin
 		    almost_empty => fifo_out_a_empty
 		);
 		
---	buffer_in: entity work.buffer_vfat3
---		port map(
---			rst 			=> reset,
---			clk 			=> clk40,
---			BC				=> BC,
---			BCd				=> BCd,
---			data_in 		=> fifo_in_data_out,
---			data_out 		=> command,
---			trigger		 	=> fifo_in_r_en,
---			fifo_empty 		=> fifo_in_empty,
---			reset_BCd		=> reset_BCd
---		);
+	buffer_in: entity work.buffer_vfat3
+		port map(
+			rst 			=> rst40,
+			clk 			=> clk40,
+			BCd				=> BCd,
+			data_in 		=> fifo_in_data_out,
+			data_out 		=> command,
+			read_fifo_en	=> fifo_in_r_en,
+			reset_BCd		=> reset_BCd,
+			start_BCd		=> start_BCd,
+			out_ready		=> buffer_valid,
+			leds			=> leds,
+			fifo_valid		=> fifo_in_valid
+		);
 		
---	BC_block: entity work.BC_block
+		fifo_out_w_en <= buffer_valid; -- buffer loopback testing
+		fifo_out_data_in <= command & command & command & command & command & command & command & command;
+--		fifo_out_data_in(31 downto 4) <= (others => '1'); FW does not work anymore with this assignment ...
+--		fifo_out_data_in(3 downto 0) <= command ;
+		
+	BC_block: entity work.BC_block
+		port map(
+			rst			=> rst40,
+			clk			=> clk40,
+			BCd			=> BCd,
+			start_BCd	=> start_BCd,
+			reset_BCd	=> reset_BCd,
+			leds		=> leds
+		);
+--	serializer: selectio_wiz_ser
 --		port map(
---			rst			=> reset,
---			clk			=> clk40,
---			BC			=> BC,
---			BCd			=> BCd,
---			reset_BCd	=> reset_BCd
+--			data_out_from_device	=> data_bus_out,
+--			data_out_to_pins		=> data_to_vfat3,
+--			clk_in					=> clk320, -- fast so 320 ?
+--			clk_div_in				=> clk40, -- slow so 40 ?
+--			io_reset				=> rst40 -- ?
 --		);
-			
-	
-
+--	deserializer: selectio_wiz_des
+--		port map(
+--			data_out_from_device	=> data_bus_in,
+--			data_out_to_pins		=> data_from_vfat3,
+--			clk_in					=> clk320, -- fast so 320 ?
+--			clk_div_in				=> clk40, -- slow so 40 ?
+--			io_reset				=> rst40 -- ?
+--		);
 end rtl;
