@@ -74,13 +74,16 @@ begin
 						leds(6) <= '1';
 						data_to_fifo <= ipbus_in.ipb_wdata;
 						fifo_in_w_en <= '1';
-						ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => (others => '0'));
+						ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => (others => '0')); 
+						-- should not be necessary as already wr_ack of fifo in on ipb_ack... to check
+						
 						state <= RESET;
 					when R =>
 						leds(5) <= '1';
 						fifo_out_r_en <= '1';
 						state <= ACK;
-					when ACK =>				
+					when ACK =>	
+						fifo_out_r_en <= '0';			
 						if fifo_out_valid = '1' then
 							leds(4) <= '1';
 							ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => data_from_fifo);
@@ -89,7 +92,6 @@ begin
 					when RESET =>
 						data_to_fifo <= (others => '0');
 						fifo_in_w_en <= '0';
-						fifo_out_r_en <= '0';
 						ipbus_out.ipb_ack <= '0';
 						ipbus_out.ipb_rdata <= (others => '0');
 						state <= IDLE;

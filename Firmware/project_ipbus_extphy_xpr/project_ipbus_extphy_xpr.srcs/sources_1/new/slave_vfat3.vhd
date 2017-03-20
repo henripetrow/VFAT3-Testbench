@@ -79,6 +79,7 @@ architecture rtl of slave_vfat3 is
 	signal data_to_vfat3		: std_logic;
 	signal data_bus_in			: std_logic_vector(8 - 1 downto 0);
 	signal data_from_vfat3		: std_logic;
+	signal data_buf_received	: std_logic;
 	
 	component fifo_generator_0 is
 		PORT (
@@ -196,9 +197,12 @@ begin
 			start_BCd		=> start_BCd,
 			out_ready		=> buffer_valid,
 			leds			=> leds,
-			fifo_valid		=> fifo_in_valid
+			fifo_valid		=> fifo_in_valid,
+			send_ack		=> data_buf_received,
+			fifo_empty		=> fifo_in_empty
 		);
 		
+		data_buf_received <= fifo_out_w_ack;
 		fifo_out_w_en <= buffer_valid; -- buffer loopback testing
 		fifo_out_data_in <= command & command & command & command & command & command & command & command;
 --		fifo_out_data_in(31 downto 4) <= (others => '1'); FW does not work anymore with this assignment ...
