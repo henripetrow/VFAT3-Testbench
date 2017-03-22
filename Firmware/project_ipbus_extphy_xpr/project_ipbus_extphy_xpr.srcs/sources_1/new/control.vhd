@@ -75,7 +75,6 @@ begin
 						data_to_fifo <= ipbus_in.ipb_wdata;
 						fifo_in_w_en <= '1';
 						ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => (others => '0')); 
-						-- should not be necessary as already wr_ack of fifo in on ipb_ack... to check
 						
 						state <= RESET;
 					when R =>

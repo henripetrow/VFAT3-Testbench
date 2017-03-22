@@ -97,6 +97,7 @@ begin
 				reset_BCd <= '0';
 				start_BCd <= '0';
 				BCd <= (others => '0');
+				--leds <= (others => '1');
 			else
 				--internal state machine 
 				case state is 
