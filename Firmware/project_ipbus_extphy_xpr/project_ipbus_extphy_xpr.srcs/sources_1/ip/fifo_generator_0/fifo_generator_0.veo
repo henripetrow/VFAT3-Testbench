@@ -67,7 +67,8 @@ fifo_generator_0 your_instance_name (
   .wr_ack(wr_ack),              // output wire wr_ack
   .empty(empty),                // output wire empty
   .almost_empty(almost_empty),  // output wire almost_empty
-  .valid(valid)                // output wire valid
+  .valid(valid),                // output wire valid
+  .underflow(underflow)        // output wire underflow
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

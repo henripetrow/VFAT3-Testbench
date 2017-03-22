@@ -66,7 +66,8 @@ COMPONENT fifo_generator_0
     wr_ack : OUT STD_LOGIC;
     empty : OUT STD_LOGIC;
     almost_empty : OUT STD_LOGIC;
-    valid : OUT STD_LOGIC
+    valid : OUT STD_LOGIC;
+    underflow : OUT STD_LOGIC
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
@@ -89,7 +90,8 @@ your_instance_name : fifo_generator_0
     wr_ack => wr_ack,
     empty => empty,
     almost_empty => almost_empty,
-    valid => valid
+    valid => valid,
+    underflow => underflow
   );
 -- INST_TAG_END ------ End INSTANTIATION Template ---------
 

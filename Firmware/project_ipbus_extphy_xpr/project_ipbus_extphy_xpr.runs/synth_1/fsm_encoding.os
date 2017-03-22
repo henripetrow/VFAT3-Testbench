@@ -12,7 +12,7 @@
  add_fsm_encoding \
        {control.state} \
        { }  \
-       {{000 000} {001 001} {010 010} {011 011} {100 100} }
+       {{000 000} {001 001} {010 010} {011 100} {100 011} {101 101} }
 
  add_fsm_encoding \
        {buffer_vfat3.state} \

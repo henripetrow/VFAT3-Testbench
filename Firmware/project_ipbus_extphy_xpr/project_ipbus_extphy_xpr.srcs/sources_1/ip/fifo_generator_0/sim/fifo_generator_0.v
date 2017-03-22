@@ -66,7 +66,8 @@ module fifo_generator_0 (
   wr_ack,
   empty,
   almost_empty,
-  valid
+  valid,
+  underflow
 );
 
 input wire rst;
@@ -92,6 +93,7 @@ output wire empty;
 (* X_INTERFACE_INFO = "xilinx.com:interface:fifo_read:1.0 FIFO_READ ALMOST_EMPTY" *)
 output wire almost_empty;
 output wire valid;
+output wire underflow;
 
   fifo_generator_v13_1_2 #(
     .C_COMMON_CLOCK(0),
@@ -116,7 +118,7 @@ output wire valid;
     .C_HAS_RD_RST(0),
     .C_HAS_RST(1),
     .C_HAS_SRST(0),
-    .C_HAS_UNDERFLOW(0),
+    .C_HAS_UNDERFLOW(1),
     .C_HAS_VALID(1),
     .C_HAS_WR_ACK(1),
     .C_HAS_WR_DATA_COUNT(0),
@@ -327,7 +329,7 @@ output wire valid;
     .empty(empty),
     .almost_empty(almost_empty),
     .valid(valid),
-    .underflow(),
+    .underflow(underflow),
     .data_count(),
     .rd_data_count(),
     .wr_data_count(),

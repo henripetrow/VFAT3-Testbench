@@ -34,7 +34,7 @@ entity control is
 		rst 			: in std_logic;
 		ipbus_in 		: in ipb_wbus;
 		fifo_out_valid 	: in std_logic;
-		fifo_in_valid	: in std_logic;
+		fifo_underflow  : in std_logic;
 		data_from_fifo 	: in std_logic_vector (data_width - 1 downto 0);
 		ipbus_out 		: out ipb_rbus;
 		data_to_fifo 	: out std_logic_vector (data_width - 1 downto 0);
@@ -45,7 +45,7 @@ entity control is
 end control;
 
 architecture rtl of control is
-	type state_type is (IDLE, W, R, ACK, RESET);
+	type state_type is (IDLE, W, R, ACK, ERROR, RESET);
 	
 	signal state 	: state_type;
 begin
@@ -81,20 +81,25 @@ begin
 					when R =>
 						leds(5) <= '1';
 						fifo_out_r_en <= '1';
-						state <= ACK;
-					when ACK =>	
-						fifo_out_r_en <= '0';			
 						if fifo_out_valid = '1' then
-							leds(4) <= '1';
-							ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => data_from_fifo);
-							state <= RESET;
+							state <= ACK;
 						end if;
+						if fifo_underflow = '1' then
+							state <= ERROR;
+						end if;
+					when ACK =>	
+						leds(4) <= '1';
+						ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => data_from_fifo);
+						state <= RESET;
 					when RESET =>
 						data_to_fifo <= (others => '0');
 						fifo_in_w_en <= '0';
 						ipbus_out.ipb_ack <= '0';
 						ipbus_out.ipb_rdata <= (others => '0');
 						state <= IDLE;
+					when ERROR =>
+						fifo_out_r_en <= '0';
+						state <= RESET;
 					when others =>
 						data_to_fifo <= (others => '0');
 						fifo_in_w_en <= '0';

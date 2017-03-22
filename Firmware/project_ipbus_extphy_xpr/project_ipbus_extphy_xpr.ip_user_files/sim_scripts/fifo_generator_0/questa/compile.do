@@ -28,7 +28,7 @@ vlog -work fifo_generator_v13_1_2 -64 \
 "../../../ipstatic/hdl/fifo_generator_v13_1_rfs.v" \
 
 vlog -work work -64 \
-"../../../../../../../../../Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/ip/fifo_generator_0/sim/fifo_generator_0.v" \
+"../../../../project_ipbus_extphy_xpr.srcs/sources_1/ip/fifo_generator_0/sim/fifo_generator_0.v" \
 
 vlog -work work "glbl.v"
 

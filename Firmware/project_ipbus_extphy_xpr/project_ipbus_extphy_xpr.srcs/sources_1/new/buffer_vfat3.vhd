@@ -34,15 +34,12 @@ entity buffer_vfat3 is
 	port(
 		rst 			: in std_logic;
 		clk 			: in std_logic;
-		BCd				: in std_logic_vector(BC_width - 1 downto 0);
 		data_in 		: in std_logic_vector(data_width - 1 downto 0);
 		fifo_valid		: in std_logic;
-		send_ack		: in std_logic;
+		ack		: in std_logic;
 		fifo_empty		: in std_logic;
 		data_out 		: out std_logic_vector(cmd_width - 1 downto 0);
 		read_fifo_en	: out std_logic;
-		reset_BCd		: out std_logic;
-		start_BCd		: out std_logic;
 		leds			: out std_logic_vector(7 downto 0);
 		out_ready		: out std_logic
 	);
@@ -55,7 +52,35 @@ architecture rtl of buffer_vfat3 is
 	signal state : state_type := IDLE;
 	signal buf : std_logic_vector(data_width - 1 downto 0);
 	signal data1_to_be_read : natural range 0 to 1 := 1;
+	
+	signal BCd: std_logic_vector(BC_width - 1 downto 0);
+	signal reset_BCd : std_logic;
+	signal start_BCd : std_logic;
+			
+			
 begin
+	BCd_proc: process(clk,rst)
+	begin
+		if rising_edge(clk) then
+			if rst = '1' then
+				BCd <= (others => '0');
+			else
+				if start_BCd = '1' then
+					if reset_BCd = '0' then
+						BCd <= std_logic_vector(unsigned(BCd) + 1);
+					else
+						BCd <= (others => '0');
+					end if;
+					if BCd = "111111111111" then
+						BCd <= (others => '0');
+					end if;	
+				else
+					BCd <= (others => '0');
+				end if;
+			end if;
+		end if;
+	end process;
+	
 	
 	process(clk, rst)
 	
@@ -69,6 +94,9 @@ begin
 				start_BCd <= '0';
 				out_ready <= '0';
 				state <= IDLE;
+				reset_BCd <= '0';
+				start_BCd <= '0';
+				BCd <= (others => '0');
 			else
 				--internal state machine 
 				case state is 
@@ -103,7 +131,7 @@ begin
 					when WAIT_ACK =>
 						out_ready <= '0';
 						reset_BCd <= '0';
-						if send_ack = '1' then
+						if ack = '1' then
 						    leds(0) <= '1';
 						    if data1_to_be_read = 0 then
 						    	state <= RESET;

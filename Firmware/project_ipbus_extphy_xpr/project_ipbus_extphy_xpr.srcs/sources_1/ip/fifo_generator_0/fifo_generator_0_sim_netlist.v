@@ -1,10 +1,10 @@
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-// Date        : Thu Feb 23 09:48:46 2017
+// Date        : Wed Mar 22 08:57:41 2017
 // Host        : Shinsekai running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top fifo_generator_0 -prefix
-//               fifo_generator_0_ fifo_generator_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0_sim_netlist.v
 // Design      : fifo_generator_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -27,7 +27,8 @@ module fifo_generator_0
     wr_ack,
     empty,
     almost_empty,
-    valid);
+    valid,
+    underflow);
   input rst;
   (* x_interface_info = "xilinx.com:signal:clock:1.0 write_clk CLK" *) input wr_clk;
   (* x_interface_info = "xilinx.com:signal:clock:1.0 read_clk CLK" *) input rd_clk;
@@ -41,6 +42,7 @@ module fifo_generator_0
   (* x_interface_info = "xilinx.com:interface:fifo_read:1.0 FIFO_READ EMPTY" *) output empty;
   (* x_interface_info = "xilinx.com:interface:fifo_read:1.0 FIFO_READ ALMOST_EMPTY" *) output almost_empty;
   output valid;
+  output underflow;
 
   wire almost_empty;
   wire almost_full;
@@ -51,6 +53,7 @@ module fifo_generator_0
   wire rd_clk;
   wire rd_en;
   wire rst;
+  wire underflow;
   wire valid;
   wire wr_ack;
   wire wr_clk;
@@ -112,7 +115,6 @@ module fifo_generator_0
   wire NLW_U0_s_axi_wready_UNCONNECTED;
   wire NLW_U0_s_axis_tready_UNCONNECTED;
   wire NLW_U0_sbiterr_UNCONNECTED;
-  wire NLW_U0_underflow_UNCONNECTED;
   wire NLW_U0_wr_rst_busy_UNCONNECTED;
   wire [4:0]NLW_U0_axi_ar_data_count_UNCONNECTED;
   wire [4:0]NLW_U0_axi_ar_rd_data_count_UNCONNECTED;
@@ -266,7 +268,7 @@ module fifo_generator_0
   (* C_HAS_RST = "1" *) 
   (* C_HAS_SLAVE_CE = "0" *) 
   (* C_HAS_SRST = "0" *) 
-  (* C_HAS_UNDERFLOW = "0" *) 
+  (* C_HAS_UNDERFLOW = "1" *) 
   (* C_HAS_VALID = "1" *) 
   (* C_HAS_WR_ACK = "1" *) 
   (* C_HAS_WR_DATA_COUNT = "0" *) 
@@ -601,7 +603,7 @@ module fifo_generator_0
         .sbiterr(NLW_U0_sbiterr_UNCONNECTED),
         .sleep(1'b0),
         .srst(1'b0),
-        .underflow(NLW_U0_underflow_UNCONNECTED),
+        .underflow(underflow),
         .valid(valid),
         .wr_ack(wr_ack),
         .wr_clk(wr_clk),
@@ -611,6 +613,7 @@ module fifo_generator_0
         .wr_rst_busy(NLW_U0_wr_rst_busy_UNCONNECTED));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_generic_cstr" *) 
 module fifo_generator_0_blk_mem_gen_generic_cstr
    (dout,
     wr_clk,
@@ -653,6 +656,7 @@ module fifo_generator_0_blk_mem_gen_generic_cstr
         .wr_clk(wr_clk));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
 module fifo_generator_0_blk_mem_gen_prim_width
    (dout,
     wr_clk,
@@ -695,6 +699,7 @@ module fifo_generator_0_blk_mem_gen_prim_width
         .wr_clk(wr_clk));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper" *) 
 module fifo_generator_0_blk_mem_gen_prim_wrapper
    (dout,
     wr_clk,
@@ -950,6 +955,7 @@ module fifo_generator_0_blk_mem_gen_prim_wrapper
         .WEBWE({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_top" *) 
 module fifo_generator_0_blk_mem_gen_top
    (dout,
     wr_clk,
@@ -992,6 +998,7 @@ module fifo_generator_0_blk_mem_gen_top
         .wr_clk(wr_clk));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_v8_3_4" *) 
 module fifo_generator_0_blk_mem_gen_v8_3_4
    (dout,
     wr_clk,
@@ -1034,6 +1041,7 @@ module fifo_generator_0_blk_mem_gen_v8_3_4
         .wr_clk(wr_clk));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_v8_3_4_synth" *) 
 module fifo_generator_0_blk_mem_gen_v8_3_4_synth
    (dout,
     wr_clk,
@@ -1076,6 +1084,7 @@ module fifo_generator_0_blk_mem_gen_v8_3_4_synth
         .wr_clk(wr_clk));
 endmodule
 
+(* ORIG_REF_NAME = "clk_x_pntrs" *) 
 module fifo_generator_0_clk_x_pntrs
    (v1_reg,
     v1_reg_0,
@@ -1731,6 +1740,7 @@ module fifo_generator_0_clk_x_pntrs
         .Q(wr_pntr_gc[9]));
 endmodule
 
+(* ORIG_REF_NAME = "compare" *) 
 module fifo_generator_0_compare
    (comp1,
     v1_reg);
@@ -2056,12 +2066,14 @@ module fifo_generator_0_compare_7
         .S({\NLW_gmux.gm[4].gms.ms_CARRY4_S_UNCONNECTED [3:1],v1_reg_1[4]}));
 endmodule
 
+(* ORIG_REF_NAME = "fifo_generator_ramfifo" *) 
 module fifo_generator_0_fifo_generator_ramfifo
    (wr_rst_busy,
     empty,
     dout,
     full,
     valid,
+    underflow,
     wr_ack,
     almost_empty,
     almost_full,
@@ -2076,6 +2088,7 @@ module fifo_generator_0_fifo_generator_ramfifo
   output [31:0]dout;
   output full;
   output valid;
+  output underflow;
   output wr_ack;
   output almost_empty;
   output almost_full;
@@ -2108,6 +2121,7 @@ module fifo_generator_0_fifo_generator_ramfifo
   wire rst;
   wire rst_full_ff_i;
   wire tmp_ram_rd_en;
+  wire underflow;
   wire valid;
   wire wr_ack;
   wire wr_clk;
@@ -2138,6 +2152,7 @@ module fifo_generator_0_fifo_generator_ramfifo
         .out(p_2_out),
         .rd_clk(rd_clk),
         .rd_en(rd_en),
+        .underflow(underflow),
         .v1_reg(\gras.rsts/c0/v1_reg ),
         .v1_reg_0(\gras.rsts/c1/v1_reg ),
         .v1_reg_1(\gras.rsts/gae.c2/v1_reg ),
@@ -2177,12 +2192,14 @@ module fifo_generator_0_fifo_generator_ramfifo
         .wr_rst_busy(wr_rst_busy));
 endmodule
 
+(* ORIG_REF_NAME = "fifo_generator_top" *) 
 module fifo_generator_0_fifo_generator_top
    (wr_rst_busy,
     empty,
     dout,
     full,
     valid,
+    underflow,
     wr_ack,
     almost_empty,
     almost_full,
@@ -2197,6 +2214,7 @@ module fifo_generator_0_fifo_generator_top
   output [31:0]dout;
   output full;
   output valid;
+  output underflow;
   output wr_ack;
   output almost_empty;
   output almost_full;
@@ -2216,6 +2234,7 @@ module fifo_generator_0_fifo_generator_top
   wire rd_clk;
   wire rd_en;
   wire rst;
+  wire underflow;
   wire valid;
   wire wr_ack;
   wire wr_clk;
@@ -2232,6 +2251,7 @@ module fifo_generator_0_fifo_generator_top
         .rd_clk(rd_clk),
         .rd_en(rd_en),
         .rst(rst),
+        .underflow(underflow),
         .valid(valid),
         .wr_ack(wr_ack),
         .wr_clk(wr_clk),
@@ -2269,7 +2289,7 @@ endmodule
 (* C_HAS_PROG_FLAGS_RACH = "0" *) (* C_HAS_PROG_FLAGS_RDCH = "0" *) (* C_HAS_PROG_FLAGS_WACH = "0" *) 
 (* C_HAS_PROG_FLAGS_WDCH = "0" *) (* C_HAS_PROG_FLAGS_WRCH = "0" *) (* C_HAS_RD_DATA_COUNT = "0" *) 
 (* C_HAS_RD_RST = "0" *) (* C_HAS_RST = "1" *) (* C_HAS_SLAVE_CE = "0" *) 
-(* C_HAS_SRST = "0" *) (* C_HAS_UNDERFLOW = "0" *) (* C_HAS_VALID = "1" *) 
+(* C_HAS_SRST = "0" *) (* C_HAS_UNDERFLOW = "1" *) (* C_HAS_VALID = "1" *) 
 (* C_HAS_WR_ACK = "1" *) (* C_HAS_WR_DATA_COUNT = "0" *) (* C_HAS_WR_RST = "0" *) 
 (* C_IMPLEMENTATION_TYPE = "2" *) (* C_IMPLEMENTATION_TYPE_AXIS = "1" *) (* C_IMPLEMENTATION_TYPE_RACH = "1" *) 
 (* C_IMPLEMENTATION_TYPE_RDCH = "1" *) (* C_IMPLEMENTATION_TYPE_WACH = "1" *) (* C_IMPLEMENTATION_TYPE_WDCH = "1" *) 
@@ -2306,7 +2326,7 @@ endmodule
 (* C_WR_DEPTH_WRCH = "16" *) (* C_WR_FREQ = "1" *) (* C_WR_PNTR_WIDTH = "10" *) 
 (* C_WR_PNTR_WIDTH_AXIS = "10" *) (* C_WR_PNTR_WIDTH_RACH = "4" *) (* C_WR_PNTR_WIDTH_RDCH = "10" *) 
 (* C_WR_PNTR_WIDTH_WACH = "4" *) (* C_WR_PNTR_WIDTH_WDCH = "10" *) (* C_WR_PNTR_WIDTH_WRCH = "4" *) 
-(* C_WR_RESPONSE_LATENCY = "1" *) 
+(* C_WR_RESPONSE_LATENCY = "1" *) (* ORIG_REF_NAME = "fifo_generator_v13_1_2" *) 
 module fifo_generator_0_fifo_generator_v13_1_2
    (backup,
     backup_marker,
@@ -2782,6 +2802,7 @@ module fifo_generator_0_fifo_generator_v13_1_2
   wire rd_clk;
   wire rd_en;
   wire rst;
+  wire underflow;
   wire valid;
   wire wr_ack;
   wire wr_clk;
@@ -3297,7 +3318,6 @@ module fifo_generator_0_fifo_generator_v13_1_2
   assign s_axi_wready = \<const0> ;
   assign s_axis_tready = \<const0> ;
   assign sbiterr = \<const0> ;
-  assign underflow = \<const0> ;
   assign wr_data_count[9] = \<const0> ;
   assign wr_data_count[8] = \<const0> ;
   assign wr_data_count[7] = \<const0> ;
@@ -3322,6 +3342,7 @@ module fifo_generator_0_fifo_generator_v13_1_2
         .rd_clk(rd_clk),
         .rd_en(rd_en),
         .rst(rst),
+        .underflow(underflow),
         .valid(valid),
         .wr_ack(wr_ack),
         .wr_clk(wr_clk),
@@ -3329,12 +3350,14 @@ module fifo_generator_0_fifo_generator_v13_1_2
         .wr_rst_busy(wr_rst_busy));
 endmodule
 
+(* ORIG_REF_NAME = "fifo_generator_v13_1_2_synth" *) 
 module fifo_generator_0_fifo_generator_v13_1_2_synth
    (wr_rst_busy,
     empty,
     dout,
     full,
     valid,
+    underflow,
     wr_ack,
     almost_empty,
     almost_full,
@@ -3349,6 +3372,7 @@ module fifo_generator_0_fifo_generator_v13_1_2_synth
   output [31:0]dout;
   output full;
   output valid;
+  output underflow;
   output wr_ack;
   output almost_empty;
   output almost_full;
@@ -3368,6 +3392,7 @@ module fifo_generator_0_fifo_generator_v13_1_2_synth
   wire rd_clk;
   wire rd_en;
   wire rst;
+  wire underflow;
   wire valid;
   wire wr_ack;
   wire wr_clk;
@@ -3384,6 +3409,7 @@ module fifo_generator_0_fifo_generator_v13_1_2_synth
         .rd_clk(rd_clk),
         .rd_en(rd_en),
         .rst(rst),
+        .underflow(underflow),
         .valid(valid),
         .wr_ack(wr_ack),
         .wr_clk(wr_clk),
@@ -3391,6 +3417,7 @@ module fifo_generator_0_fifo_generator_v13_1_2_synth
         .wr_rst_busy(wr_rst_busy));
 endmodule
 
+(* ORIG_REF_NAME = "memory" *) 
 module fifo_generator_0_memory
    (dout,
     wr_clk,
@@ -3433,6 +3460,7 @@ module fifo_generator_0_memory
         .wr_clk(wr_clk));
 endmodule
 
+(* ORIG_REF_NAME = "rd_bin_cntr" *) 
 module fifo_generator_0_rd_bin_cntr
    (Q,
     \gc1.count_d2_reg[9]_0 ,
@@ -3791,21 +3819,36 @@ module fifo_generator_0_rd_bin_cntr
         .Q(Q[9]));
 endmodule
 
+(* ORIG_REF_NAME = "rd_handshaking_flags" *) 
 module fifo_generator_0_rd_handshaking_flags
    (valid,
+    underflow,
     ram_empty_i_reg,
     rd_clk,
-    AR);
+    AR,
+    p_1_out);
   output valid;
+  output underflow;
   input ram_empty_i_reg;
   input rd_clk;
   input [0:0]AR;
+  input p_1_out;
 
   wire [0:0]AR;
+  wire p_1_out;
   wire ram_empty_i_reg;
   wire rd_clk;
+  wire underflow;
   wire valid;
 
+  FDRE #(
+    .INIT(1'b0)) 
+    \guf.guf1.underflow_i_reg 
+       (.C(rd_clk),
+        .CE(1'b1),
+        .D(p_1_out),
+        .Q(underflow),
+        .R(1'b0));
   FDCE #(
     .INIT(1'b0)) 
     \gv.ram_valid_d1_reg 
@@ -3816,10 +3859,12 @@ module fifo_generator_0_rd_handshaking_flags
         .Q(valid));
 endmodule
 
+(* ORIG_REF_NAME = "rd_logic" *) 
 module fifo_generator_0_rd_logic
    (empty,
     out,
     valid,
+    underflow,
     almost_empty,
     Q,
     \gc1.count_d2_reg[9] ,
@@ -3833,6 +3878,7 @@ module fifo_generator_0_rd_logic
   output empty;
   output out;
   output valid;
+  output underflow;
   output almost_empty;
   output [9:0]Q;
   output [9:0]\gc1.count_d2_reg[9] ;
@@ -3853,8 +3899,10 @@ module fifo_generator_0_rd_logic
   wire \gras.rsts_n_3 ;
   wire \gras.rsts_n_4 ;
   wire out;
+  wire p_1_out;
   wire rd_clk;
   wire rd_en;
+  wire underflow;
   wire [4:0]v1_reg;
   wire [4:0]v1_reg_0;
   wire [4:0]v1_reg_1;
@@ -3867,6 +3915,7 @@ module fifo_generator_0_rd_logic
         .empty(empty),
         .\gv.ram_valid_d1_reg (\gras.rsts_n_4 ),
         .out(out),
+        .p_1_out(p_1_out),
         .rd_clk(rd_clk),
         .rd_en(rd_en),
         .v1_reg(v1_reg),
@@ -3874,8 +3923,10 @@ module fifo_generator_0_rd_logic
         .v1_reg_1(v1_reg_1));
   fifo_generator_0_rd_handshaking_flags \grhf.rhf 
        (.AR(AR),
+        .p_1_out(p_1_out),
         .ram_empty_i_reg(\gras.rsts_n_4 ),
         .rd_clk(rd_clk),
+        .underflow(underflow),
         .valid(valid));
   fifo_generator_0_rd_bin_cntr rpntr
        (.AR(AR),
@@ -3886,12 +3937,14 @@ module fifo_generator_0_rd_logic
         .rd_clk(rd_clk));
 endmodule
 
+(* ORIG_REF_NAME = "rd_status_flags_as" *) 
 module fifo_generator_0_rd_status_flags_as
    (empty,
     out,
     almost_empty,
     E,
     \gv.ram_valid_d1_reg ,
+    p_1_out,
     v1_reg,
     v1_reg_0,
     v1_reg_1,
@@ -3903,6 +3956,7 @@ module fifo_generator_0_rd_status_flags_as
   output almost_empty;
   output [0:0]E;
   output \gv.ram_valid_d1_reg ;
+  output p_1_out;
   input [4:0]v1_reg;
   input [4:0]v1_reg_0;
   input [4:0]v1_reg_1;
@@ -3917,6 +3971,7 @@ module fifo_generator_0_rd_status_flags_as
   wire comp1;
   wire comp2;
   wire \gv.ram_valid_d1_reg ;
+  wire p_1_out;
   (* DONT_TOUCH *) wire ram_empty_fb_i;
   (* DONT_TOUCH *) wire ram_empty_i;
   wire ram_empty_i0;
@@ -3960,6 +4015,12 @@ module fifo_generator_0_rd_status_flags_as
         .I1(ram_empty_fb_i),
         .O(E));
   LUT2 #(
+    .INIT(4'h8)) 
+    \guf.guf1.underflow_i_i_1 
+       (.I0(rd_en),
+        .I1(ram_empty_i),
+        .O(p_1_out));
+  LUT2 #(
     .INIT(4'h2)) 
     \gv.ram_valid_d1_i_1 
        (.I0(rd_en),
@@ -3989,6 +4050,7 @@ module fifo_generator_0_rd_status_flags_as
         .Q(ram_empty_i));
 endmodule
 
+(* ORIG_REF_NAME = "reset_blk_ramfifo" *) 
 module fifo_generator_0_reset_blk_ramfifo
    (out,
     \gc1.count_reg[0] ,
@@ -4227,6 +4289,7 @@ module fifo_generator_0_reset_blk_ramfifo
         .Q(wr_rst_reg[2]));
 endmodule
 
+(* ORIG_REF_NAME = "synchronizer_ff" *) 
 module fifo_generator_0_synchronizer_ff
    (out,
     \ngwrdrst.grst.g7serrst.rd_rst_asreg_reg ,
@@ -5096,6 +5159,7 @@ module fifo_generator_0_synchronizer_ff__parameterized3
         .O(\gnxpm_cdc.rd_pntr_bin_reg[8] [8]));
 endmodule
 
+(* ORIG_REF_NAME = "wr_bin_cntr" *) 
 module fifo_generator_0_wr_bin_cntr
    (Q,
     v1_reg,
@@ -5663,6 +5727,7 @@ module fifo_generator_0_wr_bin_cntr
         .O(v1_reg_1[4]));
 endmodule
 
+(* ORIG_REF_NAME = "wr_handshaking_flags" *) 
 module fifo_generator_0_wr_handshaking_flags
    (wr_ack,
     E,
@@ -5686,6 +5751,7 @@ module fifo_generator_0_wr_handshaking_flags
         .Q(wr_ack));
 endmodule
 
+(* ORIG_REF_NAME = "wr_logic" *) 
 module fifo_generator_0_wr_logic
    (full,
     wr_ack,
@@ -5752,6 +5818,7 @@ module fifo_generator_0_wr_logic
         .wr_clk(wr_clk));
 endmodule
 
+(* ORIG_REF_NAME = "wr_status_flags_as" *) 
 module fifo_generator_0_wr_status_flags_as
    (full,
     almost_full,

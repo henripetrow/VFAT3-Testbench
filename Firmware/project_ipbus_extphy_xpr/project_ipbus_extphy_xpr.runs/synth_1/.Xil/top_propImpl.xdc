@@ -19,8 +19,6 @@ set_property src_info {type:XDC file:1 line:58 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN E18 [get_ports {leds[6]}]
 set_property src_info {type:XDC file:1 line:60 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN F16 [get_ports {leds[7]}]
-set_property src_info {type:XDC file:1 line:63 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN AG5 [get_ports {swb}]
 set_property src_info {type:XDC file:1 line:70 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN K30 [get_ports gmii_gtx_clk]
 set_property src_info {type:XDC file:1 line:77 export:INPUT save:INPUT read:READ} [current_design]

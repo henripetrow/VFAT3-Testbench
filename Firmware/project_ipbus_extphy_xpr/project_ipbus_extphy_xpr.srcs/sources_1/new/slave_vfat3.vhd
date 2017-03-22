@@ -65,9 +65,12 @@ architecture rtl of slave_vfat3 is
 	signal fifo_out_a_empty		: std_logic;
 	signal fifo_out_a_full		: std_logic;
 	signal fifo_out_w_ack		: std_logic;
+	signal fifo_out_underflow	: std_logic;
+	signal fifo_in_underflow	: std_logic;
+	signal fifo_in_ack			: std_logic;
 	signal reset_fifo			: std_logic;
 	
-	signal counter_rst			: std_logic_vector(3 downto 0) := "0000";
+	signal counter_rst			: integer := 0;
 	
 	signal command				: std_logic_vector(cmd_width - 1 downto 0);
 	signal BCd					: std_logic_vector(BC_width - 1 downto 0);
@@ -85,17 +88,18 @@ architecture rtl of slave_vfat3 is
 		PORT (
 	    	wr_clk     		: IN  std_logic := '0';
 	     	rd_clk      	: IN  std_logic := '0';
-	        wr_ack			: OUT std_logic := '0';
-	        almost_full  	: OUT std_logic := '0';
-	        almost_empty	: OUT std_logic := '1';
+	        wr_ack			: OUT std_logic;
+	        almost_full  	: OUT std_logic;
+	        almost_empty	: OUT std_logic;
+	        underflow		: OUT std_logic;
 	        rst          	: IN  std_logic := '0';
 	        wr_en        	: IN  std_logic := '0';
 	        rd_en        	: IN  std_logic := '0';
 	        din          	: IN  std_logic_vector(32-1 DOWNTO 0) := (OTHERS => '0');
-	        dout         	: OUT std_logic_vector(32-1 DOWNTO 0) := (OTHERS => '0');
-	        full         	: OUT std_logic := '0';
-	        empty        	: OUT std_logic := '1';
-	        valid			: OUT std_logic := '0'
+	        dout         	: OUT std_logic_vector(32-1 DOWNTO 0);
+	        full         	: OUT std_logic;
+	        empty        	: OUT std_logic;
+	        valid			: OUT std_logic
 		);
 	  end component;
 	  
@@ -131,7 +135,7 @@ begin
 			fifo_out_valid	=> fifo_out_valid,
 			data_to_fifo 	=> fifo_in_data_in,
 			data_from_fifo 	=> fifo_out_data_out,
-			fifo_in_valid 	=> fifo_in_valid,
+			fifo_underflow	=> fifo_out_underflow,
 			leds			=> leds
 		);
 		
@@ -141,27 +145,28 @@ begin
 		
 	fifo_in: fifo_generator_0
 		port map(
-			rst 	=> reset_fifo,
-		    wr_clk 	=> clk,
-		    rd_clk 	=> clk40,-- !!!!
-		    din		=> fifo_in_data_in,
-		    wr_en 	=> fifo_in_w_en,
-		    rd_en 	=> fifo_in_r_en,
-		    dout 	=> fifo_in_data_out,
-		    full 	=> fifo_in_full,
-		    valid	=> fifo_in_valid,
-		    almost_full => fifo_in_a_full,
-		    wr_ack 	=> ipbus_out.ipb_ack,
-		    empty 	=> fifo_in_empty,
-		    almost_empty => fifo_in_a_empty
+			rst 			=> reset_fifo,
+		    wr_clk 			=> clk,
+		    rd_clk 			=> clk40,-- !!!!
+		    din				=> fifo_in_data_in,
+		    wr_en 			=> fifo_in_w_en,
+		    rd_en 			=> fifo_in_r_en,
+		    dout 			=> fifo_in_data_out,
+		    full 			=> fifo_in_full,
+		    valid			=> fifo_in_valid,
+		    almost_full 	=> fifo_in_a_full,
+		    wr_ack 			=> fifo_in_ack, -- not used
+		    empty 			=> fifo_in_empty,
+		    almost_empty	=> fifo_in_a_empty,
+		    underflow 		=> fifo_in_underflow
 		);
 				
 		process(clk, reset) 
 		begin
 			if rising_edge(clk) then
-				if counter_rst < "1010" then -- need to maintain reset on FIFO a few clk cycles first
+				if counter_rst < 10 then -- need to maintain reset on FIFO a few clk cycles first
 					reset_fifo <= '1';
-					counter_rst <= std_logic_vector(unsigned(counter_rst) + 1);
+					counter_rst <= counter_rst + 1;
 				else
 					reset_fifo <= reset;
 				end if;
@@ -170,35 +175,33 @@ begin
 		
 	fifo_out: fifo_generator_0
 		port map(
-			rst 	=> reset,
-		    wr_clk 	=> clk40,
-		    rd_clk 	=> clk,
-		    din 	=> fifo_out_data_in,
-		    wr_en 	=> fifo_out_w_en,
-		    rd_en 	=> fifo_out_r_en,
-		    dout 	=> fifo_out_data_out,
-		    full 	=> fifo_out_full,
-		    almost_full => fifo_out_a_full,
-		    wr_ack	=> fifo_out_w_ack,
-		    empty 	=> fifo_out_empty,
-		    valid	=> fifo_out_valid,
-		    almost_empty => fifo_out_a_empty
+			rst 			=> reset,
+		    wr_clk 			=> clk40,
+		    rd_clk 			=> clk,
+		    din 			=> fifo_out_data_in,
+		    wr_en 			=> fifo_out_w_en,
+		    rd_en 			=> fifo_out_r_en,
+		    dout 			=> fifo_out_data_out,
+		    full 			=> fifo_out_full,
+		    almost_full 	=> fifo_out_a_full,
+		    wr_ack			=> fifo_out_w_ack,
+		    empty 			=> fifo_out_empty,
+		    valid			=> fifo_out_valid,
+		    almost_empty 	=> fifo_out_a_empty,
+		    underflow 		=> fifo_out_underflow
 		);
 		
 	buffer_in: entity work.buffer_vfat3
 		port map(
 			rst 			=> rst40,
 			clk 			=> clk40,
-			BCd				=> BCd,
 			data_in 		=> fifo_in_data_out,
 			data_out 		=> command,
 			read_fifo_en	=> fifo_in_r_en,
-			reset_BCd		=> reset_BCd,
-			start_BCd		=> start_BCd,
 			out_ready		=> buffer_valid,
 			leds			=> leds,
 			fifo_valid		=> fifo_in_valid,
-			send_ack		=> data_buf_received,
+			ack				=> data_buf_received,
 			fifo_empty		=> fifo_in_empty
 		);
 		
@@ -207,16 +210,7 @@ begin
 		fifo_out_data_in <= command & command & command & command & command & command & command & command;
 --		fifo_out_data_in(31 downto 4) <= (others => '1'); FW does not work anymore with this assignment ...
 --		fifo_out_data_in(3 downto 0) <= command ;
-		
-	BC_block: entity work.BC_block
-		port map(
-			rst			=> rst40,
-			clk			=> clk40,
-			BCd			=> BCd,
-			start_BCd	=> start_BCd,
-			reset_BCd	=> reset_BCd,
-			leds		=> leds
-		);
+
 --	serializer: selectio_wiz_ser
 --		port map(
 --			data_out_from_device	=> data_bus_out,
