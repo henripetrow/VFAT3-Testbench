@@ -347,19 +347,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/BC_block.vhd">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/new/control.vhd">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/switch.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -453,24 +441,6 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="fifo_generator_0.xci" FileRelPathName="fifo_generator_0_ooc.xdc"/>
-        <CompFileExtendedInfo CompFileName="fifo_generator_0.xci" FileRelPathName="synth/fifo_generator_0.vhd"/>
-        <CompFileExtendedInfo CompFileName="fifo_generator_0.xci" FileRelPathName="hdl/fifo_generator_v13_1_vhsyn_rfs.vhd"/>
-        <CompFileExtendedInfo CompFileName="fifo_generator_0.xci" FileRelPathName="hdl/blk_mem_gen_v8_3_vhsyn_rfs.vhd"/>
-        <CompFileExtendedInfo CompFileName="fifo_generator_0.xci" FileRelPathName="hdl/fifo_generator_v13_1_rfs.vhd"/>
-        <CompFileExtendedInfo CompFileName="fifo_generator_0.xci" FileRelPathName="simulation/fifo_generator_vlog_beh.v"/>
-        <CompFileExtendedInfo CompFileName="fifo_generator_0.xci" FileRelPathName="fifo_generator_0/fifo_generator_0_clocks.xdc"/>
-        <CompFileExtendedInfo CompFileName="fifo_generator_0.xci" FileRelPathName="sim/fifo_generator_0.v"/>
-        <CompFileExtendedInfo CompFileName="fifo_generator_0.xci" FileRelPathName="hdl/fifo_generator_v13_1_rfs.v"/>
-        <CompFileExtendedInfo CompFileName="fifo_generator_0.xci" FileRelPathName="fifo_generator_0.vho"/>
-        <CompFileExtendedInfo CompFileName="fifo_generator_0.xci" FileRelPathName="doc/fifo_generator_v13_1_changelog.txt"/>
-        <CompFileExtendedInfo CompFileName="fifo_generator_0.xci" FileRelPathName="fifo_generator_0/fifo_generator_0.xdc"/>
-        <CompFileExtendedInfo CompFileName="fifo_generator_0.xci" FileRelPathName="fifo_generator_0.veo"/>
-        <CompFileExtendedInfo CompFileName="fifo_generator_0.xci" FileRelPathName="fifo_generator_0.xml"/>
-        <CompFileExtendedInfo CompFileName="fifo_generator_0.xci" FileRelPathName="fifo_generator_0_sim_netlist.vhdl"/>
-        <CompFileExtendedInfo CompFileName="fifo_generator_0.xci" FileRelPathName="fifo_generator_0_sim_netlist.v"/>
-        <CompFileExtendedInfo CompFileName="fifo_generator_0.xci" FileRelPathName="fifo_generator_0_stub.vhdl"/>
-        <CompFileExtendedInfo CompFileName="fifo_generator_0.xci" FileRelPathName="fifo_generator_0_stub.v"/>
       </File>
       <Config>
         <Option Name="TopModule" Val="fifo_generator_0"/>
@@ -531,9 +501,7 @@
     </Run>
     <Run Id="fifo_generator_0_synth_1" Type="Ft3:Synth" SrcSet="fifo_generator_0" Part="xc7k325tffg900-2" ConstrsSet="fifo_generator_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/fifo_generator_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -603,9 +571,7 @@
     </Run>
     <Run Id="fifo_generator_0_impl_1" Type="Ft2:EntireDesign" Part="xc7k325tffg900-2" ConstrsSet="fifo_generator_0" Description="Default settings for Implementation." SynthRun="fifo_generator_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

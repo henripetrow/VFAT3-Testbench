@@ -60,25 +60,24 @@ begin
 				data_to_fifo 	<= (others => '0');
 				fifo_in_w_en 	<= '0';
 				fifo_out_r_en 	<= '0';
-				leds			<= (others => '0');
 			else
 				case state is
 					when IDLE =>
-						leds(7) <= '1';
+						--leds(7) <= '1';
 						if ipbus_in.ipb_strobe = '1' and ipbus_in.ipb_write = '1' then
 							state <= W;
 						elsif ipbus_in.ipb_strobe = '1' and ipbus_in.ipb_write = '0' then
 							state <= R;
 						end if;
 					when W =>
-						leds(6) <= '1';
+						--leds(6) <= '1';
 						data_to_fifo <= ipbus_in.ipb_wdata;
 						fifo_in_w_en <= '1';
 						ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => (others => '0')); 
 						
 						state <= RESET;
 					when R =>
-						leds(5) <= '1';
+						--leds(5) <= '1';
 						fifo_out_r_en <= '1';
 						if fifo_out_valid = '1' then
 							state <= ACK;
@@ -87,7 +86,7 @@ begin
 							state <= ERROR;
 						end if;
 					when ACK =>	
-						leds(4) <= '1';
+						--leds(4) <= '1';
 						ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => data_from_fifo);
 						state <= RESET;
 					when RESET =>

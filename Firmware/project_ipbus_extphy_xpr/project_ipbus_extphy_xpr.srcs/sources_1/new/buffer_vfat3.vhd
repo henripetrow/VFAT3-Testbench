@@ -59,27 +59,27 @@ architecture rtl of buffer_vfat3 is
 			
 			
 begin
-	BCd_proc: process(clk,rst)
-	begin
-		if rising_edge(clk) then
-			if rst = '1' then
-				BCd <= (others => '0');
-			else
-				if start_BCd = '1' then
-					if reset_BCd = '0' then
-						BCd <= std_logic_vector(unsigned(BCd) + 1);
-					else
-						BCd <= (others => '0');
-					end if;
-					if BCd = "111111111111" then
-						BCd <= (others => '0');
-					end if;	
-				else
-					BCd <= (others => '0');
-				end if;
-			end if;
-		end if;
-	end process;
+--	BCd_proc: process(clk,rst)
+--	begin
+--		if rising_edge(clk) then
+--			if rst = '1' then
+--				BCd <= (others => '0');
+--			else
+--				if start_BCd = '1' then
+--					if reset_BCd = '0' then
+--						BCd <= std_logic_vector(unsigned(BCd) + 1);
+--					else
+--						BCd <= (others => '0');
+--					end if;
+--					if BCd = "111111111111" then
+--						BCd <= (others => '0');
+--					end if;	
+--				else
+--					BCd <= (others => '0');
+--				end if;
+--			end if;
+--		end if;
+--	end process;
 	
 	
 	process(clk, rst)
@@ -95,9 +95,6 @@ begin
 				out_ready <= '0';
 				state <= IDLE;
 				reset_BCd <= '0';
-				start_BCd <= '0';
-				BCd <= (others => '0');
-				--leds <= (others => '1');
 			else
 				--internal state machine 
 				case state is 
@@ -106,13 +103,13 @@ begin
 							read_fifo_en <= '1';
 							state <= READ;
 						end if;
-						leds(3) <= '1';
+						leds(7) <= '1';
 					when READ => 
 						read_fifo_en <= '0';
 						if fifo_valid <= '1' then
 							buf <= data_in;
 							start_BCd <= '1';
-							leds(2) <= '1';
+							leds(6) <= '1';
 							state <= MATCH_SEND;
 						end if;
 					when MATCH_SEND =>
@@ -120,23 +117,35 @@ begin
 						--31     20|19      16|15      4|3        0--
 						-- BCdiff1 |   cmd1   | BCdiff2 |   cmd2   --
 						---------------------------------------------
+						if start_BCd = '1' then
+							BCd <= std_logic_vector(unsigned(BCd) + 1);
+							if BCd = "111111111111" then
+								BCd <= (others => '0');
+							end if;	
+						else
+							BCd <= (others => '0');
+						end if;
 						if buf(data1_to_be_read * (BC_width + cmd_width) + ((BC_width + cmd_width) - 1) downto data1_to_be_read * (BC_width + cmd_width) + cmd_width) = BCd then
-							-- reads either BCdiff1 or BCdiff2 if data1_to_be_read = 1 or 0
+							-- reads either BCdiff1 (31 downto 20) or BCdiff2 (15 downto 4)  if data1_to_be_read = 1 or 0
 						    data_out <= buf(data1_to_be_read * (BC_width + cmd_width) + (cmd_width - 1) downto data1_to_be_read * (BC_width + cmd_width));
-						    -- transmits either cmd1 or cmd2 if data1_to_be_read = 1 or 0
+						    -- transmits either cmd1(19 downto 16) or cmd2(3 downto 0) if data1_to_be_read = 1 or 0
 						    out_ready <= '1';
-						    reset_BCd <= '1';
 						    state <= WAIT_ACK;
-						    leds(1) <= '1';
+						    reset_BCd <= '1';
+						    leds(5) <= '1';
 						end if;
 					when WAIT_ACK =>
 						out_ready <= '0';
-						reset_BCd <= '0';
 						if ack = '1' then
-						    leds(0) <= '1';
-						    if data1_to_be_read = 0 then
+							if reset_BCd = '1' then
+								reset_BCd <= '0';
+								BCd <= (others => '0');
+							end if;
+							if data1_to_be_read = 0 then
+						    	leds(4) <= '1';
 						    	state <= RESET;
 						    else
+						    	leds(3) <= '1';
 						    	STATE <= MATCH_SEND;
 						    end if;						    
 						    data1_to_be_read <= abs(data1_to_be_read - 1); --equivalent in boolean to "A = not A"
@@ -145,7 +154,6 @@ begin
 					when RESET =>
 						out_ready <= '0';
 						data1_to_be_read <= 1;
-						reset_BCd <= '0';
 						data_out <= (others => '0');
 						buf <= (others => '0');
 						state <= IDLE;

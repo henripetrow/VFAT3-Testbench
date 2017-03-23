@@ -191,6 +191,9 @@ begin
 		    underflow 		=> fifo_out_underflow
 		);
 		
+		leds(2) <= fifo_out_empty;
+		leds(1) <= fifo_in_empty;
+		
 	buffer_in: entity work.buffer_vfat3
 		port map(
 			rst 			=> rst40,
