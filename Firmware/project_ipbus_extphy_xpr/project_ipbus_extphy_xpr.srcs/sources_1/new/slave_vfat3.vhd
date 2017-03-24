@@ -191,8 +191,6 @@ begin
 		    underflow 		=> fifo_out_underflow
 		);
 		
-		leds(2) <= fifo_out_empty;
-		leds(1) <= fifo_in_empty;
 		
 	buffer_in: entity work.buffer_vfat3
 		port map(
@@ -208,10 +206,12 @@ begin
 			fifo_empty		=> fifo_in_empty
 		);
 		
+		leds(2 downto 0) <= command(2 downto 0);
+		
 		data_buf_received <= fifo_out_w_ack;
 		fifo_out_w_en <= buffer_valid; -- buffer loopback testing
 		fifo_out_data_in <= command & command & command & command & command & command & command & command;
---		fifo_out_data_in(31 downto 4) <= (others => '1'); FW does not work anymore with this assignment ...
+--		fifo_out_data_in(31 downto 4) <= (others => '1'); -- FW does not work anymore with this assignment ...
 --		fifo_out_data_in(3 downto 0) <= command ;
 
 --	serializer: selectio_wiz_ser

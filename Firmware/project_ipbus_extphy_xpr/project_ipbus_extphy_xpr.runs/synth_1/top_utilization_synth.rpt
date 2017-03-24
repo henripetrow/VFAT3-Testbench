@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date         : Thu Mar 23 11:50:38 2017
+| Date         : Fri Mar 24 15:32:44 2017
 | Host         : Shinsekai running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
@@ -158,11 +158,11 @@ Table of Contents
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
 | FDRE       | 4157 |        Flop & Latch |
-| LUT6       | 1292 |                 LUT |
-| LUT5       |  710 |                 LUT |
-| LUT3       |  672 |                 LUT |
-| LUT2       |  556 |                 LUT |
-| LUT4       |  504 |                 LUT |
+| LUT6       | 1294 |                 LUT |
+| LUT5       |  709 |                 LUT |
+| LUT3       |  674 |                 LUT |
+| LUT2       |  554 |                 LUT |
+| LUT4       |  501 |                 LUT |
 | FDSE       |  415 |        Flop & Latch |
 | LUT1       |  381 |                 LUT |
 | CARRY4     |  164 |          CarryLogic |
@@ -170,8 +170,8 @@ Table of Contents
 | FDCE       |   66 |        Flop & Latch |
 | MUXF7      |   26 |               MuxFx |
 | FDPE       |   22 |        Flop & Latch |
+| OBUF       |   20 |                  IO |
 | RAMB36E1   |   19 |        Block Memory |
-| OBUF       |   19 |                  IO |
 | RAMD64E    |   16 |  Distributed Memory |
 | RAMD32     |   14 |  Distributed Memory |
 | IBUF       |   11 |                  IO |
@@ -180,7 +180,6 @@ Table of Contents
 | BUFG       |    3 |               Clock |
 | RAMS32     |    2 |  Distributed Memory |
 | ODDR       |    1 |                  IO |
-| OBUFT      |    1 |                  IO |
 | MMCME2_ADV |    1 |               Clock |
 | IDELAYCTRL |    1 |                  IO |
 | IBUFDS     |    1 |                  IO |

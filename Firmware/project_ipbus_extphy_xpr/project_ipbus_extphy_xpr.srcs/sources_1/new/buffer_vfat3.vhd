@@ -59,29 +59,7 @@ architecture rtl of buffer_vfat3 is
 			
 			
 begin
---	BCd_proc: process(clk,rst)
---	begin
---		if rising_edge(clk) then
---			if rst = '1' then
---				BCd <= (others => '0');
---			else
---				if start_BCd = '1' then
---					if reset_BCd = '0' then
---						BCd <= std_logic_vector(unsigned(BCd) + 1);
---					else
---						BCd <= (others => '0');
---					end if;
---					if BCd = "111111111111" then
---						BCd <= (others => '0');
---					end if;	
---				else
---					BCd <= (others => '0');
---				end if;
---			end if;
---		end if;
---	end process;
-	
-	
+
 	process(clk, rst)
 	
 	begin

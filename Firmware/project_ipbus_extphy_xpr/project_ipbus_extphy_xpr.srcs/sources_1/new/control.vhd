@@ -87,6 +87,7 @@ begin
 						end if;
 					when ACK =>	
 						--leds(4) <= '1';
+						fifo_out_r_en <= '0';
 						ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => data_from_fifo);
 						state <= RESET;
 					when RESET =>

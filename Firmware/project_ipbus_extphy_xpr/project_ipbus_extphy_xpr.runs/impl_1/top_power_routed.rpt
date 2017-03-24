@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date             : Thu Mar 23 11:59:00 2017
+| Date             : Fri Mar 24 15:52:42 2017
 | Host             : Shinsekai running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -51,14 +51,14 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.026 |       10 |       --- |             --- |
 | Slice Logic              |     0.007 |     8255 |       --- |             --- |
-|   LUT as Logic           |     0.006 |     3052 |    203800 |            1.50 |
-|   Register               |    <0.001 |     4229 |    407600 |            1.04 |
+|   LUT as Logic           |     0.006 |     3048 |    203800 |            1.50 |
+|   Register               |    <0.001 |     4232 |    407600 |            1.04 |
 |   CARRY4                 |    <0.001 |      174 |     50950 |            0.34 |
 |   LUT as Shift Register  |    <0.001 |       51 |     64000 |            0.08 |
 |   F7/F8 Muxes            |    <0.001 |       22 |    203800 |            0.01 |
 |   LUT as Distributed RAM |    <0.001 |        8 |     64000 |            0.01 |
-|   Others                 |     0.000 |      214 |       --- |             --- |
-| Signals                  |     0.008 |     6202 |       --- |             --- |
+|   Others                 |     0.000 |      213 |       --- |             --- |
+| Signals                  |     0.008 |     6213 |       --- |             --- |
 | Block RAM                |     0.018 |       21 |       445 |            4.72 |
 | MMCM                     |     0.210 |        2 |        10 |           20.00 |
 | I/O                      |     0.023 |       33 |       500 |            6.60 |
@@ -168,7 +168,7 @@ Table of Contents
 |     trans                                                                                          |     0.003 |
 |       iface                                                                                        |     0.001 |
 |       sm                                                                                           |     0.001 |
-|     udp_if                                                                                         |     0.041 |
+|     udp_if                                                                                         |     0.040 |
 |       ARP                                                                                          |    <0.001 |
 |       IPADDR                                                                                       |    <0.001 |
 |       RARP_block                                                                                   |    <0.001 |
@@ -178,7 +178,7 @@ Table of Contents
 |       internal_ram_shim                                                                            |    <0.001 |
 |       ipbus_rx_ram                                                                                 |     0.008 |
 |       ipbus_tx_ram                                                                                 |     0.007 |
-|       payload                                                                                      |     0.003 |
+|       payload                                                                                      |     0.002 |
 |       ping                                                                                         |     0.001 |
 |       resend                                                                                       |    <0.001 |
 |       rx_byte_sum                                                                                  |    <0.001 |
@@ -188,7 +188,7 @@ Table of Contents
 |       rx_reset_block                                                                               |    <0.001 |
 |       rx_transactor                                                                                |    <0.001 |
 |       status                                                                                       |     0.002 |
-|       status_buffer                                                                                |     0.004 |
+|       status_buffer                                                                                |     0.003 |
 |       tx_byte_sum                                                                                  |    <0.001 |
 |       tx_main                                                                                      |     0.002 |
 |       tx_ram_selector                                                                              |    <0.001 |
@@ -204,11 +204,11 @@ Table of Contents
 |     slave_vfat3                                                                                    |     0.002 |
 |       buffer_in                                                                                    |    <0.001 |
 |       control_block                                                                                |    <0.001 |
-|       fifo_in                                                                                      |    <0.001 |
-|         U0                                                                                         |    <0.001 |
-|           inst_fifo_gen                                                                            |    <0.001 |
-|             gconvfifo.rf                                                                           |    <0.001 |
-|               grf.rf                                                                               |    <0.001 |
+|       fifo_in                                                                                      |     0.001 |
+|         U0                                                                                         |     0.001 |
+|           inst_fifo_gen                                                                            |     0.001 |
+|             gconvfifo.rf                                                                           |     0.001 |
+|               grf.rf                                                                               |     0.001 |
 |                 gntv_or_sync_fifo.gcx.clkx                                                         |    <0.001 |
 |                   gnxpm_cdc.gsync_stage[1].rd_stg_inst                                             |    <0.001 |
 |                   gnxpm_cdc.gsync_stage[1].wr_stg_inst                                             |    <0.001 |
