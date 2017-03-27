@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
 // Date        : Wed Mar 15 09:41:27 2017
 // Host        : Shinsekai running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/ip/selectio_wiz_ser/selectio_wiz_ser_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top selectio_wiz_ser -prefix
+//               selectio_wiz_ser_ selectio_wiz_ser_stub.v
 // Design      : selectio_wiz_ser
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7k325tffg900-2

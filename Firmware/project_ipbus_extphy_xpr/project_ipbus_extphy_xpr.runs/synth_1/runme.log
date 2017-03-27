@@ -22,9 +22,9 @@ Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 9940 
+INFO: Helper process launched with PID 10828 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 346.094 ; gain = 136.742
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 346.609 ; gain = 136.473
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'top' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/ipbus/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:28]
 INFO: [Synth 8-638] synthesizing module 'clocks_7s_extphy' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/ipbus/firmware/example_designs/hdl/clocks_7s_extphy.vhd:35]
@@ -70,8 +70,8 @@ INFO: [Synth 8-638] synthesizing module 'clock_div' [C:/Users/Jason/Dropbox/ULB/
 	Parameter INIT bound to: 16'b0000000000000000 
 INFO: [Synth 8-113] binding component instance 'reset_gen' to cell 'SRL16' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/ipbus/firmware/example_designs/hdl/clock_div.vhd:31]
 INFO: [Synth 8-256] done synthesizing module 'clock_div' (1#1) [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/ipbus/firmware/example_designs/hdl/clock_div.vhd:25]
-INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-11896-Shinsekai/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'clk_wiz' of component 'clk_wiz_0' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/ipbus/firmware/example_designs/hdl/clocks_7s_extphy.vhd:99]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-11896-Shinsekai/realtime/clk_wiz_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-2536-Shinsekai/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'clk_wiz' of component 'clk_wiz_0' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/ipbus/firmware/example_designs/hdl/clocks_7s_extphy.vhd:99]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-2536-Shinsekai/realtime/clk_wiz_0_stub.vhdl:16]
 INFO: [Synth 8-256] done synthesizing module 'clocks_7s_extphy' (2#1) [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/ipbus/firmware/example_designs/hdl/clocks_7s_extphy.vhd:35]
 INFO: [Synth 8-638] synthesizing module 'eth_7s_gmii' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/ipbus/firmware/ethernet/hdl/eth_7s_gmii.vhd:45]
 	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
@@ -442,23 +442,24 @@ INFO: [Synth 8-256] done synthesizing module 'ipbus_ram' (37#1) [C:/Users/Jason/
 INFO: [Synth 8-638] synthesizing module 'ipbus_peephole_ram' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/imports/hdl/ipbus_peephole_ram.vhd:39]
 	Parameter addr_width bound to: 10 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'ipbus_peephole_ram' (38#1) [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/imports/hdl/ipbus_peephole_ram.vhd:39]
-INFO: [Synth 8-638] synthesizing module 'slave_vfat3' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/slave_vfat3.vhd:47]
+INFO: [Synth 8-638] synthesizing module 'slave_vfat3' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/slave_vfat3.vhd:48]
 	Parameter data_width bound to: 32 - type: integer 
 	Parameter BC_width bound to: 12 - type: integer 
 	Parameter cmd_width bound to: 4 - type: integer 
+	Parameter cmd_8w bound to: 8 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'control' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/control.vhd:47]
 	Parameter data_width bound to: 32 - type: integer 
 WARNING: [Synth 8-3848] Net leds in module/entity control does not have driver. [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/control.vhd:43]
 INFO: [Synth 8-256] done synthesizing module 'control' (39#1) [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/control.vhd:47]
-INFO: [Synth 8-3491] module 'fifo_generator_0' declared at 'C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-11896-Shinsekai/realtime/fifo_generator_0_stub.vhdl:5' bound to instance 'fifo_in' of component 'fifo_generator_0' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/slave_vfat3.vhd:146]
-INFO: [Synth 8-638] synthesizing module 'fifo_generator_0' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-11896-Shinsekai/realtime/fifo_generator_0_stub.vhdl:25]
-INFO: [Synth 8-3491] module 'fifo_generator_0' declared at 'C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-11896-Shinsekai/realtime/fifo_generator_0_stub.vhdl:5' bound to instance 'fifo_out' of component 'fifo_generator_0' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/slave_vfat3.vhd:176]
-INFO: [Synth 8-638] synthesizing module 'buffer_vfat3' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/buffer_vfat3.vhd:48]
+INFO: [Synth 8-3491] module 'fifo_generator_0' declared at 'C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-2536-Shinsekai/realtime/fifo_generator_0_stub.vhdl:5' bound to instance 'fifo_in' of component 'fifo_generator_0' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/slave_vfat3.vhd:148]
+INFO: [Synth 8-638] synthesizing module 'fifo_generator_0' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-2536-Shinsekai/realtime/fifo_generator_0_stub.vhdl:25]
+INFO: [Synth 8-3491] module 'fifo_generator_0' declared at 'C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-2536-Shinsekai/realtime/fifo_generator_0_stub.vhdl:5' bound to instance 'fifo_out' of component 'fifo_generator_0' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/slave_vfat3.vhd:181]
+INFO: [Synth 8-638] synthesizing module 'buffer_vfat3' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/buffer_vfat3.vhd:49]
 	Parameter BC_width bound to: 12 - type: integer 
 	Parameter data_width bound to: 32 - type: integer 
 	Parameter cmd_width bound to: 4 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'buffer_vfat3' (40#1) [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/buffer_vfat3.vhd:48]
-INFO: [Synth 8-256] done synthesizing module 'slave_vfat3' (41#1) [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/slave_vfat3.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'buffer_vfat3' (40#1) [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/buffer_vfat3.vhd:49]
+INFO: [Synth 8-256] done synthesizing module 'slave_vfat3' (41#1) [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/slave_vfat3.vhd:48]
 INFO: [Synth 8-256] done synthesizing module 'slaves' (42#1) [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/ipbus/firmware/example_designs/hdl/slaves.vhd:31]
 INFO: [Synth 8-256] done synthesizing module 'top' (43#1) [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/ipbus/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:28]
 WARNING: [Synth 8-3917] design top has port phy_rstb driven by constant 1
@@ -564,7 +565,7 @@ WARNING: [Synth 8-3331] design ipbus_pkt_ctr has unconnected port ipbus_in[ipb_a
 WARNING: [Synth 8-3331] design ipbus_pkt_ctr has unconnected port ipbus_in[ipb_addr][28]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 411.879 ; gain = 202.527
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 412.363 ; gain = 202.227
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -574,28 +575,30 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 411.879 ; gain = 202.527
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 412.363 ; gain = 202.227
 ---------------------------------------------------------------------------------
 WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'clk_wiz_0' instantiated as 'clocks/clk_wiz' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/ipbus/firmware/example_designs/hdl/clocks_7s_extphy.vhd:99]
-WARNING: [Project 1-560] Could not resolve non-primitive black box cell 'fifo_generator_0' instantiated as 'slaves/slave_vfat3/fifo_in'. 2 instances of this cell are unresolved black boxes. [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/slave_vfat3.vhd:146]
+WARNING: [Project 1-560] Could not resolve non-primitive black box cell 'fifo_generator_0' instantiated as 'slaves/slave_vfat3/fifo_in'. 2 instances of this cell are unresolved black boxes. [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/new/slave_vfat3.vhd:148]
 WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'mac_fifo_axi4' instantiated as 'eth/fifo' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/ipbus/firmware/ethernet/hdl/eth_7s_gmii.vhd:273]
 WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'tri_mode_eth_mac_v5_4' instantiated as 'eth/emac0' [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/ipbus/firmware/ethernet/hdl/eth_7s_gmii.vhd:227]
 INFO: [Netlist 29-17] Analyzing 17 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Device 21-403] Loading part xc7k325tffg900-2
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-11896-Shinsekai/dcp_3/fifo_generator_0_in_context.xdc] for cell 'slaves/slave_vfat3/fifo_in'
-Finished Parsing XDC File [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-11896-Shinsekai/dcp_3/fifo_generator_0_in_context.xdc] for cell 'slaves/slave_vfat3/fifo_in'
-Parsing XDC File [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-11896-Shinsekai/dcp_3/fifo_generator_0_in_context.xdc] for cell 'slaves/slave_vfat3/fifo_out'
-Finished Parsing XDC File [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-11896-Shinsekai/dcp_3/fifo_generator_0_in_context.xdc] for cell 'slaves/slave_vfat3/fifo_out'
-Parsing XDC File [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-11896-Shinsekai/dcp_4/clk_wiz_0_in_context.xdc] for cell 'clocks/clk_wiz'
-Finished Parsing XDC File [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-11896-Shinsekai/dcp_4/clk_wiz_0_in_context.xdc] for cell 'clocks/clk_wiz'
+Parsing XDC File [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-2536-Shinsekai/dcp_3/fifo_generator_0_in_context.xdc] for cell 'slaves/slave_vfat3/fifo_in'
+Finished Parsing XDC File [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-2536-Shinsekai/dcp_3/fifo_generator_0_in_context.xdc] for cell 'slaves/slave_vfat3/fifo_in'
+Parsing XDC File [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-2536-Shinsekai/dcp_3/fifo_generator_0_in_context.xdc] for cell 'slaves/slave_vfat3/fifo_out'
+Finished Parsing XDC File [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-2536-Shinsekai/dcp_3/fifo_generator_0_in_context.xdc] for cell 'slaves/slave_vfat3/fifo_out'
+Parsing XDC File [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-2536-Shinsekai/dcp_4/clk_wiz_0_in_context.xdc] for cell 'clocks/clk_wiz'
+Finished Parsing XDC File [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-2536-Shinsekai/dcp_4/clk_wiz_0_in_context.xdc] for cell 'clocks/clk_wiz'
 Parsing XDC File [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc]
 INFO: [Timing 38-2] Deriving generated clocks [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 WARNING: [Constraints 18-402] set_false_path: 'slaves/slave_vfat3/control_block/state_i__0' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'slaves/slave_vfat3/buffer_in/state_i' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-402] set_false_path: 'slaves/slave_vfat3/buffer_in/leds_i__0' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
@@ -603,23 +606,23 @@ WARNING: [Constraints 18-402] set_false_path: 'slaves/slave_vfat3/buffer_in/leds
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-402] set_false_path: 'slaves/slave_vfat3/buffer_in/leds_i__3' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/tx_main/mac_tx_data_int_i__0/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
-Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/tx_main/mac_tx_data_int_i/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'eth/gmii_txd_reg[1]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/tx_main/mac_tx_data_int_i__0/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'eth/gmii_txd_reg[0]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'eth/gmii_txd_reg[7]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-401] set_false_path: 'eth/gmii_tx_er_reg/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-401] set_false_path: 'eth/gmii_tx_en_reg/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-401] set_false_path: 'eth/gmii_txd_reg[6]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/tx_main/ipbus_hdr_int_i__1/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'eth/fifo/s_axis_tuser[0]' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
-Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'eth/oddr0/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/stretch_rx/clkdiv/reset_gen/CLK' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
-Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/stretch_tx/clkdiv/reset_gen/CLK' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'eth/fifo/s_axis_tuser[0]' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/IPADDR/pkt_mask_i/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
@@ -633,71 +636,67 @@ WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/tx_main/next_state_i
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/tx_main/next_state_i__0/I6[2]' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/ipbus_rx_ram/ram2_reg/WCLK' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/ipbus_rx_ram/ram1_reg/WCLK' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/ipbus_rx_ram/ram4_reg/WCLK' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/ipbus_rx_ram/ram2_reg/WCLK' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/ipbus_rx_ram/ram3_reg/WCLK' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/ipbus_rx_ram/ram4_reg/WCLK' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/internal_ram/ram_reg/WCLK' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
-Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/ipbus_rx_ram/ram1_reg/WCLK' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
-Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__50/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__47/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__46/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__50/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__43/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__31/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__46/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__18/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__36/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__35/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__36/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__31/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__40/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__15/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__18/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__12/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__11/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__24/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__12/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__19/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__23/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__10/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
-Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__22/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__19/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
-Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/unreliable_data_i__14/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
-Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/unreliable_data_reg__0[4]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__10/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/unreliable_data_i__18/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__9/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
-Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/unreliable_data_i__15/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/unreliable_data_i__14/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__9/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/unreliable_data_i__11/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/reliable_data_i__4/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__8/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__7/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__13/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
-Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__8/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
-Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/unreliable_data_i__8/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/unreliable_data_i__5/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
@@ -705,81 +704,89 @@ WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/unr
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/unreliable_data_i__1/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__12/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/stretch_tx/clkdiv/reset_gen/CLK' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/unreliable_data_i__8/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/stretch_rx/clkdiv/reset_gen/CLK' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__8/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__9/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
-Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__6/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
-Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__5/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/msk_data_i__3/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__9/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/msk_mask_i__0/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__12/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/msk_data_i__4/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/msk_mask_i__0/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/msk_data_i__3/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/msk_mask_i__2/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__6/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__0/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__5/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__4/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
-Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__1/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/reliable_data_i/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__0/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__4/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__3/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__2/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_reset_block/reset_buf_i/I1[0]' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_byte_sum/lo_byte_int_i__1/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__0/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
-Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_byte_sum/hi_byte_int_i__0/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[73]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[123]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/ipbus_in_reg[2]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[64]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[113]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[44]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[93]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[20]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[51]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[43]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[50]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[84]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[53]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[65]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[30]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[85]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[112]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[106]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[94]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[63]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[9]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[86]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[95]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[124]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[74]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[105]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[29]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[22]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[72]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[23]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[31]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[42]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[52]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[21]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_reg[10]/C' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/history_i__0/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
@@ -789,23 +796,17 @@ WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status_buffer/event_
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status/data_to_send_i__0/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status/shift_buf_i/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
-Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status/shift_buf_i__0/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status/addr_int_i__1/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
-Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status/addr_to_set_int_i__1/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
-Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status/addr_to_set_int_i__2/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status/shift_buf_i/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status/addr_to_set_int_i__0/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/resend/pkt_mask_i/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status/addr_int_i__1/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
+Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-401] set_false_path: 'ipbus/udp_if/status/addr_to_set_int_i__2/S' is not a valid endpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
 Resolution: A valid end point is a data pin of a sequential cell or a primary output or inout port. Please validate that all the objects returned by your query belong to this list.
 INFO: [Common 17-14] Message 'Constraints 18-401' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:28]
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/status_buffer/history_i__0' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/status_buffer/event_data_i__6' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/status_buffer/event_data_i__4' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
@@ -823,6 +824,18 @@ Resolution: A valid start point is a main or generated clock pin or port, a cloc
 WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/status/addr_to_set_int_i__1' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/status/addr_to_set_int_i__0' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/ping/addr_int_i__1' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/ping/addr_to_set_int_i__3' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/ping/addr_to_set_int_i__1' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/ping/addr_to_set_int_i__0' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/ping/next_state_i__2' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/ping/next_state_i' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/resend/pkt_mask_i__0' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
@@ -842,17 +855,11 @@ WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/ping/buf_to_load_int
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/ping/buf_to_load_int_i__1' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/ping/addr_int_i__1' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/payload/payload_len_i__6' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/ping/addr_to_set_int_i__3' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/payload/data_to_send_i__0' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/ping/addr_to_set_int_i__1' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/ping/addr_to_set_int_i__0' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/ping/next_state_i__2' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/ping/next_state_i' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/payload/shift_buf_i__0' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/payload/shift_buf_i' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
@@ -861,12 +868,6 @@ Resolution: A valid start point is a main or generated clock pin or port, a cloc
 WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/payload/buf_to_load_int_i__5' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/payload/buf_to_load_int_i__1' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/payload/payload_len_i__6' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/payload/data_to_send_i__0' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/payload/shift_buf_i__0' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/payload/payload_len_i__2' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
@@ -906,11 +907,9 @@ WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/IPADDR/pkt_mask_i' i
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-402] set_false_path: 'eth/fifo' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/status_buffer/history_i__0' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_byte_sum/hi_byte_int_i__0' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/tx_main/next_state_i__0' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/tx_main/addr_int_i' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_byte_sum/lo_byte_int_i__1' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
@@ -929,6 +928,38 @@ Resolution: A valid start point is a main or generated clock pin or port, a cloc
 WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__3' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__4' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/tx_main/addr_int_i' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/tx_main/mac_tx_data_int_i' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/tx_main/mac_tx_data_int_i__0' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/tx_main/ipbus_hdr_int_i__1' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__11' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__12' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__15' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__18' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__31' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__35' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__36' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__40' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__43' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__46' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__47' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__50' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__0' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
@@ -960,41 +991,11 @@ WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/unr
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/unreliable_data_i__8' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
+WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/unreliable_data_i__11' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
+Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__13' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
 WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__7' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__8' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/reliable_data_i__4' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/unreliable_data_i__11' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/unreliable_data_i__14' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/unreliable_data_i__15' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/unreliable_data_i__18' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__9' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__10' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__19' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__22' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__23' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_data_i__24' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__11' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__12' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__15' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
-Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
-WARNING: [Constraints 18-402] set_false_path: 'ipbus/udp_if/rx_packet_parser/pkt_mask_i__18' is not a valid startpoint. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 Resolution: A valid start point is a main or generated clock pin or port, a clock pin of a sequential cell, or a primary input or inout port. Please validate that all the objects returned by your query belong to this list.
 INFO: [Common 17-14] Message 'Constraints 18-402' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:30]
 WARNING: [Constraints 18-96] Setting input delay on a clock pin 'sysclk_p' is not supported, ignoring it [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:130]
@@ -1008,23 +1009,22 @@ Parsing XDC File [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/
 Finished Parsing XDC File [C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-WARNING: [Runs 36-115] Could not delete directory 'C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-11896-Shinsekai/dcp_4'.
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 5 instances were transformed.
   IBUFGDS => IBUFDS: 1 instances
   MMCME2_BASE => MMCME2_ADV: 1 instances
   SRL16 => SRL16E: 3 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 770.398 ; gain = 0.043
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 769.879 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 770.426 ; gain = 561.074
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 769.879 ; gain = 559.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k325tffg900-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 770.426 ; gain = 561.074
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 769.879 ; gain = 559.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -1033,7 +1033,7 @@ Applied set_property DONT_TOUCH = true for clocks/clk_wiz. (constraint file  aut
 Applied set_property DONT_TOUCH = true for eth/emac0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for eth/fifo. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 770.426 ; gain = 561.074
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 769.879 ; gain = 559.742
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "tick_int" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "set_addr_int" won't be mapped to RAM because it is too sparse
@@ -1139,12 +1139,13 @@ INFO: [Synth 8-5545] ROM "reg_reg[1]" won't be mapped to RAM because address siz
 INFO: [Synth 8-5545] ROM "reg_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'control'
 INFO: [Synth 8-5544] ROM "ipbus_out[ipb_rdata]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "ipbus_out[ipb_err]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ipbus_out[ipb_ack]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "data_to_fifo" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "fifo_out_r_en" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'buffer_vfat3'
+INFO: [Synth 8-5544] ROM "no_data" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -1191,7 +1192,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'buffer_vfat3'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 770.426 ; gain = 561.074
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 769.879 ; gain = 559.742
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1246,7 +1247,7 @@ Detailed RTL Component Info :
 	                4 Bit    Registers := 13    
 	                3 Bit    Registers := 8     
 	                2 Bit    Registers := 11    
-	                1 Bit    Registers := 213   
+	                1 Bit    Registers := 214   
 +---RAMs : 
 	             256K Bit         RAMs := 1     
 	              64K Bit         RAMs := 4     
@@ -1310,24 +1311,24 @@ Detailed RTL Component Info :
 	   2 Input      4 Bit        Muxes := 13    
 	   5 Input      4 Bit        Muxes := 2     
 	   2 Input      3 Bit        Muxes := 4     
-	   8 Input      3 Bit        Muxes := 3     
+	   8 Input      3 Bit        Muxes := 4     
 	  13 Input      3 Bit        Muxes := 1     
 	   4 Input      3 Bit        Muxes := 1     
 	  18 Input      3 Bit        Muxes := 1     
-	   6 Input      3 Bit        Muxes := 2     
+	   6 Input      3 Bit        Muxes := 1     
 	   9 Input      3 Bit        Muxes := 1     
 	   4 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 12    
 	  18 Input      2 Bit        Muxes := 2     
 	   9 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 180   
-	   6 Input      1 Bit        Muxes := 20    
+	   6 Input      1 Bit        Muxes := 21    
 	   9 Input      1 Bit        Muxes := 3     
 	   4 Input      1 Bit        Muxes := 18    
 	  11 Input      1 Bit        Muxes := 2     
 	  12 Input      1 Bit        Muxes := 2     
 	  13 Input      1 Bit        Muxes := 9     
-	   5 Input      1 Bit        Muxes := 18    
+	   5 Input      1 Bit        Muxes := 20    
 	   8 Input      1 Bit        Muxes := 16    
 	   3 Input      1 Bit        Muxes := 6     
 	  16 Input      1 Bit        Muxes := 9     
@@ -1829,7 +1830,7 @@ Detailed RTL Component Info :
 	   6 Input     32 Bit        Muxes := 2     
 	   9 Input      3 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 2     
-	   6 Input      1 Bit        Muxes := 8     
+	   6 Input      1 Bit        Muxes := 9     
 Module buffer_vfat3 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -1840,7 +1841,7 @@ Detailed RTL Component Info :
 	               12 Bit    Registers := 1     
 	                8 Bit    Registers := 1     
 	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 5     
+	                1 Bit    Registers := 6     
 +---Muxes : 
 	   5 Input     32 Bit        Muxes := 1     
 	   2 Input     12 Bit        Muxes := 3     
@@ -1850,9 +1851,9 @@ Detailed RTL Component Info :
 	   3 Input      5 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 1     
 	   5 Input      4 Bit        Muxes := 1     
-	   6 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
-	   5 Input      1 Bit        Muxes := 13    
+	   5 Input      1 Bit        Muxes := 15    
 Module slave_vfat3 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -2194,7 +2195,7 @@ WARNING: [Synth 8-3332] Sequential element (header_reg[66]) is unused and will b
 WARNING: [Synth 8-3332] Sequential element (header_reg[65]) is unused and will be removed from module udp_status_buffer.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:43 ; elapsed = 00:01:50 . Memory (MB): peak = 770.426 ; gain = 561.074
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:11 ; elapsed = 00:01:16 . Memory (MB): peak = 769.879 ; gain = 559.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2232,17 +2233,17 @@ Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5578] Moved timing constraint from pin 'clocks/clk_wiz/clk_in1' to pin 'clocks/ibufgds0/O'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'clocks/clk_wiz/clk_out1' to pin 'clocks/clk_wiz/bbstub_clk_out1/O'
-INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'clocks/clk_wiz/clk_in1' to 'i_8/clocks/clkdiv/cnt_reg[16]/C'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'clocks/clk_wiz/clk_in1' to 'i_9/clocks/clkdiv/cnt_reg[16]/C'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'clocks/clk_wiz/clk_out2' to pin 'clocks/clk_wiz/bbstub_clk_out2/O'
-INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'clocks/clk_wiz/clk_in1' to 'i_8/clocks/clkdiv/cnt_reg[16]/C'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'clocks/clk_wiz/clk_in1' to 'i_9/clocks/clkdiv/cnt_reg[16]/C'
 WARNING: [Synth 8-3321] set_false_path : Empty through list for constraint at line 33 of C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:33]
 WARNING: [Synth 8-3321] set_false_path : Empty through list for constraint at line 35 of C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc. [C:/Users/Jason/AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc:35]
 INFO: [Synth 8-5819] Moved 3 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:19 ; elapsed = 00:02:26 . Memory (MB): peak = 770.426 ; gain = 561.074
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:23 ; elapsed = 00:01:28 . Memory (MB): peak = 769.879 ; gain = 559.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:25 ; elapsed = 00:02:32 . Memory (MB): peak = 779.844 ; gain = 570.492
+Finished Timing Optimization : Time (s): cpu = 00:01:25 ; elapsed = 00:01:30 . Memory (MB): peak = 781.355 ; gain = 571.219
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2294,7 +2295,7 @@ INFO: [Synth 8-4480] The timing for the instance ipbus/udp_if/ipbus_tx_ram/ram_r
 INFO: [Synth 8-4480] The timing for the instance slaves/slave2/reg_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance slaves/slave4/reg_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:36 ; elapsed = 00:02:43 . Memory (MB): peak = 827.969 ; gain = 618.617
+Finished Technology Mapping : Time (s): cpu = 00:01:29 ; elapsed = 00:01:35 . Memory (MB): peak = 829.234 ; gain = 619.098
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2318,7 +2319,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:40 ; elapsed = 00:02:47 . Memory (MB): peak = 827.969 ; gain = 618.617
+Finished IO Insertion : Time (s): cpu = 00:01:30 ; elapsed = 00:01:36 . Memory (MB): peak = 829.234 ; gain = 619.098
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2331,7 +2332,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:40 ; elapsed = 00:02:47 . Memory (MB): peak = 827.969 ; gain = 618.617
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:30 ; elapsed = 00:01:36 . Memory (MB): peak = 829.234 ; gain = 619.098
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2343,25 +2344,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:43 ; elapsed = 00:02:50 . Memory (MB): peak = 827.969 ; gain = 618.617
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:31 ; elapsed = 00:01:36 . Memory (MB): peak = 829.234 ; gain = 619.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:43 ; elapsed = 00:02:50 . Memory (MB): peak = 827.969 ; gain = 618.617
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:31 ; elapsed = 00:01:36 . Memory (MB): peak = 829.234 ; gain = 619.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:44 ; elapsed = 00:02:51 . Memory (MB): peak = 827.969 ; gain = 618.617
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:32 ; elapsed = 00:01:37 . Memory (MB): peak = 829.234 ; gain = 619.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:44 ; elapsed = 00:02:51 . Memory (MB): peak = 827.969 ; gain = 618.617
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:32 ; elapsed = 00:01:37 . Memory (MB): peak = 829.234 ; gain = 619.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2432,12 +2433,12 @@ Report Cell Usage:
 |9     |CARRY4                     |   127|
 |10    |IDELAYCTRL                 |     1|
 |11    |IDELAYE2                   |    10|
-|12    |LUT1                       |   253|
-|13    |LUT2                       |   462|
-|14    |LUT3                       |   494|
-|15    |LUT4                       |   374|
-|16    |LUT5                       |   575|
-|17    |LUT6                       |  1042|
+|12    |LUT1                       |   254|
+|13    |LUT2                       |   464|
+|14    |LUT3                       |   496|
+|15    |LUT4                       |   376|
+|16    |LUT5                       |   580|
+|17    |LUT6                       |  1037|
 |18    |MMCME2_BASE                |     1|
 |19    |MUXF7                      |    17|
 |20    |ODDR                       |     1|
@@ -2448,25 +2449,26 @@ Report Cell Usage:
 |25    |SRL16E                     |    60|
 |26    |SRLC32E                    |     6|
 |27    |FDCE                       |    17|
-|28    |FDRE                       |  3177|
+|28    |FDRE                       |  3179|
 |29    |FDSE                       |   379|
 |30    |IBUF                       |    11|
 |31    |IBUFGDS                    |     1|
-|32    |OBUF                       |    20|
+|32    |OBUF                       |    18|
+|33    |OBUFT                      |     2|
 +------+---------------------------+------+
 
 Report Instance Areas: 
 +------+----------------------------+------------------------------------+------+
 |      |Instance                    |Module                              |Cells |
 +------+----------------------------+------------------------------------+------+
-|1     |top                         |                                    |  7234|
+|1     |top                         |                                    |  7243|
 |2     |  clocks                    |clocks_7s_extphy                    |    67|
 |3     |    clkdiv                  |clock_div                           |    46|
 |4     |  eth                       |eth_7s_gmii                         |   165|
-|5     |  ipbus                     |ipbus_ctrl                          |  5936|
-|6     |    trans                   |transactor                          |   794|
-|7     |      iface                 |transactor_if                       |   394|
-|8     |      sm                    |transactor_sm                       |   400|
+|5     |  ipbus                     |ipbus_ctrl                          |  5940|
+|6     |    trans                   |transactor                          |   798|
+|7     |      iface                 |transactor_if                       |   397|
+|8     |      sm                    |transactor_sm                       |   401|
 |9     |    udp_if                  |UDP_if                              |  5135|
 |10    |      ipbus_rx_ram          |udp_DualPortRAM_rx                  |     8|
 |11    |      ARP                   |udp_build_arp                       |   237|
@@ -2492,24 +2494,24 @@ Report Instance Areas:
 |31    |      tx_main               |udp_tx_mux                          |   552|
 |32    |      tx_ram_selector       |udp_buffer_selector__parameterized1 |   197|
 |33    |      tx_transactor         |udp_txtransactor_if                 |   421|
-|34    |  slaves                    |slaves                              |  1034|
+|34    |  slaves                    |slaves                              |  1039|
 |35    |    fabric                  |ipbus_fabric                        |     1|
 |36    |    slave0                  |ipbus_ctrlreg                       |    65|
 |37    |    slave1                  |ipbus_reg                           |    65|
-|38    |    slave2                  |ipbus_ram                           |    25|
+|38    |    slave2                  |ipbus_ram                           |    24|
 |39    |    slave3                  |ipbus_ctrlreg__parameterized0       |   193|
 |40    |    slave4                  |ipbus_peephole_ram                  |    30|
 |41    |    slave5                  |ipbus_pkt_ctr                       |   177|
-|42    |    slave_vfat3             |slave_vfat3                         |   478|
-|43    |      buffer_in             |buffer_vfat3                        |   160|
-|44    |      control_block         |control                             |   145|
+|42    |    slave_vfat3             |slave_vfat3                         |   484|
+|43    |      buffer_in             |buffer_vfat3                        |   161|
+|44    |      control_block         |control                             |   150|
 +------+----------------------------+------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:44 ; elapsed = 00:02:51 . Memory (MB): peak = 827.969 ; gain = 618.617
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:32 ; elapsed = 00:01:37 . Memory (MB): peak = 829.234 ; gain = 619.098
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 497 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:24 ; elapsed = 00:02:33 . Memory (MB): peak = 827.969 ; gain = 195.223
-Synthesis Optimization Complete : Time (s): cpu = 00:02:45 ; elapsed = 00:02:52 . Memory (MB): peak = 827.969 ; gain = 618.617
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:11 ; elapsed = 00:01:19 . Memory (MB): peak = 829.234 ; gain = 197.016
+Synthesis Optimization Complete : Time (s): cpu = 00:01:32 ; elapsed = 00:01:37 . Memory (MB): peak = 829.234 ; gain = 619.098
 INFO: [Project 1-571] Translating synthesized netlist
 Release 14.7 - ngc2edif P_INT.20160902 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
@@ -2545,7 +2547,7 @@ Processing design ...
    Preping design's macros ...
   finished :Prep
 Writing EDIF netlist file mac_fifo_axi4.edif ...
-ngc2edif: Total memory usage is 85944 kilobytes
+ngc2edif: Total memory usage is 85816 kilobytes
 
 Reading core file 'c:/Users/Jason/Dropbox/ULB/MA2/Memoire/Vivado/IPBUS/ipbus_extphy/ipcore_dir/mac_fifo_axi4.ngc' for (cell view 'mac_fifo_axi4', library 'work')
 Parsing EDIF File [./.ngc2edfcache/mac_fifo_axi4_ngc_32dbef71.edif]
@@ -2577,10 +2579,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   SRLC32E => SRL16E: 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-683 Infos, 417 Warnings, 0 Critical Warnings and 0 Errors encountered.
+684 Infos, 416 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:54 ; elapsed = 00:03:09 . Memory (MB): peak = 829.789 ; gain = 563.863
-WARNING: [Runs 36-115] Could not delete directory 'C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-11896-Shinsekai/dcp'.
+synth_design: Time (s): cpu = 00:01:30 ; elapsed = 00:01:37 . Memory (MB): peak = 831.383 ; gain = 565.867
+WARNING: [Runs 36-115] Could not delete directory 'C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/.Xil/Vivado-2536-Shinsekai/dcp'.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/synth_1/top.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.330 . Memory (MB): peak = 829.789 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Mar 24 15:32:45 2017...
+report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.096 . Memory (MB): peak = 831.383 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Mar 27 14:51:56 2017...

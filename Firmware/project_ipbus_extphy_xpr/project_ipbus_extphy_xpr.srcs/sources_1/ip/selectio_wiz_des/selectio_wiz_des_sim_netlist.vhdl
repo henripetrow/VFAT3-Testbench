@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
 -- Date        : Wed Mar 15 09:53:27 2017
 -- Host        : Shinsekai running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/ip/selectio_wiz_des/selectio_wiz_des_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top selectio_wiz_des -prefix
+--               selectio_wiz_des_ selectio_wiz_des_sim_netlist.vhdl
 -- Design      : selectio_wiz_des
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -24,8 +24,6 @@ entity selectio_wiz_des_selectio_wiz_des_selectio_wiz is
   );
   attribute DEV_W : integer;
   attribute DEV_W of selectio_wiz_des_selectio_wiz_des_selectio_wiz : entity is 8;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of selectio_wiz_des_selectio_wiz_des_selectio_wiz : entity is "selectio_wiz_des_selectio_wiz";
   attribute SYS_W : integer;
   attribute SYS_W of selectio_wiz_des_selectio_wiz_des_selectio_wiz : entity is 1;
   attribute num_serial_bits : integer;

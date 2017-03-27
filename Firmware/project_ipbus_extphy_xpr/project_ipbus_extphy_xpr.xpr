@@ -415,6 +415,17 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_ser.xci" FileRelPathName="selectio_wiz_ser_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_ser.xci" FileRelPathName="selectio_wiz_ser.xdc"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_ser.xci" FileRelPathName="selectio_wiz_ser_selectio_wiz.v"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_ser.xci" FileRelPathName="doc/selectio_wiz_v5_1_changelog.txt"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_ser.xci" FileRelPathName="selectio_wiz_ser.vho"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_ser.xci" FileRelPathName="selectio_wiz_ser.v"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_ser.xci" FileRelPathName="selectio_wiz_ser.xml"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_ser.xci" FileRelPathName="selectio_wiz_ser_sim_netlist.vhdl"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_ser.xci" FileRelPathName="selectio_wiz_ser_sim_netlist.v"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_ser.xci" FileRelPathName="selectio_wiz_ser_stub.vhdl"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_ser.xci" FileRelPathName="selectio_wiz_ser_stub.v"/>
       </File>
       <Config>
         <Option Name="TopModule" Val="selectio_wiz_ser"/>
@@ -428,6 +439,17 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_des.xci" FileRelPathName="doc/selectio_wiz_v5_1_changelog.txt"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_des.xci" FileRelPathName="selectio_wiz_des.v"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_des.xci" FileRelPathName="selectio_wiz_des.vho"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_des.xci" FileRelPathName="selectio_wiz_des_selectio_wiz.v"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_des.xci" FileRelPathName="selectio_wiz_des_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_des.xci" FileRelPathName="selectio_wiz_des.xdc"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_des.xci" FileRelPathName="selectio_wiz_des.xml"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_des.xci" FileRelPathName="selectio_wiz_des_sim_netlist.vhdl"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_des.xci" FileRelPathName="selectio_wiz_des_sim_netlist.v"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_des.xci" FileRelPathName="selectio_wiz_des_stub.v"/>
+        <CompFileExtendedInfo CompFileName="selectio_wiz_des.xci" FileRelPathName="selectio_wiz_des_stub.vhdl"/>
       </File>
       <Config>
         <Option Name="TopModule" Val="selectio_wiz_des"/>

@@ -28,7 +28,8 @@ entity slave_vfat3 is
 	generic(
 		data_width 	: natural := 32;
 		BC_width	: natural := 12;
-		cmd_width	: natural := 4
+		cmd_width	: natural := 4;
+		cmd_8w		: natural := 8
 		);
 	port(
 		clk			: in STD_LOGIC;
@@ -77,10 +78,11 @@ architecture rtl of slave_vfat3 is
 	signal reset_BCd			: std_logic;
 	signal start_BCd			: std_logic;
 	signal buffer_valid			: std_logic;
+	signal no_data				: std_logic;
 	
-	signal data_bus_out			: std_logic_vector(8 - 1 downto 0);
+	signal data_bus_out			: std_logic_vector(cmd_8w - 1 downto 0);
 	signal data_to_vfat3		: std_logic;
-	signal data_bus_in			: std_logic_vector(8 - 1 downto 0);
+	signal data_bus_in			: std_logic_vector(cmd_8w - 1 downto 0);
 	signal data_from_vfat3		: std_logic;
 	signal data_buf_received	: std_logic;
 	
@@ -170,12 +172,15 @@ begin
 				else
 					reset_fifo <= reset;
 				end if;
+				if fifo_out_w_en = '1' then
+					leds(2) <= '1';
+				end if;
 			end if;
 		end process;
 		
 	fifo_out: fifo_generator_0
 		port map(
-			rst 			=> reset,
+			rst 			=> reset_fifo,
 		    wr_clk 			=> clk40,
 		    rd_clk 			=> clk,
 		    din 			=> fifo_out_data_in,
@@ -199,20 +204,30 @@ begin
 			data_in 		=> fifo_in_data_out,
 			data_out 		=> command,
 			read_fifo_en	=> fifo_in_r_en,
-			out_ready		=> buffer_valid,
+			data_valid		=> buffer_valid,
 			leds			=> leds,
 			fifo_valid		=> fifo_in_valid,
 			ack				=> data_buf_received,
-			fifo_empty		=> fifo_in_empty
+			fifo_empty		=> fifo_in_empty,
+			no_data			=> no_data
 		);
 		
-		leds(2 downto 0) <= command(2 downto 0);
+--		leds(2 downto 0) <= command(2 downto 0);
 		
 		data_buf_received <= fifo_out_w_ack;
 		fifo_out_w_en <= buffer_valid; -- buffer loopback testing
 		fifo_out_data_in <= command & command & command & command & command & command & command & command;
 --		fifo_out_data_in(31 downto 4) <= (others => '1'); -- FW does not work anymore with this assignment ...
 --		fifo_out_data_in(3 downto 0) <= command ;
+
+--	lut: entity work.LUT
+--		port map(
+--			clk => clk40,
+--			rst => rst40,
+--			data_in => command,
+--			data_out => data_bus_out,
+--			no_data => no_data
+--		);
 
 --	serializer: selectio_wiz_ser
 --		port map(

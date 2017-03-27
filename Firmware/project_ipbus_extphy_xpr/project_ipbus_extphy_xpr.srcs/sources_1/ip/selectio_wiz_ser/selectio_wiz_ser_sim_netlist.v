@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
 // Date        : Wed Mar 15 09:41:27 2017
 // Host        : Shinsekai running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.srcs/sources_1/ip/selectio_wiz_ser/selectio_wiz_ser_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top selectio_wiz_ser -prefix
+//               selectio_wiz_ser_ selectio_wiz_ser_sim_netlist.v
 // Design      : selectio_wiz_ser
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -43,8 +43,7 @@ module selectio_wiz_ser
         .io_reset(io_reset));
 endmodule
 
-(* DEV_W = "8" *) (* ORIG_REF_NAME = "selectio_wiz_ser_selectio_wiz" *) (* SYS_W = "1" *) 
-(* num_serial_bits = "8" *) 
+(* DEV_W = "8" *) (* SYS_W = "1" *) (* num_serial_bits = "8" *) 
 module selectio_wiz_ser_selectio_wiz_ser_selectio_wiz
    (data_out_from_device,
     data_out_to_pins,

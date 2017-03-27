@@ -36,12 +36,13 @@ entity buffer_vfat3 is
 		clk 			: in std_logic;
 		data_in 		: in std_logic_vector(data_width - 1 downto 0);
 		fifo_valid		: in std_logic;
-		ack		: in std_logic;
+		ack				: in std_logic;
 		fifo_empty		: in std_logic;
 		data_out 		: out std_logic_vector(cmd_width - 1 downto 0);
 		read_fifo_en	: out std_logic;
 		leds			: out std_logic_vector(7 downto 0);
-		out_ready		: out std_logic
+		data_valid		: out std_logic;
+		no_data			: out std_logic
 	);
 end buffer_vfat3;
 
@@ -70,16 +71,21 @@ begin
 				data1_to_be_read <= 1;
 				read_fifo_en <= '0';
 				start_BCd <= '0';
-				out_ready <= '0';
+				data_valid <= '0';
 				state <= IDLE;
 				reset_BCd <= '0';
+				no_data <= '1';
 			else
 				--internal state machine 
 				case state is 
 					when IDLE =>
 						if fifo_empty = '0' then
+							no_data <= '0';
 							read_fifo_en <= '1';
 							state <= READ;
+						else
+							no_data <= '1';
+							state <= RESET;
 						end if;
 						leds(7) <= '1';
 					when READ => 
@@ -107,13 +113,13 @@ begin
 							-- reads either BCdiff1 (31 downto 20) or BCdiff2 (15 downto 4)  if data1_to_be_read = 1 or 0
 						    data_out <= buf(data1_to_be_read * (BC_width + cmd_width) + (cmd_width - 1) downto data1_to_be_read * (BC_width + cmd_width));
 						    -- transmits either cmd1(19 downto 16) or cmd2(3 downto 0) if data1_to_be_read = 1 or 0
-						    out_ready <= '1';
+						    data_valid <= '1';
 						    state <= WAIT_ACK;
 						    reset_BCd <= '1';
 						    leds(5) <= '1';
 						end if;
 					when WAIT_ACK =>
-						out_ready <= '0';
+						data_valid <= '0';
 						if ack = '1' then
 							if reset_BCd = '1' then
 								reset_BCd <= '0';
@@ -130,8 +136,9 @@ begin
 						end if;
 						
 					when RESET =>
-						out_ready <= '0';
+						data_valid <= '0';
 						data1_to_be_read <= 1;
+						no_data <= '1';
 						data_out <= (others => '0');
 						buf <= (others => '0');
 						state <= IDLE;

@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date         : Fri Mar 24 15:37:00 2017
+| Date         : Mon Mar 27 14:53:30 2017
 | Host         : Shinsekai running 64-bit major release  (build 9200)
 | Command      : report_io -file top_io_placed.rpt
 | Design       : top
@@ -70,7 +70,7 @@ Table of Contents
 | AA5        |              |                  | GND                          | GND           |             |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |
 | AA6        |              |                  | GND                          | GND           |             |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |
 | AA7        |              |                  | GND                          | GND           |             |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |
-| AA8        | leds[1]      | High Performance | IO_L2P_T0_33                 | OUTPUT        | LVCMOS15    |      33 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
+| AA8        | leds[1]      | High Performance | IO_L2P_T0_33                 | TRISTATE      | LVCMOS15    |      33 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
 | AA9        |              | High Performance | VCCO_33                      | VCCO          |             |      33 |            |      |                     |                      |      1.50 |            |           |          |      |                  |
 | AA10       |              | High Performance | IO_L5N_T0_33                 | User IO       |             |      33 |            |      |                     |                      |           |            |           |          |      |                  |
 | AA11       |              | High Performance | IO_L5P_T0_33                 | User IO       |             |      33 |            |      |                     |                      |           |            |           |          |      |                  |
@@ -100,7 +100,7 @@ Table of Contents
 | AB5        |              | Dedicated        | M0_0                         | Config        |             |       0 |            |      |                     |                      |           |            |           |          |      |                  |
 | AB6        |              | Dedicated        | VCCO_0                       | VCCO          |             |       0 |            |      |                     |                      |     any** |            |           |          |      |                  |
 | AB7        |              | High Performance | IO_25_VRP_34                 | User IO       |             |      34 |            |      |                     |                      |           |            |           |          |      |                  |
-| AB8        | leds[0]      | High Performance | IO_L2N_T0_33                 | OUTPUT        | LVCMOS15    |      33 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
+| AB8        | leds[0]      | High Performance | IO_L2N_T0_33                 | TRISTATE      | LVCMOS15    |      33 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
 | AB9        | leds[3]      | High Performance | IO_L3P_T0_DQS_33             | OUTPUT        | LVCMOS15    |      33 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
 | AB10       |              | High Performance | IO_L7P_T1_33                 | User IO       |             |      33 |            |      |                     |                      |           |            |           |          |      |                  |
 | AB11       |              |                  | GND                          | GND           |             |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |
