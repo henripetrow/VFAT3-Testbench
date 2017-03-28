@@ -23,7 +23,8 @@ entity slaves is
 		eth_err_stat: in std_logic_vector(47 downto 0) := X"000000000000";
 		pkt_rx: in std_logic := '0';
 		pkt_tx: in std_logic := '0';
-		leds:	out std_logic_vector (7 downto 0)
+		leds:	out std_logic_vector (7 downto 0);
+		onehz: in std_logic
 	);
 
 end slaves;
@@ -137,7 +138,8 @@ begin
 			rst320 => rst320,
 			ipbus_in => ipbw(6),
 			ipbus_out => ipbr(6),
-			leds		=> leds
+			leds		=> leds,
+			onehz		=> onehz
 		);
 
 end rtl;

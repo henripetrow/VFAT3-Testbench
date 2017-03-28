@@ -38,6 +38,7 @@ entity slave_vfat3 is
 		rst40 		: in STD_LOGIC;
 		clk320 		: in STD_LOGIC;
 		rst320 		: in STD_LOGIC;
+		onehz		: in STD_LOGIC;
 		ipbus_in	: in ipb_wbus;
 		ipbus_out	: out ipb_rbus;
 		leds		: out STD_LOGIC_VECTOR(7 DOWNTO 0)
@@ -72,7 +73,21 @@ architecture rtl of slave_vfat3 is
 	signal reset_fifo			: std_logic;
 	
 	signal counter_rst			: integer := 0;
+	signal counter_onehz1		: integer := 0;
+	signal counter_onehz2		: integer := 0;
+	signal counter_onehz0		: integer := 0;
+			
+	signal start_counter1		: std_logic;
+	signal start_counter2		: std_logic;
+	signal start_counter0		: std_logic;
+	signal reset_onehz1			: std_logic;
 	
+	type led_type is (LIGHT, OFF);
+	signal led0_state 			: led_type;
+	signal led1_state 			: led_type;
+	signal led2_state 			: led_type;
+		
+		
 	signal command				: std_logic_vector(cmd_width - 1 downto 0);
 	signal BCd					: std_logic_vector(BC_width - 1 downto 0);
 	signal reset_BCd			: std_logic;
@@ -162,7 +177,29 @@ begin
 		    almost_empty	=> fifo_in_a_empty,
 		    underflow 		=> fifo_in_underflow
 		);
-				
+		
+		process(onehz, reset)
+		begin
+			if rising_edge(onehz) then
+				if start_counter0 = '1' then
+					counter_onehz0 <= counter_onehz0 + 1;
+				else
+					counter_onehz0 <= 0;
+				end if;
+				if start_counter1 = '1' then
+					counter_onehz1 <= counter_onehz1 + 1;
+				else
+					counter_onehz1 <= 0;
+				end if;
+				if start_counter2 = '1' then
+					counter_onehz2 <= counter_onehz2 + 1;
+				else
+					counter_onehz2 <= 0;
+				end if;
+			end if;
+		end process;
+
+		
 		process(clk, reset) 
 		begin
 			if rising_edge(clk) then
@@ -171,9 +208,59 @@ begin
 					counter_rst <= counter_rst + 1;
 				else
 					reset_fifo <= reset;
-				end if;
-				if fifo_out_w_en = '1' then
-					leds(2) <= '1';
+					if fifo_out_w_en = '1' then
+						led0_state <= LIGHT;
+					end if;
+					if fifo_out_empty = '0' then
+						led1_state <= LIGHT;
+					end if;
+					if fifo_in_empty = '0' then
+						led2_state <= LIGHT;
+					end if;
+					case led1_state is
+						when LIGHT =>
+							start_counter1 <= '1';
+							if counter_onehz1 < 3 then
+								leds(1) <= '1';
+							else
+								led1_state <= OFF;
+								start_counter1 <= '0';
+							end if;
+						when OFF =>
+							leds(1) <= '0';
+						when others =>
+							led1_state <= OFF;
+					end case;
+					
+					case led0_state is
+						when LIGHT =>
+							start_counter0 <= '1';
+							if counter_onehz0 < 3 then
+								leds(0) <= '1';
+							else
+								led0_state <= OFF;
+								start_counter0 <= '0';
+							end if;
+						when OFF =>
+							leds(0) <= '0';
+						when others =>
+							led0_state <= OFF;
+					end case;
+					
+					case led2_state is
+					when LIGHT =>
+						start_counter2 <= '1';
+						if counter_onehz2 < 3 then
+							leds(2) <= '1';
+						else
+							led2_state <= OFF;
+							start_counter2 <= '0';
+						end if;
+					when OFF =>
+						leds(2) <= '0';
+					when others =>
+						led2_state <= OFF;
+					end case;
 				end if;
 			end if;
 		end process;

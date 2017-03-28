@@ -136,7 +136,8 @@ begin
 		rst_out => sys_rst,
 		pkt_rx => pkt_rx,
 		pkt_tx => pkt_tx,
-		leds	=> leds
+		leds	=> leds,
+		onehz	=> onehz
 	);
 	
 --	switch_button: entity work.switch port map(
