@@ -178,92 +178,97 @@ begin
 		    underflow 		=> fifo_in_underflow
 		);
 		
-		process(onehz, reset)
-		begin
-			if rising_edge(onehz) then
-				if start_counter0 = '1' then
-					counter_onehz0 <= counter_onehz0 + 1;
-				else
-					counter_onehz0 <= 0;
-				end if;
-				if start_counter1 = '1' then
-					counter_onehz1 <= counter_onehz1 + 1;
-				else
-					counter_onehz1 <= 0;
-				end if;
-				if start_counter2 = '1' then
-					counter_onehz2 <= counter_onehz2 + 1;
-				else
-					counter_onehz2 <= 0;
-				end if;
-			end if;
-		end process;
+--		process(onehz, reset)
+--		begin
+--			if rising_edge(onehz) then
+--				if start_counter0 = '1' then
+--					counter_onehz0 <= counter_onehz0 + 1;
+--				else
+--					counter_onehz0 <= 0;
+--				end if;
+--				if start_counter1 = '1' then
+--					counter_onehz1 <= counter_onehz1 + 1;
+--				else
+--					counter_onehz1 <= 0;
+--				end if;
+--				if start_counter2 = '1' then
+--					counter_onehz2 <= counter_onehz2 + 1;
+--				else
+--					counter_onehz2 <= 0;
+--				end if;
+--			end if;
+--		end process;
 
 		
-		process(clk, reset) 
-		begin
-			if rising_edge(clk) then
-				if counter_rst < 10 then -- need to maintain reset on FIFO a few clk cycles first
-					reset_fifo <= '1';
-					counter_rst <= counter_rst + 1;
-				else
-					reset_fifo <= reset;
-					if fifo_out_w_en = '1' then
-						led0_state <= LIGHT;
-					end if;
-					if fifo_out_empty = '0' then
-						led1_state <= LIGHT;
-					end if;
-					if fifo_in_empty = '0' then
-						led2_state <= LIGHT;
-					end if;
-					case led1_state is
-						when LIGHT =>
-							start_counter1 <= '1';
-							if counter_onehz1 < 3 then
-								leds(1) <= '1';
-							else
-								led1_state <= OFF;
-								start_counter1 <= '0';
-							end if;
-						when OFF =>
-							leds(1) <= '0';
-						when others =>
-							led1_state <= OFF;
-					end case;
+--		process(clk, reset) 
+--		begin
+--			if rising_edge(clk) then
+--				if counter_rst < 10 then -- need to maintain reset on FIFO a few clk cycles first
+--					reset_fifo <= '1';
+--					counter_rst <= counter_rst + 1;
+--				else
+--					reset_fifo <= reset;
 					
-					case led0_state is
-						when LIGHT =>
-							start_counter0 <= '1';
-							if counter_onehz0 < 3 then
-								leds(0) <= '1';
-							else
-								led0_state <= OFF;
-								start_counter0 <= '0';
-							end if;
-						when OFF =>
-							leds(0) <= '0';
-						when others =>
-							led0_state <= OFF;
-					end case;
+--					if fifo_in_data_out = "00000010000010101000000000000101" then
+--						led2_state <= LIGHT;
+--					end if;
+--					if fifo_in_data_out = "00000000000000000000000000000000" then
+--						led1_state <= LIGHT;
+--					end if;
+--					if command = "0101" then
+--						led0_state <= LIGHT;
+--					end if;
 					
-					case led2_state is
-					when LIGHT =>
-						start_counter2 <= '1';
-						if counter_onehz2 < 3 then
-							leds(2) <= '1';
-						else
-							led2_state <= OFF;
-							start_counter2 <= '0';
-						end if;
-					when OFF =>
-						leds(2) <= '0';
-					when others =>
-						led2_state <= OFF;
-					end case;
-				end if;
-			end if;
-		end process;
+					
+					
+					
+--					case led1_state is
+--						when LIGHT =>
+--							start_counter1 <= '1';
+--							if counter_onehz1 < 3 then
+--								leds(1) <= '1';
+--							else
+--								led1_state <= OFF;
+--								start_counter1 <= '0';
+--							end if;
+--						when OFF =>
+--							leds(1) <= '0';
+--						when others =>
+--							led1_state <= OFF;
+--					end case;
+					
+--					case led0_state is
+--						when LIGHT =>
+--							start_counter0 <= '1';
+--							if counter_onehz0 < 3 then
+--								leds(0) <= '1';
+--							else
+--								led0_state <= OFF;
+--								start_counter0 <= '0';
+--							end if;
+--						when OFF =>
+--							leds(0) <= '0';
+--						when others =>
+--							led0_state <= OFF;
+--					end case;
+					
+--					case led2_state is
+--					when LIGHT =>
+--						start_counter2 <= '1';
+--						if counter_onehz2 < 3 then
+--							leds(2) <= '1';
+--						else
+--							led2_state <= OFF;
+--							start_counter2 <= '0';
+--						end if;
+--					when OFF =>
+--						leds(2) <= '0';
+--					when others =>
+--						led2_state <= OFF;
+--					end case;
+--				end if;
+--			end if;
+--		end process;
 		
 	fifo_out: fifo_generator_0
 		port map(
@@ -288,6 +293,7 @@ begin
 		port map(
 			rst 			=> rst40,
 			clk 			=> clk40,
+			onehz			=> onehz,
 			data_in 		=> fifo_in_data_out,
 			data_out 		=> command,
 			read_fifo_en	=> fifo_in_r_en,
