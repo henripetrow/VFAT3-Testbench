@@ -80,6 +80,9 @@ architecture rtl of buffer_vfat3 is
 	signal led4_state 			: led_type;
 	
 	signal data_out_int			: std_logic_vector(cmd_width - 1 downto 0);
+	
+	signal test					: std_logic := '0';
+	
 			
 			
 begin
@@ -134,8 +137,6 @@ begin
 				if BCd = "000001000000" then
 					led4_state <= LIGHT;
 				end if;
-								
-				
 					
 				case led1_state is
 					when LIGHT =>
@@ -233,6 +234,7 @@ begin
 				--internal state machine 
 				case state is 
 					when IDLE =>
+					test <= '0';
 						if fifo_empty = '0' then
 							no_data <= '0';
 							read_fifo_en <= '1';
@@ -244,10 +246,11 @@ begin
 						leds(7) <= '1';
 					when READ => 
 						read_fifo_en <= '0';
-						if fifo_valid <= '1' then
+						leds(6) <= '1';
+						--if fifo_valid <= '1' then
+						if fifo_valid = '0' then
 							buf <= data_in;
 							start_BCd <= '1';
-							leds(6) <= '1';
 							state <= MATCH_SEND;
 						end if;
 					when MATCH_SEND =>

@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date         : Tue Mar 28 13:43:44 2017
+| Date         : Wed Mar 29 18:04:35 2017
 | Host         : Shinsekai running 64-bit major release  (build 9200)
 | Command      : report_incremental_reuse -file top_incremental_reuse_pre_placed.rpt (Using checkpoint C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Github/VFAT3-Testbench/Firmware/project_ipbus_extphy_xpr/project_ipbus_extphy_xpr.runs/impl_2/top_routed.dcp)
 | Design       : top
@@ -16,9 +16,9 @@ Incremental Reuse Summary
 +---------------+-------+-------+------------+
 |      Type     | Count | Total | Percentage |
 +---------------+-------+-------+------------+
-| Matched Cells |   471 |  8419 |       5.59 |
+| Matched Cells |   471 |  8420 |       5.59 |
 | Matched Ports |    38 |    38 |     100.00 |
-| Matched Nets  |   528 |  9769 |       5.40 |
+| Matched Nets  |   528 |  9772 |       5.40 |
 +---------------+-------+-------+------------+
 
 
@@ -28,18 +28,18 @@ Incremental Reuse Summary
 +------------------------------------------------------+-------+-------+------------+
 |                         Type                         | Count | Total | Percentage |
 +------------------------------------------------------+-------+-------+------------+
-| Reused Cells                                         |   486 |  8419 |       5.77 |
+| Reused Cells                                         |   485 |  8420 |       5.76 |
 | Reused Ports                                         |    33 |    33 |     100.00 |
 |   Fixed Ports                                        |    33 |    33 |     100.00 |
-| Reused Nets                                          |   299 |  6326 |       4.72 |
+| Reused Nets                                          |   298 |  6328 |       4.70 |
 |                                                      |       |       |            |
-| Non-Reused Cells                                     |  7933 |  8419 |      94.22 |
-|   New                                                |  7915 |  8419 |      94.01 |
-|   Discarded illegal placement due to netlist changes |    16 |  8419 |       0.19 |
-|   Discarded to improve timing                        |     2 |  8419 |       0.02 |
-| Fully Reused nets                                    |   161 |  6326 |       2.54 |
-| Partially reused nets                                |   138 |  6326 |       2.18 |
-| Non-Reused nets                                      |  6027 |  6326 |      95.27 |
+| Non-Reused Cells                                     |  7935 |  8420 |      94.23 |
+|   New                                                |  7916 |  8420 |      94.01 |
+|   Discarded illegal placement due to netlist changes |    17 |  8420 |       0.20 |
+|   Discarded to improve timing                        |     2 |  8420 |       0.02 |
+| Fully Reused nets                                    |   161 |  6328 |       2.54 |
+| Partially reused nets                                |   137 |  6328 |       2.16 |
+| Non-Reused nets                                      |  6030 |  6328 |      95.29 |
 | Non-Reused Ports                                     |     0 |    33 |       0.00 |
 +------------------------------------------------------+-------+-------+------------+
 * Ports that are UnConnected and UnPlaced do not contribute in Reuse calculations

@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date         : Tue Mar 28 13:41:50 2017
+| Date         : Wed Mar 29 18:03:13 2017
 | Host         : Shinsekai running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
@@ -158,9 +158,9 @@ Table of Contents
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
 | FDRE       | 4300 |        Flop & Latch |
-| LUT6       | 1296 |                 LUT |
+| LUT6       | 1297 |                 LUT |
 | LUT5       |  721 |                 LUT |
-| LUT3       |  697 |                 LUT |
+| LUT3       |  696 |                 LUT |
 | LUT2       |  601 |                 LUT |
 | LUT1       |  523 |                 LUT |
 | LUT4       |  501 |                 LUT |
