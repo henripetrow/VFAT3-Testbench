@@ -384,7 +384,7 @@
           <Attr Name="UserDisabled" Val="1"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../../../../../../AppData/Roaming/Xilinx/PlanAhead/kc705_extphy.xdc">
+      <File Path="$PPRDIR/../ipbus/firmware/example_designs/ucf/kc705_extphy.xdc">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
