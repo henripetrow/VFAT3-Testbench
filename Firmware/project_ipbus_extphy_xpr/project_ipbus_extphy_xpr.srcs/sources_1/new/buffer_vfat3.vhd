@@ -248,7 +248,7 @@ begin
 						read_fifo_en <= '0';
 						leds(6) <= '1';
 						--if fifo_valid <= '1' then
-						if fifo_valid = '0' then
+						if fifo_valid = '1' then
 							buf <= data_in;
 							start_BCd <= '1';
 							state <= MATCH_SEND;
