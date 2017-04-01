@@ -34,6 +34,7 @@ entity LUT is
 		rst 			: in std_logic;
 		data_in			: in std_logic_vector(din_w - 1 downto 0);
 		data_out		: out std_logic_vector(dout_w - 1 downto 0);
+		w_en			: out std_logic;
 		no_data			: in std_logic
 	);
 end LUT;
@@ -50,16 +51,19 @@ begin
 			if rst = '1' then
 				data_out <= "00000000";
 				even <= '0';
+				w_en <= '0';
 			else
 				if no_data = '1' then
-					if even = '1' then
-						data_out <= "11111111"; -- A
-						even <= '0';
-					else
-						data_out <= "00000000"; -- P
-						even <= '1';
-					end if;	
+--					if even = '1' then
+--						data_out <= "11111111"; -- A
+--						even <= '0';
+--					else
+--						data_out <= "00000000"; -- P
+--						even <= '1';
+--					end if;	
+					w_en <= '0';
 				else
+					w_en <= '1';
 					case data_in is
 						when "0000" => -- A -- CCA
 							data_out <= "00010111";
@@ -95,13 +99,13 @@ begin
 							data_out <= "11101000";
 						when others =>
 							-- fillers
-							if even = '1' then
-								data_out <= "11111111"; -- A
-								even <= '0';
-							else
-								data_out <= "00000000"; -- P
-								even <= '1';
-							end if;						
+--							if even = '1' then
+--								data_out <= "11111111"; -- A
+--								even <= '0';
+--							else
+--								data_out <= "00000000"; -- P
+--								even <= '1';
+--							end if;						
 					end case;
 				end if;
 			end if; --if rst
