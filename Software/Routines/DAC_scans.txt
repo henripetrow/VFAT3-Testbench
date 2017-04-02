@@ -1,0 +1,8 @@
+100 Send CC-A
+1 Send CC-A
+1 Send CC-A
+
+100 Write ST 1
+100 Write CAL_MODE 1
+100 Write CAL_DAC 100
+100 Write CAL_DUR 1

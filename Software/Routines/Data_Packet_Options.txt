@@ -1,0 +1,146 @@
+100 Send CC-A
+1 Send CC-A
+1 Send CC-A
+
+100 Write ST 1
+100 Write CAL_MODE 1
+100 Write CAL_DAC 100
+100 Write CAL_DUR 1
+
+1 Write cal0 1
+1 Write cal8 1
+1 Write cal16 1
+1 Write cal24 1
+1 Write cal32 1
+1 Write cal40 1
+1 Write cal48 1
+1 Write cal56 1
+1 Write cal64 1
+1 Write cal72 1
+1 Write cal80 1
+1 Write cal88 1
+1 Write cal96 1
+1 Write cal104 1
+1 Write cal112 1
+1 Write cal120 1
+1 Write cal127 1
+
+
+1000 Write RUN 1
+1 Send RunMode
+
+# Check normal packet
+100 Send CalPulse
+
+# Check BC counter
+1000 Write BCb 1
+100 Send CalPulse
+
+# Check EC counter
+1000 Write ECb 1
+100 Send CalPulse
+
+1000 Write ECb 2
+100 Send CalPulse
+
+1000 Write ECb 3
+100 Send CalPulse
+
+1000 Write ECb 4
+100 Send CalPulse
+
+# Check Time Tag format
+1000 Write TT 1
+100 Send CalPulse
+
+1000 Write TT 2
+100 Send CalPulse
+
+1000 Write TT 3
+100 Send CalPulse
+
+1000 Write TT 4
+100 Send CalPulse
+
+# Suppress zero data field and suppress zero data packet
+
+1000 Write SZD 1
+100 Send LV1A
+
+1000 Write SZP 1
+100 Send LV1A
+
+1000 Write SZD 0
+100 Send LV1A
+
+# SPZS-mode
+
+1000 Write DT 1
+
+100 Send CalPulse
+
+1000 Write PAR 1
+100 Send CalPulse
+
+1000 Write PAR 2
+100 Send CalPulse
+
+1000 Write PAR 3
+100 Send CalPulse
+
+1000 Write PAR 4
+100 Send CalPulse
+
+1000 Write PAR 5
+100 Send CalPulse
+
+1000 Write PAR 6
+100 Send CalPulse
+
+1000 Write PAR 7
+100 Send CalPulse
+
+1000 Write PAR 8
+100 Send CalPulse
+
+1000 Write PAR 9
+100 Send CalPulse
+
+1000 Write PAR 10
+100 Send CalPulse
+
+1000 Write PAR 11
+100 Send CalPulse
+
+1000 Write PAR 12
+100 Send CalPulse
+
+1000 Write PAR 13
+100 Send CalPulse
+
+1000 Write PAR 14
+100 Send CalPulse
+
+1000 Write PAR 15
+100 Send CalPulse
+
+1000 Write P16 1
+100 Send CalPulse
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

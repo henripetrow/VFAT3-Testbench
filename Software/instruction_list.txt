@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# List of the desired instructions.
+## List of the desired instructions.
 # 1 BC -> 20 ns
 # 4 BC -> 100 ns
 # 40 BC -> 1 us
@@ -19,53 +18,17 @@
 
 
 
+1 Send CC-A
+1 Send CC-A
+1 Send CC-A
 
-200 Write RUN 1
+1000 Write Monitor_Sel 2
+200 Write PRE_I_BIT 0
 
-200 Write Monitor_Sel 4
-200 Write PRE_I_BSF 0
+200 Repeat 255
 
-200 Repeat 63
-200 Write PRE_I_BLCC 4
-200 Read 131072
-200 Read 131073
-200 End_Repeat
+1000 Write PRE_I_BIT 1
+1000 Read ADC0
+1000 Read ADC1
 
-
-
-
-
-
-
-
-=======
-# List of the desired instructions.
-# 1 BC -> 20 ns
-# 4 BC -> 100 ns
-# 40 BC -> 1 us
-# Slow control:
-# Syntax: 'Time' Write 'Reg' 'Value/Increment(if in a repeat)'
-#         'Time' Read 'Address'
-# FCC:
-# Syntax:
-#	  'Time' Send 'Command'
-#	  'Time' Send_Repeat 'Command' '# times to repeat' 'interval'
-# Repeat:
-# Syntax:
-#         'Time' Repeat '# times to repeat'
-#         'Time' End_Repeat
-
-
-
-#20 Write cal0 1
-#200 Write ST 1
-
-200 Write RUN 1
-200 Send RunMode
-
-1000 Send Calpulse
-100 Send LV1A
-
-
-
->>>>>>> 85a685027fd756c5ee9a98d099b377513beace32
+2000 End_Repeat
