@@ -101,6 +101,8 @@ architecture rtl of slave_vfat3 is
 	signal buffer_valid			: std_logic;
 	signal no_data				: std_logic;
 	
+	signal data_filt			: std_logic_vector(cmd_8w - 1 downto 0);
+	signal w_en_next			: std_logic;
 	signal data_bus_out			: std_logic_vector(cmd_8w - 1 downto 0);
 	signal data_to_vfat3		: std_logic;
 	signal data_bus_in			: std_logic_vector(cmd_8w - 1 downto 0);
@@ -224,19 +226,19 @@ begin
 					counter_rst <= counter_rst + 1;
 				else
 					reset_fifo <= reset;
-					if fifo_out_empty = '1' then
+					if fifo_in_empty = '1' then
 						led4_state <= LIGHT;
 					end if;
-					if fifo_out_full = '1' then
+					if fifo_in_full = '1' then
 						led3_state <= LIGHT;
 					end if;
 					if fifo_out_w_en = '1' then
 						led2_state <= LIGHT;
 					end if;
-					if data_bus_out = "10100101" then
+					if no_data = '1' then
 						led1_state <= LIGHT;
 					end if;
-					if data_bus_out = "01011010" then
+					if data_buf_received = '1' then
 						led0_state <= LIGHT;
 					end if;
 					
@@ -347,7 +349,7 @@ begin
 			data_in 		=> fifo_in_data_out,
 			data_out 		=> command,
 			read_fifo_en	=> fifo_in_r_en,
-			data_valid		=> buffer_valid,
+		--	data_valid		=> buffer_valid,
 			leds			=> leds,
 			fifo_valid		=> fifo_in_valid,
 			ack				=> data_buf_received,
@@ -359,9 +361,10 @@ begin
 		
 		data_buf_received <= fifo_out_w_ack;
 --		fifo_out_w_en <= '1'; -- buffer loopback testing
-		fifo_out_data_in <= data_bus_out & data_bus_out & data_bus_out & data_bus_out;
+		fifo_out_data_in <= data_filt & data_filt & data_filt & data_filt;
 --		fifo_out_data_in(31 downto 4) <= (others => '1'); -- FW does not work anymore with this assignment ...
 --		fifo_out_data_in(3 downto 0) <= command ;
+		w_en_next <= '1';
 
 	lut: entity work.LUT
 		port map(
@@ -369,8 +372,16 @@ begin
 			rst => rst40,
 			data_in => command,
 			data_out => data_bus_out,
-			w_en => fifo_out_w_en,
+			w_en => w_en_next,
 			no_data => no_data
+		);
+	filter: entity work.filter
+		port map(
+			clk => clk40,
+			rst => rst40,
+			data_in => data_bus_out,
+			data_out => data_filt,
+			w_en => fifo_out_w_en
 		);
 
 --	serializer: selectio_wiz_ser

@@ -97,7 +97,7 @@ begin
 						data_to_fifo <= (others => '0');
 						fifo_in_w_en <= '0';
 						ipbus_out.ipb_ack <= '0';
---						ipbus_out.ipb_rdata <= (others => '0');
+						ipbus_out.ipb_rdata <= (others => '0');
 						state <= IDLE;
 					when others =>
 						data_to_fifo <= (others => '0');

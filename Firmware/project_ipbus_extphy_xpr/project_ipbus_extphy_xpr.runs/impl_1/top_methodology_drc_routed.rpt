@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date         : Fri Mar 31 16:47:12 2017
+| Date         : Tue Apr 04 16:14:26 2017
 | Host         : Shinsekai running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_methodology_drc_routed.rpt -rpx top_methodology_drc_routed.rpx
 | Design       : top
@@ -23,7 +23,7 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 226
+             Violations found: 225
 +-----------+----------+----------------------------------------------------+------------+
 | Rule      | Severity | Description                                        | Violations |
 +-----------+----------+----------------------------------------------------+------------+
@@ -33,8 +33,8 @@ Table of Contents
 | TIMING-6  | Warning  | No common primary clock between related clocks     | 3          |
 | TIMING-7  | Warning  | No common node between related clocks              | 2          |
 | TIMING-9  | Warning  | Unknown CDC Logic                                  | 1          |
-| TIMING-15 | Warning  | Large hold violation on inter-clock path           | 11         |
-| TIMING-16 | Warning  | Large setup violation                              | 4          |
+| TIMING-15 | Warning  | Large hold violation on inter-clock path           | 12         |
+| TIMING-16 | Warning  | Large setup violation                              | 2          |
 | TIMING-17 | Warning  | Non-clocked sequential cell                        | 160        |
 | TIMING-18 | Warning  | Missing input or output delay                      | 19         |
 | TIMING-27 | Warning  | Invalid primary clock on hierarchical pin          | 1          |
@@ -44,22 +44,22 @@ Table of Contents
 -----------------
 PDRC-190#1 Warning
 Suboptimally placed synchronized register chain  
-The FDPE cell eth/emac0/U0/trimac_top/TRI_SPEED.TRIMAC_INST/SYNC_RX_RESET_I/R2 in site SLICE_X17Y115 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell eth/emac0/U0/trimac_top/TRI_SPEED.TRIMAC_INST/SYNC_RX_RESET_I/R3 is not placed in the same (SLICE) site.
+The FDPE cell eth/emac0/U0/trimac_top/TRI_SPEED.TRIMAC_INST/SYNC_RX_RESET_I/R2 in site SLICE_X20Y103 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell eth/emac0/U0/trimac_top/TRI_SPEED.TRIMAC_INST/SYNC_RX_RESET_I/R3 is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#2 Warning
 Suboptimally placed synchronized register chain  
-The FDPE cell eth/emac0/U0/trimac_top/TRI_SPEED.TRIMAC_INST/SYNC_TX_RESET_I/R2 in site SLICE_X21Y122 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell eth/emac0/U0/trimac_top/TRI_SPEED.TRIMAC_INST/SYNC_TX_RESET_I/R3 is not placed in the same (SLICE) site.
+The FDPE cell eth/emac0/U0/trimac_top/TRI_SPEED.TRIMAC_INST/SYNC_TX_RESET_I/R2 in site SLICE_X20Y129 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell eth/emac0/U0/trimac_top/TRI_SPEED.TRIMAC_INST/SYNC_TX_RESET_I/R3 is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#3 Warning
 Suboptimally placed synchronized register chain  
-The FDPE cell eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/rd_rst_asreg in site SLICE_X14Y116 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/rd_rst_asreg_d1 is not placed in the same (SLICE) site.
+The FDPE cell eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/rd_rst_asreg in site SLICE_X8Y119 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/rd_rst_asreg_d1 is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#4 Warning
 Suboptimally placed synchronized register chain  
-The FDPE cell eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/wr_rst_asreg in site SLICE_X15Y116 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/wr_rst_asreg_d1 is not placed in the same (SLICE) site.
+The FDPE cell eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/wr_rst_asreg in site SLICE_X8Y117 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/wr_rst_asreg_d1 is not placed in the same (SLICE) site.
 Related violations: <none>
 
 SYNTH-6#1 Warning
@@ -199,77 +199,72 @@ Related violations: <none>
 
 TIMING-15#1 Warning
 Large hold violation on inter-clock path  
-There is a large inter-clock skew of 6.987 ns between eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM21/DP/CLK (clocked by gmii_rx_clk) and eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_6/D (clocked by I) that results in large hold timing violation(s) of -1.565 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+There is a large inter-clock skew of 7.095 ns between eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM21/DP/CLK (clocked by gmii_rx_clk) and eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_6/D (clocked by I) that results in large hold timing violation(s) of -1.760 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#2 Warning
 Large hold violation on inter-clock path  
-There is a large inter-clock skew of 6.987 ns between eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM22/DP/CLK (clocked by gmii_rx_clk) and eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_7/D (clocked by I) that results in large hold timing violation(s) of -1.311 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+There is a large inter-clock skew of 7.095 ns between eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM22/DP/CLK (clocked by gmii_rx_clk) and eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_7/D (clocked by I) that results in large hold timing violation(s) of -1.374 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#3 Warning
 Large hold violation on inter-clock path  
-There is a large inter-clock skew of 6.987 ns between eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM23/DP/CLK (clocked by gmii_rx_clk) and eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_8/D (clocked by I) that results in large hold timing violation(s) of -1.663 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+There is a large inter-clock skew of 7.096 ns between eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1/RAMA/CLK (clocked by gmii_rx_clk) and eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_0/D (clocked by I) that results in large hold timing violation(s) of -1.848 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#4 Warning
 Large hold violation on inter-clock path  
-There is a large inter-clock skew of 6.987 ns between eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM24/DP/CLK (clocked by gmii_rx_clk) and eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_9/D (clocked by I) that results in large hold timing violation(s) of -1.707 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+There is a large inter-clock skew of 7.096 ns between eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1/RAMA_D1/CLK (clocked by gmii_rx_clk) and eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_1/D (clocked by I) that results in large hold timing violation(s) of -1.227 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#5 Warning
 Large hold violation on inter-clock path  
-There is a large inter-clock skew of 6.988 ns between eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1/RAMA/CLK (clocked by gmii_rx_clk) and eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_0/D (clocked by I) that results in large hold timing violation(s) of -1.767 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+There is a large inter-clock skew of 7.096 ns between eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1/RAMC/CLK (clocked by gmii_rx_clk) and eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_4/D (clocked by I) that results in large hold timing violation(s) of -1.196 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#6 Warning
 Large hold violation on inter-clock path  
-There is a large inter-clock skew of 6.988 ns between eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1/RAMA_D1/CLK (clocked by gmii_rx_clk) and eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_1/D (clocked by I) that results in large hold timing violation(s) of -1.614 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+There is a large inter-clock skew of 7.096 ns between eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1/RAMC_D1/CLK (clocked by gmii_rx_clk) and eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_5/D (clocked by I) that results in large hold timing violation(s) of -1.610 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#7 Warning
 Large hold violation on inter-clock path  
-There is a large inter-clock skew of 6.988 ns between eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1/RAMB_D1/CLK (clocked by gmii_rx_clk) and eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_3/D (clocked by I) that results in large hold timing violation(s) of -1.755 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+There is a large inter-clock skew of 7.096 ns between eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM23/DP/CLK (clocked by gmii_rx_clk) and eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_8/D (clocked by I) that results in large hold timing violation(s) of -1.311 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#8 Warning
 Large hold violation on inter-clock path  
-There is a large inter-clock skew of 6.988 ns between eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1/RAMC/CLK (clocked by gmii_rx_clk) and eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_4/D (clocked by I) that results in large hold timing violation(s) of -1.535 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+There is a large inter-clock skew of 7.096 ns between eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM24/DP/CLK (clocked by gmii_rx_clk) and eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_9/D (clocked by I) that results in large hold timing violation(s) of -1.334 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#9 Warning
 Large hold violation on inter-clock path  
-There is a large inter-clock skew of 6.988 ns between eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1/RAMC_D1/CLK (clocked by gmii_rx_clk) and eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_5/D (clocked by I) that results in large hold timing violation(s) of -1.674 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+There is a large inter-clock skew of 7.097 ns between eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1/RAMB/CLK (clocked by gmii_rx_clk) and eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_2/D (clocked by I) that results in large hold timing violation(s) of -1.521 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#10 Warning
 Large hold violation on inter-clock path  
-There is a large inter-clock skew of 8.008 ns between slaves/slave_vfat3/lut/data_out_reg[1]/C (clocked by clk_out1_clk_wiz_0) and slaves/slave_vfat3/led0_state_reg/D (clocked by clk_ipb_i) that results in large hold timing violation(s) of -8.137 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+There is a large inter-clock skew of 7.097 ns between eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1/RAMB_D1/CLK (clocked by gmii_rx_clk) and eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_3/D (clocked by I) that results in large hold timing violation(s) of -1.135 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-15#11 Warning
 Large hold violation on inter-clock path  
-There is a large inter-clock skew of 8.008 ns between slaves/slave_vfat3/lut/data_out_reg[1]/C (clocked by clk_out1_clk_wiz_0) and slaves/slave_vfat3/led1_state_reg/D (clocked by clk_ipb_i) that results in large hold timing violation(s) of -8.135 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+There is a large inter-clock skew of 8.010 ns between slaves/slave_vfat3/buffer_in/no_data_reg/C (clocked by clk_out1_clk_wiz_0) and slaves/slave_vfat3/led1_state_reg/D (clocked by clk_ipb_i) that results in large hold timing violation(s) of -8.060 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+Related violations: <none>
+
+TIMING-15#12 Warning
+Large hold violation on inter-clock path  
+There is a large inter-clock skew of 8.011 ns between slaves/slave_vfat3/filter/w_en_reg/C (clocked by clk_out1_clk_wiz_0) and slaves/slave_vfat3/led2_state_reg/D (clocked by clk_ipb_i) that results in large hold timing violation(s) of -8.136 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-16#1 Warning
 Large setup violation  
-There is a large setup violation of -1.883 ns between slaves/slave_vfat3/lut/data_out_reg[7]/C (clocked by clk_out1_clk_wiz_0) and slaves/slave_vfat3/led0_state_reg/D (clocked by clk_ipb_i). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.261 ns between slaves/slave_vfat3/fifo_in/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i_reg/C (clocked by clk_out1_clk_wiz_0) and slaves/slave_vfat3/led4_state_reg/D (clocked by clk_ipb_i). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#2 Warning
 Large setup violation  
-There is a large setup violation of -1.915 ns between slaves/slave_vfat3/lut/data_out_reg[7]/C (clocked by clk_out1_clk_wiz_0) and slaves/slave_vfat3/led1_state_reg/D (clocked by clk_ipb_i). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#3 Warning
-Large setup violation  
-There is a large setup violation of -3.170 ns between slaves/slave_vfat3/fifo_out/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i_reg/C (clocked by clk_out1_clk_wiz_0) and slaves/slave_vfat3/led3_state_reg/D (clocked by clk_ipb_i). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#4 Warning
-Large setup violation  
-There is a large setup violation of -3.170 ns between slaves/slave_vfat3/lut/w_en_reg/C (clocked by clk_out1_clk_wiz_0) and slaves/slave_vfat3/led2_state_reg/D (clocked by clk_ipb_i). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.870 ns between slaves/slave_vfat3/fifo_out/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/gwa.WR_ACK_reg/C (clocked by clk_out1_clk_wiz_0) and slaves/slave_vfat3/led0_state_reg/D (clocked by clk_ipb_i). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-17#1 Warning
