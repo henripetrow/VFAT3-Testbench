@@ -54,13 +54,14 @@ begin
 				w_en <= '0';
 			else
 				if no_data = '1' then
---					if even = '1' then
---						data_out <= "11111111"; -- A
---						even <= '0';
---					else
---						data_out <= "00000000"; -- P
---						even <= '1';
---					end if;	
+					
+					if even = '1' then
+						data_out <= "11111111"; -- A
+						even <= '0';
+					else
+						data_out <= "00000000"; -- P
+						even <= '1';
+					end if;	
 					w_en <= '0';
 				else
 					w_en <= '1';
@@ -98,14 +99,15 @@ begin
 						when "1111" => -- P -- CCB
 							data_out <= "11101000";
 						when others =>
+							
 							-- fillers
---							if even = '1' then
---								data_out <= "11111111"; -- A
---								even <= '0';
---							else
---								data_out <= "00000000"; -- P
---								even <= '1';
---							end if;						
+							if even = '1' then
+								data_out <= "11111111"; -- A
+								even <= '0';
+							else
+								data_out <= "00000000"; -- P
+								even <= '1';
+							end if;						
 					end case;
 				end if;
 			end if; --if rst

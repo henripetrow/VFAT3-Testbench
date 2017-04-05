@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date         : Tue Apr 04 16:06:17 2017
+| Date         : Wed Apr 05 09:30:35 2017
 | Host         : Shinsekai running 64-bit major release  (build 9200)
 | Command      : report_drc -file top_drc_opted.rpt
 | Design       : top
