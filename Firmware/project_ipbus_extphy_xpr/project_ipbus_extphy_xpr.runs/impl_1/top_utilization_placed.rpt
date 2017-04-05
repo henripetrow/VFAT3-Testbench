@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date         : Wed Apr 05 09:31:43 2017
+| Date         : Wed Apr 05 11:52:09 2017
 | Host         : Shinsekai running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_utilization_placed.rpt -pb top_utilization_placed.pb
 | Design       : top
@@ -31,8 +31,8 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs                 | 3311 |     0 |    203800 |  1.62 |
-|   LUT as Logic             | 3252 |     0 |    203800 |  1.60 |
+| Slice LUTs                 | 3313 |     0 |    203800 |  1.63 |
+|   LUT as Logic             | 3254 |     0 |    203800 |  1.60 |
 |   LUT as Memory            |   59 |     0 |     64000 |  0.09 |
 |     LUT as Distributed RAM |    8 |     0 |           |       |
 |     LUT as Shift Register  |   51 |     0 |           |       |
@@ -69,13 +69,13 @@ Table of Contents
 +-------------------------------------------+------+-------+-----------+-------+
 |                 Site Type                 | Used | Fixed | Available | Util% |
 +-------------------------------------------+------+-------+-----------+-------+
-| Slice                                     | 1456 |     0 |     50950 |  2.86 |
-|   SLICEL                                  |  870 |     0 |           |       |
-|   SLICEM                                  |  586 |     0 |           |       |
-| LUT as Logic                              | 3252 |     0 |    203800 |  1.60 |
+| Slice                                     | 1485 |     0 |     50950 |  2.91 |
+|   SLICEL                                  |  994 |     0 |           |       |
+|   SLICEM                                  |  491 |     0 |           |       |
+| LUT as Logic                              | 3254 |     0 |    203800 |  1.60 |
 |   using O5 output only                    |    0 |       |           |       |
-|   using O6 output only                    | 2784 |       |           |       |
-|   using O5 and O6                         |  468 |       |           |       |
+|   using O6 output only                    | 2788 |       |           |       |
+|   using O5 and O6                         |  466 |       |           |       |
 | LUT as Memory                             |   59 |     0 |     64000 |  0.09 |
 |   LUT as Distributed RAM                  |    8 |     0 |           |       |
 |     using O5 output only                  |    0 |       |           |       |
@@ -85,9 +85,9 @@ Table of Contents
 |     using O5 output only                  |   32 |       |           |       |
 |     using O6 output only                  |   10 |       |           |       |
 |     using O5 and O6                       |    9 |       |           |       |
-| LUT Flip Flop Pairs                       | 1786 |     0 |    203800 |  0.88 |
+| LUT Flip Flop Pairs                       | 1783 |     0 |    203800 |  0.87 |
 |   fully used LUT-FF pairs                 |  238 |       |           |       |
-|   LUT-FF pairs with one unused LUT output | 1469 |       |           |       |
+|   LUT-FF pairs with one unused LUT output | 1466 |       |           |       |
 |   LUT-FF pairs with one unused Flip Flop  | 1374 |       |           |       |
 | Unique Control Sets                       |  237 |       |           |       |
 +-------------------------------------------+------+-------+-----------+-------+
@@ -193,10 +193,10 @@ Table of Contents
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
 | FDRE       | 3690 |        Flop & Latch |
-| LUT6       | 1215 |                 LUT |
+| LUT6       | 1214 |                 LUT |
 | LUT2       |  709 |                 LUT |
-| LUT5       |  689 |                 LUT |
-| LUT4       |  523 |                 LUT |
+| LUT5       |  691 |                 LUT |
+| LUT4       |  522 |                 LUT |
 | LUT3       |  506 |                 LUT |
 | FDCE       |  370 |        Flop & Latch |
 | FDSE       |  315 |        Flop & Latch |

@@ -49,13 +49,13 @@ begin
 				w_en <= '0';
 			else
 				case data_in is
-					when "00010111" => -- A -- CCA
+--					when "00010111" =>
+--						w_en <= '0';
+					when "11111111" => 
 						w_en <= '0';
-					when "11111111" => -- B -- EC0
+					when "00000000" =>
 						w_en <= '0';
-					when "00000000" => -- C -- BC0
-						w_en <= '0';
-					when others => -- D -- CalPulse
+					when others => 
 						data_out <= data_in;
 						w_en <= '1';
 				end case;
