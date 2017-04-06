@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date             : Wed Apr 05 12:02:27 2017
+| Date             : Thu Apr 06 12:29:03 2017
 | Host             : Shinsekai running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -50,16 +50,16 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.027 |       10 |       --- |             --- |
-| Slice Logic              |     0.007 |     8699 |       --- |             --- |
-|   LUT as Logic           |     0.006 |     3254 |    203800 |            1.60 |
-|   Register               |    <0.001 |     4436 |    407600 |            1.09 |
-|   CARRY4                 |    <0.001 |      236 |     50950 |            0.46 |
+| Slice Logic              |     0.007 |     8759 |       --- |             --- |
+|   LUT as Logic           |     0.006 |     3244 |    203800 |            1.59 |
+|   Register               |    <0.001 |     4462 |    407600 |            1.09 |
+|   CARRY4                 |    <0.001 |      240 |     50950 |            0.47 |
 |   LUT as Shift Register  |    <0.001 |       51 |     64000 |            0.08 |
 |   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
 |   LUT as Distributed RAM |    <0.001 |        8 |     64000 |            0.01 |
-|   F7/F8 Muxes            |    <0.001 |       14 |    203800 |           <0.01 |
-|   Others                 |     0.000 |      216 |       --- |             --- |
-| Signals                  |     0.009 |     6521 |       --- |             --- |
+|   F7/F8 Muxes            |    <0.001 |        8 |    203800 |           <0.01 |
+|   Others                 |     0.000 |      217 |       --- |             --- |
+| Signals                  |     0.009 |     6610 |       --- |             --- |
 | Block RAM                |     0.018 |       21 |       445 |            4.72 |
 | MMCM                     |     0.210 |        2 |        10 |           20.00 |
 | I/O                      |     0.023 |       33 |       500 |            6.60 |
@@ -165,11 +165,11 @@ Table of Contents
 |       U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM22 |    <0.001 |
 |       U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM23 |    <0.001 |
 |       U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM24 |    <0.001 |
-|   ipbus                                                                                            |     0.044 |
+|   ipbus                                                                                            |     0.043 |
 |     trans                                                                                          |     0.003 |
-|       iface                                                                                        |     0.002 |
-|       sm                                                                                           |     0.001 |
-|     udp_if                                                                                         |     0.041 |
+|       iface                                                                                        |     0.001 |
+|       sm                                                                                           |     0.002 |
+|     udp_if                                                                                         |     0.040 |
 |       ARP                                                                                          |    <0.001 |
 |       IPADDR                                                                                       |    <0.001 |
 |       RARP_block                                                                                   |    <0.001 |
@@ -189,12 +189,12 @@ Table of Contents
 |       rx_reset_block                                                                               |    <0.001 |
 |       rx_transactor                                                                                |    <0.001 |
 |       status                                                                                       |     0.002 |
-|       status_buffer                                                                                |     0.004 |
+|       status_buffer                                                                                |     0.003 |
 |       tx_byte_sum                                                                                  |    <0.001 |
 |       tx_main                                                                                      |     0.002 |
 |       tx_ram_selector                                                                              |    <0.001 |
 |       tx_transactor                                                                                |     0.002 |
-|   slaves                                                                                           |     0.005 |
+|   slaves                                                                                           |     0.006 |
 |     fabric                                                                                         |    <0.001 |
 |     slave0                                                                                         |    <0.001 |
 |     slave1                                                                                         |    <0.001 |

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="selectio_wiz_des_synth_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1490616185">
-  <File Type="PA-TCL" Name="selectio_wiz_des.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="selectio_wiz_des_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="selectio_wiz_des.tcl"/>
   <File Type="RDS-RDS" Name="selectio_wiz_des.vds"/>
   <File Type="RDS-UTIL" Name="selectio_wiz_des_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="selectio_wiz_des_utilization_synth.pb"/>

@@ -24,28 +24,33 @@ package body ipbus_addr_decode is
     variable sel : integer;
   begin
                 -- START automatically  generated VHDL the Tue Jul  9 16:49:55 2013 
-		if    std_match(addr, "------------------00--------000-") then
+		if    std_match(addr, "-----------------000--------000-") then
 			sel := 0; -- ctrl_reg / base 0x00000000 / mask 0x0000300e
-		elsif std_match(addr, "------------------00--------001-") then
+		elsif std_match(addr, "-----------------000--------001-") then
 			sel := 1; -- reg / base 0x00000002 / mask 0x0000300e
-		elsif std_match(addr, "------------------00--------01--") then
+		elsif std_match(addr, "-----------------000--------01--") then
 			sel := 2; -- err_inject / base 0x00000004 / mask 0x0000300e
-		elsif std_match(addr, "------------------00--------100-") then
+		elsif std_match(addr, "-----------------000--------100-") then
 			sel := 3; -- pkt_ctr / base 0x00000008 / mask 0x0000300e
-		elsif std_match(addr, "------------------01------------") then
+		elsif std_match(addr, "-----------------001------------") then
 			sel := 4; -- ram / base 0x00001000 / mask 0x0000300e
-		elsif std_match(addr, "------------------10--------000-") then
+		elsif std_match(addr, "-----------------010--------000-") then
 			sel := 5; -- pram / base 0x00002000 / mask 0x0000300e
 		-- END automatic generated VHDL
 		
-		elsif std_match(addr, "------------------11--------000-") then
+		elsif std_match(addr, "-----------------011--------000-") then
 			sel := 6; -- vfat3 / base 0x00003000 / mask 0x0000300e
-		
-		
-                else
-                        sel := 99;
-                end if;
-                return sel;
+		elsif std_match(addr, "-----------------100--------000-") then
+			sel := 7; -- por / base 0x00004000 / mask 0x0000300e
+		elsif std_match(addr, "-----------------101--------000-") then
+			sel := 8; -- i²c / base 0x00005000 / mask 0x0000300e
+		elsif std_match(addr, "-----------------110--------000-") then
+			sel := 9; -- adc / base 0x00006000 / mask 0x0000300e
+			
+        else
+            sel := 99;
+        end if;
+  	return sel;
   end ipbus_addr_sel;
                 
 end ipbus_addr_decode;

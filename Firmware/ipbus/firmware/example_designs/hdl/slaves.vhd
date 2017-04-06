@@ -31,7 +31,7 @@ end slaves;
 
 architecture rtl of slaves is
 
-	constant NSLV: positive := 7;
+	constant NSLV: positive := 10;
 	signal ipbw: ipb_wbus_array(NSLV-1 downto 0);
 	signal ipbr, ipbr_d: ipb_rbus_array(NSLV-1 downto 0);
 	signal ctrl_reg: std_logic_vector(31 downto 0);
@@ -141,5 +141,46 @@ begin
 			leds		=> leds,
 			onehz		=> onehz
 		);
+		
+--		slave_por: entity work.slave_por
+--		port map(
+--			clk => ipb_clk,
+--			reset => ipb_rst,
+--			clk40 => clk40,
+--			rst40 => rst40,
+--			clk320 => clk320,
+--			rst320 => rst320,
+--			ipbus_in => ipbw(6),
+--			ipbus_out => ipbr(6),
+--			leds		=> leds,
+--			onehz		=> onehz
+--		);
+		
+--		slave_i2c: entity work.slave_i2c
+--			port map(
+--				clk => ipb_clk,
+--				reset => ipb_rst,
+--				clk40 => clk40,
+--				rst40 => rst40,
+--				clk320 => clk320,
+--				rst320 => rst320,
+--				ipbus_in => ipbw(6),
+--				ipbus_out => ipbr(6),
+--				leds		=> leds,
+--				onehz		=> onehz
+--			);
 
+--		slave_adc: entity work.slave_adc
+--			port map(
+--				clk => ipb_clk,
+--				reset => ipb_rst,
+--				clk40 => clk40,
+--				rst40 => rst40,
+--				clk320 => clk320,
+--				rst320 => rst320,
+--				ipbus_in => ipbw(6),
+--				ipbus_out => ipbr(6),
+--				leds		=> leds,
+--				onehz		=> onehz
+--			);
 end rtl;

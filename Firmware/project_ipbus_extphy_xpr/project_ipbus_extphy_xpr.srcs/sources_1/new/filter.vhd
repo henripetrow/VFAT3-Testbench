@@ -49,8 +49,6 @@ begin
 				w_en <= '0';
 			else
 				case data_in is
---					when "00010111" =>
---						w_en <= '0';
 					when "11111111" => 
 						w_en <= '0';
 					when "00000000" =>

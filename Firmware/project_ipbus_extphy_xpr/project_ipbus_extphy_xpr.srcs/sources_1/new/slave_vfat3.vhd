@@ -73,7 +73,8 @@ architecture rtl of slave_vfat3 is
 	signal reset_fifo			: std_logic;
 	
 	signal counter_rst			: integer := 0;
-
+	-------------------------------------------
+	-- for status blinking LEDs
 	signal counter_onehz0		: integer := 0;
 	signal counter_onehz1		: integer := 0;
 	signal counter_onehz2		: integer := 0;
@@ -92,22 +93,18 @@ architecture rtl of slave_vfat3 is
 	signal led2_state 			: led_type;
 	signal led3_state			: led_type;
 	signal led4_state			: led_type;
-		
+	--
+	-------------------------------------------	
 		
 	signal command				: std_logic_vector(cmd_width - 1 downto 0);
-	signal BCd					: std_logic_vector(BC_width - 1 downto 0);
-	signal reset_BCd			: std_logic;
-	signal start_BCd			: std_logic;
-	signal buffer_valid			: std_logic;
 	signal no_data				: std_logic;
 	
 	signal data_filt			: std_logic_vector(cmd_8w - 1 downto 0);
 	signal w_en_next			: std_logic;
 	signal data_bus_out			: std_logic_vector(cmd_8w - 1 downto 0);
-	signal data_to_vfat3		: std_logic;
 	signal data_bus_in			: std_logic_vector(cmd_8w - 1 downto 0);
-	signal data_from_vfat3		: std_logic;
 	signal data_buf_received	: std_logic;
+	signal firmware_status		: std_logic_vector(3 downto 0);
 	
 	component fifo_generator_0 is
 		PORT (
@@ -128,25 +125,6 @@ architecture rtl of slave_vfat3 is
 		);
 	  end component;
 	  
-	  component selectio_wiz_ser is
-	  	PORT (
-	  		data_out_from_device 	: IN std_logic_vector(7 downto 0);
-	  		data_out_to_pins 		: OUT std_logic;
-	  		clk_in 					: IN std_logic;
-	  		clk_div_in 				: IN std_logic;
-	  		io_reset 				: IN std_logic
-	  	);
-		end component;
-	
-		component selectio_wiz_des is
-	  		PORT (
-	  			data_out_from_device 	: IN std_logic_vector(7 downto 0);
-	  		  	data_out_to_pins 		: OUT std_logic;
-	  		  	clk_in 					: IN std_logic;
-	  		  	clk_div_in 				: IN std_logic;
-	  		  	io_reset 				: IN std_logic
-	  		);
-	  	end component;
 begin
 	
 	control_block: entity work.control
@@ -161,18 +139,16 @@ begin
 			data_to_fifo 	=> fifo_in_data_in,
 			data_from_fifo 	=> fifo_out_data_out,
 			fifo_underflow	=> fifo_out_underflow,
-			leds			=> leds
+			fifo_out_empty  => fifo_out_empty,
+			leds			=> leds,
+			firmware_status => firmware_status
 		);
-		
---	fifo_out_data_in <= fifo_in_data_out; --fifo loopback testing
---	fifo_out_w_en <= fifo_in_valid;
---	fifo_in_r_en <= not reset_fifo;
 		
 	fifo_in: fifo_generator_0
 		port map(
 			rst 			=> reset_fifo,
 		    wr_clk 			=> clk,
-		    rd_clk 			=> clk40,-- !!!!
+		    rd_clk 			=> clk40,
 		    din				=> fifo_in_data_in,
 		    wr_en 			=> fifo_in_w_en,
 		    rd_en 			=> fifo_in_r_en,
@@ -180,12 +156,14 @@ begin
 		    full 			=> fifo_in_full,
 		    valid			=> fifo_in_valid,
 		    almost_full 	=> fifo_in_a_full,
-		    wr_ack 			=> fifo_in_ack, -- not used
+		    wr_ack 			=> fifo_in_ack,
 		    empty 			=> fifo_in_empty,
 		    almost_empty	=> fifo_in_a_empty,
 		    underflow 		=> fifo_in_underflow
 		);
 		
+		-------------------------------------------------
+		-- process for blinking status LEDS
 		process(onehz, reset)
 		begin
 			if rising_edge(onehz) then
@@ -216,7 +194,9 @@ begin
 				end if;
 			end if;
 		end process;
-
+		--
+		-----------------------------------------
+		
 		
 		process(clk, reset) 
 		begin
@@ -226,6 +206,8 @@ begin
 					counter_rst <= counter_rst + 1;
 				else
 					reset_fifo <= reset;
+					------------------------------------
+					-- status blinking LEDS
 					if fifo_in_empty = '1' then
 						led4_state <= LIGHT;
 					end if;
@@ -317,7 +299,8 @@ begin
 						when others =>
 							led0_state <= OFF;
 					end case;
-
+				--
+				-----------------------------------------
 				end if;
 			end if;
 		end process;
@@ -349,7 +332,6 @@ begin
 			data_in 		=> fifo_in_data_out,
 			data_out 		=> command,
 			read_fifo_en	=> fifo_in_r_en,
-		--	data_valid		=> buffer_valid,
 			leds			=> leds,
 			fifo_valid		=> fifo_in_valid,
 			ack				=> data_buf_received,
@@ -357,13 +339,8 @@ begin
 			no_data			=> no_data
 		);
 		
---		leds(2 downto 0) <= command(2 downto 0);
-		
 		data_buf_received <= fifo_out_w_ack;
---		fifo_out_w_en <= '1'; -- buffer loopback testing
 		fifo_out_data_in <= data_filt & data_filt & data_filt & data_filt;
---		fifo_out_data_in(31 downto 4) <= (others => '1'); -- FW does not work anymore with this assignment ...
---		fifo_out_data_in(3 downto 0) <= command ;
 		w_en_next <= '1';
 
 	lut: entity work.LUT
@@ -383,21 +360,4 @@ begin
 			data_out => data_filt,
 			w_en => fifo_out_w_en
 		);
-
---	serializer: selectio_wiz_ser
---		port map(
---			data_out_from_device	=> data_bus_out,
---			data_out_to_pins		=> data_to_vfat3,
---			clk_in					=> clk320, -- fast so 320 ?
---			clk_div_in				=> clk40, -- slow so 40 ?
---			io_reset				=> rst40 -- ?
---		);
---	deserializer: selectio_wiz_des
---		port map(
---			data_out_from_device	=> data_bus_in,
---			data_out_to_pins		=> data_from_vfat3,
---			clk_in					=> clk320, -- fast so 320 ?
---			clk_div_in				=> clk40, -- slow so 40 ?
---			io_reset				=> rst40 -- ?
---		);
 end rtl;

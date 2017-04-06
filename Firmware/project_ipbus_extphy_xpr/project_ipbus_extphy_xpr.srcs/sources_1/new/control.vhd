@@ -36,10 +36,12 @@ entity control is
 		fifo_out_valid 	: in std_logic;
 		fifo_underflow  : in std_logic;
 		data_from_fifo 	: in std_logic_vector (data_width - 1 downto 0);
+		firmware_status : inout std_logic_vector(3 downto 0);
 		ipbus_out 		: out ipb_rbus;
 		data_to_fifo 	: out std_logic_vector (data_width - 1 downto 0);
 		fifo_in_w_en 	: out std_logic;
 		fifo_out_r_en 	: out std_logic;
+		fifo_out_empty  : in std_logic;
 		leds			: out std_logic_vector(7 downto 0)
 	);
 end control;
@@ -48,6 +50,7 @@ architecture rtl of control is
 	type state_type is (IDLE, W, R, ACK, ERROR, RESET);
 	
 	signal state 	: state_type;
+	signal read_fw_st : std_logic_vector(data_width - 1 downto 0);
 begin
 	
 	process(clk, rst)
@@ -63,22 +66,37 @@ begin
 			else
 				case state is
 					when IDLE =>
-						--leds(7) <= '1';
 						if ipbus_in.ipb_strobe = '1' and ipbus_in.ipb_write = '1' then
-							state <= W;
+							if ipbus_in.ipb_addr = X"00003001" then
+								firmware_status <= ipbus_in.ipb_wdata(3 downto 0);
+								ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => (others => '0'));
+								state <= RESET;
+							else
+								state <= W;
+							end if;
 						elsif ipbus_in.ipb_strobe = '1' and ipbus_in.ipb_write = '0' then
-							state <= R;
-							fifo_out_r_en <= '1';
+							if ipbus_in.ipb_addr = X"00003001" then
+								read_fw_st <= X"0000000" & firmware_status;
+								ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => read_fw_st);
+							else
+								if fifo_out_empty = '1' then
+									state <= RESET;
+									ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => (others => '0'));
+								else
+									state <= R;
+									firmware_status <= "0011";
+									fifo_out_r_en <= '1';
+								end if;
+							end if;
 						end if;
 					when W =>
-						--leds(6) <= '1';
 						data_to_fifo <= ipbus_in.ipb_wdata;
+						firmware_status <= "0010";
 						fifo_in_w_en <= '1';
 						ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => (others => '0')); 
 						
 						state <= RESET;
 					when R =>
-						--leds(5) <= '1';
 						fifo_out_r_en <= '0';
 						if fifo_out_valid = '1' then
 							state <= ACK;
@@ -87,7 +105,6 @@ begin
 							state <= ERROR;
 						end if;
 					when ACK =>	
-						--leds(4) <= '1';
 						ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => data_from_fifo);
 						state <= RESET;
 					when ERROR =>
