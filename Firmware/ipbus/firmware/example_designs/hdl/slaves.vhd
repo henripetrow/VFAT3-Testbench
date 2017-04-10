@@ -157,19 +157,16 @@ begin
 --			leds		=> leds
 --		);
 		
---		slave_i2c: entity work.slave_i2c
---			port map(
---				clk => ipb_clk,
---				reset => ipb_rst,
---				clk40 => clk40,
---				rst40 => rst40,
---				clk320 => clk320,
---				rst320 => rst320,
---				ipbus_in => ipbw(8),
---				ipbus_out => ipbr(8),
---				leds		=> leds,
---				onehz		=> onehz
---			);
+		slave_i2c: entity work.slave_i2c
+			port map(
+				clk => ipb_clk,
+				reset => ipb_rst,
+				clk40 => clk40,
+				rst40 => rst40,
+				ipbus_in => ipbw(8),
+				ipbus_out => ipbr(8),
+				leds		=> leds
+			);
 
 --		slave_adc: entity work.slave_adc
 --			port map(

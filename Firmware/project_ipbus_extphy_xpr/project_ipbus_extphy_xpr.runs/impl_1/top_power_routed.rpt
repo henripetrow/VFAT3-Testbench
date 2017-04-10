@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date             : Mon Apr 10 10:49:43 2017
+| Date             : Mon Apr 10 19:01:25 2017
 | Host             : Shinsekai running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.460 |
-| Dynamic (W)              | 0.295 |
+| Total On-Chip Power (W)  | 0.458 |
+| Dynamic (W)              | 0.293 |
 | Device Static (W)        | 0.165 |
 | Effective TJA (C/W)      | 1.8   |
 | Max Ambient (C)          | 84.2  |
@@ -49,22 +49,22 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.027 |       10 |       --- |             --- |
-| Slice Logic              |     0.007 |     8759 |       --- |             --- |
-|   LUT as Logic           |     0.006 |     3244 |    203800 |            1.59 |
+| Clocks                   |     0.025 |       10 |       --- |             --- |
+| Slice Logic              |     0.007 |     8776 |       --- |             --- |
+|   LUT as Logic           |     0.006 |     3259 |    203800 |            1.60 |
 |   Register               |    <0.001 |     4462 |    407600 |            1.09 |
 |   CARRY4                 |    <0.001 |      240 |     50950 |            0.47 |
 |   LUT as Shift Register  |    <0.001 |       51 |     64000 |            0.08 |
 |   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
 |   LUT as Distributed RAM |    <0.001 |        8 |     64000 |            0.01 |
-|   F7/F8 Muxes            |    <0.001 |        8 |    203800 |           <0.01 |
+|   F7/F8 Muxes            |    <0.001 |        7 |    203800 |           <0.01 |
 |   Others                 |     0.000 |      217 |       --- |             --- |
-| Signals                  |     0.009 |     6610 |       --- |             --- |
+| Signals                  |     0.009 |     6638 |       --- |             --- |
 | Block RAM                |     0.018 |       21 |       445 |            4.72 |
 | MMCM                     |     0.210 |        2 |        10 |           20.00 |
 | I/O                      |     0.023 |       33 |       500 |            6.60 |
 | Static Power             |     0.165 |          |           |                 |
-| Total                    |     0.460 |          |           |                 |
+| Total                    |     0.458 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.132 |       0.062 |      0.070 |
+| Vccint    |       1.000 |     0.130 |       0.060 |      0.070 |
 | Vccaux    |       1.800 |     0.152 |       0.124 |      0.028 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.004 |       0.003 |      0.001 |
@@ -151,7 +151,7 @@ Table of Contents
 +----------------------------------------------------------------------------------------------------+-----------+
 | Name                                                                                               | Power (W) |
 +----------------------------------------------------------------------------------------------------+-----------+
-| top                                                                                                |     0.295 |
+| top                                                                                                |     0.293 |
 |   clocks                                                                                           |     0.218 |
 |     clk_wiz                                                                                        |     0.103 |
 |       inst                                                                                         |     0.103 |
@@ -165,11 +165,11 @@ Table of Contents
 |       U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM22 |    <0.001 |
 |       U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM23 |    <0.001 |
 |       U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM24 |    <0.001 |
-|   ipbus                                                                                            |     0.043 |
+|   ipbus                                                                                            |     0.042 |
 |     trans                                                                                          |     0.003 |
 |       iface                                                                                        |     0.001 |
 |       sm                                                                                           |     0.002 |
-|     udp_if                                                                                         |     0.040 |
+|     udp_if                                                                                         |     0.039 |
 |       ARP                                                                                          |    <0.001 |
 |       IPADDR                                                                                       |    <0.001 |
 |       RARP_block                                                                                   |    <0.001 |
@@ -194,7 +194,7 @@ Table of Contents
 |       tx_main                                                                                      |     0.002 |
 |       tx_ram_selector                                                                              |    <0.001 |
 |       tx_transactor                                                                                |     0.002 |
-|   slaves                                                                                           |     0.006 |
+|   slaves                                                                                           |     0.005 |
 |     fabric                                                                                         |    <0.001 |
 |     slave0                                                                                         |    <0.001 |
 |     slave1                                                                                         |    <0.001 |

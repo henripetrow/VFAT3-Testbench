@@ -43,12 +43,12 @@ end slave_i2c;
 architecture Behavioral of slave_i2c is
 
 	signal enable 			: std_logic;
-	signal addr 			: std_logic_vector(d_width downto 0); -- ?
+	signal addr 			: std_logic_vector(d_width-1 downto 0); -- ?
 	signal rw 				: std_logic;
-	signal wdata 			: std_logic_vector(d_width downto 0); --?
+	signal wdata 			: std_logic_vector(d_width-1 downto 0); --?
 	signal rdata_valid 		: std_logic;
 	signal error 			: std_logic;
-	signal rdata		 	: std_logic_vector(d_width downto 0);
+	signal rdata		 	: std_logic_vector(d_width-1 downto 0);
 	signal scl 				: std_logic;
 	signal sda 				: std_logic;
 	signal master_select	: std_logic;

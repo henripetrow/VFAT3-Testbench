@@ -27,10 +27,7 @@ use work.ipbus.all;
 
 entity slave_por is
 	generic(
-		data_width 	: natural := 32;
-		BC_width	: natural := 12;
-		cmd_width	: natural := 4;
-		cmd_8w		: natural := 8
+		data_width 	: natural := 32
 		);
 	port(
 		clk			: in STD_LOGIC;

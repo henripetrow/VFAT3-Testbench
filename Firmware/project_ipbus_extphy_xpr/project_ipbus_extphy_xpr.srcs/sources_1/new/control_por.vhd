@@ -29,9 +29,9 @@ entity control_por is
 		rst : in std_logic;
 		ipbus_in : in ipb_wbus;
 		ipbus_out : out ipb_rbus;
-		por_disable : inout std_logic;
-		bor_disable : inout std_logic;
-		vfat_reset : inout std_logic;
+		por_disable : buffer std_logic;
+		bor_disable : buffer std_logic;
+		vfat_reset : buffer std_logic;
 		leds : out std_logic_vector(7 downto 0)
 	);
 end control_por;
@@ -72,6 +72,7 @@ begin
 						state <= RESET;
 					when RESET =>
 						ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => (others => '0'));
+						read_reg <= (others => '0');
 				end case;
 			end if;
 		end if;

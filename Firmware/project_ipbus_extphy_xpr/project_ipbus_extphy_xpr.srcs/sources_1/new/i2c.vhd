@@ -33,14 +33,14 @@ port(
     
     -- Request
     en_i        : in std_logic;
-    address_i   : in std_logic_vector(6 downto 0);
+    address_i   : in std_logic_vector(31 downto 0);
     rw_i        : in std_logic;
-    data_i      : in std_logic_vector(7 downto 0);
+    data_i      : in std_logic_vector(31 downto 0);
     
     -- Response
     valid_o     : out std_logic;
     error_o     : out std_logic;
-    data_o      : out std_logic_vector(7 downto 0);
+    data_o      : out std_logic_vector(31 downto 0);
     
     -- I2C lines
     scl_o       : out std_logic;
@@ -77,14 +77,14 @@ architecture Behavioral of i2c is
     signal state        : state_t;
     
     -- Transaction parameters
-    signal address      : std_logic_vector(6 downto 0);
+    signal address      : std_logic_vector(31 downto 0);
     signal rw_n         : std_logic;
-    signal din          : std_logic_vector(7 downto 0);
-    signal dout         : std_logic_vector(7 downto 0);
+    signal din          : std_logic_vector(31 downto 0);
+    signal dout         : std_logic_vector(31 downto 0);
     
     -- Address and data counters
-    signal address_cnt  : integer range 0 to 6;
-    signal data_cnt     : integer range 0 to 7;
+    signal address_cnt  : integer range 0 to 31;
+    signal data_cnt     : integer range 0 to 31;
 
 begin
 
