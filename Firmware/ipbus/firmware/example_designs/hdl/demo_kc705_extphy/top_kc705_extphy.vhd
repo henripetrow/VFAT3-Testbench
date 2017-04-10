@@ -21,7 +21,10 @@ entity top is port(
 	gmii_rx_clk, gmii_rx_dv, gmii_rx_er: in STD_LOGIC;
 	gmii_rxd : in STD_LOGIC_VECTOR(7 downto 0);
 	phy_rstb : out STD_LOGIC;
-	dip_switch: in std_logic_vector(3 downto 0)
+	dip_switch: in std_logic_vector(3 downto 0);
+	por_disable : inout std_logic;
+	bor_disable : inout std_logic;
+	vfat_reset : inout std_logic
 	);
 end top;
 
@@ -137,15 +140,11 @@ begin
 		pkt_rx => pkt_rx,
 		pkt_tx => pkt_tx,
 		leds	=> leds,
-		onehz	=> onehz
+		onehz	=> onehz,
+		por_disable => por_disable,
+		bor_disable => bor_disable,
+		vfat_reset => vfat_reset
 	);
-	
---	switch_button: entity work.switch port map(
---		clk => ipb_clk,
---		rst => rst_ipb,
---		swb => swb,
---		leds => leds
---	);
 	
 end rtl;
 
