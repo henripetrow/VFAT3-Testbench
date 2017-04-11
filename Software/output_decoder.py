@@ -2,44 +2,7 @@ from SC_encode import *
 from VFAT3_registers import *
 
 
-SC_shift_register = [[0,0]]*8
-SC_shift_register_counter = 0
-BCcounter = 0
 
-
-
-
-SC0 = "10010110"        # Slow Control 0
-SC1 = "10011001"        # SLow Control 1
-
-HDR_1 = "00011110"		# Basic Data Packet
-HDR_1W = "01011110"     # Basic Data Packet, With FIFO half full -warning
-HDR_2 = "00011010"		# Zero Suppressed Data Packet
-HDR_2W = "01010110"		# Zero Suppressed Data Packet, With FIFO half full -warning
-
-
-EC_size = 1
-BC_size = 1
-
-IPbus_transaction_list = []
-datapacket_list = []
-
-hdlc_state = "IDLE"
-hdlc_start_BCd = 0
-hdlc_flag_bit = 0
-hdlc_flag = [0,1,1,1,1,1,1,0]
-hdlc_data = []
-ipbus_protocol_version = [0,0,1,0]
-ipbus_info_code = [1,1,1,1]
-
-dataformat_register = GBL_CFG_CTR_1()                                            ##### Add the functionality for the changed values.
-dataformat_register.SZD[0] = 1
-
-data_header = 0
-datapacket_status = "IDLE"
-datapacket_byte_counter = 0
-
-SC_bit_counter = 0
 
 class IPbus_response:
     def __init__(self, BCd, data):
@@ -150,7 +113,7 @@ class datapacket:
        self.crc_error = 0
        self.received_crc = 0
        self.calculated_crc = 0
-    def ready(self):
+    def ready(self,dataformat_register):
        print("************")
        print("DATA PACKET RECEIVED")
        print("Header:")
@@ -200,6 +163,42 @@ class datapacket:
 
 
 def decode_output_data():
+    BCcounter = 0
+    SC_shift_register = [[0,0]]*8
+    SC_shift_register_counter = 0
+
+    SC0 = "10010110"        # Slow Control 0
+    SC1 = "10011001"        # SLow Control 1
+
+    HDR_1 = "00011110"		# Basic Data Packet
+    HDR_1W = "01011110"     # Basic Data Packet, With FIFO half full -warning
+    HDR_2 = "00011010"		# Zero Suppressed Data Packet
+    HDR_2W = "01010110"		# Zero Suppressed Data Packet, With FIFO half full -warning
+
+
+    EC_size = 1
+    BC_size = 1
+
+    IPbus_transaction_list = []
+    datapacket_list = []
+    sync_response_list = []
+
+    hdlc_state = "IDLE"
+    hdlc_start_BCd = 0
+    hdlc_flag_bit = 0
+    hdlc_flag = [0,1,1,1,1,1,1,0]
+    hdlc_data = []
+    ipbus_protocol_version = [0,0,1,0]
+    ipbus_info_code = [1,1,1,1]
+
+    dataformat_register = GBL_CFG_CTR_1()                                            ##### Add the functionality for the changed values.
+    dataformat_register.SZD[0] = 1
+
+    data_header = 0
+    datapacket_status = "IDLE"
+    datapacket_byte_counter = 0
+
+    SC_bit_counter = 0
     with open('./data/data4_t.txt', 'r') as f:
         for line in f:
             line = line.rstrip('\n')
@@ -219,10 +218,16 @@ def decode_output_data():
 
             BCcounter = BCcounter + BCd
 
+            # Sync responses.
+            if input_value == "10101111":
+                sync_response_list.append([BCcounter,"SyncAkc"])
+            if input_value == "11111010":
+                sync_response_list.append([BCcounter,"VerifAkc"])
+
            # DATA PACKETS
 
             if input_value == HDR_2 or input_value == HDR_2W: # Ehka voisi vain laskea monta tavua paketti on ja hajottaa se sitten objektissa.
-                print("Header II found.")
+                #print("Header II found.")
                 data_header = 2                               # Type of header.
                 data_packet = datapacket()                   # Create a new data packet object.
                 if input_value == HDR_2W:                     # Check if FIFO warning was given.
@@ -245,7 +250,7 @@ def decode_output_data():
           
 
             elif input_value == HDR_1 or input_value == HDR_1W: # See if the read line is Header 1.
-                print("Header I found.")
+                #print("Header I found.")
                 data_header = 1                               # Type of header. To be used to stop after EC or BC.
                 data_packet = datapacket()                   # Create a new data packet object. 
                 if input_value == HDR_1W:                     # Check if FIFO warning was given.
@@ -293,7 +298,7 @@ def decode_output_data():
             elif datapacket_status == "BC":                     # Enter the BC to collect the bytes for BC.
                 if datapacket_byte_counter == 0:              # If the byte counter is 0. We are coming here the first time.
                                                               # Check the size of the BC counter.
-                    if dataformat_register.BCb[0] == 0:89
+                    if dataformat_register.BCb[0] == 0:
                         BC_size = 2
                     if dataformat_register.BCb[0] == 1:
                         BC_size = 3
@@ -373,13 +378,13 @@ def decode_output_data():
                         data_packet.crc += input_value           # input value is added to the data. 
                         datapacket_byte_counter = 0               # Set the byte counter to 0 for the next state.        #############Vammanen patchi. Pitaa miettia koko looppi uudestaan.
                         datapacket_status = "IDLE"                # Set state to IDLE.
-                        data_packet.ready()
+                        data_packet.ready(dataformat_register)
                         datapacket_list.append(data_packet)       # Add the finished data packet to the data packet list.
 
                 elif datapacket_byte_counter >= data_size:      # If byte counter is >= than data_size we have all data bytes and we can move to next state.
                     datapacket_byte_counter = 0               # Set the byte counter to 0 for the next state.
                     datapacket_status = "IDLE"                # Set state to IDLE.
-                    data_packet.ready()
+                    data_packet.ready(dataformat_register)
                     datapacket_list.append(data_packet)       # Add the finished data packet to the data packet list.
                 else:
                     data_packet.crc += input_value           # Input value is added to the data.               
@@ -428,7 +433,7 @@ def decode_output_data():
 
 
 
-    output_data = [IPbus_transaction_list, datapacket_list]
+    output_data = [IPbus_transaction_list, datapacket_list, sync_response_list]
     return output_data
 
 

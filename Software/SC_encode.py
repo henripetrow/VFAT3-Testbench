@@ -14,6 +14,8 @@ class SC_encode:
         return package
 
     def create_SC_packet(self,address,data,action,BCcounter):
+        if action == "IDLE":
+            action_value = "f"
         if action == "READ":
             action_value = 0
         if action == "WRITE":
@@ -84,7 +86,15 @@ class SC_encode:
 
         # Data. 32 bits.
         # data = dec_to_bin_with_stuffing(data, 32)
-       
+     
+
+        if typ == "f": # Idle
+            type_ID = [1,1,1,1]
+            ipbus_pack.extend(type_ID)
+            ipbus_pack.extend(transaction_ID)
+            ipbus_pack.extend(words)
+            ipbus_pack.extend(protocol_version)
+  
         if typ == 0: # Read
             type_ID = [0,0,0,0]
             ipbus_pack.extend(type_ID)
