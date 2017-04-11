@@ -24,7 +24,10 @@ entity slaves is
 		pkt_rx: in std_logic := '0';
 		pkt_tx: in std_logic := '0';
 		leds:	out std_logic_vector (7 downto 0);
-		onehz: in std_logic
+		onehz: in std_logic;
+		por_disable : inout std_logic;
+		bor_disable : inout std_logic;
+		vfat_reset : inout std_logic
 	);
 
 end slaves;
@@ -127,7 +130,7 @@ begin
 			ipbus_out => ipbr(5)
 		);
 
- -- MY SLAVE
+ -- MY SLAVES
 	slave_vfat3: entity work.slave_vfat3
 		port map(
 			clk => ipb_clk,
@@ -145,30 +148,25 @@ begin
 --		slave_por: entity work.slave_por
 --		port map(
 --			clk => ipb_clk,
---			reset => ipb_rst,
---			clk40 => clk40,
---			rst40 => rst40,
---			clk320 => clk320,
---			rst320 => rst320,
---			ipbus_in => ipbw(6),
---			ipbus_out => ipbr(6),
---			leds		=> leds,
---			onehz		=> onehz
+--			rst => ipb_rst,
+--			ipbus_in => ipbw(7),
+--			ipbus_out => ipbr(7),
+--			por_disable => por_disable,
+--			bor_disable => bor_disable,
+--			vfat_reset => vfat_reset,
+--			leds		=> leds
 --		);
 		
---		slave_i2c: entity work.slave_i2c
---			port map(
---				clk => ipb_clk,
---				reset => ipb_rst,
---				clk40 => clk40,
---				rst40 => rst40,
---				clk320 => clk320,
---				rst320 => rst320,
---				ipbus_in => ipbw(6),
---				ipbus_out => ipbr(6),
---				leds		=> leds,
---				onehz		=> onehz
---			);
+		slave_i2c: entity work.slave_i2c
+			port map(
+				clk => ipb_clk,
+				reset => ipb_rst,
+				clk40 => clk40,
+				rst40 => rst40,
+				ipbus_in => ipbw(8),
+				ipbus_out => ipbr(8),
+				leds		=> leds
+			);
 
 --		slave_adc: entity work.slave_adc
 --			port map(
@@ -178,8 +176,8 @@ begin
 --				rst40 => rst40,
 --				clk320 => clk320,
 --				rst320 => rst320,
---				ipbus_in => ipbw(6),
---				ipbus_out => ipbr(6),
+--				ipbus_in => ipbw(9),
+--				ipbus_out => ipbr(9),
 --				leds		=> leds,
 --				onehz		=> onehz
 --			);

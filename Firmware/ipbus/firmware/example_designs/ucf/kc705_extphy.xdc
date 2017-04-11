@@ -186,3 +186,22 @@ set_property PACKAGE_PIN L20 [get_ports phy_rstb]
 # The conversion of 'IOSTANDARD' constraint on 'net' object 'phy_rstb' has been applied to the port object 'phy_rstb'.
 set_property IOSTANDARD LVCMOS25 [get_ports phy_rstb]
 
+set_property PACKAGE_PIN AG25 [get_ports por_disable]
+# POR_DISABLE: AG25 for VBv2+TBv1.4, B25 for VBv2+TBv1.3
+set_property IOSTANDARD LVCMOS25 [get_ports por_disable]
+
+set_property PACKAGE_PIN AB20 [get_ports bor_disable]
+# BOR_DISABLE: AB20 for VBv2+TBv1.4, H24 for VBv2+TBv1.3
+set_property IOSTANDARD LVCMOS25 [get_ports bor_disable]
+
+set_property PACKAGE_PIN AH25 [get_ports vfat_reset]
+# EXT_RST: AH25 for VBv2+TBv1.4, C25 for VBv2+TBv1.3
+set_property IOSTANDARD LVCMOS25 [get_ports vfat_reset]
+
+set_property PACKAGE_PIN AF20 [get_ports i2c_sda]
+# SDA: AF20 
+set_property IOSTANDARD LVCMOS25 [get_ports i2c_sda]
+
+set_property PACKAGE_PIN AF21 [get_ports i2c_scl]
+# SCL: AF21 
+set_property IOSTANDARD LVCMOS25 [get_ports i2c_scl]
