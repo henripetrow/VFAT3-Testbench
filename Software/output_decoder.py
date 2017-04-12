@@ -73,12 +73,19 @@ class IPbus_response:
         print "****************"
                 
 
-        
-
-
-        received_crc_bin = ''.join(map(str, data[-16:]))
+        print data[-16:]
+        received_crc_lsb = ''.join(map(str, data[-16:-8]))
+        print received_crc_lsb
+        received_crc_msb = ''.join(map(str, data[-8:]))
+        print received_crc_msb
+        received_crc_bin = received_crc_msb+received_crc_lsb
         print received_crc_bin
+        #received_crc_bin = ''.join(map(str, received_crc_bin))
         received_crc = int(received_crc_bin,2) # Extract the CRC value from the received message. CRC is the last 16 bits of the data
+        print received_crc
+
+
+
         crc_calculation = []
         crc_calculation.extend(hdlc_address_bin)
         crc_calculation.extend(hdlc_control_bin)
@@ -87,10 +94,10 @@ class IPbus_response:
         crc_calculation.extend(transaction_ID_bin)
         crc_calculation.extend(words_bin)
         crc_calculation.extend(protocol_bin)
-        print crc_calculation
+        #print crc_calculation
         calculated_crc = crc_remainder(data[:-16]) # Calculate the CRC for the message.
         #calculated_crc = crc_remainder(crc_calculation) # Calculate the CRC for the message.
-
+        print calculated_crc
         if received_crc == calculated_crc:
             print "CRC check ok."
         else:
