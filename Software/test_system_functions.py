@@ -60,86 +60,7 @@ def data_packet_bit_stuffing(data):
     return out
 
 def crc_remainder(input_package):
-    polynomial_bitstring = 4129
-    crc = 65535
-    input_package = ''.join(str(e) for e in input_package)
-    input_package_len = len(input_package)/8
-    for j in range(0,input_package_len):
-        input_bitstring = input_package[(j*8):((j+1)*8)]
-        for i in range(7,-1,-1):
-
-            crc_bin = bin(crc)
-            crc_bin = crc_bin[2:]
-            crc_len = len(crc_bin)
-            crc_bin = (16-crc_len)*'0' + crc_bin
-
-            if int(input_bitstring[i],2)^int(crc_bin[-1],2) == 1:
-                crc_bin = crc_bin[1:]+'0'
-                crc = int(crc_bin,2)
-                crc =crc^polynomial_bitstring
-            else:
-                crc_bin = crc_bin[1:]+'0'
-                crc = int(crc_bin,2)
-    return crc
-
-
-##https://gist.github.com/oysstu/68072c44c02879a2abf94ef350d1c7c6
-#def crc_remainder(data):
-#    '''
-#    CRC-16-CCITT Algorithm
-#    '''
-#    data = bytearray(data)
-#    poly = 0x8408
-#    crc = 0xFFFF
-#    for b in data:
-#        cur_byte = 0xFF & b
-#        for _ in range(0, 8):
-#            if (crc & 0x0001) ^ (cur_byte & 0x0001):
-#                crc = (crc >> 1) ^ poly
-#            else:
-#                crc >>= 1
-
-#            cur_byte >>= 1
-
-#    crc = (~crc & 0xFFFF)
-#    crc = (crc << 8) | ((crc >> 8) & 0xFF)
-
-#    return np.uint16(crc)
-
-
-
-
-
-
-#def crc_remainder(input_package):
-#    polynomial_bitstring = 4129
-#    crc = 65535
-#    input_package = ''.join(str(e) for e in input_package)
-#    input_package_len = len(input_package)/8
-#    for j in range(0,input_package_len):
-#        input_bitstring = input_package[(j*8):((j+1)*8)]
-#        for i in range(7,-1,-1):
-
-#            crc_bin = bin(crc)
-#            crc_bin = crc_bin[2:]
-#            crc_len = len(crc_bin)
-#            crc_bin = (16-crc_len)*'0' + crc_bin
-
-#            if int(input_bitstring[i],2)^int(crc_bin[-1],2) == 1:
-#                crc_bin = crc_bin[1:]+'0'
-#                crc = int(crc_bin,2)
-#                crc =crc^polynomial_bitstring
-#            else:
-#                crc_bin = crc_bin[1:]+'0'
-#                crc = int(crc_bin,2)
-#    return crc
-
-
-
-
-
-def crc_remainder(input_package):
-    #print(input_package)
+    print(input_package)
     polynomial_bitstring = 4129
     crc = 65535
 
@@ -147,10 +68,10 @@ def crc_remainder(input_package):
 
     for j in range(0,input_package_len):
         input_bitstring = input_package[(j*8):((j+1)*8)]
-        print input_bitstring
-        #input_bitstring.reverse()
+        input_bitstring.reverse()
         input_bitstring = ''.join(str(e) for e in input_bitstring)
-
+        print('Here')
+        print(input_bitstring)
 
 
 
@@ -161,7 +82,7 @@ def crc_remainder(input_package):
             crc_bin = crc_bin[2:]			#
             crc_len = len(crc_bin)			#
             crc_bin = (16-crc_len)*'0' + crc_bin	#
- 
+            print(crc_bin)
 
             if int(input_bitstring[i],2)^int(crc_bin[0],2) == 1:
 
@@ -171,6 +92,5 @@ def crc_remainder(input_package):
             else:
                 crc_bin = crc_bin[1:]+'0'
                 crc = int(crc_bin,2)
-    print bin(crc)
     return crc
 

@@ -3,10 +3,17 @@ from test_system_functions import *
 
 class SC_encode:
 
+
     def __init__(self):
         self.SC0 = "SC0"
         self.SC1 = "SC1"
         self.transaction_ID = 0
+
+    def update_trans_ID(self):
+        self.transaction_ID += 1
+        if self.transaction_ID > 255:
+            self.transaction_ID = 0
+        return self.transaction_ID
 
     def binary_to_sc(self,package):
         package = [self.SC1 if x==1 else x for x in package]
@@ -20,7 +27,7 @@ class SC_encode:
             action_value = 0
         if action == "WRITE":
             action_value = 1
-        self.transaction_ID += 1
+        self.transaction_ID = update_trans_ID()
         ipbus = self.IPbus14_package(address,data,1,action_value,self.transaction_ID)
         paketti = self.HDLC_package(ipbus)
         paketti = self.binary_to_sc(paketti) # Convert binary form to a list of SC0 and SC1 commands
@@ -41,6 +48,7 @@ class SC_encode:
         data.extend(ipbus_package)
         crc = crc_remainder(data)
         crc_bin = bin(crc)
+        print crc_bin
         crc_bin = crc_bin[2:]
         crc_len = len(crc_bin)
         crc_bin = (16-crc_len)*'0' + crc_bin
@@ -53,6 +61,7 @@ class SC_encode:
                 crc.append(1)
             elif i == 1:
                 crc.append(0)
+        print crc
         data.extend(crc)
         data = data_packet_bit_stuffing(data)
 
@@ -92,6 +101,7 @@ class SC_encode:
             type_ID = [1,1,1,1]
             ipbus_pack.extend(type_ID)
             ipbus_pack.extend(transaction_ID)
+            words = dec_to_bin_with_stuffing(0, 12)
             ipbus_pack.extend(words)
             ipbus_pack.extend(protocol_version)
   
