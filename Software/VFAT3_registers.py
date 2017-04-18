@@ -1,3 +1,9 @@
+############################################
+# Created by Henri Petrow 2017
+# Lappeenranta University of Technology
+###########################################
+
+
 register = [None]*65536
 
 class GBL_CFG_CH:

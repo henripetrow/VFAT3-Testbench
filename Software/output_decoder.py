@@ -1,3 +1,8 @@
+############################################
+# Created by Henri Petrow 2017
+# Lappeenranta University of Technology
+###########################################
+
 from SC_encode import *
 from VFAT3_registers import *
 

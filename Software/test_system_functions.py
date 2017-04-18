@@ -1,4 +1,7 @@
-#import numpy as np
+############################################
+# Created by Henri Petrow 2017
+# Lappeenranta University of Technology
+###########################################
 
 def write_instruction(BCd, command, erase):
     if erase == 1:

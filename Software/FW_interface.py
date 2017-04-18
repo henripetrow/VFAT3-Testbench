@@ -1,3 +1,10 @@
+############################################
+# Created by Henri Petrow 2017
+# Lappeenranta University of Technology
+###########################################
+
+
+
 #import uhal
 from output_decoder import *
 import time

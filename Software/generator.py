@@ -1,4 +1,7 @@
-#!/usr/bin/python
+############################################
+# Created by Henri Petrow 2017
+# Lappeenranta University of Technology
+###########################################
 
 import  os
 from instruction_object import *

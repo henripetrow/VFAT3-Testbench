@@ -1,3 +1,9 @@
+############################################
+# Created by Henri Petrow 2017
+# Lappeenranta University of Technology
+###########################################
+
+
 from Tkinter import *
 import ttk
 
