@@ -11,7 +11,7 @@ import subprocess # For opening scans for edit.
 
 class VFAT3_GUI:
     def __init__(self, master):
-        self.interfaceFW = FW_interface(2)
+        self.interfaceFW = FW_interface(1)
         self.SC_encoder = SC_encode()
         self.channel_register = 0
         self.value = ""
@@ -167,7 +167,6 @@ class VFAT3_GUI:
         self.default_button = Button(self.register_button_frame, text="Defaults")
         self.default_button.grid(column=1, row=0)
 
-
         self.channel_label = Label(self.register_data_frame, text = "Channel:")
         self.channel_label.grid(column = 0, row= 0, sticky='e')
 
@@ -182,15 +181,13 @@ class VFAT3_GUI:
         self.channel_entry.grid_forget()
         self.channel_button.grid_forget()
 
-
         ################MISC TAB #######################################
         # Read ADCs
         self.close_button = Button(self.misc_frame, text="Read ADCs", command= lambda: self.read_ADCs())
         self.close_button.grid(column = 1, row= 0, sticky='e')
 
-        self.sync_button = Button(self.misc_frame, text="SC Idle character", command= lambda: self.send_idle())
-        self.sync_button.grid(column = 1, row= 1, sticky='e')
-
+        self.idle_button = Button(self.misc_frame, text="SC Idle character", command= lambda: self.send_idle())
+        self.idle_button.grid(column = 1, row= 1, sticky='e')
 
         self.sync_button = Button(self.misc_frame, text="Sync", command= lambda: self.send_sync())
         self.sync_button.grid(column = 1, row= 2, sticky='e')
@@ -284,33 +281,69 @@ class VFAT3_GUI:
         self.scrollbar.grid(column=2,row=0, sticky='nsew')
         self.interactive_screen['yscrollcommand'] = self.scrollbar.set
 
-        # CLOSE-BUTTON
-        self.close_button = Button(master, text="Close", command=master.quit)
-        self.close_button.grid(column=1,sticky='e')
+        # CLOSE- AND CLEAR-BUTTONS
+        self.ctrlButtons_frame = ttk.Frame(master)
+        self.ctrlButtons_frame.grid(column=1,sticky='e')
+        self.close_button = Button(self.ctrlButtons_frame, text="Clear", command=self.clear_interactive_screen)
+        self.close_button.grid(column=1,row=0)
+        self.close_button = Button(self.ctrlButtons_frame, text="Close", command=master.quit)
+        self.close_button.grid(column=2,row=0)
 
 
 
-        ##############FUNCTIONS########################################
+####################################################################################
+###################################FUNCTIONS########################################
+####################################################################################
+
+
+##################### GENERAL GUI FUNCTIONS ############################
+
+    def add_to_interactive_screen(self,text):
+        self.interactive_screen.insert(END,text)
+        self.interactive_screen.see(END)
+
+    def clear_interactive_screen(self):
+        self.interactive_screen.delete(1.0,END)
+
     def execute(self):
         output = self.interfaceFW.launch()
-        if output[0] != "":
-            text =  "Received SC replies:\n"
+        if output[0] == "Error":
+            text =  "%s: %s\n" %(output[0],output[1])
             self.add_to_interactive_screen(text)
-            for i in output[0]:
-                text =  "Transaction ID:%d\n" % i.transaction_ID
-                self.add_to_interactive_screen(text)                
-        if output[1] != "":
-            text =  "Received data packets:\n"
-            self.add_to_interactive_screen(text)
-            for i in output[1]:
-                text =  "BC:%d\n" % i.systemBC
-                self.add_to_interactive_screen(text)  
-        if output[2] != "":
-            text =  "Received sync replies:\n"
-            self.add_to_interactive_screen(text)
-            for i in output[2]:
-                text =  "BC:%d, %s\n" % (i[0],i[1])
-                self.add_to_interactive_screen(text) 
+        else:
+            if output[0]:
+                text =  "Received SC replies:\n"
+                self.add_to_interactive_screen(text)
+                for i in output[0]:
+                    if i.info_code == 0:
+                        data_ok = "Transaction ok."
+                    else: 
+                        data_ok = "Transaction error."                     
+
+                    text =  "Transaction ID:%d, %s\n" % (i.transaction_ID, data_ok)
+                    self.add_to_interactive_screen(text)                
+            if output[1]:
+                text =  "Received data packets:\n"
+                self.add_to_interactive_screen(text)
+                for i in output[1]:
+                    text =  "BC:%d EC: %d\n" % (i.BC,i.EC)
+                    self.add_to_interactive_screen(text)  
+                    text =  "%s\n" % i.data[0:15]
+                    text +=  "%s\n" % i.data[16:31]
+                    text +=  "%s\n" % i.data[32:47]
+                    text +=  "%s\n" % i.data[48:63]
+                    text +=  "%s\n" % i.data[64:79]
+                    text +=  "%s\n" % i.data[80:95]
+                    text +=  "%s\n" % i.data[96:111]
+                    text +=  "%s\n" % i.data[112:127]
+
+                    self.add_to_interactive_screen(text) 
+            if output[2]:
+                text =  "Received sync replies:\n"
+                self.add_to_interactive_screen(text)
+                for i in output[2]:
+                    text =  "BC:%d, %s\n" % (i[0],i[1])
+                    self.add_to_interactive_screen(text) 
 
     def change_mode(self,mode):
         if mode == "interactive":
@@ -321,8 +354,10 @@ class VFAT3_GUI:
             self.scan_frame.grid(column=0,row=0)
             self.scan_frame.grid_propagate(False)
 
+################# MISC-TAB FUNCTIONS ################################
+
     def send_sync(self):
-        text =  "Sending sync request.\n"
+        text =  "->Sending sync request.\n"
         self.add_to_interactive_screen(text)
         command_encoded = FCC_LUT["CC-A"]
         write_instruction(1, command_encoded,1)
@@ -331,20 +366,16 @@ class VFAT3_GUI:
         self.execute()
 
     def send_idle(self):
-
-        text =  "Sending IDLE character.\n"
+        text =  "->Sending IDLE character.\n"
         self.add_to_interactive_screen(text)
-
         paketti = self.SC_encoder.create_SC_packet(0,0,"IDLE",0)
         write_instruction(1, FCC_LUT[paketti[0]], 1)
         for x in range(1,len(paketti)):
             write_instruction(1, FCC_LUT[paketti[x]], 0)
         self.execute()
 
-
     def read_ADCs(self):
-
-        text =  "Reading the ADCs.\n"
+        text =  "->Reading the ADCs.\n"
         self.add_to_interactive_screen(text)
 
         addr0 = 131072 # ADC0 address
@@ -361,10 +392,24 @@ class VFAT3_GUI:
             write_instruction(1, FCC_LUT[paketti[x]], 0)
         self.execute()
 
+    def send_Cal_trigger(self):
+        latency = int(self.CalPulse_LV1A_entry.get())
+        self.CalPulseLV1A_latency = latency
+        self.CalPulse_LV1A_entry.delete(0, END)
+        self.CalPulse_LV1A_entry.insert(0, self.CalPulseLV1A_latency)
+        text = "->Sending CalPulse and LV1A with %s BC latency \n" % latency
+        self.add_to_interactive_screen(text)
+        CalPulse_encoded = FCC_LUT["CalPulse"]
+        LV1A_encoded = FCC_LUT["LV1A"]
 
+        write_instruction(1, CalPulse_encoded, 1)
+        write_instruction(latency, LV1A_encoded, 0)
+        self.execute()
+
+################## SCAN/TEST -FUNCTIONS #############################
 
     def run_scan(self):
-        text =  "Running the scan: %s\n" % self.chosen_scan
+        text =  "->Running the scan: %s\n" % self.chosen_scan
         self.add_to_interactive_screen(text)
         scan_name = self.chosen_scan
         modified = scan_name.replace(" ", "_")
@@ -381,19 +426,29 @@ class VFAT3_GUI:
         self.execute()
 
     def modify_scan(self):
-        text =  "Modifying the scan: %s\n" % self.chosen_scan
+        text =  "->Modifying the scan: %s\n" % self.chosen_scan
         self.add_to_interactive_screen(text)
         scan_name = self.chosen_scan
         modified = scan_name.replace(" ", "_")
         file_name = "%s.txt" % modified
         proc = subprocess.Popen(['gedit', file_name])
 
-    def add_to_interactive_screen(self,text):
-        self.interactive_screen.insert(END,text)
-        self.interactive_screen.see(END)
+    def choose_scan(self,value):
+       self.chosen_scan = value
+
+######################## FCC-TAB FUNCTIONS ##########################
+
+    def send_FCC(self,command):
+        text = "->Sending %s.\n" % command
+        self.add_to_interactive_screen(text)
+        command_encoded = FCC_LUT[command]
+        write_instruction(1, command_encoded,1)
+        self.execute()
+
+######################### REGISTER-TAB FUNCTIONS ####################
 
     def apply_register_values(self):
-        text = "Setting the register: %s \n" % self.value
+        text = "->Setting the register: %s \n" % self.value
         self.add_to_interactive_screen(text)
         j = 0
         for i in self.register_names:
@@ -415,7 +470,6 @@ class VFAT3_GUI:
                 text = "Register: %s Value: %s \n" % (i,new_value)
                 self.add_to_interactive_screen(text)
             j += 1
-
         data = []
         data_intermediate = []
         for x in register[addr].reg_array:
@@ -423,37 +477,11 @@ class VFAT3_GUI:
             data_intermediate.reverse()
             data.extend(data_intermediate)
         data.reverse()
-
         paketti = self.SC_encoder.create_SC_packet(addr,data,"WRITE",0)
-
         write_instruction(1, FCC_LUT[paketti[0]], 1)
         for x in range(1,len(paketti)):
             write_instruction(1, FCC_LUT[paketti[x]], 0)
-
-
-
-    def send_FCC(self,command):
-        text = "Sending %s.\n" % command
-        self.add_to_interactive_screen(text)
-        command_encoded = FCC_LUT[command]
-        write_instruction(1, command_encoded,1)
         self.execute()
-
-
-    def send_Cal_trigger(self):
-        latency = int(self.CalPulse_LV1A_entry.get())
-        self.CalPulseLV1A_latency = latency
-        self.CalPulse_LV1A_entry.delete(0, END)
-        self.CalPulse_LV1A_entry.insert(0, self.CalPulseLV1A_latency)
-        text = "Sending CalPulse and LV1A with %s BC latency \n" % latency
-        self.add_to_interactive_screen(text)
-        CalPulse_encoded = FCC_LUT["CalPulse"]
-        LV1A_encoded = FCC_LUT["LV1A"]
-
-        write_instruction(1, CalPulse_encoded, 1)
-        write_instruction(latency, LV1A_encoded, 0)
-        self.execute()
-
 
     def change_channel(self):
         register = int(self.channel_entry.get())
@@ -463,12 +491,6 @@ class VFAT3_GUI:
             text = "Channel value: %d is out of limits. Channels are 0-128 \n" % register
             self.add_to_interactive_screen(text)
         self.update_registers("Channels")
-
-
-    def choose_scan(self,value):
-       self.chosen_scan = value
- 
-
 
     def update_registers(self,value):
         self.value = value
@@ -490,9 +512,6 @@ class VFAT3_GUI:
             self.channel_entry.delete(0, END)
             self.channel_entry.insert(0, self.channel_register)
             self.channel_button.grid(column = 2, row = 0, sticky='e')
-
-
-
 
         elif self.value == "Control Logic":
             register_nr = 129
@@ -590,7 +609,6 @@ class VFAT3_GUI:
             self.register_names = ["RUN"]
         else:
             self.register_names = []
-
 
         for i in self.label:
             i.grid_forget()

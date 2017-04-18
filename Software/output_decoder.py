@@ -8,7 +8,6 @@ class IPbus_response:
     def __init__(self, BCd, data):
         self.BCd = BCd
         print "****************"
-        print data
         print "SLOW CONTROL RESPONSE RECEIVED"
 
         data_in = data[0:8]
@@ -62,29 +61,25 @@ class IPbus_response:
         print "Protocol: %d" % self.protocol
 
         if self.type_ID  == 0:
-            self.data = []
-            for x in range(1,self.words+2):
-                self.data.append(data[(x*32):(x+1)*32])
+            self.data = data[48:64]
+            self.data.reverse()
+ #           self.data = []
+ #           for x in range(1,self.words+1):
+ #               self.data.append(data[(x*48):(x+1)*48])
+            print "Data:"
+            print self.data
 
+            print "No data."
         if self.info_code == 0:
             print "Transaction ok."
         else:
-            print "Transaction error %d", info_code
-        print "****************"
-                
+            print "!-> Transaction error %d", info_code     
 
-        print data[-16:]
         received_crc_lsb = ''.join(map(str, data[-16:-8]))
-        print received_crc_lsb
         received_crc_msb = ''.join(map(str, data[-8:]))
-        print received_crc_msb
         received_crc_bin = received_crc_msb+received_crc_lsb
-        print received_crc_bin
         #received_crc_bin = ''.join(map(str, received_crc_bin))
         received_crc = int(received_crc_bin,2) # Extract the CRC value from the received message. CRC is the last 16 bits of the data
-        print received_crc
-
-
 
         crc_calculation = []
         crc_calculation.extend(hdlc_address_bin)
@@ -97,79 +92,72 @@ class IPbus_response:
         #print crc_calculation
         calculated_crc = crc_remainder(data[:-16]) # Calculate the CRC for the message.
         #calculated_crc = crc_remainder(crc_calculation) # Calculate the CRC for the message.
-        print calculated_crc
         if received_crc == calculated_crc:
             print "CRC check ok."
         else:
-            print "CRC error."
-
+            print "!-> CRC error."
+        print "****************"
 
 
 class datapacket:
     def __init__(self):
-       self.header = ""
-       self.FIFO_warning = 0
-       self.systemBC = 0
-       self.EC = ""
-       self.BC = ""
-       self.data = ""
-       self.partition_table = "" 
-       self.partitions = 0
-       self.spzs_data = ""
-       self.crc = ""
-       self.crc_error = 0
-       self.received_crc = 0
-       self.calculated_crc = 0
+        self.header = ""
+        self.FIFO_warning = 0
+        self.systemBC = 0
+        self.EC = ""
+        self.BC = ""
+        self.data = ""
+        self.partition_table = "" 
+        self.partitions = 0
+        self.spzs_data = ""
+        self.crc = ""
+        self.crc_error = 0
+        self.received_crc = 0
+        self.calculated_crc = 0
     def ready(self,dataformat_register):
-       print("************")
-       print("DATA PACKET RECEIVED")
-       print("Header:")
-       print(self.header)
-       print("FIFO warning:")
-       print(self.FIFO_warning)
-       print("System BC:")
-       print(self.systemBC)
-       print("EC:")
-       print(self.EC)
-       print("BC:")
-       print(self.BC)
-       print("DATA:")
-       print(self.data)
-
-       if dataformat_register.SZP[0] == 0:
-           self.received_crc = int(self.crc,2)
-
-           crc_calculation = []  
-           crc_calculation.extend(list(self.header))
-           crc_calculation.extend(list(self.EC))
-           crc_calculation.extend(list(self.BC))
-           crc_calculation.extend(list(self.partition_table))
-           crc_calculation.extend(list(self.spzs_data))
-           crc_calculation.extend(list(self.data))
-           self.calculated_crc = crc_remainder(crc_calculation)
-           if self.received_crc != self.calculated_crc:
-               self.crc_error = 1
-               print("CRC error.")
-           else:
-               print("CRC ok.")
-       self.EC = int(self.EC,2)
-       self.BC = int(self.BC,2)
-       indices = [i for i, x in enumerate(self.partition_table) if x == "1"]
-       if self.spzs_data != "":
-           for i in range(0,16):
-               if i in indices:
-                   self.data += self.spzs_data[:8]
-                   self.spzs_data = self.spzs_data[8:]
-               else:
-                   self.data += "00000000"
-       print("************")
-       print("************")
+        print "****************"
+        print "DATA PACKET RECEIVED"
+        print "Header: %s" % self.header
+        print "FIFO warning: %d" % self.FIFO_warning
+        print "System BC: %d" % self.systemBC
+        print "EC: %d" % int(self.EC,2)
+        print "BC: %d" % int(self.BC,2)
+        print "DATA:"
+        for i in range(0,(len(self.data)/8)):
+            print self.data[i*8:(1+i)*8-1]
+        if dataformat_register.SZP[0] == 0:
+            self.received_crc = int(self.crc,2)
+            crc_calculation = []  
+            crc_calculation.extend(list(self.header))
+            crc_calculation.extend(list(self.EC))
+            crc_calculation.extend(list(self.BC))
+            crc_calculation.extend(list(self.partition_table))
+            crc_calculation.extend(list(self.spzs_data))
+            crc_calculation.extend(list(self.data))
+            self.calculated_crc = crc_remainder(crc_calculation)
+            if self.received_crc != self.calculated_crc:
+                self.crc_error = 1
+                print("!-> CRC error.")
+            else:
+                print("CRC ok.")
+        self.EC = int(self.EC,2)
+        self.BC = int(self.BC,2)
+        indices = [i for i, x in enumerate(self.partition_table) if x == "1"]
+        if self.spzs_data != "":
+            for i in range(0,16):
+                if i in indices:
+                    self.data += self.spzs_data[:8]
+                    self.spzs_data = self.spzs_data[8:]
+                else:
+                    self.data += "00000000"
+        print "****************"
 
 
 
 
 
-def decode_output_data():
+
+def decode_output_data(filename):
     BCcounter = 0
     SC_shift_register = [[0,0]]*8
     SC_shift_register_counter = 0
@@ -206,16 +194,20 @@ def decode_output_data():
     datapacket_byte_counter = 0
 
     SC_bit_counter = 0
-    with open('./data/data4_t.txt', 'r') as f:
+    SC1_counter = 0
+    with open(filename, 'r') as f:
         for line in f:
             line = line.rstrip('\n')
+            line = line.replace(" ","")
             # print(line)
-            split_line = line.split()
+            split_line = line.split(",")
             #print(split_line)
+
             try:
                 BCd = int(split_line[0])
-            except ValueError:
-                print "-IGNORED: Invalid value: %s" % line
+            except Exception as e: 
+                print(e)
+                print "-IGNORE: Invalid value: %s" % split_line[0]
                 continue
 
             input_value = split_line[1]
@@ -226,15 +218,17 @@ def decode_output_data():
             BCcounter = BCcounter + BCd
 
             # Sync responses.
-            if input_value == "10101111":
+            if input_value == "00111010":
                 sync_response_list.append([BCcounter,"SyncAkc"])
-            if input_value == "11111010":
+                print "******Sync Ack********"
+            if input_value == "11111110":
                 sync_response_list.append([BCcounter,"VerifAkc"])
+                print "******SyncVerifAck********"
 
            # DATA PACKETS
 
             if input_value == HDR_2 or input_value == HDR_2W: # Ehka voisi vain laskea monta tavua paketti on ja hajottaa se sitten objektissa.
-                #print("Header II found.")
+                print("Header II found.")
                 data_header = 2                               # Type of header.
                 data_packet = datapacket()                   # Create a new data packet object.
                 if input_value == HDR_2W:                     # Check if FIFO warning was given.
@@ -257,7 +251,7 @@ def decode_output_data():
           
 
             elif input_value == HDR_1 or input_value == HDR_1W: # See if the read line is Header 1.
-                #print("Header I found.")
+                print("Header I found.")
                 data_header = 1                               # Type of header. To be used to stop after EC or BC.
                 data_packet = datapacket()                   # Create a new data packet object. 
                 if input_value == HDR_1W:                     # Check if FIFO warning was given.
@@ -383,7 +377,7 @@ def decode_output_data():
                     else:
                         data_size = 1
                         data_packet.crc += input_value           # input value is added to the data. 
-                        datapacket_byte_counter = 0               # Set the byte counter to 0 for the next state.        #############Vammanen patchi. Pitaa miettia koko looppi uudestaan.
+                        datapacket_byte_counter = 0               # Set the byte counter to 0 for the next state.        #######Vammanen patchi. Pitaa miettia koko looppi uudestaan.
                         datapacket_status = "IDLE"                # Set state to IDLE.
                         data_packet.ready(dataformat_register)
                         datapacket_list.append(data_packet)       # Add the finished data packet to the data packet list.
@@ -405,35 +399,43 @@ def decode_output_data():
 
 
             if input_value == SC0:                            # See if the input line is SC0.
-                SC_shift_register = SC_shift_register[1:]     # Remove the first item from the SC shift register.
-                SC_shift_register.append([BCcounter,0])       # Add zero and the BCcounter value to the SC shift register
-                if hdlc_flag_bit == 1:
+                
+                if SC1_counter == 5:
+                    print "Bit stuffing detected, Ignoring one SC0."
+                    SC1_counter = 0
+                else:
+                    SC_shift_register = SC_shift_register[1:]     # Remove the first item from the SC shift register.
+                    SC_shift_register.append([BCcounter,0])       # Add zero and the BCcounter value to the SC shift register
                     SC_bit_counter += 1
+                SC1_counter = 0
+                
 
             if input_value == SC1:                            # See if the input line is SC1.
+                SC1_counter += 1
                 SC_shift_register = SC_shift_register[1:]     # Remove the first item from the SC shift register.
                 SC_shift_register.append([BCcounter,1])       # Add one and the BCcounter value to the SC shift register
-                if hdlc_flag_bit == 1:
-                    SC_bit_counter += 1
+                SC_bit_counter += 1
 
             if [i[1] for i in SC_shift_register] == hdlc_flag: # Compare the first row of the shift register to see if it is HDLC flag.
-                if hdlc_flag_bit == 2:
-                    hdlc_flag_bit = 0
-                elif hdlc_flag_bit == 0:                         # See if flag bit is set. Indicates that this is the beginning flag of the message
-                    hdlc_flag_bit = 1                          # Change the flag bit to 1 to indicate that HDLC-message has started.
+                if hdlc_flag_bit == 0:                         # See if flag bit is set. Indicates that this is the beginning flag of the message
+                    #hdlc_flag_bit = 1                          # Change the flag bit to 1 to indicate that HDLC-message has started.
                     hdlc_start_BCd = SC_shift_register[0][0]   # Get the value of the BCcounter in the beginning of the flag byte, to store the beginning time of the hdlc message.
                     hdlc_state = "DATA"                     # The first HDLC field after the flag is the address field.
+                    print 'HDLC flag found, start collecting data.'
                     SC_bit_counter = 0                         # Set the bit counter to zero. With this counter we count when we have a full byte of SC0's and SC1's.
                 elif hdlc_flag_bit == 1:                       # See if the flag bit is set. This indicates that it is the end flag of the message.
+                    print 'HDLC flag found, stop collecting data. Analysing data..'
                     hdlc_flag_bit = 0                          # Set hdlc flag to zero to indicate that the hdlc-message has ended.
                     IPbus_transaction_list.append(IPbus_response(hdlc_start_BCd,hdlc_data)) # Create an IPbus_response object with the new data and add it to the transaction list.
                     hdlc_state = "IDLE"                          # The HDLC message is complete. Change state to IDLE.
+                    SC_bit_counter = 0
                     del hdlc_data[:]
-                    hdlc_flag_bit = 2
 
                 SC_shift_register = [[0,0]]*8                    # Clear the shift register.
 
             if SC_bit_counter == 8 and hdlc_state == "DATA":     # If the bit counter has counted to one byte and the state is control.
+                print 'Collecting a byte of SC data: %s' % str([i[1] for i in SC_shift_register])
+                hdlc_flag_bit = 1
                 hdlc_data.extend([i[1] for i in SC_shift_register]) # Save the data byte to the list.
                 SC_bit_counter = 0                               # Set the bit counter to zero. Data acquisition ends when flag byte has been found in the flag-section.    
 

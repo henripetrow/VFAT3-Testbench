@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<node id="kintex7">cd
+	<node id="vfat3"			address="0x00003000" 				            description="Registers for the slave">
+  		<node id="fifos"     	address="0x0" 	        permission="rw" 		description="Input and output fifo." />
+  		<node id="control"     	address="0x1" 	        permission="rw" 		description="Control register." />
+	</node>
+</node>
+
+

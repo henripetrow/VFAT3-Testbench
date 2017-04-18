@@ -27,7 +27,7 @@ class SC_encode:
             action_value = 0
         if action == "WRITE":
             action_value = 1
-        self.transaction_ID = update_trans_ID()
+        self.transaction_ID = self.update_trans_ID()
         ipbus = self.IPbus14_package(address,data,1,action_value,self.transaction_ID)
         paketti = self.HDLC_package(ipbus)
         paketti = self.binary_to_sc(paketti) # Convert binary form to a list of SC0 and SC1 commands
@@ -48,7 +48,6 @@ class SC_encode:
         data.extend(ipbus_package)
         crc = crc_remainder(data)
         crc_bin = bin(crc)
-        print crc_bin
         crc_bin = crc_bin[2:]
         crc_len = len(crc_bin)
         crc_bin = (16-crc_len)*'0' + crc_bin
@@ -61,7 +60,6 @@ class SC_encode:
                 crc.append(1)
             elif i == 1:
                 crc.append(0)
-        print crc
         data.extend(crc)
         data = data_packet_bit_stuffing(data)
 
@@ -82,9 +80,11 @@ class SC_encode:
         
         # Number of words. 12 bits.
         words = dec_to_bin_with_stuffing(wrds, 12)
+        words.reverse()
 
         # Transaction_ID. 8 bits.
         transaction_ID = dec_to_bin_with_stuffing(trans_ID, 8)
+        transaction_ID.reverse()
 
         ipbus_pack.extend(info_code)
 
@@ -92,6 +92,7 @@ class SC_encode:
 
         # Address. 32 bits.
         address = dec_to_bin_with_stuffing(addr, 32)
+        address.reverse()
 
         # Data. 32 bits.
         # data = dec_to_bin_with_stuffing(data, 32)

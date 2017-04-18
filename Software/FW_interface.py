@@ -1,5 +1,6 @@
 #import uhal
 from output_decoder import *
+import time
 
 class FW_interface:
 
@@ -12,6 +13,7 @@ class FW_interface:
 #            self.node = hw.getNode("vfat3")
         if self.simulation_mode == 1: #Simulation mode
             with open("./data/FPGA_statusfile.dat", "w") as myfile:
+                print "Entering Simulation mode."
                 myfile.write("0")
         if self.simulation_mode == 2: #Debugging mode
             with open("./data/FPGA_statusfile.dat", "w") as myfile:
@@ -51,17 +53,7 @@ class FW_interface:
                     myfile.write("%s" % line)
 
     def launch(self):
-        if self.simulation_mode == 1:
-            with open("./data/FPGA_statusfile.dat", "w") as myfile:
-                myfile.write("1")
-
-            while(False):
-                with open('/data/FPGA_statusfile.dat', 'r') as f:
-                    first_line = f.readline()
-                if first_line == 3:
-                    with open("./data/FPGA_statusfile.dat", "w") as myfile:
-                        myfile.write("0")
-                    break
+        timeout = 0
         if self.simulation_mode == 0:
             self.write_fifo()
             self.write_control(1)
@@ -70,7 +62,32 @@ class FW_interface:
                 if status == 3:
                     break
             self.read_fifo()
-        output_data = decode_output_data()
+        if self.simulation_mode == 1:
+            with open("./data/FPGA_statusfile.dat", "w") as myfile:
+                myfile.write("1")
+            counter = 0
+            while(True):
+                counter += 1
+                if counter == 20:
+                    print "Timeout, no response from the chip."
+                    timeout = 1
+                    break
+                with open('./data/FPGA_statusfile.dat', 'r') as f:
+                    first_line = f.readline()
+                    first_line.strip()
+                    first_line = int(first_line)
+                time.sleep(1)
+                print "Waiting. Control register value: %s" % first_line
+                if first_line == 3:
+                    with open("./data/FPGA_statusfile.dat", "w") as myfile:
+                        myfile.write("0")
+                    break
+
+        if not timeout:
+            output_data = decode_output_data('./data/FPGA_output_list.dat')
+            open("./data/FPGA_output_list.dat", 'w').close()
+        else:
+            output_data = ['Error','Timeout']
         return output_data
 
 

@@ -1,4 +1,4 @@
-import numpy as np
+#import numpy as np
 
 def write_instruction(BCd, command, erase):
     if erase == 1:
@@ -60,7 +60,6 @@ def data_packet_bit_stuffing(data):
     return out
 
 def crc_remainder(input_package):
-    print(input_package)
     polynomial_bitstring = 4129
     crc = 65535
 
@@ -70,8 +69,7 @@ def crc_remainder(input_package):
         input_bitstring = input_package[(j*8):((j+1)*8)]
         input_bitstring.reverse()
         input_bitstring = ''.join(str(e) for e in input_bitstring)
-        print('Here')
-        print(input_bitstring)
+
 
 
 
@@ -82,7 +80,6 @@ def crc_remainder(input_package):
             crc_bin = crc_bin[2:]			#
             crc_len = len(crc_bin)			#
             crc_bin = (16-crc_len)*'0' + crc_bin	#
-            print(crc_bin)
 
             if int(input_bitstring[i],2)^int(crc_bin[0],2) == 1:
 
