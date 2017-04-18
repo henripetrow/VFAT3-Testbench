@@ -199,9 +199,25 @@ set_property PACKAGE_PIN AH25 [get_ports vfat_reset]
 set_property IOSTANDARD LVCMOS25 [get_ports vfat_reset]
 
 set_property PACKAGE_PIN AF20 [get_ports i2c_sda]
-# SDA: AF20 
+# SDA: VBv1 AF23 - VBv2 AF20 
 set_property IOSTANDARD LVCMOS25 [get_ports i2c_sda]
 
 set_property PACKAGE_PIN AF21 [get_ports i2c_scl]
-# SCL: AF21 
+# SCL: VBv1 AE23 - VBv2 AF21
 set_property IOSTANDARD LVCMOS25 [get_ports i2c_scl]
+
+#set_property PACKAGE_PIN AG22 [get_ports tx_p]
+## VBv1 : TX_LVDS_1_N AG22 (P and N have been reversed)
+#set_property IOSTANDARD LVDS_25 [get_ports tx_p]
+
+#set_property PACKAGE_PIN AH22 [get_ports tx_n]
+## VBv1 : TX_LVDS_1_P AH22 
+#set_property IOSTANDARD LVDS_25 [get_ports tx_n]
+
+#set_property PACKAGE_PIN AG30 [get_ports rx_p]
+## VBv1 : RX_LVDS_1_N AG30 (P and N have been reversed)
+#set_property IOSTANDARD LVDS_25 [get_ports rx_p]
+
+#set_property PACKAGE_PIN AH30 [get_ports rx_n]
+## VBv1 : RX_LVDS_1_P AH30 
+#set_property IOSTANDARD LVDS_25 [get_ports rx_n]

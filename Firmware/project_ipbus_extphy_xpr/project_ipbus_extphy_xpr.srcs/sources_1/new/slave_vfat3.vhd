@@ -41,6 +41,10 @@ entity slave_vfat3 is
 		onehz		: in STD_LOGIC;
 		ipbus_in	: in ipb_wbus;
 		ipbus_out	: out ipb_rbus;
+		tx_p		: out STD_LOGIC;
+		tx_n		: out STD_LOGIC;
+		rx_p		: in STD_LOGIC;
+		rx_n		: in STD_LOGIC;
 		leds		: out STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);
 	
@@ -105,6 +109,7 @@ architecture rtl of slave_vfat3 is
 	signal data_bus_in			: std_logic_vector(cmd_8w - 1 downto 0);
 	signal data_buf_received	: std_logic;
 	signal firmware_status		: std_logic_vector(3 downto 0);
+	signal bitslip				: std_logic;
 	
 	component fifo_generator_0 is
 		PORT (
@@ -125,6 +130,20 @@ architecture rtl of slave_vfat3 is
 		);
 	  end component;
 	  
+	  component selectio_wiz_serdes is
+	  	port(
+	  		data_in_from_pins_p : IN std_logic;
+	  		data_in_from_pins_n : IN std_logic;
+	  		data_out_to_pins_p : OUT std_logic;
+	  		data_out_to_pins_n : OUT std_logic;
+	  		data_in_to_device : OUT std_logic_vector(7 downto 0);
+	  		data_out_from_device : IN std_logic_vector(7 downto 0);
+	  		bitslip : IN std_logic;
+	  		clk_in : IN std_logic;
+	  		clk_div_in : IN std_logic;
+	  		io_reset : IN std_logic
+	  	);
+	  end component;
 begin
 	
 	control_block: entity work.control
@@ -201,11 +220,12 @@ begin
 		process(clk, reset) 
 		begin
 			if rising_edge(clk) then
-				if counter_rst < 10 then -- need to maintain reset on FIFO a few clk cycles first
+				if counter_rst < 16 then -- need to maintain reset on FIFO a few clk cycles first
 					reset_fifo <= '1';
 					counter_rst <= counter_rst + 1;
 				else
 					reset_fifo <= reset;
+					bitslip <= '1';
 					------------------------------------
 					-- status blinking LEDS
 					if fifo_in_empty = '1' then
@@ -356,8 +376,23 @@ begin
 		port map(
 			clk => clk40,
 			rst => rst40,
-			data_in => data_bus_out,
+			data_in => data_bus_in,
 			data_out => data_filt,
 			w_en => fifo_out_w_en
 		);
+		
+--	serdes: selectio_wiz_serdes
+--		port map(
+--			clk_in => clk320,
+--			clk_div_in => clk40,
+--			io_reset => reset_fifo,
+--			bitslip => bitslip,
+--			data_out_to_pins_p => tx_p,
+--			data_out_to_pins_n => tx_n,
+--			data_in_from_pins_p => rx_p,
+--			data_in_from_pins_n => rx_n,
+--			data_out_from_device => data_bus_out,
+--			data_in_to_device => data_bus_in
+--		);
+		
 end rtl;

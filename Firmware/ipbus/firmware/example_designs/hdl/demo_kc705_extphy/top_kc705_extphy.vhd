@@ -12,20 +12,24 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use work.ipbus.ALL;
 
+library unisim;
+use unisim.VComponents.all;
+
 entity top is port(
 	sysclk_p, sysclk_n: in STD_LOGIC;
-	swb: in STD_LOGIC;
-	leds: out STD_LOGIC_VECTOR(7 downto 0);
-	gmii_gtx_clk, gmii_tx_en, gmii_tx_er : out STD_LOGIC;
-	gmii_txd : out STD_LOGIC_VECTOR(7 downto 0);
-	gmii_rx_clk, gmii_rx_dv, gmii_rx_er: in STD_LOGIC;
-	gmii_rxd : in STD_LOGIC_VECTOR(7 downto 0);
-	phy_rstb : out STD_LOGIC;
-	dip_switch: in std_logic_vector(3 downto 0);
-	por_disable : inout std_logic;
-	bor_disable : inout std_logic;
-	vfat_reset : inout std_logic
-	);
+	swb										: in STD_LOGIC;
+	leds									: out STD_LOGIC_VECTOR(7 downto 0);
+	gmii_gtx_clk, gmii_tx_en, gmii_tx_er 	: out STD_LOGIC;
+	gmii_txd 								: out STD_LOGIC_VECTOR(7 downto 0);
+	gmii_rx_clk, gmii_rx_dv, gmii_rx_er		: in STD_LOGIC;
+	gmii_rxd 								: in STD_LOGIC_VECTOR(7 downto 0);
+	phy_rstb 								: out STD_LOGIC;
+	tx_p, tx_n								: out std_logic;
+	rx_p, rx_n 								: in std_logic;
+	por_disable 							: buffer std_logic;
+	bor_disable 							: buffer std_logic;
+	vfat_reset 								: buffer std_logic
+);
 end top;
 
 architecture rtl of top is
@@ -37,7 +41,7 @@ architecture rtl of top is
 	signal ipb_master_in : ipb_rbus;
 	signal mac_addr: std_logic_vector(47 downto 0);
 	signal ip_addr: std_logic_vector(31 downto 0);
-	signal pkt_rx, pkt_tx, pkt_rx_led, pkt_tx_led, sys_rst: std_logic;	
+	signal pkt_rx, pkt_tx, pkt_rx_led, pkt_tx_led, sys_rst: std_logic;
 
 begin
 
@@ -141,10 +145,15 @@ begin
 		pkt_tx => pkt_tx,
 		leds	=> leds,
 		onehz	=> onehz,
+		tx_p => tx_p,
+		tx_n => tx_n,
+		rx_p => rx_p,
+		rx_n => rx_n,
 		por_disable => por_disable,
 		bor_disable => bor_disable,
 		vfat_reset => vfat_reset
 	);
+	
 	
 end rtl;
 
