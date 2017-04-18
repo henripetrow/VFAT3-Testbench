@@ -1,6 +1,0 @@
-verilog work "../../../../project_ipbus_extphy_xpr.srcs/sources_1/ip/selectio_wiz_des/selectio_wiz_des_selectio_wiz.v" 
-verilog work "../../../../project_ipbus_extphy_xpr.srcs/sources_1/ip/selectio_wiz_des/selectio_wiz_des.v" 
-
-verilog work "glbl.v"
-
-nosort
