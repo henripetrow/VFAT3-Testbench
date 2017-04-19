@@ -13,11 +13,11 @@ from test_system_functions import *
 from FW_interface import *
 
 
-import subprocess # For opening scans for edit.
+import subprocess # For opening scans for edit in the system default editor.
 
 class VFAT3_GUI:
     def __init__(self, master):
-        self.interfaceFW = FW_interface(1)
+        self.interfaceFW = FW_interface(1) # 0 - Normal mode(with Firmware), 1 - Simulation mode(with simulation model)
         self.SC_encoder = SC_encode()
         self.channel_register = 0
         self.value = ""
