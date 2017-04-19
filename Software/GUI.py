@@ -133,8 +133,8 @@ class VFAT3_GUI:
                 "Global Threshold",
                 "Global Hysteresis",
                 "Latency",
+                "Calibration 0",
                 "Calibration 1",
-                "Calibration 2",
                 "Biasing 0",
                 "Biasing 1",
                 "Biasing 2",
@@ -189,19 +189,19 @@ class VFAT3_GUI:
 
         ################MISC TAB #######################################
         # Read ADCs
-        self.close_button = Button(self.misc_frame, text="Read ADCs", command= lambda: self.read_ADCs())
+        self.close_button = Button(self.misc_frame, text="Read ADCs", command= lambda: self.read_ADCs(), width = bwidth)
         self.close_button.grid(column = 1, row= 0, sticky='e')
 
-        self.idle_button = Button(self.misc_frame, text="SC Idle character", command= lambda: self.send_idle())
+        self.idle_button = Button(self.misc_frame, text="SC Idle character", command= lambda: self.send_idle(), width = bwidth)
         self.idle_button.grid(column = 1, row= 1, sticky='e')
 
-        self.sync_button = Button(self.misc_frame, text="Sync", command= lambda: self.send_sync())
+        self.sync_button = Button(self.misc_frame, text="Sync", command= lambda: self.send_sync(), width = bwidth)
         self.sync_button.grid(column = 1, row= 2, sticky='e')
 
-        self.sync_check_button = Button(self.misc_frame, text="Sync check", command= lambda: self.send_FCC("CC-B"))
+        self.sync_check_button = Button(self.misc_frame, text="Sync check", command= lambda: self.send_FCC("CC-B"), width = bwidth)
         self.sync_check_button.grid(column = 1, row = 3, sticky='e')
 
-        self.CalPulse_LV1A_button = Button(self.misc_frame, text="CalPulse+LV1A", command = self.send_Cal_trigger)
+        self.CalPulse_LV1A_button = Button(self.misc_frame, text="CalPulse+LV1A", command = self.send_Cal_trigger, width = bwidth)
         self.CalPulse_LV1A_button.grid(column = 1, row = 4, sticky='e')
 
         self.CalPulse_LV1A_label0 = Label(self.misc_frame, text = "Latency")
@@ -328,28 +328,38 @@ class VFAT3_GUI:
 
                     text =  "Transaction ID:%d, %s\n" % (i.transaction_ID, data_ok)
                     self.add_to_interactive_screen(text)                
+                    if i.type_ID  == 0:
+                        text = "Data:\n %s\n" % i.data
+                        self.add_to_interactive_screen(text) 
+
             if output[1]:
                 text =  "Received data packets:\n"
                 self.add_to_interactive_screen(text)
                 for i in output[1]:
-                    text =  "BC:%d EC: %d\n" % (i.BC,i.EC)
-                    self.add_to_interactive_screen(text)  
-                    text =  "%s\n" % i.data[0:15]
-                    text +=  "%s\n" % i.data[16:31]
-                    text +=  "%s\n" % i.data[32:47]
-                    text +=  "%s\n" % i.data[48:63]
-                    text +=  "%s\n" % i.data[64:79]
-                    text +=  "%s\n" % i.data[80:95]
-                    text +=  "%s\n" % i.data[96:111]
-                    text +=  "%s\n" % i.data[112:127]
-
-                    self.add_to_interactive_screen(text) 
+                    if i.header == "00011010" or i.header == "01010110":
+                        text = "Header II received.\n"
+                        self.add_to_interactive_screen(text)
+                    else:
+                        text =  "BC:%d EC: %d\n" % (i.BC,i.EC)
+                        self.add_to_interactive_screen(text)  
+                        text =  "%s\n" % i.data[0:15]
+                        text +=  "%s\n" % i.data[16:31]
+                        text +=  "%s\n" % i.data[32:47]
+                        text +=  "%s\n" % i.data[48:63]
+                        text +=  "%s\n" % i.data[64:79]
+                        text +=  "%s\n" % i.data[80:95]
+                        text +=  "%s\n" % i.data[96:111]
+                        text +=  "%s\n" % i.data[112:127]
+                        self.add_to_interactive_screen(text) 
             if output[2]:
                 text =  "Received sync replies:\n"
                 self.add_to_interactive_screen(text)
                 for i in output[2]:
                     text =  "BC:%d, %s\n" % (i[0],i[1])
                     self.add_to_interactive_screen(text) 
+
+        return output                 
+
 
     def change_mode(self,mode):
         if mode == "interactive":
@@ -372,7 +382,7 @@ class VFAT3_GUI:
         self.execute()
 
     def send_idle(self):
-        text =  "->Sending IDLE character.\n"
+        text =  "->Sending IDLE transaction.\n"
         self.add_to_interactive_screen(text)
         paketti = self.SC_encoder.create_SC_packet(0,0,"IDLE",0)
         write_instruction(1, FCC_LUT[paketti[0]], 1)
@@ -393,7 +403,7 @@ class VFAT3_GUI:
             write_instruction(1, FCC_LUT[paketti[x]], 0)
 
         paketti = self.SC_encoder.create_SC_packet(addr1,0,"READ",0)
-        write_instruction(1, FCC_LUT[paketti[0]], 0)
+        write_instruction(150, FCC_LUT[paketti[0]], 0)
         for x in range(1,len(paketti)):
             write_instruction(1, FCC_LUT[paketti[x]], 0)
         self.execute()
@@ -480,7 +490,6 @@ class VFAT3_GUI:
         data_intermediate = []
         for x in register[addr].reg_array:
             data_intermediate = dec_to_bin_with_stuffing(x[0], x[1])
-            data_intermediate.reverse()
             data.extend(data_intermediate)
         data.reverse()
         paketti = self.SC_encoder.create_SC_packet(addr,data,"WRITE",0)
@@ -564,12 +573,12 @@ class VFAT3_GUI:
             description = "Setting of the Latency."
             self.register_names = ["LAT"]
 
-        elif self.value == "Calibration 1":
+        elif self.value == "Calibration 0":
             register_nr = 138
             description = "Settings for the Calibration Pulse."
             self.register_names = ["CAL_SEL_POL","CAL_PHI","CAL_EXT","CAL_DAC","CAL_MODE"]
 
-        elif self.value == "Calibration 2":
+        elif self.value == "Calibration 1":
             register_nr = 139
             description = "Settings for the Calibration Pulse."
             self.register_names = ["CAL_FS","CAL_DUR"]
@@ -597,7 +606,7 @@ class VFAT3_GUI:
         elif self.value == "Biasing 4":
             register_nr = 144
             description = "Settings for the Front End biasing."
-            self.register_names = ["SH_I_BFAMP","SD_I_BDIFF"]
+            self.register_names = ["SD_I_BDIFF"]
 
         elif self.value == "Biasing 5":
             register_nr = 145
@@ -631,6 +640,23 @@ class VFAT3_GUI:
         self.description_label.grid(column = 0, row= 1, columnspan = 2)
         self.separator = ttk.Separator(self.register_data_frame, orient='horizontal')
         self.separator.grid(column=0, row=2, columnspan=2, sticky='ew')
+
+
+        # Read register value from the chip and save it to the register object.
+        paketti = self.SC_encoder.create_SC_packet(register_nr,0,"READ",0)
+        write_instruction(150, FCC_LUT[paketti[0]], 1)
+        for x in range(1,len(paketti)):
+            write_instruction(1, FCC_LUT[paketti[x]], 0)
+        output = self.execute()
+        print "Read data:"
+        new_data = output[0][0].data
+        #new_data.reverse()
+        print new_data
+        new_data = ''.join(str(e) for e in new_data)
+        register[register_nr].change_values(new_data)
+        #print "New data in register:"
+        #print register[register_nr].reg_array
+
         j = 0
         for i in self.register_names:
             try:
