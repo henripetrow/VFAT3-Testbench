@@ -15,33 +15,33 @@
 
 100 Write LAT 1
 
-100 Send Calpulse
+100 Send CalPulse
 1 Send_Repeat LV1A 20 1
 
 100 Write PS 1
-100 Send Calpulse
+100 Send CalPulse
 1 Send_Repeat LV1A 20 1
 
 100 Write PS 2
-100 Send Calpulse
+100 Send CalPulse
 1 Send_Repeat LV1A 20 1
 
 100 Write PS 3
-100 Send Calpulse
+100 Send CalPulse
 1 Send_Repeat LV1A 20 1
 
 100 Write PS 4
-100 Send Calpulse
+100 Send CalPulse
 1 Send_Repeat LV1A 20 1
 
 100 Write PS 5
-100 Send Calpulse
+100 Send CalPulse
 1 Send_Repeat LV1A 20 1
 
 100 Write PS 6
-100 Send Calpulse
+100 Send CalPulse
 1 Send_Repeat LV1A 20 1
 
 100 Write PS 7
-100 Send Calpulse
+100 Send CalPulse
 1 Send_Repeat LV1A 20 1

@@ -41,37 +41,16 @@ class FW_interface:
 
     def write_fifo(self):
         with open("./data/FPGA_instruction_list.dat", 'r') as f:
-            size = 0
             for line in f:
-                size =+ 1
-            print "size"
-            print size
-            with open("./data/FPGA_instruction_list.dat", 'r') as f:
-                flag = 0
+                line = line.rstrip('\n')
+                data_line = line + "0000000000000000"
+                #using pychips
+                self.glib.set("test_fifo",int(data_line,2))
+                print "Writing command to fifo:"
+                print data_line
+                print int(data_line,2)
                 data_line = ""
-                for line in f:  
-                    line = line.rstrip('\n')
-                    if size == 1:
-                        data_line = line
-                        data_line += "0000000000000000"
-                        #using pychips
-                        self.glib.set("test_fifo",int(data_line,2))
-                        print "Writing single to fifo:"
-                        print data_line
-                        data_line = ""
-                        break
 
-                    if flag == 0:
-                        data_line = line
-                        flag = 1
-                    if flag == 1:
-                        data_line += line
-                        #using pychips
-                        self.glib.set("test_fifo",int(data_line,2))
-                        print "Writing to fifo:"
-                        print data_line
-                        flag = 0
-                        data_line = ""
 
 
     def read_fifo(self):
@@ -85,7 +64,7 @@ class FW_interface:
                 with open("./data/FPGA_output.dat", "a") as myfile:
                     myfile.write("%s" % line)
 
-    def launch(self):
+    def launch(self,register):
         timeout = 0
         ########### NORMAL MODE ##########
         if self.simulation_mode == 0:
@@ -102,7 +81,6 @@ class FW_interface:
                 if status == 3:
                     break
                 time.sleep(1)
-
             self.read_fifo()
 
         ############# SIMULATION MODE ##########
@@ -128,19 +106,11 @@ class FW_interface:
                     break
 
         if not timeout:
-            output_data = decode_output_data('./data/FPGA_output_list.dat')
+            output_data = decode_output_data('./data/FPGA_output_list.dat',register)
             open("./data/FPGA_output_list.dat", 'w').close()
         else:
-            output_data = ['Error','Timeout']
+            output_data = ['Error','Timeout, no response from the chip.']
         return output_data
-
-
-
-
-
-
-
-
 
 
             

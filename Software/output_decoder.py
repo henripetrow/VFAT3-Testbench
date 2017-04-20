@@ -4,7 +4,7 @@
 ###########################################
 
 from SC_encode import *
-from VFAT3_registers import *
+#from VFAT3_registers import *
 
 
 
@@ -125,6 +125,21 @@ class datapacket:
         print "Header: %s" % self.header
         print "FIFO warning: %d" % self.FIFO_warning
         print "System BC: %d" % self.systemBC
+
+        if dataformat_register.SZP[0] == 0:
+            self.received_crc = int(self.crc,2)
+            crc_calculation = []  
+            crc_calculation.extend(list(self.header))
+            crc_calculation.extend(list(self.EC))
+            crc_calculation.extend(list(self.BC))
+            crc_calculation.extend(list(self.partition_table))
+            crc_calculation.extend(list(self.spzs_data))
+            crc_calculation.extend(list(self.data))
+            self.calculated_crc = crc_remainder(crc_calculation)
+
+
+
+
         if self.EC:
             self.EC = int(self.EC,2)
             print "EC: %d" % self.EC
@@ -147,21 +162,12 @@ class datapacket:
         else:
             print "No data."
 
-        if dataformat_register.SZP[0] == 0:
-            self.received_crc = int(self.crc,2)
-            crc_calculation = []  
-            crc_calculation.extend(list(self.header))
-            crc_calculation.extend(list(self.EC))
-            crc_calculation.extend(list(self.BC))
-            crc_calculation.extend(list(self.partition_table))
-            crc_calculation.extend(list(self.spzs_data))
-            crc_calculation.extend(list(self.data))
-            self.calculated_crc = crc_remainder(crc_calculation)
-            if self.received_crc != self.calculated_crc:
-                self.crc_error = 1
-                print("!-> CRC error.")
-            else:
-                print("CRC ok.")
+
+        if self.received_crc != self.calculated_crc:
+            self.crc_error = 1
+            print("!-> CRC error.")
+        else:
+            print("CRC ok.")
 
         indices = [i for i, x in enumerate(self.partition_table) if x == "1"]
         if self.spzs_data:
@@ -178,7 +184,7 @@ class datapacket:
 
 
 
-def decode_output_data(filename):
+def decode_output_data(filename,register):
     BCcounter = 0
     SC_shift_register = [[0,0]]*8
     SC_shift_register_counter = 0
@@ -207,8 +213,11 @@ def decode_output_data(filename):
     ipbus_protocol_version = [0,0,1,0]
     ipbus_info_code = [1,1,1,1]
 
-    dataformat_register = GBL_CFG_CTR_1()                                            ##### Add the functionality for the changed values.
-    dataformat_register.SZP[0] = 1
+    dataformat_register = register[130] 
+    print "Dataformat settings:"                                           ##### Add the functionality for the changed values.
+    print dataformat_register.BCb[0]
+    print dataformat_register.ECb[0]
+    print dataformat_register.SZP[0]
     bit_stuffing_flag = 0
     data_header = 0
     datapacket_status = "IDLE"
@@ -231,7 +240,7 @@ def decode_output_data(filename):
 
             input_value = split_line[1]
             BCcounter = BCcounter + BCd
-
+            print datapacket_status
             # Sync responses.
             if input_value == "00111010":
                 sync_response_list.append([BCcounter,"SyncAkc"])
@@ -282,6 +291,7 @@ def decode_output_data(filename):
             elif datapacket_status == "EC":                   # Enter the EC to collect the bytes for EC.
                 if datapacket_byte_counter == 0:              # If the byte counter is 0. We are coming here the first time
                     data_packet.EC += input_value             # input value is added to the EC value.
+                    print "Adding EC"
                     datapacket_byte_counter += 1              # byte counter is incremented by one to count the amount of EC bytes.
                                                               # Check the size of the EC counter.
                     if dataformat_register.ECb[0] == 0 or dataformat_register.ECb[0] ==3:
@@ -293,9 +303,9 @@ def decode_output_data(filename):
                                 
                     if dataformat_register.ECb[0] == 1:
                         EC_size = 2
+                        print EC_size
                     if dataformat_register.ECb[0] == 2:
                         EC_size = 3
-
 
                 elif datapacket_byte_counter >= EC_size:      # If byte counter is >= than size of EC we have all EC bytes and we can move to next state.
                     datapacket_byte_counter = 0               # Set the byte counter to 0 for the next state.
@@ -306,6 +316,7 @@ def decode_output_data(filename):
                     else:
                         datapacket_status = "DATA"            # Else we only have EC so we can move to collect the data.
                 else:                                         # Here the EC data is collected.
+                    print "Adding EC"
                     data_packet.EC += input_value             # Input value is added to the EC value. 
                     datapacket_byte_counter += 1              # Byte counter is incremented by one to count the amount of EC bytes.
                 
@@ -318,11 +329,13 @@ def decode_output_data(filename):
                     if dataformat_register.BCb[0] == 1:
                         BC_size = 3
                     data_packet.BC += input_value             # input value is added to the BC value. 
+                    print "Adding BC"
 
                     datapacket_byte_counter += 1              # byte counter is incremented by one to count the amount of EC bytes
 
                 elif datapacket_byte_counter >= BC_size-2:    # If byte counter is >= than size of BC we have all BC bytes and we can move to next state.
-                    data_packet.BC += input_value             # Input value is added to the EC value.           
+                    data_packet.BC += input_value             # Input value is added to the BC value.  
+                    print "Adding BC"         
                     datapacket_byte_counter += 1              # Byte counter is incremented by one to count the amount of BC bytes.
                     if data_header == 2:                      # If header was 2 there is no data after BC
                         datapacket_byte_counter = 0           # Set the byte counter to 0 for the next state.
@@ -333,6 +346,7 @@ def decode_output_data(filename):
                 else:                                         # Here the BC data is collected.
                     data_packet.BC += input_value             # Input value is added to the EC value.  
                     datapacket_byte_counter += 1              # Byte counter is incremented by one to count the amount of BC bytes.
+                    print "Adding BC"
 
 
 
@@ -377,6 +391,8 @@ def decode_output_data(filename):
                 else:
                     data_packet.data += input_value            # Input value is added to the data.               
                     datapacket_byte_counter += 1               # Byte counter is incremented by one to count the amount of data bytes. 
+                    print "datapacket byte counter"
+                    print datapacket_byte_counter
 
 
 

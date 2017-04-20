@@ -4,8 +4,10 @@
 ###########################################
 
 
+
 from Tkinter import *
 import ttk
+import sys
 
 from VFAT3_registers import *
 from generator import *
@@ -17,7 +19,14 @@ import subprocess # For opening scans for edit in the system default editor.
 
 class VFAT3_GUI:
     def __init__(self, master):
-        self.interfaceFW = FW_interface(1) # 0 - Normal mode(with Firmware), 1 - Simulation mode(with simulation model)
+        if len(sys.argv) >= 2:
+            if sys.argv[1] == '-s':
+                self.interfaceFW = FW_interface(1)      #  1 - Simulation mode(with simulation model)
+            else:
+                print "Unrecognised option."
+                self.interfaceFW = FW_interface(0)      # 0 - Normal mode(with Firmware)
+        else:
+            self.interfaceFW = FW_interface(0)          # 0 - Normal mode(with Firmware)         
         self.SC_encoder = SC_encode()
         self.channel_register = 0
         self.value = ""
@@ -312,7 +321,7 @@ class VFAT3_GUI:
         self.interactive_screen.delete(1.0,END)
 
     def execute(self):
-        output = self.interfaceFW.launch()
+        output = self.interfaceFW.launch(register)
         if output[0] == "Error":
             text =  "%s: %s\n" %(output[0],output[1])
             self.add_to_interactive_screen(text)
@@ -429,14 +438,14 @@ class VFAT3_GUI:
         self.add_to_interactive_screen(text)
         scan_name = self.chosen_scan
         modified = scan_name.replace(" ", "_")
-        file_name = "%s.txt" % modified
+        file_name = "./Routines/%s.txt" % modified
         output = generator(file_name)
         if self.verbose_var.get() == 1:
             for i in output[0]:
                 self.add_to_interactive_screen(i)
                 self.add_to_interactive_screen("\n")
         print output[2]
-        text = "Lines: %d, Size:%d kb, Duration: %d BC, %f ms\n" %(output[2][0],output[2][1],output[2][2],output[2][3])
+        text = "Lines: %d, Size:%d kb, Duration: %d BC, %f ms.\n" %(output[2][0],output[2][1],output[2][2],output[2][3])
         self.add_to_interactive_screen("Generated file:\n")
         self.add_to_interactive_screen(text)
         self.execute()
@@ -446,7 +455,7 @@ class VFAT3_GUI:
         self.add_to_interactive_screen(text)
         scan_name = self.chosen_scan
         modified = scan_name.replace(" ", "_")
-        file_name = "%s.txt" % modified
+        file_name = "./Routines/%s.txt" % modified
         proc = subprocess.Popen(['gedit', file_name])
 
     def choose_scan(self,value):
@@ -643,19 +652,25 @@ class VFAT3_GUI:
 
 
         # Read register value from the chip and save it to the register object.
+        text =  "Reading the register: %d\n" %register_nr
+        self.add_to_interactive_screen(text)
+
         paketti = self.SC_encoder.create_SC_packet(register_nr,0,"READ",0)
         write_instruction(150, FCC_LUT[paketti[0]], 1)
         for x in range(1,len(paketti)):
             write_instruction(1, FCC_LUT[paketti[x]], 0)
         output = self.execute()
-        print "Read data:"
-        new_data = output[0][0].data
-        #new_data.reverse()
-        print new_data
-        new_data = ''.join(str(e) for e in new_data)
-        register[register_nr].change_values(new_data)
-        #print "New data in register:"
-        #print register[register_nr].reg_array
+        if output[0] == "Error":
+            text =  "%s: %s\n" %(output[0],output[1])
+            text =  "Register values might be incorrect.\n"
+            self.add_to_interactive_screen(text)
+        else:
+            print "Read data:"
+            new_data = output[0][0].data
+            print new_data
+            new_data = ''.join(str(e) for e in new_data)
+            register[register_nr].change_values(new_data)
+
 
         j = 0
         for i in self.register_names:

@@ -42,7 +42,7 @@ class instruction_object:
             if command_type == "FCC":
                 command = line[2]
                 command_bin = FCC_LUT[command] # Add error checks.  # BCd comes reversed?
-                write_instruction(BCd, command, 0)
+                write_instruction(BCd, command_bin, 0)
 
                 self.BCcounter = self.BCcounter + BCd
                 with open("./data/sent_FCCs.dat", "a") as myfile:
