@@ -348,6 +348,9 @@ class VFAT3_GUI:
                     if i.header == "00011010" or i.header == "01010110":
                         text = "Header II received.\n"
                         self.add_to_interactive_screen(text)
+                        if i.BC or i.EC:
+                            text =  "BC:%d EC: %d\n" % (i.BC,i.EC)
+                            self.add_to_interactive_screen(text) 
                     else:
                         text =  "BC:%d EC: %d\n" % (i.BC,i.EC)
                         self.add_to_interactive_screen(text)  

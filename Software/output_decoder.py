@@ -137,21 +137,17 @@ class datapacket:
             crc_calculation.extend(list(self.data))
             self.calculated_crc = crc_remainder(crc_calculation)
 
-
-
-
         if self.EC:
             self.EC = int(self.EC,2)
             print "EC: %d" % self.EC
         else:
             print "No EC value."
             self.EC = 0
-
         if self.BC:
             self.BC = int(self.BC,2)
             print "BC: %d" % self.BC
         else:
-            print "No EC value."
+            print "No BC value."
             self.BC = 0
 
 
@@ -186,9 +182,20 @@ class datapacket:
 
 def decode_output_data(filename,register):
     BCcounter = 0
+
+    # Data packet registers
+    data_header = 0
+    datapacket_status = "IDLE"
+    datapacket_byte_counter = 0
+
+    # Slow control registers
+    SC_bit_counter = 0
+    SC1_counter = 0
+    bit_stuffing_flag = 0
     SC_shift_register = [[0,0]]*8
     SC_shift_register_counter = 0
 
+    # Headers from the chips
     SC0 = "10010110"        # Slow Control 0
     SC1 = "10011001"        # SLow Control 1
 
@@ -197,10 +204,7 @@ def decode_output_data(filename,register):
     HDR_2 = "00011010"		# Zero Suppressed Data Packet
     HDR_2W = "01010110"		# Zero Suppressed Data Packet, With FIFO half full -warning
 
-
-    EC_size = 1
-    BC_size = 1
-
+    # Lists for decoded data
     IPbus_transaction_list = []
     datapacket_list = []
     sync_response_list = []
@@ -214,22 +218,30 @@ def decode_output_data(filename,register):
     ipbus_info_code = [1,1,1,1]
 
     dataformat_register = register[130] 
-    print "Dataformat settings:"                                           ##### Add the functionality for the changed values.
-    print dataformat_register.BCb[0]
-    print dataformat_register.ECb[0]
-    print dataformat_register.SZP[0]
-    bit_stuffing_flag = 0
-    data_header = 0
-    datapacket_status = "IDLE"
-    datapacket_byte_counter = 0
 
-    SC_bit_counter = 0
-    SC1_counter = 0
+
     with open(filename, 'r') as f:
         for line in f:
             line = line.rstrip('\n')
             line = line.replace(" ","")
             split_line = line.split(",")
+
+            # Datapacket size
+            if dataformat_register.ECb[0] == 0 or dataformat_register.ECb[0] ==3:
+                EC_size = 1
+            if dataformat_register.ECb[0] == 1:
+                EC_size = 2
+            if dataformat_register.ECb[0] == 2:
+                EC_size = 3
+            if dataformat_register.BCb[0] == 0:
+                BC_size = 2
+            if dataformat_register.BCb[0] == 1:
+                BC_size = 3
+            if dataformat_register.TT[0] == 1:
+                BC_size = 0                
+            if dataformat_register.TT[0] == 2:
+                EC_size = 0                 
+
 
             try:
                 BCd = int(split_line[0])
@@ -240,7 +252,7 @@ def decode_output_data(filename,register):
 
             input_value = split_line[1]
             BCcounter = BCcounter + BCd
-            print datapacket_status
+            #print datapacket_status
             # Sync responses.
             if input_value == "00111010":
                 sync_response_list.append([BCcounter,"SyncAkc"])
@@ -250,8 +262,11 @@ def decode_output_data(filename,register):
                 print "******SyncVerifAck********"
 
            # DATA PACKETS
+            #print "Reading line: %s" % input_value
+            #print "datapacket byte counter: %d" % datapacket_byte_counter
+ 
 
-            if input_value == HDR_2 or input_value == HDR_2W: # Ehka voisi vain laskea monta tavua paketti on ja hajottaa se sitten objektissa.
+            if (input_value == HDR_2 or input_value == HDR_2W) and datapacket_status == "IDLE": # Ehka voisi vain laskea monta tavua paketti on ja hajottaa se sitten objektissa.
                 print("Header II found.")
                 data_header = 2                               # Type of header.
                 data_packet = datapacket()                    # Create a new data packet object.
@@ -264,16 +279,13 @@ def decode_output_data(filename,register):
                     datapacket_list.append(data_packet)       # Add the finished data packet to the data packet list.
                     continue                                  # Continue to read next line from file.
                 if dataformat_register.SZD[0] == 1:           # If SZD is set to one, we will get also time tag
-                    if dataformat_register.TT[0] == 2:        # If Time Tag format is set to 2 we only get BC. So we change the state straight to BC
+                    if EC_size == 0:        # If Time Tag format is set to 2 we only get BC. So we change the state straight to BC
                         datapacket_status = "BC"
                     else:
                         datapacket_status = "EC"              # If time tag format is 0 or 3 we get EC+BC. If 1 we get just EC. So we can got to EC and then over there decide if we need also BC.
                 datapacket_byte_counter = 0                   # Set byte counter to zero. This is used to count number of bytes to be read in different stages.
 
-
-          
-
-            elif input_value == HDR_1 or input_value == HDR_1W: # See if the read line is Header 1.
+            elif (input_value == HDR_1 or input_value == HDR_1W) and datapacket_status == "IDLE": # See if the read line is Header 1.
                 print("Header I found.")
                 data_header = 1                               # Type of header. To be used to stop after EC or BC.
                 data_packet = datapacket()                    # Create a new data packet object. 
@@ -281,74 +293,35 @@ def decode_output_data(filename,register):
                     data_packet.FIFO_warning = 1              # Set the FIFO warning to the object.
                 data_packet.header = input_value              # Give the binary header to the new object.
                 data_packet.systemBC = BCcounter              # Give the system BC counter to the object. Tells the time of arrival of the packet.
-                if dataformat_register.TT[0] == 2:            # If Time Tag format is set to 2 we only get BC. So we change the state straight to BC.
+                if EC_size == 0:                              # If Time Tag format is set to 2 we only get BC. So we change the state straight to BC.
                     datapacket_status = "BC"
                 else:
                     datapacket_status = "EC"                  # If time tag format is 0 or 3 we get EC+BC. If 1 we get just EC. So we can got to EC and then over there decide if we need also BC.
                 datapacket_byte_counter = 0                   # Set byte counter to zero. This is used to count the number of bytes to be read in different stages.
 
-
             elif datapacket_status == "EC":                   # Enter the EC to collect the bytes for EC.
-                if datapacket_byte_counter == 0:              # If the byte counter is 0. We are coming here the first time
-                    data_packet.EC += input_value             # input value is added to the EC value.
-                    print "Adding EC"
-                    datapacket_byte_counter += 1              # byte counter is incremented by one to count the amount of EC bytes.
-                                                              # Check the size of the EC counter.
-                    if dataformat_register.ECb[0] == 0 or dataformat_register.ECb[0] ==3:
-                        EC_size = 1
-                        if dataformat_register.TT[0] == 0 or dataformat_register.TT[0] == 3: # If time tag format is 0 or 3 we have EC+BC. So we move to state BC to get also BC counter.
-                            datapacket_status = "BC"
-
-                            datapacket_byte_counter = 0
-                                
-                    if dataformat_register.ECb[0] == 1:
-                        EC_size = 2
-                        print EC_size
-                    if dataformat_register.ECb[0] == 2:
-                        EC_size = 3
-
-                elif datapacket_byte_counter >= EC_size:      # If byte counter is >= than size of EC we have all EC bytes and we can move to next state.
-                    datapacket_byte_counter = 0               # Set the byte counter to 0 for the next state.
-                    if dataformat_register.TT[0] == 0 or dataformat_register.TT[0] == 3: # If time tag format is 0 or 3 we have EC+BC. So we move to state BC to get also BC counter.
-                        datapacket_status = "BC"
-                    elif data_header == 2:                    # If header was 2 there is no data after BC
+                print "Adding EC %s" % input_value
+                data_packet.EC += input_value             # Input value is added to the EC value. 
+                datapacket_byte_counter += 1              # Byte counter is incremented by one to count the amount of EC bytes.
+                if datapacket_byte_counter >= EC_size:        # If byte counter is >= than size of EC we have all EC bytes and we can move to next state.
+                    if data_header == 2:                      # If header was 2 there is no data after BC
                         datapacket_status = "CRC"             # Stop data collection by setting status to IDLE.
+                    if BC_size:                               # If time tag format is 0 or 3 we have EC+BC. So we move to state BC to get also BC counter.
+                        datapacket_status = "BC"
                     else:
                         datapacket_status = "DATA"            # Else we only have EC so we can move to collect the data.
-                else:                                         # Here the EC data is collected.
-                    print "Adding EC"
-                    data_packet.EC += input_value             # Input value is added to the EC value. 
-                    datapacket_byte_counter += 1              # Byte counter is incremented by one to count the amount of EC bytes.
-                
+                    datapacket_byte_counter = 0               # Set the byte counter to 0 for the next state.
 
             elif datapacket_status == "BC":                   # Enter the BC to collect the bytes for BC.
-                if datapacket_byte_counter == 0:              # If the byte counter is 0. We are coming here the first time.
-                                                              # Check the size of the BC counter.
-                    if dataformat_register.BCb[0] == 0:
-                        BC_size = 2
-                    if dataformat_register.BCb[0] == 1:
-                        BC_size = 3
-                    data_packet.BC += input_value             # input value is added to the BC value. 
-                    print "Adding BC"
-
-                    datapacket_byte_counter += 1              # byte counter is incremented by one to count the amount of EC bytes
-
-                elif datapacket_byte_counter >= BC_size-2:    # If byte counter is >= than size of BC we have all BC bytes and we can move to next state.
-                    data_packet.BC += input_value             # Input value is added to the BC value.  
-                    print "Adding BC"         
-                    datapacket_byte_counter += 1              # Byte counter is incremented by one to count the amount of BC bytes.
+                print "Adding BC %s" % input_value
+                data_packet.BC += input_value             # Input value is added to the EC value.  
+                datapacket_byte_counter += 1              # Byte counter is incremented by one to count the amount of BC bytes.
+                if datapacket_byte_counter >= BC_size:        # If byte counter is >= than size of BC we have all BC bytes and we can move to next state.
                     if data_header == 2:                      # If header was 2 there is no data after BC
-                        datapacket_byte_counter = 0           # Set the byte counter to 0 for the next state.
                         datapacket_status = "CRC"             # Stop data collection by setting status to IDLE.
                     else:
-                        datapacket_byte_counter = 0           # Set the byte counter to 0 for the next state.
                         datapacket_status = "DATA"            # Set state to DATA 
-                else:                                         # Here the BC data is collected.
-                    data_packet.BC += input_value             # Input value is added to the EC value.  
-                    datapacket_byte_counter += 1              # Byte counter is incremented by one to count the amount of BC bytes.
-                    print "Adding BC"
-
-
+                    datapacket_byte_counter = 0           # Set the byte counter to 0 for the next state.
 
             elif datapacket_status == "DATA" and dataformat_register.DT[0] == 1:                   # Enter the DATA state to collect the bytes for DATA.
                 if datapacket_byte_counter == 0:              # If the byte counter is 0. We are coming here the first time.
@@ -358,75 +331,37 @@ def decode_output_data(filename,register):
                         if data_size > dataformat_register.PAR[0]:
                             data_size = dataformat_register.PAR[0]
                         if dataformat_register.P16[0] == 1:
-                            datapacket_byte_counter = 0               # Set the byte counter to 0 for the next state.
                             datapacket_status = "CRC"                # Set state to IDLE.
-                            data_packet.crc += input_value           # input value is added to the data.
-
-                        pata_packet.partitions = data_size
+                            datapacket_byte_counter = 0               # Set the byte counter to 0 for the next state.
+                        data_packet.partitions = data_size
                         datapacket_byte_counter += 1              # Byte counter is incremented by one to count the amount of data bytes.
-                if datapacket_byte_counter > data_size:      # If byte counter is >= than data_size we have all data bytes and we can move to next state.
-                    datapacket_byte_counter = 0               # Set the byte counter to 0 for the next state.
+                if datapacket_byte_counter >= data_size:      # If byte counter is >= than data_size we have all data bytes and we can move to next state.
                     datapacket_status = "CRC"                # Set state to IDLE.
-                    data_packet.crc += input_value           # input value is added to the data.
+                    datapacket_byte_counter = 0               # Set the byte counter to 0 for the next state.
                 else:
                     data_packet.spzs_data += input_value           # Input value is added to the data.               
                     datapacket_byte_counter += 1              # Byte counter is incremented by one to count the amount of data bytes. 
 
-
-
-
-
-
             elif datapacket_status == "DATA" and dataformat_register.DT[0] == 0:                   # Enter the DATA state to collect the bytes for DATA.
-
                 data_size = 16
-    #            if datapacket_byte_counter == 0:              # If the byte counter is 0. We are coming here the first time.
-    #                data_size = 16                            # Set the data size to 16 bytes. 16*8 bits = 128 bits
-    #                data_packet.data += input_value           # input value is added to the data. 
-    #                datapacket_byte_counter += 1              # byte counter is incremented by one to count the amount of data bytes
+                data_packet.data += input_value            # Input value is added to the data.               
+                datapacket_byte_counter += 1               # Byte counter is incremented by one to count the amount of data bytes. 
                 if datapacket_byte_counter >= data_size:       # If byte counter is >= than data_size we have all data bytes and we can move to next state.
-                    datapacket_byte_counter = 0                # Set the byte counter to 0 for the next state.
                     datapacket_status = "CRC"                  # Set state to IDLE.
-                    data_packet.crc += input_value             # input value is added to the data.
-                else:
-                    data_packet.data += input_value            # Input value is added to the data.               
-                    datapacket_byte_counter += 1               # Byte counter is incremented by one to count the amount of data bytes. 
-                    print "datapacket byte counter"
-                    print datapacket_byte_counter
-
-
-
-
+                    datapacket_byte_counter = 0                # Set the byte counter to 0 for the next state.
 
             elif datapacket_status == "CRC":                   # Enter the DATA state to collect the bytes for DATA.
-                if datapacket_byte_counter == 0:               # If the byte counter is 0. We are coming here the first time.
-                    if data_header == 2:
-                        data_size = 2                          # Set the data size to 16 bytes. 16*8 bits = 128 bits
-                        data_packet.crc += input_value         # input value is added to the data. 
-                        datapacket_byte_counter += 1           # byte counter is incremented by one to count the amount of data bytes
-                    else:
-                        data_size = 1
-                        data_packet.crc += input_value         # input value is added to the data. 
-                        datapacket_byte_counter = 0            # Set the byte counter to 0 for the next state.        #######Vammanen patchi. Pitaa miettia koko looppi uudestaan.
-                        datapacket_status = "IDLE"              # Set state to IDLE.
-                        data_packet.ready(dataformat_register)
-                        datapacket_list.append(data_packet)       # Add the finished data packet to the data packet list.
-
-                elif datapacket_byte_counter >= data_size:      # If byte counter is >= than data_size we have all data bytes and we can move to next state.
-                    datapacket_byte_counter = 0               # Set the byte counter to 0 for the next state.
-                    datapacket_status = "IDLE"                # Set state to IDLE.
+                crc_size = 2
+                data_packet.crc += input_value           # Input value is added to the data.               
+                datapacket_byte_counter += 1              # Byte counter is incremented by one to count the amount of data bytes. 
+                if datapacket_byte_counter >= crc_size:      # If byte counter is >= than data_size we have all data bytes and we can move to next state.
                     data_packet.ready(dataformat_register)
-                    datapacket_list.append(data_packet)       # Add the finished data packet to the data packet list.
-                else:
-                    data_packet.crc += input_value           # Input value is added to the data.               
-                    datapacket_byte_counter += 1              # Byte counter is incremented by one to count the amount of data bytes. 
+                    datapacket_list.append(data_packet)       # Add the finished data packet to the data packet list
+                    datapacket_status = "IDLE"                # Set state to IDLE.
+                    datapacket_byte_counter = 0               # Set the byte counter to 0 for the next state.
 
-
-
-
-
+ 
             # SLOW CONTROL
-
 
             if input_value == SC0:                            # See if the input line is SC0.
                 
