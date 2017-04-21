@@ -26,7 +26,7 @@ class FW_interface:
                 myfile.write("0")
         if self.simulation_mode == 2: #Aamir mode
             print "Entering Aamir mode."
-            #self.ser = serial.Serial('/dev/tty.usbserial', 9600, timeout=0.5)
+            self.ser = serial.Serial('COM3', 9600, timeout=0.5)
 
         self.FCC_LUT_L = {
         "0000":"00010111",
@@ -131,15 +131,17 @@ class FW_interface:
 
         ############### Aamir mode #####################333
         if self.simulation_mode == 2:
-            #self.ser.write(hex(202)
+            self.ser.write(hex(202)
             print hex(202) # Writing ca
+            time.sleep(0.1)
             with open("./data/FPGA_instruction_list.dat", 'r') as f0:
                 for i, l in enumerate(f0):
                     pass
             f0.close()
             size = i + 1
             print hex(size)
-            #self.ser.write(hex(size))
+            self.ser.write(hex(size))
+            time.sleep(0.1)
             with open("./data/FPGA_instruction_list.dat", 'r') as f:
                 for line in f:
                         line = line.rstrip('\n')
@@ -147,7 +149,8 @@ class FW_interface:
                         data_line = self.FCC_LUT_L[data_line]
                         data_line = int(data_line,2)
                         print hex(data_line)
-                        #self.ser.write(hex(data_line))
+                        self.ser.write(hex(data_line))
+                        time.sleep(0.1)
 
 
                         timeout = 1
