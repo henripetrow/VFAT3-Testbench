@@ -22,7 +22,7 @@ class VFAT3_GUI:
         if len(sys.argv) >= 2:
             if sys.argv[1] == '-s':
                 self.interfaceFW = FW_interface(1)      #  1 - Simulation mode(with simulation model)
-            if sys.argv[1] == '-a':
+            if sys.argv[1] == '-a' or sys.argv[1] == '-a_nr':
                 self.interfaceFW = FW_interface(2)      #  1 - Simulation mode(with simulation model)
             else:
                 print "Unrecognised option."
@@ -746,29 +746,29 @@ class VFAT3_GUI:
         self.separator = ttk.Separator(self.register_data_frame, orient='horizontal')
         self.separator.grid(column=0, row=2, columnspan=2, sticky='ew')
 
-
-        # Read a register value from the chip and save it to the corresponding register object.
-        text =  "Reading the register: %d\n" %register_nr
-        self.add_to_interactive_screen(text)
-
-        paketti = self.SC_encoder.create_SC_packet(register_nr,0,"READ",0)
-        write_instruction(150, FCC_LUT[paketti[0]], 1)
-        for x in range(1,len(paketti)):
-            write_instruction(1, FCC_LUT[paketti[x]], 0)
-        output = self.execute()
-        if output[0] == "Error":
-            text =  "%s: %s\n" %(output[0],output[1])
-            text =  "Register values might be incorrect.\n"
+        if sys.argv[1] != '-a_nr': # If not in Aamir mode we read the values from the chip
+            # Read a register value from the chip and save it to the corresponding register object.
+            text =  "Reading the register: %d\n" %register_nr
             self.add_to_interactive_screen(text)
-        else:
-            print "Read data:"
-            new_data = output[0][0].data
-            print new_data
-            if register_nr in [65536,65537,65538,65539]:
-                new_data = ''.join(str(e) for e in new_data)
+
+            paketti = self.SC_encoder.create_SC_packet(register_nr,0,"READ",0)
+            write_instruction(150, FCC_LUT[paketti[0]], 1)
+            for x in range(1,len(paketti)):
+                write_instruction(1, FCC_LUT[paketti[x]], 0)
+            output = self.execute()
+            if output[0] == "Error":
+                text =  "%s: %s\n" %(output[0],output[1])
+                text =  "Register values might be incorrect.\n"
+                self.add_to_interactive_screen(text)
             else:
-                new_data = ''.join(str(e) for e in new_data[-16:])
-            register[register_nr].change_values(new_data)
+                print "Read data:"
+                new_data = output[0][0].data
+                print new_data
+                if register_nr in [65536,65537,65538,65539]:
+                    new_data = ''.join(str(e) for e in new_data)
+                else:
+                    new_data = ''.join(str(e) for e in new_data[-16:])
+                register[register_nr].change_values(new_data)
 
 
         j = 0
@@ -780,8 +780,6 @@ class VFAT3_GUI:
                 continue
             addr = key[0]
             variable = key[1]
-            print addr
-            print variable
             current_value = register[addr].reg_array[variable][0]
             self.label.append(Label(self.register_data_frame, text=i))
             self.label[j].grid(column=0,row = j+3, sticky='e')

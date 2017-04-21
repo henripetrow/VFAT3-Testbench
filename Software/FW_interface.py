@@ -3,7 +3,7 @@
 # Lappeenranta University of Technology
 ###########################################
 
-import serial
+#import serial
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/python_scripts_thomas/kernel")
 from ipbus import *
@@ -26,7 +26,29 @@ class FW_interface:
                 myfile.write("0")
         if self.simulation_mode == 2: #Aamir mode
             print "Entering Aamir mode."
-            self.ser = serial.Serial('/dev/tty.usbserial', 9600, timeout=0.5)
+            #self.ser = serial.Serial('/dev/tty.usbserial', 9600, timeout=0.5)
+
+        self.FCC_LUT_L = {
+        "0000":"00010111",
+        "1111":"11101000",
+        "0001":"00001111",
+        "0010":"00110011",
+        "0011":"00111100",
+        "0100":"01010101",
+        "0101":"01011010",
+        "0110":"01100110",
+        "0111":"01101001",
+        "1000":"10010110",
+        "1001":"10011001",
+        "1010":"10100101",
+        "1011":"10101010",
+        "1100":"11000011",
+        "1101":"11001100",
+        "1110":"11110000"
+        }
+
+
+
 
 
     def write_control(self,input_value):
@@ -109,26 +131,25 @@ class FW_interface:
 
         ############### Aamir mode #####################333
         if self.simulation_mode == 2:
-            self.ser.write('\xca')
-            print '\xca'
+            #self.ser.write(hex(202)
+            print hex(202) # Writing ca
             with open("./data/FPGA_instruction_list.dat", 'r') as f0:
-                for i, l in enumerate(f):
+                for i, l in enumerate(f0):
                     pass
             f0.close()
             size = i + 1
             print hex(size)
-            self.ser.write(hex(size))
+            #self.ser.write(hex(size))
             with open("./data/FPGA_instruction_list.dat", 'r') as f:
                 for line in f:
                         line = line.rstrip('\n')
                         data_line = line[-4:]
-                        if data_line == '1000':
-                            print '\x96'
-                            self.ser.write('\x96')
-                        if data_line == '1001':
-                            self.ser.write('\x99')
-                            print '\x99'
-                        print data_line
+                        data_line = self.FCC_LUT_L[data_line]
+                        data_line = int(data_line,2)
+                        print hex(data_line)
+                        #self.ser.write(hex(data_line))
+
+
                         timeout = 1
 
 
