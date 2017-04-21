@@ -4,7 +4,7 @@
 ###########################################
 
 
-register = [None]*65536
+register = [None]*65541
 
 class GBL_CFG_CH:
     def __init__(self):
@@ -337,24 +337,61 @@ register[65535] = GBL_CFG_RUN()
 
 class HW_ID_ID:
     def __init__(self):
-        self.ID = 90464596
+        self.ID = [90464596,32]
+
+        self.reg_array = [self.ID]
+
+    def change_values(self, new_values):
+        self.ID[0] = int(new_values,2)
+
+register[65536] = HW_ID_ID()
+
 
 class HW_ID_VER:
     def __init__(self):
-        self.VER = 196608
+        self.VER = [196608,32]
+
+        self.reg_array = [self.VER]
+
+    def change_values(self, new_values):
+        self.VER[0] = int(new_values,2)
+
+register[65537] = HW_ID_VER()
 
 class HW_RW_REG:
     def __init__(self):
-        self.RW_REG = 0
+        self.RW_REG = [0,32]
 
-class HW_CHP_ID:
+        self.reg_array = [self.RW_REG]
+
+    def change_values(self, new_values):
+        self.RW_REG[0] = int(new_values,2)
+
+register[65538] = HW_RW_REG()
+
+
+class HW_CHIP_ID:
     def __init__(self):
-        self.CHIP_ID = 0
+        self.CHIP_ID = [0,32]
+
+        self.reg_array = [self.CHIP_ID]
+
+    def change_values(self, new_values):
+        self.CHIP_ID[0] = int(new_values,2)
+
+register[65539] = HW_CHIP_ID()
+
 
 class HW_PROG:
     def __init__(self):
-        self.PRG_TIME = 0
-        self.PRG_BIT_ADD = 0
+        self.PRG_TIME = [0,11]
+        self.PRG_BIT_ADD = [0,5]
+
+    def change_values(self, new_values):
+        self.PRG_TIME[0] = int(new_values,2)
+        self.PRG_BIT_ADD[0] = int(new_values,2)
+
+register[65540] = HW_PROG()
 
 class ADC_READ_0:
     def __init__(self):
@@ -1087,7 +1124,12 @@ LUT = {
 "SLVS_IBIAS":[146,1],
 "SLVS_VREF":[146,2],
 #
-"RUN":[65535,1]}
+"RUN":[65535,0],
+"ID":[65536,0],
+"VER":[65537,0],
+"RW_REG":[65538,0],
+"CHIP_ID":[65539,0]
+}
 
 FCC_LUT = {
 "CC-A":"0000",

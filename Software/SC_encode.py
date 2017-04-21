@@ -1,3 +1,8 @@
+############################################
+# Created by Henri Petrow 2017
+# Lappeenranta University of Technology
+###########################################
+
 from test_system_functions import *
 
 

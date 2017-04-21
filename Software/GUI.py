@@ -22,6 +22,8 @@ class VFAT3_GUI:
         if len(sys.argv) >= 2:
             if sys.argv[1] == '-s':
                 self.interfaceFW = FW_interface(1)      #  1 - Simulation mode(with simulation model)
+            if sys.argv[1] == '-a':
+                self.interfaceFW = FW_interface(2)      #  1 - Simulation mode(with simulation model)
             else:
                 print "Unrecognised option."
                 self.interfaceFW = FW_interface(0)      # 0 - Normal mode(with Firmware)
@@ -35,6 +37,7 @@ class VFAT3_GUI:
         s = ttk.Style()
         s.configure('My.TFrame', background='white')
 
+        self.register_mode = 'r'
         self.register_names = []
         self.master = master
         self.master.title("GUI for the VFAT3 test system.")
@@ -131,6 +134,9 @@ class VFAT3_GUI:
         self.EC0BC0_button.grid()
 
         ##################REGISTERS TAB###################################
+        
+    
+
         OPTIONS = [
                 "Channels",
                 "Control Logic",
@@ -151,7 +157,11 @@ class VFAT3_GUI:
                 "Biasing 4",
                 "Biasing 5",
                 "Biasing 6",
-                "SLEEP/RUN"
+                "SLEEP/RUN",
+                "HW_ID_ID",
+                "HW_ID_VER",
+                "HW_RW_REG",
+                "HW_CHIP_ID"
                 ]
 
         self.variable = StringVar(master)
@@ -304,7 +314,7 @@ class VFAT3_GUI:
         self.close_button = Button(self.ctrlButtons_frame, text="Close", command=master.quit)
         self.close_button.grid(column=2,row=0)
 
-
+       # self.read_all_registers()
 
 ####################################################################################
 ###################################FUNCTIONS########################################
@@ -312,6 +322,27 @@ class VFAT3_GUI:
 
 
 ##################### GENERAL GUI FUNCTIONS ############################
+
+    def read_all_registers(self):
+        # Read register value from the chip and save it to the register object.
+        text =  "Reading all of the chips registers:\n"
+        self.add_to_interactive_screen(text)
+        for i in range(129,146):
+            paketti = self.SC_encoder.create_SC_packet(i,0,"READ",0)
+            write_instruction(150, FCC_LUT[paketti[0]], 1)
+            for x in range(1,len(paketti)):
+                write_instruction(1, FCC_LUT[paketti[x]], 0)
+            output = self.execute()
+            if output[0] == "Error":
+                text =  "%s: %s\n" %(output[0],output[1])
+                text =  "Register values might be incorrect.\n"
+                self.add_to_interactive_screen(text)
+                break
+            else:
+                new_data = output[0][0].data
+                new_data = ''.join(str(e) for e in new_data)
+                register[i].change_values(new_data)
+        self.clear_interactive_screen()
 
     def add_to_interactive_screen(self,text):
         self.interactive_screen.insert(END,text)
@@ -345,23 +376,28 @@ class VFAT3_GUI:
                 text =  "Received data packets:\n"
                 self.add_to_interactive_screen(text)
                 for i in output[1]:
+                    if i.spzs_packet == 1:
+                        text = "Data built from a SPZS packet.\n"
+                        self.add_to_interactive_screen(text)             
                     if i.header == "00011010" or i.header == "01010110":
                         text = "Header II received.\n"
                         self.add_to_interactive_screen(text)
                         if i.BC or i.EC:
                             text =  "BC:%d EC: %d\n" % (i.BC,i.EC)
                             self.add_to_interactive_screen(text) 
+   
                     else:
                         text =  "BC:%d EC: %d\n" % (i.BC,i.EC)
-                        self.add_to_interactive_screen(text)  
-                        text =  "%s\n" % i.data[0:15]
-                        text +=  "%s\n" % i.data[16:31]
-                        text +=  "%s\n" % i.data[32:47]
-                        text +=  "%s\n" % i.data[48:63]
-                        text +=  "%s\n" % i.data[64:79]
-                        text +=  "%s\n" % i.data[80:95]
-                        text +=  "%s\n" % i.data[96:111]
-                        text +=  "%s\n" % i.data[112:127]
+                        self.add_to_interactive_screen(text)
+                        text  = "Hits, channels:128-1\n"
+                        text +=  "%s\n" % i.data[0:16]
+                        text +=  "%s\n" % i.data[16:32]
+                        text +=  "%s\n" % i.data[32:48]
+                        text +=  "%s\n" % i.data[48:64]
+                        text +=  "%s\n" % i.data[64:80]
+                        text +=  "%s\n" % i.data[80:96]
+                        text +=  "%s\n" % i.data[96:112]
+                        text +=  "%s\n" % i.data[112:128]
                         self.add_to_interactive_screen(text) 
             if output[2]:
                 text =  "Received sync replies:\n"
@@ -383,6 +419,8 @@ class VFAT3_GUI:
             self.scan_frame.grid_propagate(False)
 
 ################# MISC-TAB FUNCTIONS ################################
+
+
 
     def send_sync(self):
         text =  "->Sending sync request.\n"
@@ -476,39 +514,43 @@ class VFAT3_GUI:
 ######################### REGISTER-TAB FUNCTIONS ####################
 
     def apply_register_values(self):
-        text = "->Setting the register: %s \n" % self.value
-        self.add_to_interactive_screen(text)
-        j = 0
-        for i in self.register_names:
-            new_value = int(self.entry[j].get())
-            try:
-                key = LUT[i]
-            except ValueError:
-                text =  "-IGNORED: Invalid value for Register: %s" % i
-                self.add_to_interactive_screen(text)
-                continue
-            addr = key[0]
-            variable = key[1]
-            size = register[addr].reg_array[variable][1]
-            if new_value < 0 or new_value > 2**(size)-1:
-                text = "-IGNORED: Value out of the range of the register: %d \n" % new_value
-                self.add_to_interactive_screen(text)
-            else:
-                register[addr].reg_array[variable][0] = new_value
-                text = "Register: %s Value: %s \n" % (i,new_value)
-                self.add_to_interactive_screen(text)
-            j += 1
-        data = []
-        data_intermediate = []
-        for x in register[addr].reg_array:
-            data_intermediate = dec_to_bin_with_stuffing(x[0], x[1])
-            data.extend(data_intermediate)
-        data.reverse()
-        paketti = self.SC_encoder.create_SC_packet(addr,data,"WRITE",0)
-        write_instruction(1, FCC_LUT[paketti[0]], 1)
-        for x in range(1,len(paketti)):
-            write_instruction(1, FCC_LUT[paketti[x]], 0)
-        self.execute()
+        if self.register_mode == 'r':
+            text = "The register is read only\n"
+            self.add_to_interactive_screen(text)
+        else:
+            text = "->Setting the register: %s \n" % self.value
+            self.add_to_interactive_screen(text)
+            j = 0
+            for i in self.register_names:
+                new_value = int(self.entry[j].get())
+                try:
+                    key = LUT[i]
+                except ValueError:
+                    text =  "-IGNORED: Invalid value for Register: %s" % i
+                    self.add_to_interactive_screen(text)
+                    continue
+                addr = key[0]
+                variable = key[1]
+                size = register[addr].reg_array[variable][1]
+                if new_value < 0 or new_value > 2**(size)-1:
+                    text = "-IGNORED: Value out of the range of the register: %d \n" % new_value
+                    self.add_to_interactive_screen(text)
+                else:
+                    register[addr].reg_array[variable][0] = new_value
+                    text = "Register: %s Value: %s \n" % (i,new_value)
+                    self.add_to_interactive_screen(text)
+                j += 1
+            data = []
+            data_intermediate = []
+            for x in register[addr].reg_array:
+                data_intermediate = dec_to_bin_with_stuffing(x[0], x[1])
+                data.extend(data_intermediate)
+            data.reverse()
+            paketti = self.SC_encoder.create_SC_packet(addr,data,"WRITE",0)
+            write_instruction(1, FCC_LUT[paketti[0]], 1)
+            for x in range(1,len(paketti)):
+                write_instruction(1, FCC_LUT[paketti[x]], 0)
+            self.execute()
 
     def change_channel(self):
         register = int(self.channel_entry.get())
@@ -526,6 +568,7 @@ class VFAT3_GUI:
         self.channel_button.grid_forget()
 
         if self.value == "Channels":
+            self.register_mode = 'rw'
             register_nr = 0
             description = "Settings for the channels."
             cal = "cal%d" % self.channel_register
@@ -541,99 +584,149 @@ class VFAT3_GUI:
             self.channel_button.grid(column = 2, row = 0, sticky='e')
 
         elif self.value == "Control Logic":
+            self.register_mode = 'rw'
             register_nr = 129
             description = "Settings for the control logic."
             self.register_names = ["PS","SyncLevelEnable","ST","DDR"]
 
         elif self.value == "Data Packet":
+            self.register_mode = 'rw'
             register_nr = 130
             description = "Settings for the data packets."
             self.register_names = ["P16","PAR","DT","SZP","SZD","TT","ECb","BCb"]
 
         elif self.value == "Front End":
+            self.register_mode = 'rw'
             register_nr = 131
             description = "Settings for the Front End."
             self.register_names = ["TP_FE","RES_PRE","CAP_PRE"]
 
         elif self.value == "CFD":
+            self.register_mode = 'rw'
             register_nr = 132
-            description = "Settings for the CFD"
+            description = "Settings for the CFD."
             self.register_names = ["PT","EN_HYST","SEL_POL","Force_En_ZCC","Force_TH","SEL_COMP_MODE"]
 
         elif self.value == "Monitoring":
+            self.register_mode = 'rw'
             register_nr = 133
             description = "Settings for the Monitoring."
             self.register_names = ["VREF_ADC","Mon_Gain","Monitor_Sel"]
 
         elif self.value == "Global reference current":
+            self.register_mode = 'rw'
             register_nr = 134
             description = "Tuning of the global reference current."
             self.register_names = ["Iref"]
 
         elif self.value == "Global Threshold":
+            self.register_mode = 'rw'
             register_nr = 135
             description = "Settings for the global thresholds."
             self.register_names = ["ZCC_DAC","ARM_DAC"]
 
         elif self.value == "Global Hysteresis":
+            self.register_mode = 'rw'
             register_nr = 136
             description = "Setting of the global hysteresis."
             self.register_names = ["HYST_DAC"]
 
         elif self.value == "Latency":
+            self.register_mode = 'rw'
             register_nr = 137
             description = "Setting of the Latency."
             self.register_names = ["LAT"]
 
         elif self.value == "Calibration 0":
+            self.register_mode = 'rw'
             register_nr = 138
             description = "Settings for the Calibration Pulse."
             self.register_names = ["CAL_SEL_POL","CAL_PHI","CAL_EXT","CAL_DAC","CAL_MODE"]
 
         elif self.value == "Calibration 1":
+            self.register_mode = 'rw'
             register_nr = 139
             description = "Settings for the Calibration Pulse."
             self.register_names = ["CAL_FS","CAL_DUR"]
 
         elif self.value == "Biasing 0":
+            self.register_mode = 'rw'
             register_nr = 140
             description = "Settings for the CFD biasing."
             self.register_names = ["CFD_DAC_2","CFD_DAC_1"]
 
         elif self.value == "Biasing 1":
+            self.register_mode = 'rw'
             register_nr = 141
             description = "Settings for the Front End biasing."
             self.register_names = ["PRE_I_BSF","PRE_I_BIT"]
 
         elif self.value == "Biasing 2":
+            self.register_mode = 'rw'
             register_nr = 142
             description = "Settings for the Front End biasing."
             self.register_names = ["PRE_I_BLCC","PRE_VREF"]
 
         elif self.value == "Biasing 3":
+            self.register_mode = 'rw'
             register_nr = 143
             description = "Settings for the Front End biasing."
             self.register_names = ["SH_I_BFCAS","SH_I_BDIFF"]
 
         elif self.value == "Biasing 4":
+            self.register_mode = 'rw'
             register_nr = 144
             description = "Settings for the Front End biasing."
             self.register_names = ["SD_I_BDIFF"]
 
         elif self.value == "Biasing 5":
+            self.register_mode = 'rw'
             register_nr = 145
             description = "Settings for the Front End biasing."
             self.register_names = ["SD_I_BSF","SD_I_BFCAS"]
 
         elif self.value == "Biasing 6":
+            self.register_mode = 'rw'
             register_nr = 146
             description = "Settings for the SLVS biasing."
             self.register_names = ["SLVS_IBIAS","SLVS_VREF"]
 
         elif self.value == "SLEEP/RUN":
+            self.register_mode = 'rw'
             register_nr = 65535
             description = "Setting of the RUN-bit to switch between SLEEP- and RUN-mode."
             self.register_names = ["RUN"]
+
+        elif self.value == "HW_ID_ID":
+            self.register_mode = 'r'
+            register_nr = 65536
+            description = "Hardware ID."
+            self.register_names = ["ID"]
+
+        elif self.value == "HW_ID_VER":
+            self.register_mode = 'r'
+            register_nr = 65537
+            description = "Hardware version."
+            self.register_names = ["VER"]
+
+        elif self.value == "HW_RW_REG":
+            self.register_mode = 'rw'
+            register_nr = 65538
+            description = "GEneral purpose register."
+            self.register_names = ["RW_REG"]
+
+        elif self.value == "HW_CHIP_ID":
+            self.register_mode = 'r'
+            register_nr = 65539
+            description = "ID number of the chip."
+            self.register_names = ["CHIP_ID"]
+
+
+
+
+
+
+
         else:
             self.register_names = []
 
@@ -654,7 +747,7 @@ class VFAT3_GUI:
         self.separator.grid(column=0, row=2, columnspan=2, sticky='ew')
 
 
-        # Read register value from the chip and save it to the register object.
+        # Read a register value from the chip and save it to the corresponding register object.
         text =  "Reading the register: %d\n" %register_nr
         self.add_to_interactive_screen(text)
 
@@ -671,7 +764,10 @@ class VFAT3_GUI:
             print "Read data:"
             new_data = output[0][0].data
             print new_data
-            new_data = ''.join(str(e) for e in new_data)
+            if register_nr in [65536,65537,65538,65539]:
+                new_data = ''.join(str(e) for e in new_data)
+            else:
+                new_data = ''.join(str(e) for e in new_data[-16:])
             register[register_nr].change_values(new_data)
 
 
@@ -684,12 +780,20 @@ class VFAT3_GUI:
                 continue
             addr = key[0]
             variable = key[1]
+            print addr
+            print variable
             current_value = register[addr].reg_array[variable][0]
             self.label.append(Label(self.register_data_frame, text=i))
             self.label[j].grid(column=0,row = j+3, sticky='e')
-            self.entry.append(Entry(self.register_data_frame, width=5))
+            if register_nr in [65536,65537,65538,65539]:
+                entry_width = 12
+            else:
+                entry_width = 5
+            self.entry.append(Entry(self.register_data_frame, width=entry_width))
             self.entry[j].grid(column = 1, row = j+3, sticky= 'w')
             self.entry[j].insert(0, current_value)
+            if self.register_mode == 'r':
+                self.entry[j].config(state='disabled')
             size = register[addr].reg_array[variable][1]
             text = "(0 - %d)" % (2**size-1)
             self.range.append(Label(self.register_data_frame, text=text))

@@ -3,7 +3,7 @@
 # Lappeenranta University of Technology
 ###########################################
 
-
+import serial
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/python_scripts_thomas/kernel")
 from ipbus import *
@@ -24,6 +24,9 @@ class FW_interface:
             with open("./data/FPGA_statusfile.dat", "w") as myfile:
                 print "Entering Simulation mode."
                 myfile.write("0")
+        if self.simulation_mode == 2: #Aamir mode
+            print "Entering Aamir mode."
+            self.ser = serial.Serial('/dev/tty.usbserial', 9600, timeout=0.5)
 
 
     def write_control(self,input_value):
@@ -38,7 +41,6 @@ class FW_interface:
         print value
         return value
 
-
     def write_fifo(self):
         with open("./data/FPGA_instruction_list.dat", 'r') as f:
             for line in f:
@@ -50,8 +52,6 @@ class FW_interface:
                 print data_line
                 print int(data_line,2)
                 data_line = ""
-
-
 
     def read_fifo(self):
         open("./data/FPGA_output.dat", 'w').close()
@@ -75,7 +75,7 @@ class FW_interface:
                 counter += 1
                 status = self.read_control()
                 if counter == 20:
-                    print "Timeout, no response from the chip."
+                    print "Timeout, no response from the firmware."
                     timeout = 1
                     break
                 if status == 3:
@@ -91,7 +91,7 @@ class FW_interface:
             while(True):
                 counter += 1
                 if counter == 20:
-                    print "Timeout, no response from the chip."
+                    print "Timeout, no response from the firmware."
                     timeout = 1
                     break
                 with open('./data/FPGA_statusfile.dat', 'r') as f:
@@ -105,11 +105,39 @@ class FW_interface:
                         myfile.write("0")
                     break
 
+
+
+        ############### Aamir mode #####################333
+        if self.simulation_mode == 2:
+            self.ser.write('\xca')
+            print '\xca'
+            with open("./data/FPGA_instruction_list.dat", 'r') as f0:
+                for i, l in enumerate(f):
+                    pass
+            f0.close()
+            size = i + 1
+            print hex(size)
+            self.ser.write(hex(size))
+            with open("./data/FPGA_instruction_list.dat", 'r') as f:
+                for line in f:
+                        line = line.rstrip('\n')
+                        data_line = line[-4:]
+                        if data_line == '1000':
+                            print '\x96'
+                            self.ser.write('\x96')
+                        if data_line == '1001':
+                            self.ser.write('\x99')
+                            print '\x99'
+                        print data_line
+                        timeout = 1
+
+
+
         if not timeout:
             output_data = decode_output_data('./data/FPGA_output_list.dat',register)
             open("./data/FPGA_output_list.dat", 'w').close()
         else:
-            output_data = ['Error','Timeout, no response from the chip.']
+            output_data = ['Error','Timeout, no response from the firmware.']
         return output_data
 
 
