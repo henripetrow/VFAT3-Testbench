@@ -134,6 +134,9 @@ class FW_interface:
             self.ser.write(hex(202)
             print hex(202) # Writing ca
             time.sleep(0.1)
+
+            self.ser.write(hex(0))
+            time.sleep(0.1)
             with open("./data/FPGA_instruction_list.dat", 'r') as f0:
                 for i, l in enumerate(f0):
                     pass
