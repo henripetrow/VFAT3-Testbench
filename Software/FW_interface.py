@@ -3,7 +3,7 @@
 # Lappeenranta University of Technology
 ###########################################
 
-#import serial
+import serial
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/python_scripts_thomas/kernel")
 from ipbus import *
@@ -26,7 +26,7 @@ class FW_interface:
                 myfile.write("0")
         if self.simulation_mode == 2: #Aamir mode
             print "Entering Aamir mode."
-            self.ser = serial.Serial('COM3', 9600, timeout=0.5)
+            #self.ser = serial.Serial('COM2', 9600, timeout=0.5)
 
         self.FCC_LUT_L = {
         "0000":"00010111",
@@ -131,41 +131,60 @@ class FW_interface:
 
         ############### Aamir mode #####################333
         if self.simulation_mode == 2:
-            self.ser.write(hex(202)
-            print hex(202) # Writing ca
-            time.sleep(0.1)
+            ser = serial.Serial('COM2', baudrate=9600, writeTimeout=0)
+            # ser.baudrate =9600
+            ser.bytesize = serial.EIGHTBITS  # number of bits per bytes
+            ser.parity = serial.PARITY_NONE  # set parity check: no parity
+            ser.stopbits = serial.STOPBITS_ONE  # number of stop bits
+            # ser.timeout = None          #block read
+            # ser.timeout = 1  # non-block read
+            ser.timeout = 10  # timeout block read
+            ser.xonxoff = True  # disable software flow control
+            ser.rtscts = False  # disable hardware (RTS/CTS) flow control
+            ser.dsrdtr = False  # disable hardware (DSR/DTR) flow control
+            # ser.writeTimeout = 100  # timeout for write
 
-            self.ser.write(hex(0))
-            time.sleep(0.1)
+            data = "\xca"
+            ser.write(data)
+            data = "\x00"
+            ser.write(data)
+            #data = "\x03"
+            #ser.write(data)
+
+            output_byte_list = []
             with open("./data/FPGA_instruction_list.dat", 'r') as f0:
                 for i, l in enumerate(f0):
                     pass
             f0.close()
             size = i + 1
-            print hex(size)
-            self.ser.write(hex(size))
-            time.sleep(0.1)
+            output_byte_list.append(size)
+
             with open("./data/FPGA_instruction_list.dat", 'r') as f:
                 for line in f:
-                        line = line.rstrip('\n')
-                        data_line = line[-4:]
-                        data_line = self.FCC_LUT_L[data_line]
-                        data_line = int(data_line,2)
-                        print hex(data_line)
-                        self.ser.write(hex(data_line))
-                        time.sleep(0.1)
+                    line = line.rstrip('\n')
+                    data_line = line[-4:]
+                    data_line = self.FCC_LUT_L[data_line]
+                    data_line = int(data_line, 2)
+                    output_byte_list.append(data_line)
 
 
-                        timeout = 1
 
+            ser.write(bytearray(output_byte_list))
 
+            open("./data/FPGA_output_list.dat", 'w').close()
+            for i in range(0,1024):
+                data = ser.read()
+                data = ord(data)
+                data = dec_to_bin_with_stuffing(data, 8)
+                data = ''.join(str(e) for e in data)
+                data = "000000000001,%s\n" % data
+                with open("./data/FPGA_output_list.dat", "a") as myfile:
+                    myfile.write(data)
+            timeout = 0
 
         if not timeout:
             output_data = decode_output_data('./data/FPGA_output_list.dat',register)
-            open("./data/FPGA_output_list.dat", 'w').close()
+            #open("./data/FPGA_output_list.dat", 'w').close()
         else:
             output_data = ['Error','Timeout, no response from the firmware.']
         return output_data
-
-
-            
