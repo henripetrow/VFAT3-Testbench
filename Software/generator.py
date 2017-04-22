@@ -32,7 +32,7 @@ def generator(input_file):
                     generation_error_list.append(text)
                     continue
 
-                # Write to Slow Control
+                ######### Write to Slow Control
                 if split_line[1] == "Write":
                     # Check the given parameters.
                     try:
@@ -55,7 +55,7 @@ def generator(input_file):
                         instruction_list.write_to_file()
                         instruction_list.clear()
 
-                # Read from slow Control.
+                ######### Read from slow Control.
                 elif split_line[1] == "Read":
                     text = "-Read from Slow Control. Address: %s" % split_line[2]
                     generation_output_list.append(text)
@@ -77,11 +77,11 @@ def generator(input_file):
                         instruction_list.write_to_file()
                         instruction_list.clear()
 
-               # write default values to the register.
+               ######### write default values to the register.
                 elif split_line[1] == "Write_defaults":
                         instruction_list.write_register_defaults()
 
-                # Send a single FCC command.
+                ######### Send a single FCC command.
                 elif split_line[1] == "Send":
                     text = "-Send a Fast Control Command: %s" % split_line[2]
                     generation_output_list.append(text)
@@ -95,7 +95,7 @@ def generator(input_file):
                         instruction_list.write_to_file()
                         instruction_list.clear()
 
-                # Start a repeat loop.
+                ##### Start a repeat loop.
                 elif split_line[1] == "Repeat":
                     text = "Starting repeat"
                     generation_output_list.append(text)

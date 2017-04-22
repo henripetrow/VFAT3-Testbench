@@ -114,6 +114,7 @@ class datapacket:
         self.crc_error = 0
         self.received_crc = 0
         self.calculated_crc = 0
+        self.hit_found = 0
 
     def ready(self,dataformat_register):
         print "****************"
@@ -160,6 +161,10 @@ class datapacket:
                     self.data += "00000000"
                     
         print "****************"
+
+        if '1' in self.data:
+            self.hit_found = 1
+
 
         if self.data:            
             print "DATA:"
@@ -262,8 +267,8 @@ def decode_output_data(filename,register):
                 print "******SyncVerifAck********"
 
             # DATA PACKETS
-            print ""
-            print "Reading line: %s" % input_value
+            #print ""
+            #print "Reading line: %s" % input_value
             #print "datapacket byte counter: %d" % datapacket_byte_counter
  
             if (input_value == HDR_1 or input_value == HDR_1W) and datapacket_status == "IDLE": # See if the read line is Header 1.

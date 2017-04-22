@@ -23,6 +23,16 @@ class instruction_object:
 
         self.SC_encoder = SC_encode()
 
+        CalPulse_list = []
+        FCC_list = []
+        Register_change_list = []
+        Register_read_list = []
+        event_list = []
+
+    def get_events(self):
+        event_list = [CalPulse_list,FCC_list,Register_change_list,Register_read_list]
+        return event_list
+
     def add(self, command_type, BCd, command_addr_register, increment):
         new_instruction = [command_type, BCd, command_addr_register, increment]
         self.instruction_list.append(new_instruction)
@@ -37,16 +47,26 @@ class instruction_object:
         for line in self.instruction_list:
             command_type = line[0]
             BCd = line[1]
-  
+              
             # FCC
             if command_type == "FCC":
                 command = line[2]
                 command_bin = FCC_LUT[command] # Add error checks.  # BCd comes reversed?
                 write_instruction(BCd, command_bin, 0)
-
                 self.BCcounter = self.BCcounter + BCd
                 with open("./data/sent_FCCs.dat", "a") as myfile:
                     myfile.write("%d %s\n" % (self.BCcounter,command))
+
+                ####### Information collection
+                if command == "CalPulse":
+                    channel_list = []
+                    for i in range(0,129):
+                        if not register[i].mask:             
+                            if register[i].cal:
+                                channel_list.append(i)
+                    CalPulse_list.append([self.BCcounter,channel_list])
+                else:
+                    FCC_list.append([self.BCcounter,command])
 
             # READ
             elif command_type == "READ":
@@ -60,6 +80,9 @@ class instruction_object:
                 for x in range(1,len(paketti)):     
                     write_instruction(1, FCC_LUT[paketti[x]])
                     self.BCcounter = self.BCcounter + 1
+
+                Register_read_list.append([self.BCcounter,addr])
+
 
             # WRITE
             elif command_type == "WRITE" or command_type == "WRITE_REPEAT":   			########## Need a read repeat.
@@ -87,9 +110,7 @@ class instruction_object:
                 if new_value < 0 or new_value > 2**(size)-1:
                     print "-IGNORED: Value out of the range of the register: %d" % new_value
                     continue
-               # if new_value == current_value:
-                #    print "-IGNORED: New value: %d is the same as the current value: %d" % (new_value,current_value)
-                 #   continue
+
 
                 register[addr].reg_array[variable][0] = new_value
                 
@@ -107,22 +128,9 @@ class instruction_object:
 
 
                 # Snapshots of register changes for the decoding of the outputdata.
-                # DATAFORMAT
-                if addr == 130:                                                             # Record changes in the data format register. this is used when decoding outcoming data.
-                    with open("data/datapacket_register_changes.dat", "a") as myfile:
-                         myfile.write("%s %s" % (self.BCcounter,data))
+                Register_read_list.append([self.BCcounter,register])
  
-               # CHANNEL CAL AND MASK -BITS
-                if 0 <= addr <= 128:
-                    cal_list = []
-                    mask_list = []
-                    for i in range(128):
-                        cal_list.append(register[i].reg_array[0][0])
-                        mask_list.append(register[i].reg_array[1][0])
-                    cal_list = ''.join(str(e) for e in cal_list)
-                    mask_list = ''.join(str(e) for e in mask_list)
-                    with open("data/channel_states.dat", "a") as myfile:
-                        myfile.write("%s %s %s \n" % (self.BCcounter,cal_list,mask_list))
+
 
 
                 # Write instructions

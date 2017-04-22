@@ -22,13 +22,13 @@ class VFAT3_GUI:
         if len(sys.argv) >= 2:
             if sys.argv[1] == '-s':
                 self.interfaceFW = FW_interface(1)      #  1 - Simulation mode(with simulation model)
-            if sys.argv[1] == '-a' or sys.argv[1] == '-a_nr':
+            elif sys.argv[1] == '-a' or sys.argv[1] == '-a_nr':
                 self.interfaceFW = FW_interface(2)      #  1 - Simulation mode(with simulation model)
             else:
                 print "Unrecognised option."
-                self.interfaceFW = FW_interface(0)      # 0 - Normal mode(with Firmware)
+                self.interfaceFW = FW_interface(2)      # 0 - Normal mode(with Firmware)
         else:
-            self.interfaceFW = FW_interface(0)          # 0 - Normal mode(with Firmware)         
+            self.interfaceFW = FW_interface(2)          # 0 - Normal mode(with Firmware)         
         self.SC_encoder = SC_encode()
         self.channel_register = 0
         self.value = ""
@@ -61,7 +61,11 @@ class VFAT3_GUI:
         modemenu.add_command(label="Scans/Test", command=lambda:self.change_mode("scans_tests"))
         modemenu.add_separator()
         modemenu.add_command(label="Production", command=lambda:self.change_mode("production"))
+        modemenu.entryconfig(1, state=DISABLED)
+        modemenu.entryconfig(3, state=DISABLED)
         menubar.add_cascade(label="Mode", menu=modemenu)
+
+
 
         helpmenu = Menu(menubar, tearoff=0)
         helpmenu.add_command(label="About")
