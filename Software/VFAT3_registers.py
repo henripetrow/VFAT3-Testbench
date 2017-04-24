@@ -331,7 +331,7 @@ class GBL_CFG_RUN:
         self.reg_array = [self.empty1,self.RUN]
 
     def change_values(self, new_values):
-        self.RUN[0] = int(new_values[15],2)
+        self.RUN[0] = int(new_values[-1],2)
 
 register[65535] = GBL_CFG_RUN()
 
@@ -1124,7 +1124,7 @@ LUT = {
 "SLVS_IBIAS":[146,1],
 "SLVS_VREF":[146,2],
 #
-"RUN":[65535,0],
+"RUN":[65535,1],
 "ID":[65536,0],
 "VER":[65537,0],
 "RW_REG":[65538,0],
