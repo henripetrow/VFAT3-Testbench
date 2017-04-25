@@ -61,7 +61,7 @@ class VFAT3_GUI:
         modemenu.add_command(label="Scans/Test", command=lambda:self.change_mode("scans_tests"))
         modemenu.add_separator()
         modemenu.add_command(label="Production", command=lambda:self.change_mode("production"))
-        modemenu.entryconfig(1, state=DISABLED)
+       # modemenu.entryconfig(1, state=DISABLED)
         modemenu.entryconfig(3, state=DISABLED)
         menubar.add_cascade(label="Mode", menu=modemenu)
 
@@ -90,6 +90,9 @@ class VFAT3_GUI:
 
         self.misc_frame = ttk.Frame(self.nb)
         self.misc_frame.grid()
+
+        self.FW_frame = ttk.Frame(self.nb)
+        self.FW_frame.grid()
 
         ##########FCC TAB################################
         self.label = Label(self.FCC_frame, text="Send Fast Control Commands (FCC)")
@@ -195,6 +198,9 @@ class VFAT3_GUI:
         self.apply_button.grid(column=0,row=0)
         self.default_button = Button(self.register_button_frame, text="Defaults")
         self.default_button.grid(column=1, row=0)
+        self.default_button.config(state="disabled")
+        self.refresh_button = Button(self.register_button_frame, text="Refresh", command = lambda: self.update_registers(self.value))
+        self.refresh_button.grid(column=3, row=0)
 
         self.channel_label = Label(self.register_data_frame, text = "Channel:")
         self.channel_label.grid(column = 0, row= 0, sticky='e')
@@ -238,10 +244,21 @@ class VFAT3_GUI:
         self.CalPulse_LV1A_label0.grid(column = 4, row= 4, sticky='e')
 
 
+        ################ FW CONFIGURE TAB #######################################
+
+
+        self.sync_button = Button(self.FW_frame, text="ReSync Firmware", command= lambda: self.FW_sync(), width = bwidth)
+        self.sync_button.grid(column = 1, row= 2, sticky='e')
+
+
+
+
+
         # ADD TABS
         self.nb.add(self.FCC_frame, text="FCC")
         self.nb.add(self.register_frame, text="Registers")
         self.nb.add(self.misc_frame, text="misc.")
+        self.nb.add(self.FW_frame, text="Firmware")
         self.nb.grid(column = 0, row = 0)
 
         #self.nb.grid_forget()
@@ -261,13 +278,20 @@ class VFAT3_GUI:
      
         self.scan_options = [
                 "FCC Check",
-                "E-port priority modes",
-                "DAC scans",
-                "Latency scan",
-                "Consecutive Triggers",
-                "Data Packet Options",
-                "Pulse Stretcher"
-
+                "ZCC_DAC scan",
+                "ARM_DAC scan",
+                "HYST_DAC scan",
+                "CFD_DAC_1 scan",
+                "CFD_DAC_2 scan",
+                "PRE_I_BSF scan",
+                "PRE_I_BIT scan",
+                "PRE_I_BLCC scan",
+                "PRE_VREF scan",
+                "SH_I_BFCAS scan",
+                "SH_I_BDIFF scan",
+                "SD_I_BDIFF scan",
+                "SD_I_BSF scan",
+                "SD_I_BFCAS scan"
                 ]
         self.chosen_scan = self.scan_options[0]
         self.scan_variable = StringVar(master)
@@ -422,6 +446,23 @@ class VFAT3_GUI:
             self.scan_frame.grid(column=0,row=0)
             self.scan_frame.grid_propagate(False)
 
+
+################# MISC-TAB FUNCTIONS ################################
+
+
+
+    def FW_sync(self):
+        text =  "-> Resynchronising Firmware.\n"
+        self.add_to_interactive_screen(text)
+        command_encoded = FCC_LUT["CC-A"]
+        write_instruction(1, command_encoded,1)
+        write_instruction(1, command_encoded,0)
+        write_instruction(1, command_encoded,0)
+        self.execute()
+
+
+
+
 ################# MISC-TAB FUNCTIONS ################################
 
 
@@ -460,7 +501,19 @@ class VFAT3_GUI:
         write_instruction(150, FCC_LUT[paketti[0]], 0)
         for x in range(1,len(paketti)):
             write_instruction(1, FCC_LUT[paketti[x]], 0)
-        self.execute()
+        output = self.execute()
+        if output[0] == "Error":
+            text =  "%s: %s\n" %(output[0],output[1])
+            self.add_to_interactive_screen(text)
+        else:
+            if output[0]:
+                text =  "Received Values:\n"
+                self.add_to_interactive_screen(text)
+                text = "ADC0: %s\n" % int(''.join(map(str, output[0][0].data)),2)
+                self.add_to_interactive_screen(text) 
+                text = "ADC1: %s\n" % int(''.join(map(str, output[0][1].data)),2)
+                self.add_to_interactive_screen(text) 
+
 
     def send_Cal_trigger(self):
         latency = int(self.CalPulse_LV1A_entry.get())
@@ -516,6 +569,45 @@ class VFAT3_GUI:
         self.execute()
 
 ######################### REGISTER-TAB FUNCTIONS ####################
+
+    def apply_register_values(self):
+        if self.register_mode == 'r':
+            text = "The register is read only\n"
+            self.add_to_interactive_screen(text)
+        else:
+            text = "->Setting the register: %s \n" % self.value
+            self.add_to_interactive_screen(text)
+            j = 0
+            for i in self.register_names:
+                new_value = int(self.entry[j].get())
+                try:
+                    key = LUT[i]
+                except ValueError:
+                    text =  "-IGNORED: Invalid value for Register: %s" % i
+                    self.add_to_interactive_screen(text)
+                    continue
+                addr = key[0]
+                variable = key[1]
+                size = register[addr].reg_array[variable][1]
+                if new_value < 0 or new_value > 2**(size)-1:
+                    text = "-IGNORED: Value out of the range of the register: %d \n" % new_value
+                    self.add_to_interactive_screen(text)
+                else:
+                    register[addr].reg_array[variable][0] = new_value
+                    text = "Register: %s Value: %s \n" % (i,new_value)
+                    self.add_to_interactive_screen(text)
+                j += 1
+            data = []
+            data_intermediate = []
+            for x in register[addr].reg_array:
+                data_intermediate = dec_to_bin_with_stuffing(x[0], x[1])
+                data.extend(data_intermediate)
+            data.reverse()
+            paketti = self.SC_encoder.create_SC_packet(addr,data,"WRITE",0)
+            write_instruction(1, FCC_LUT[paketti[0]], 1)
+            for x in range(1,len(paketti)):
+                write_instruction(1, FCC_LUT[paketti[x]], 0)
+            self.execute()
 
     def apply_register_values(self):
         if self.register_mode == 'r':

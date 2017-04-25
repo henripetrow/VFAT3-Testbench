@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<connections>
-  <connection id="kintex7" uri="ipbusudp-2.0://192.168.0.222:50001"	address_table="file://address_regs.xml" />
-</connections>

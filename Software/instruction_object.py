@@ -23,15 +23,15 @@ class instruction_object:
 
         self.SC_encoder = SC_encode()
 
-        CalPulse_list = []
-        FCC_list = []
-        Register_change_list = []
-        Register_read_list = []
-        event_list = []
+        self.CalPulse_list = []
+        self.FCC_list = []
+        self.Register_change_list = []
+        self.Register_read_list = []
+        self.event_list = []
 
     def get_events(self):
-        event_list = [CalPulse_list,FCC_list,Register_change_list,Register_read_list]
-        return event_list
+        self.event_list = [self.CalPulse_list,self.FCC_list,self.Register_change_list,self.Register_read_list]
+        return self.event_list
 
     def add(self, command_type, BCd, command_addr_register, increment):
         new_instruction = [command_type, BCd, command_addr_register, increment]
@@ -64,9 +64,9 @@ class instruction_object:
                         if not register[i].mask:             
                             if register[i].cal:
                                 channel_list.append(i)
-                    CalPulse_list.append([self.BCcounter,channel_list])
+                    self.CalPulse_list.append([self.BCcounter,channel_list])
                 else:
-                    FCC_list.append([self.BCcounter,command])
+                    self.FCC_list.append([self.BCcounter,command])
 
             # READ
             elif command_type == "READ":
@@ -76,12 +76,12 @@ class instruction_object:
                 self.BCcounter = self.BCcounter + BCd
                 paketti = self.SC_encoder.create_SC_packet(addr,data,"READ",self.BCcounter)
 
-                write_instruction(BCd, command, 0)
+                write_instruction(BCd, FCC_LUT[paketti[0]], 0)
                 for x in range(1,len(paketti)):     
-                    write_instruction(1, FCC_LUT[paketti[x]])
+                    write_instruction(1, FCC_LUT[paketti[x]],0)
                     self.BCcounter = self.BCcounter + 1
 
-                Register_read_list.append([self.BCcounter,addr])
+                self.Register_read_list.append([self.BCcounter,addr])
 
 
             # WRITE
@@ -128,7 +128,7 @@ class instruction_object:
 
 
                 # Snapshots of register changes for the decoding of the outputdata.
-                Register_read_list.append([self.BCcounter,register])
+                self.Register_read_list.append([self.BCcounter,register])
  
 
 

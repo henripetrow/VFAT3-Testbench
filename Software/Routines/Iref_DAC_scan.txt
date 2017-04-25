@@ -1,0 +1,30 @@
+100 Send CC-A
+1 Send CC-A
+1 Send CC-A
+
+10 Write ST 1
+10 Write CAL_MODE 1
+10 Write CAL_DAC 100
+10 Write CAL_DUR 1
+
+10 Write Monitor_Sel 0
+
+10 Write Iref 0
+
+10 Repeat 63
+
+10 Write Iref 1
+
+10 Read 131072
+10 Read 131073
+
+10 Read 131072
+10 Read 131073
+
+10 Read 131072
+10 Read 131073
+
+10 Read 131072
+10 Read 131073
+
+10 End_Repeat

@@ -393,6 +393,9 @@ class HW_PROG:
 
 register[65540] = HW_PROG()
 
+
+# These are only read through the button so no need for extra components.
+
 class ADC_READ_0:
     def __init__(self):
         self.ADC_0 = 0
@@ -1128,7 +1131,9 @@ LUT = {
 "ID":[65536,0],
 "VER":[65537,0],
 "RW_REG":[65538,0],
-"CHIP_ID":[65539,0]
+"CHIP_ID":[65539,0],
+"ADC_0":[131072,1],
+"ADC_1":[131073,1]
 }
 
 FCC_LUT = {

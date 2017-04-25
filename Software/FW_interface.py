@@ -3,7 +3,7 @@
 # Lappeenranta University of Technology
 ###########################################
 
-import serial
+#import serial
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/python_scripts_thomas/kernel")
 from ipbus import *
@@ -26,7 +26,6 @@ class FW_interface:
                 myfile.write("0")
         if self.simulation_mode == 2: #Aamir mode
             print "Entering Aamir mode."
-            #self.ser = serial.Serial('COM2', 9600, timeout=0.5)
 
         self.FCC_LUT_L = {
         "0000":"00010111",
@@ -131,7 +130,7 @@ class FW_interface:
 
         ############### Aamir mode #####################333
         if self.simulation_mode == 2:
-            ser = serial.Serial('COM2', baudrate=9600, writeTimeout=0)
+            ser = serial.Serial('COM2', baudrate=115200, writeTimeout=0)
             # ser.baudrate =9600
             ser.bytesize = serial.EIGHTBITS  # number of bits per bytes
             ser.parity = serial.PARITY_NONE  # set parity check: no parity
@@ -184,7 +183,7 @@ class FW_interface:
 
         if not timeout:
             output_data = decode_output_data('./data/FPGA_output_list.dat',register)
-            #open("./data/FPGA_output_list.dat", 'w').close()
+            open("./data/FPGA_output_list.dat", 'w').close()
         else:
             output_data = ['Error','Timeout, no response from the firmware.']
         return output_data
