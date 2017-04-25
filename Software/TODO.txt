@@ -1,0 +1,5 @@
+- Possibility to write whole register.
+- Refresh button for registers.
+- Move register descriptions etc. to the objects.
+- When SLEEP set all register to defaults.
+- Scan data handling.
