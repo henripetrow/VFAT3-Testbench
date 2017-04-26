@@ -3,16 +3,39 @@
 # Lappeenranta University of Technology
 ###########################################
 
+
+
+# Slow control:
+# Syntax:   'Time' Write 'Reg(name of subregister)' 'Value/Increment(if in a repeat)(dec)'
+#           'Time' Write 'Reg(dec number of register)' 'Value(bin)'
+#           'Time' Read 'Address' 
+# FCC:
+# Syntax:
+#           'Time' Send 'Command' 
+#           'Time' Send_Repeat 'Command' '# times to repeat' 'interval' 
+# Repeat: 
+# Syntax: 
+#           'Time' Repeat '# times to repeat' 
+#           'Time' End_Repeat 
+
+
+
+
+
+import time
 import  os
 from instruction_object import *
 
 
-def generator(input_file):
+def generator(scan_name):
+    modified_scan_name = scan_name.replace(" ", "_")
+    input_file = "./routines/%s/instruction_list.txt" % modified_scan_name
     repeat_flag = 0
     repeat_times = 1
     generation_output_list = []
     generation_error_list = []
-    instruction_list = instruction_object()
+    instruction_list = instruction_object(modified_scan_name)
+    start = time.time()
     with open(input_file, 'rU') as f:
         for line in f:
             if line[0] == "#":
@@ -43,6 +66,7 @@ def generator(input_file):
                         generation_error_list.append(text)
                         continue
                     reg = split_line[2]
+
                     if repeat_flag == 1:
                         text =  "-Write to Slow Control. Register: %s, Increment: %s" % (split_line[2], split_line[3])
                         generation_output_list.append(text)
@@ -168,7 +192,11 @@ def generator(input_file):
     time_ms = time_us/1000.0
 
     specs = [num_lines,size,instruction_list.BCcounter,time_ms]
-    return [generation_output_list, generation_error_list, specs]
+    events = instruction_list.get_events()
+    stop = time.time()
+    print("Generation time (minutes):")
+    print(stop - start)/60
+    return [generation_output_list, generation_error_list, specs, events]
 
 
 

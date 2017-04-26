@@ -3,12 +3,12 @@
 # Lappeenranta University of Technology
 ###########################################
 
-def write_instruction(BCd, command, erase):
+def write_instruction(input_file, BCd, command, erase):
     if erase == 1:
-        open("./data/FPGA_instruction_list.dat", 'w').close() 
+        open(input_file, 'w').close() 
     BCd = dec_to_bin_with_stuffing(BCd,12)
     BCd = ''.join(str(e) for e in BCd)
-    with open("./data/FPGA_instruction_list.dat", "a") as myfile:
+    with open(input_file, "a") as myfile:
         myfile.write("%s%s\n" % (BCd,command))
 
 def write_register_default_values(value):

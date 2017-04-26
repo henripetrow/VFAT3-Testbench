@@ -85,7 +85,7 @@ class FW_interface:
                 with open("./data/FPGA_output.dat", "a") as myfile:
                     myfile.write("%s" % line)
 
-    def launch(self,register):
+    def launch(self,register,file_name):
         timeout = 0
         ########### NORMAL MODE ##########
         if self.simulation_mode == 0:
@@ -111,7 +111,7 @@ class FW_interface:
             counter = 0
             while(True):
                 counter += 1
-                if counter == 20:
+                if counter == 60:
                     print "Timeout, no response from the firmware."
                     timeout = 1
                     break
@@ -145,20 +145,22 @@ class FW_interface:
 
             data = "\xca"
             ser.write(data)
-            data = "\x00"
-            ser.write(data)
-            #data = "\x03"
+            #data = "\x00"
             #ser.write(data)
 
+
             output_byte_list = []
-            with open("./data/FPGA_instruction_list.dat", 'r') as f0:
+            with open(file_name, 'r') as f0:
                 for i, l in enumerate(f0):
                     pass
             f0.close()
             size = i + 1
-            output_byte_list.append(size)
 
-            with open("./data/FPGA_instruction_list.dat", 'r') as f:
+            c, f= divmod(size, 1<<8)        # split the size to 8 bit lsb and msb
+            output_byte_list.append(c)
+            output_byte_list.append(f)
+
+            with open(file_name, 'r') as f:
                 for line in f:
                     line = line.rstrip('\n')
                     data_line = line[-4:]

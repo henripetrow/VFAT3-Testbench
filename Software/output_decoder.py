@@ -63,8 +63,26 @@ class IPbus_response:
         print "Protocol: %d" % self.protocol
 
         if self.type_ID  == 0:
-            self.data = data[48:80]
-            self.data.reverse()
+            if self.words == 5:
+                self.data = []
+                data_store = data[48:80]
+                data_store.reverse()
+                self.data.append(data_store)
+                data_store = data[80:112]
+                data_store.reverse()
+                self.data.append(data_store)
+                data_store = data[112:144]
+                data_store.reverse()
+                self.data.append(data_store)
+                data_store = data[144:176]
+                data_store.reverse()
+                self.data.append(data_store)
+                data_store = data[176:208]
+                data_store.reverse()
+                self.data.append(data_store)
+            else:
+                self.data = data[48:80]
+                self.data.reverse()
             print "Data:"
             print self.data
         else:
@@ -72,7 +90,7 @@ class IPbus_response:
         if self.info_code == 0:
             print "Transaction ok."
         else:
-            print "!-> Transaction error %d", info_code     
+            print "!-> Transaction error %d ", self.info_code     
 
         received_crc_lsb = ''.join(map(str, data[-16:-8]))
         received_crc_msb = ''.join(map(str, data[-8:]))

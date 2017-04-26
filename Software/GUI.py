@@ -34,6 +34,7 @@ class VFAT3_GUI:
         self.value = ""
         self.CalPulseLV1A_latency = 4
         self.transaction_ID = 0
+        self.interactive_output_file = "./data/FPGA_instruction_list.dat"
         s = ttk.Style()
         s.configure('My.TFrame', background='white')
 
@@ -58,10 +59,10 @@ class VFAT3_GUI:
         # create more pulldown menus
         modemenu = Menu(menubar, tearoff=0)
         modemenu.add_command(label="Interactive", command=lambda:self.change_mode("interactive"))
-        modemenu.add_command(label="Scans/Test", command=lambda:self.change_mode("scans_tests"))
+        modemenu.add_command(label="Routines", command=lambda:self.change_mode("scans_tests"))
         modemenu.add_separator()
         modemenu.add_command(label="Production", command=lambda:self.change_mode("production"))
-       # modemenu.entryconfig(1, state=DISABLED)
+        modemenu.entryconfig(1, state=DISABLED)
         modemenu.entryconfig(3, state=DISABLED)
         menubar.add_cascade(label="Mode", menu=modemenu)
 
@@ -157,6 +158,7 @@ class VFAT3_GUI:
                 "Latency",
                 "Calibration 0",
                 "Calibration 1",
+                "Front End DACs",
                 "Biasing 0",
                 "Biasing 1",
                 "Biasing 2",
@@ -247,9 +249,9 @@ class VFAT3_GUI:
         ################ FW CONFIGURE TAB #######################################
 
 
-        self.sync_button = Button(self.FW_frame, text="ReSync Firmware", command= lambda: self.FW_sync(), width = bwidth)
-        self.sync_button.grid(column = 1, row= 2, sticky='e')
-
+        self.fwsync_button = Button(self.FW_frame, text="ReSync Firmware", command= lambda: self.FW_sync(), width = bwidth)
+        self.fwsync_button.grid(column = 1, row= 2, sticky='e')
+        self.fwsync_button.config(state="disabled")
 
 
 
@@ -357,9 +359,9 @@ class VFAT3_GUI:
         self.add_to_interactive_screen(text)
         for i in range(129,146):
             paketti = self.SC_encoder.create_SC_packet(i,0,"READ",0)
-            write_instruction(150, FCC_LUT[paketti[0]], 1)
+            write_instruction(self.interactive_output_file,150, FCC_LUT[paketti[0]], 1)
             for x in range(1,len(paketti)):
-                write_instruction(1, FCC_LUT[paketti[x]], 0)
+                write_instruction(self.interactive_output_file,1, FCC_LUT[paketti[x]], 0)
             output = self.execute()
             if output[0] == "Error":
                 text =  "%s: %s\n" %(output[0],output[1])
@@ -380,7 +382,7 @@ class VFAT3_GUI:
         self.interactive_screen.delete(1.0,END)
 
     def execute(self):
-        output = self.interfaceFW.launch(register)
+        output = self.interfaceFW.launch(register,self.interactive_output_file)
         if output[0] == "Error":
             text =  "%s: %s\n" %(output[0],output[1])
             self.add_to_interactive_screen(text)
@@ -455,9 +457,9 @@ class VFAT3_GUI:
         text =  "-> Resynchronising Firmware.\n"
         self.add_to_interactive_screen(text)
         command_encoded = FCC_LUT["CC-A"]
-        write_instruction(1, command_encoded,1)
-        write_instruction(1, command_encoded,0)
-        write_instruction(1, command_encoded,0)
+        write_instruction(self.interactive_output_file,1, command_encoded,1)
+        write_instruction(self.interactive_output_file,1, command_encoded,0)
+        write_instruction(self.interactive_output_file,1, command_encoded,0)
         self.execute()
 
 
@@ -471,18 +473,18 @@ class VFAT3_GUI:
         text =  "->Sending sync request.\n"
         self.add_to_interactive_screen(text)
         command_encoded = FCC_LUT["CC-A"]
-        write_instruction(1, command_encoded,1)
-        write_instruction(1, command_encoded,0)
-        write_instruction(1, command_encoded,0)
+        write_instruction(self.interactive_output_file,1, command_encoded,1)
+        write_instruction(self.interactive_output_file,1, command_encoded,0)
+        write_instruction(self.interactive_output_file,1, command_encoded,0)
         self.execute()
 
     def send_idle(self):
         text =  "->Sending IDLE transaction.\n"
         self.add_to_interactive_screen(text)
         paketti = self.SC_encoder.create_SC_packet(0,0,"IDLE",0)
-        write_instruction(1, FCC_LUT[paketti[0]], 1)
+        write_instruction(self.interactive_output_file,1, FCC_LUT[paketti[0]], 1)
         for x in range(1,len(paketti)):
-            write_instruction(1, FCC_LUT[paketti[x]], 0)
+            write_instruction(self.interactive_output_file,1, FCC_LUT[paketti[x]], 0)
         self.execute()
 
     def read_ADCs(self):
@@ -493,14 +495,14 @@ class VFAT3_GUI:
         addr1 = 131073 # ADC0 address
 
         paketti = self.SC_encoder.create_SC_packet(addr0,0,"READ",0)
-        write_instruction(1, FCC_LUT[paketti[0]], 1)
+        write_instruction(self.interactive_output_file,1, FCC_LUT[paketti[0]], 1)
         for x in range(1,len(paketti)):
             write_instruction(1, FCC_LUT[paketti[x]], 0)
 
         paketti = self.SC_encoder.create_SC_packet(addr1,0,"READ",0)
-        write_instruction(150, FCC_LUT[paketti[0]], 0)
+        write_instruction(self.interactive_output_file,150, FCC_LUT[paketti[0]], 0)
         for x in range(1,len(paketti)):
-            write_instruction(1, FCC_LUT[paketti[x]], 0)
+            write_instruction(self.interactive_output_file,1, FCC_LUT[paketti[x]], 0)
         output = self.execute()
         if output[0] == "Error":
             text =  "%s: %s\n" %(output[0],output[1])
@@ -525,19 +527,42 @@ class VFAT3_GUI:
         CalPulse_encoded = FCC_LUT["CalPulse"]
         LV1A_encoded = FCC_LUT["LV1A"]
 
-        write_instruction(1, CalPulse_encoded, 1)
-        write_instruction(latency, LV1A_encoded, 0)
+        write_instruction(self.interactive_output_file,1, CalPulse_encoded, 1)
+        write_instruction(self.interactive_output_file,latency, LV1A_encoded, 0)
         self.execute()
 
 ################## SCAN/TEST -FUNCTIONS #############################
+
+
+    def generate_scan(self):
+        text =  "->Generating the scan instruction file: %s\n" % self.chosen_scan
+        self.add_to_interactive_screen(text)
+        scan_name = self.chosen_scan
+        output = generator(scan_name)
+
 
     def run_scan(self):
         text =  "->Running the scan: %s\n" % self.chosen_scan
         self.add_to_interactive_screen(text)
         scan_name = self.chosen_scan
         modified = scan_name.replace(" ", "_")
-        file_name = "./Routines/%s.txt" % modified
-        output = generator(file_name)
+        file_name = "./routines/%s.txt" % modified
+        output = generator(scan_name)
+
+
+        generation_events = output[3]
+
+        print "size of generation events0:"
+        print len(generation_events[0])
+        print "size of generation events1:"
+        print len(generation_events[1])
+        print "size of generation events2:"
+        print len(generation_events[2])
+        print "size of generation events3:"
+        print len(generation_events[3])
+
+       
+
         if self.verbose_var.get() == 1:
             for i in output[0]:
                 self.add_to_interactive_screen(i)
@@ -546,14 +571,52 @@ class VFAT3_GUI:
         text = "Lines: %d, Size:%d kb, Duration: %d BC, %f ms.\n" %(output[2][0],output[2][1],output[2][2],output[2][3])
         self.add_to_interactive_screen("Generated file:\n")
         self.add_to_interactive_screen(text)
-        self.execute()
+        self.scan_execute(scan_name,generation_events)
+
+    def scan_execute(self,scan_name,generation_events):
+        SC_writes = generation_events[3]
+        modified = scan_name.replace(" ", "_")
+        file_name = "./routines/%s/instruction_list.txt" % modified
+
+
+        output = self.interfaceFW.launch(register,file_name)
+        if output[0] == "Error":
+            text =  "%s: %s\n" %(output[0],output[1])
+            self.add_to_interactive_screen(text)
+        else:
+            text =  "Received Values:\n"
+            self.add_to_interactive_screen(text)
+            ADC_flag = 0
+            text = "%s|ADC0|ADC1\n" %scan_name[:-5]
+            self.add_to_interactive_screen(text)
+            for i in output[0]:
+                for k in generation_events[2]:
+                    if k[0] > i.BCd:
+                        break
+                    else:
+                        reg_value = k[2]
+        
+                if i.type_ID  == 0:
+                    if ADC_flag == 0:   
+                        fist_ADC_value = int(''.join(map(str, i.data)),2)
+                        ADC_flag = 1
+                    else:
+                        second_ADC_value = int(''.join(map(str, i.data)),2)
+                        text = "%d %d %d\n" % (reg_value,fist_ADC_value,second_ADC_value)
+                        self.add_to_interactive_screen(text)
+                        ADC_flag = 0
+
+
+        return output 
+
+
 
     def modify_scan(self):
         text =  "->Modifying the scan: %s\n" % self.chosen_scan
         self.add_to_interactive_screen(text)
         scan_name = self.chosen_scan
         modified = scan_name.replace(" ", "_")
-        file_name = "./Routines/%s.txt" % modified
+        file_name = "./routines/%s/instruction_list.txt" % modified
         proc = subprocess.Popen(['gedit', file_name])
 
     def choose_scan(self,value):
@@ -565,7 +628,7 @@ class VFAT3_GUI:
         text = "->Sending %s.\n" % command
         self.add_to_interactive_screen(text)
         command_encoded = FCC_LUT[command]
-        write_instruction(1, command_encoded,1)
+        write_instruction(self.interactive_output_file,1, command_encoded,1)
         self.execute()
 
 ######################### REGISTER-TAB FUNCTIONS ####################
@@ -604,15 +667,98 @@ class VFAT3_GUI:
                 data.extend(data_intermediate)
             data.reverse()
             paketti = self.SC_encoder.create_SC_packet(addr,data,"WRITE",0)
-            write_instruction(1, FCC_LUT[paketti[0]], 1)
+            write_instruction(self.interactive_output_file,1, FCC_LUT[paketti[0]], 1)
             for x in range(1,len(paketti)):
-                write_instruction(1, FCC_LUT[paketti[x]], 0)
+                write_instruction(self.interactive_output_file,1, FCC_LUT[paketti[x]], 0)
             self.execute()
 
     def apply_register_values(self):
         if self.register_mode == 'r':
             text = "The register is read only\n"
             self.add_to_interactive_screen(text)
+        elif self.value == "Front End DACs":
+            text = "->Setting the Front End DAC registers \n"
+            self.add_to_interactive_screen(text)
+            j = 0
+            for i in self.register_names:
+                new_value = int(self.entry[j].get())
+                try:
+                    key = LUT[i]
+                except ValueError:
+                    text =  "-IGNORED: Invalid value for Register: %s" % i
+                    self.add_to_interactive_screen(text)
+                    continue
+                addr = key[0]
+                variable = key[1]
+                size = register[addr].reg_array[variable][1]
+                if new_value < 0 or new_value > 2**(size)-1:
+                    text = "-IGNORED: Value out of the range of the register: %d \n" % new_value
+                    self.add_to_interactive_screen(text)
+                else:
+                    register[addr].reg_array[variable][0] = new_value
+                    text = "Register: %s Value: %s \n" % (i,new_value)
+                    self.add_to_interactive_screen(text)
+                j += 1
+            filler_16bits = [0]*16
+            full_data = []
+            data = []
+            data_intermediate = []
+            for x in register[141].reg_array:
+                data_intermediate = dec_to_bin_with_stuffing(x[0], x[1])
+                data.extend(data_intermediate)
+            data.reverse()
+            data.extend(filler_16bits)
+            print data
+            full_data.extend(data)
+
+            data = []
+            data_intermediate = []
+            for x in register[142].reg_array:
+                data_intermediate = dec_to_bin_with_stuffing(x[0], x[1])
+                data.extend(data_intermediate)
+            data.reverse()
+            data.extend(filler_16bits)
+            print data
+            full_data.extend(data)
+
+            data = []
+            data_intermediate = []
+            for x in register[143].reg_array:
+                data_intermediate = dec_to_bin_with_stuffing(x[0], x[1])
+                data.extend(data_intermediate)
+            data.reverse()
+            data.extend(filler_16bits)
+            print data
+            full_data.extend(data)
+
+            data = []
+            data_intermediate = []
+            for x in register[144].reg_array:
+                data_intermediate = dec_to_bin_with_stuffing(x[0], x[1])
+                data.extend(data_intermediate)
+            data.reverse()
+            data.extend(filler_16bits)
+            print data
+            full_data.extend(data)
+
+            data = []
+            data_intermediate = []
+            for x in register[145].reg_array:
+                data_intermediate = dec_to_bin_with_stuffing(x[0], x[1])
+                data.extend(data_intermediate)
+            data.reverse()
+            data.extend(filler_16bits)
+            print data
+            full_data.extend(data)
+
+
+
+            paketti = self.SC_encoder.create_SC_packet(141,full_data,"MULTI_WRITE",0)
+            write_instruction(self.interactive_output_file,1, FCC_LUT[paketti[0]], 1)
+            for x in range(1,len(paketti)):
+                write_instruction(self.interactive_output_file,1, FCC_LUT[paketti[x]], 0)
+            self.execute()
+            
         else:
             text = "->Setting the register: %s \n" % self.value
             self.add_to_interactive_screen(text)
@@ -643,9 +789,9 @@ class VFAT3_GUI:
                 data.extend(data_intermediate)
             data.reverse()
             paketti = self.SC_encoder.create_SC_packet(addr,data,"WRITE",0)
-            write_instruction(1, FCC_LUT[paketti[0]], 1)
+            write_instruction(self.interactive_output_file,1, FCC_LUT[paketti[0]], 1)
             for x in range(1,len(paketti)):
-                write_instruction(1, FCC_LUT[paketti[x]], 0)
+                write_instruction(self.interactive_output_file,1, FCC_LUT[paketti[x]], 0)
             self.execute()
 
     def change_channel(self):
@@ -818,6 +964,12 @@ class VFAT3_GUI:
             self.register_names = ["CHIP_ID"]
 
 
+        elif self.value == "Front End DACs":
+            self.register_mode = 'rw'
+            register_nr = "FED"
+            description = "Front End related DACs."
+            self.register_names = ["PRE_I_BSF","PRE_I_BIT","PRE_I_BLCC","PRE_VREF","SH_I_BFCAS","SH_I_BDIFF","SD_I_BDIFF","SD_I_BSF","SD_I_BFCAS"]
+
 
 
 
@@ -842,29 +994,63 @@ class VFAT3_GUI:
         self.separator = ttk.Separator(self.register_data_frame, orient='horizontal')
         self.separator.grid(column=0, row=2, columnspan=2, sticky='ew')
         if len(sys.argv) >= 2:
+            
+
             if sys.argv[1] != '-a_nr': # If not in Aamir mode without read. we read the values from the chip
                 # Read a register value from the chip and save it to the corresponding register object.
-                text =  "Reading the register: %d\n" %register_nr
-                self.add_to_interactive_screen(text)
 
-                paketti = self.SC_encoder.create_SC_packet(register_nr,0,"READ",0)
-                write_instruction(150, FCC_LUT[paketti[0]], 1)
-                for x in range(1,len(paketti)):
-                    write_instruction(1, FCC_LUT[paketti[x]], 0)
-                output = self.execute()
-                if output[0] == "Error":
-                    text =  "%s: %s\n" %(output[0],output[1])
-                    text =  "Register values might be incorrect.\n"
+                if register_nr == "FED":
+                    text =  "Reading the Front end DAC registers\n"
                     self.add_to_interactive_screen(text)
-                else:
-                    print "Read data:"
-                    new_data = output[0][0].data
-                    print new_data
-                    if register_nr in [65536,65537,65538,65539]:
-                        new_data = ''.join(str(e) for e in new_data)
+                    paketti = self.SC_encoder.create_SC_packet(141,0,"MULTI_READ",0)
+                    print paketti
+                    write_instruction(self.interactive_output_file,150, FCC_LUT[paketti[0]], 1)
+                    for x in range(1,len(paketti)):
+                        write_instruction(self.interactive_output_file,1, FCC_LUT[paketti[x]], 0)
+                    output = self.execute()
+                    if output[0] == "Error":
+                        text =  "%s: %s\n" %(output[0],output[1])
+                        text =  "Register values might be incorrect.\n"
+                        self.add_to_interactive_screen(text)
                     else:
+                        new_data = output[0][0].data[0]
                         new_data = ''.join(str(e) for e in new_data[-16:])
-                    register[register_nr].change_values(new_data)
+                        register[141].change_values(new_data)
+                        new_data = output[0][0].data[1]
+                        new_data = ''.join(str(e) for e in new_data[-16:])
+                        register[142].change_values(new_data)
+                        new_data = output[0][0].data[2]
+                        new_data = ''.join(str(e) for e in new_data[-16:])
+                        register[143].change_values(new_data)
+                        new_data = output[0][0].data[3]
+                        new_data = ''.join(str(e) for e in new_data[-16:])
+                        register[144].change_values(new_data)
+                        new_data = output[0][0].data[4]
+                        new_data = ''.join(str(e) for e in new_data[-16:])
+                        register[145].change_values(new_data)
+
+                else:
+                    text =  "Reading the register: %d\n" %register_nr
+                    self.add_to_interactive_screen(text)
+
+                    paketti = self.SC_encoder.create_SC_packet(register_nr,0,"READ",0)
+                    write_instruction(self.interactive_output_file,150, FCC_LUT[paketti[0]], 1)
+                    for x in range(1,len(paketti)):
+                        write_instruction(self.interactive_output_file,1, FCC_LUT[paketti[x]], 0)
+                    output = self.execute()
+                    if output[0] == "Error":
+                        text =  "%s: %s\n" %(output[0],output[1])
+                        text =  "Register values might be incorrect.\n"
+                        self.add_to_interactive_screen(text)
+                    else:
+                        print "Read data:"
+                        new_data = output[0][0].data
+                        print new_data
+                        if register_nr in [65536,65537,65538,65539]:
+                            new_data = ''.join(str(e) for e in new_data)
+                        else:
+                            new_data = ''.join(str(e) for e in new_data[-16:])
+                        register[register_nr].change_values(new_data)
 
 
         j = 0

@@ -28,12 +28,23 @@ class SC_encode:
     def create_SC_packet(self,address,data,action,BCcounter):
         if action == "IDLE":
             action_value = "f"
+            words = 1
         if action == "READ":
             action_value = 0
+            words = 1
+        if action == "MULTI_READ":
+            action_value = 0
+            words = 5
+        if action == "MULTI_WRITE":
+            action_value = 1
+            words = 5
         if action == "WRITE":
+            words = 1
             action_value = 1
         self.transaction_ID = self.update_trans_ID()
-        ipbus = self.IPbus14_package(address,data,1,action_value,self.transaction_ID)
+        print "create words"
+        print words
+        ipbus = self.IPbus14_package(address,data,words,action_value,self.transaction_ID)
         paketti = self.HDLC_package(ipbus)
         paketti = self.binary_to_sc(paketti) # Convert binary form to a list of SC0 and SC1 commands
         if BCcounter != 0:
@@ -84,8 +95,12 @@ class SC_encode:
         info_code = [1,1,1,1]
         
         # Number of words. 12 bits.
+        print wrds
         words = dec_to_bin_with_stuffing(wrds, 12)
         words.reverse()
+        print "words"
+        print words
+
 
         # Transaction_ID. 8 bits.
         transaction_ID = dec_to_bin_with_stuffing(trans_ID, 8)
@@ -126,9 +141,11 @@ class SC_encode:
             ipbus_pack.extend(words)
             ipbus_pack.extend(protocol_version)
             ipbus_pack.extend(address)
-            ipbus_pack.extend(data)
-            ipbus_pack.extend(filler_16bits)
-
+            if wrds == 1:
+                ipbus_pack.extend(data)
+                ipbus_pack.extend(filler_16bits)
+            else:
+                ipbus_pack.extend(data)                
             
         if typ == 2: # Non-incrementing Read
             type_ID = [0,1,0,0]
