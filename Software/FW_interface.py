@@ -3,7 +3,7 @@
 # Lappeenranta University of Technology
 ###########################################
 
-import serial
+#import serial
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/python_scripts_thomas/kernel")
 from ipbus import *
@@ -85,8 +85,9 @@ class FW_interface:
                 with open("./data/FPGA_output.dat", "a") as myfile:
                     myfile.write("%s" % line)
 
-    def launch(self,register,file_name):
+    def launch(self,register,file_name,serial_port):
         timeout = 0
+        print "Chosen COM port: %s" % serial_port
         ########### NORMAL MODE ##########
         if self.simulation_mode == 0:
             self.write_fifo()
@@ -130,7 +131,7 @@ class FW_interface:
 
         ############### Aamir mode #####################333
         if self.simulation_mode == 2:
-            ser = serial.Serial('COM2', baudrate=115200, writeTimeout=0)
+            ser = serial.Serial(serial_port, baudrate=115200, writeTimeout=0)
             # ser.baudrate =9600
             ser.bytesize = serial.EIGHTBITS  # number of bits per bytes
             ser.parity = serial.PARITY_NONE  # set parity check: no parity

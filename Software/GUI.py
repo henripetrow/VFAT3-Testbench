@@ -253,7 +253,24 @@ class VFAT3_GUI:
         self.fwsync_button.grid(column = 1, row= 2, sticky='e')
         self.fwsync_button.config(state="disabled")
 
+        self.serial_options = [
+                "COM0",
+                "COM1",
+                "COM2",
+                "COM3",
+                "COM4",
+                "COM5",
+                "COM6",
 
+                ]
+        self.chosen_serial_port = self.serial_options[2]
+        self.serial_port_variable = StringVar(master)
+        self.serial_port_variable.set(self.serial_options[2]) # default value
+
+        # SERIAL PORT DROP DOWN MENU
+        serial_port_drop_menu = OptionMenu(self.FW_frame, self.serial_port_variable, *self.serial_options)
+        serial_port_drop_menu.config(width=30)
+        serial_port_drop_menu.grid(column = 1,row=3)
 
 
         # ADD TABS
@@ -382,7 +399,7 @@ class VFAT3_GUI:
         self.interactive_screen.delete(1.0,END)
 
     def execute(self):
-        output = self.interfaceFW.launch(register,self.interactive_output_file)
+        output = self.interfaceFW.launch(register,self.interactive_output_file,self.chosen_serial_port)
         if output[0] == "Error":
             text =  "%s: %s\n" %(output[0],output[1])
             self.add_to_interactive_screen(text)
@@ -449,7 +466,7 @@ class VFAT3_GUI:
             self.scan_frame.grid_propagate(False)
 
 
-################# MISC-TAB FUNCTIONS ################################
+################# FW-TAB FUNCTIONS ################################
 
 
 
@@ -579,7 +596,7 @@ class VFAT3_GUI:
         file_name = "./routines/%s/instruction_list.txt" % modified
 
 
-        output = self.interfaceFW.launch(register,file_name)
+        output = self.interfaceFW.launch(register,file_name,self.chosen_serial_port)
         if output[0] == "Error":
             text =  "%s: %s\n" %(output[0],output[1])
             self.add_to_interactive_screen(text)
