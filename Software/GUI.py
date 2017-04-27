@@ -37,7 +37,7 @@ class VFAT3_GUI:
         self.interactive_output_file = "./data/FPGA_instruction_list.dat"
         s = ttk.Style()
         s.configure('My.TFrame', background='white')
-
+        self.COM_port = "COM2"
         self.register_mode = 'r'
         self.register_names = []
         self.master = master
@@ -268,7 +268,7 @@ class VFAT3_GUI:
         self.serial_port_variable.set(self.serial_options[2]) # default value
 
         # SERIAL PORT DROP DOWN MENU
-        serial_port_drop_menu = OptionMenu(self.FW_frame, self.serial_port_variable, *self.serial_options)
+        serial_port_drop_menu = OptionMenu(self.FW_frame, self.serial_port_variable, *self.serial_options, command=self.change_com_port)
         serial_port_drop_menu.config(width=30)
         serial_port_drop_menu.grid(column = 1,row=3)
 
@@ -399,7 +399,7 @@ class VFAT3_GUI:
         self.interactive_screen.delete(1.0,END)
 
     def execute(self):
-        output = self.interfaceFW.launch(register,self.interactive_output_file,self.chosen_serial_port)
+        output = self.interfaceFW.launch(register,self.interactive_output_file,self.COM_port)
         if output[0] == "Error":
             text =  "%s: %s\n" %(output[0],output[1])
             self.add_to_interactive_screen(text)
@@ -479,7 +479,8 @@ class VFAT3_GUI:
         write_instruction(self.interactive_output_file,1, command_encoded,0)
         self.execute()
 
-
+    def change_com_port(self,port):
+        self.COM_port = port
 
 
 ################# MISC-TAB FUNCTIONS ################################
@@ -596,7 +597,7 @@ class VFAT3_GUI:
         file_name = "./routines/%s/instruction_list.txt" % modified
 
 
-        output = self.interfaceFW.launch(register,file_name,self.chosen_serial_port)
+        output = self.interfaceFW.launch(register,file_name,self.COM_port)
         if output[0] == "Error":
             text =  "%s: %s\n" %(output[0],output[1])
             self.add_to_interactive_screen(text)
