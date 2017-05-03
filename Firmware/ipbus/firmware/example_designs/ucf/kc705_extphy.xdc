@@ -8,10 +8,10 @@
 # Constraints from file : 'kc705_extphy.ucf'
 ####################################################################################
 
-set_property PACKAGE_PIN AD12 [get_ports sysclk_p]
 # C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Vivado/IPBUS/project_ipbus_extphy/project_ipbus_extphy.runs/impl_1/.constrs/kc705_extphy.ucf:3
 # The conversion of 'IOSTANDARD' constraint on 'net' object 'sysclk_p' has been applied to the port object 'sysclk_p'.
 set_property IOSTANDARD LVDS [get_ports sysclk_p]
+set_property PACKAGE_PIN AD12 [get_ports sysclk_p]
 set_property PACKAGE_PIN AD11 [get_ports sysclk_n]
 # C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Vivado/IPBUS/project_ipbus_extphy/project_ipbus_extphy.runs/impl_1/.constrs/kc705_extphy.ucf:5
 # The conversion of 'IOSTANDARD' constraint on 'net' object 'sysclk_n' has been applied to the port object 'sysclk_n'.
@@ -22,7 +22,7 @@ set_property IOSTANDARD LVDS [get_ports sysclk_n]
 # In xdc, all clocks are related by default. This differs from ucf, where clocks are unrelated unless specified otherwise. As a result, you may now see cross-clock paths that were previously unconstrained in ucf. Commented out xdc false path constraints have been generated and can be uncommented, should you wish to remove these new paths. These commands are located after the last clock definition
 
 # C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Vivado/IPBUS/project_ipbus_extphy/project_ipbus_extphy.runs/impl_1/.constrs/kc705_extphy.ucf:7
-create_clock -name sysclk_p -period 5.000 [get_ports sysclk_p]
+create_clock -period 5.000 -name sysclk_p [get_ports sysclk_p]
 
 # C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Vivado/IPBUS/project_ipbus_extphy/project_ipbus_extphy.runs/impl_1/.constrs/kc705_extphy.ucf:11
 set_false_path -from [all_fanout -endpoints_only -only_cells -flat -from [get_nets ipb_clk]] -to [all_fanout -endpoints_only -flat -from [get_nets clk125]]
@@ -37,28 +37,28 @@ set_false_path -through [get_nets clocks/nuke_i]
 set_property PACKAGE_PIN AB8 [get_ports {leds[0]}]
 # C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Vivado/IPBUS/project_ipbus_extphy/project_ipbus_extphy.runs/impl_1/.constrs/kc705_extphy.ucf:18
 # The conversion of 'IOSTANDARD' constraint on 'net' object 'leds[0]' has been applied to the port object 'leds[0]'.
-set_property IOSTANDARD LVCMOS15 [get_ports {leds[0]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {leds[0]}]
 set_property PACKAGE_PIN AA8 [get_ports {leds[1]}]
 # C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Vivado/IPBUS/project_ipbus_extphy/project_ipbus_extphy.runs/impl_1/.constrs/kc705_extphy.ucf:20
 # The conversion of 'IOSTANDARD' constraint on 'net' object 'leds[1]' has been applied to the port object 'leds[1]'.
-set_property IOSTANDARD LVCMOS15 [get_ports {leds[1]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {leds[1]}]
 set_property PACKAGE_PIN AC9 [get_ports {leds[2]}]
 # C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Vivado/IPBUS/project_ipbus_extphy/project_ipbus_extphy.runs/impl_1/.constrs/kc705_extphy.ucf:22
 # The conversion of 'IOSTANDARD' constraint on 'net' object 'leds[2]' has been applied to the port object 'leds[2]'.
-set_property IOSTANDARD LVCMOS15 [get_ports {leds[2]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {leds[2]}]
 set_property PACKAGE_PIN AB9 [get_ports {leds[3]}]
 # C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Vivado/IPBUS/project_ipbus_extphy/project_ipbus_extphy.runs/impl_1/.constrs/kc705_extphy.ucf:24
 # The conversion of 'IOSTANDARD' constraint on 'net' object 'leds[3]' has been applied to the port object 'leds[3]'.
-set_property IOSTANDARD LVCMOS15 [get_ports {leds[3]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {leds[3]}]
 
 set_property PACKAGE_PIN AE26 [get_ports {leds[4]}]
-set_property IOSTANDARD LVCMOS15 [get_ports {leds[4]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {leds[4]}]
 set_property PACKAGE_PIN G19 [get_ports {leds[5]}]
-set_property IOSTANDARD LVCMOS15 [get_ports {leds[5]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {leds[5]}]
 set_property PACKAGE_PIN E18 [get_ports {leds[6]}]
-set_property IOSTANDARD LVCMOS15 [get_ports {leds[6]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {leds[6]}]
 set_property PACKAGE_PIN F16 [get_ports {leds[7]}]
-set_property IOSTANDARD LVCMOS15 [get_ports {leds[7]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {leds[7]}]
 
 #set_property PACKAGE_PIN AG5 [get_ports {swb}]
 #set_property IOSTANDARD LVCMOS15 [get_ports {swb}]
@@ -120,15 +120,15 @@ set_property PACKAGE_PIN U27 [get_ports gmii_rx_clk]
 # The conversion of 'IOSTANDARD' constraint on 'net' object 'gmii_rx_clk' has been applied to the port object 'gmii_rx_clk'.
 set_property IOSTANDARD LVCMOS25 [get_ports gmii_rx_clk]
 # C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Vivado/IPBUS/project_ipbus_extphy/project_ipbus_extphy.runs/impl_1/.constrs/kc705_extphy.ucf:57
-create_clock -name gmii_rx_clk -period 8.000 [get_ports gmii_rx_clk]
+create_clock -period 8.000 -name gmii_rx_clk [get_ports gmii_rx_clk]
 
 # The following cross clock domain false path constraints can be uncommented in order to mimic ucf constraints behavior (see message at the beginning of this file)
 # set_false_path -from [get_clocks sysclk_p] -to [get_clocks gmii_rx_clk]
 # set_false_path -from [get_clocks gmii_rx_clk] -to [get_clocks sysclk_p]
 
 # C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Vivado/IPBUS/project_ipbus_extphy/project_ipbus_extphy.runs/impl_1/.constrs/kc705_extphy.ucf:58
-set_input_delay -clock [get_clocks gmii_rx_clk] -max 5.500 -add_delay [all_inputs]
-set_input_delay -clock [get_clocks gmii_rx_clk] -min 0.500 -add_delay [all_inputs]
+set_input_delay -clock [get_clocks gmii_rx_clk] -max -add_delay 5.500 [all_inputs]
+set_input_delay -clock [get_clocks gmii_rx_clk] -min -add_delay 0.500 [all_inputs]
 set_property PACKAGE_PIN U30 [get_ports {gmii_rxd[0]}]
 # C:/Users/Jason/Dropbox/ULB/MA2/Memoire/Vivado/IPBUS/project_ipbus_extphy/project_ipbus_extphy.runs/impl_1/.constrs/kc705_extphy.ucf:60
 # The conversion of 'IOSTANDARD' constraint on 'net' object 'gmii_rxd[0]' has been applied to the port object 'gmii_rxd[0]'.
@@ -186,6 +186,10 @@ set_property PACKAGE_PIN L20 [get_ports phy_rstb]
 # The conversion of 'IOSTANDARD' constraint on 'net' object 'phy_rstb' has been applied to the port object 'phy_rstb'.
 set_property IOSTANDARD LVCMOS25 [get_ports phy_rstb]
 
+
+
+
+
 set_property PACKAGE_PIN AG25 [get_ports por_disable]
 # POR_DISABLE: AG25 for VBv2+TBv1.4, B25 for VBv2+TBv1.3
 set_property IOSTANDARD LVCMOS25 [get_ports por_disable]
@@ -198,26 +202,35 @@ set_property PACKAGE_PIN AH25 [get_ports vfat_reset]
 # EXT_RST: AH25 for VBv2+TBv1.4, C25 for VBv2+TBv1.3
 set_property IOSTANDARD LVCMOS25 [get_ports vfat_reset]
 
+
+
+
+
 set_property PACKAGE_PIN AF20 [get_ports i2c_sda]
-# SDA: VBv1 AF23 - VBv2 AF20 
+# SDA: VBv1 AF23 - VBv2 AF20
 set_property IOSTANDARD LVCMOS25 [get_ports i2c_sda]
 
 set_property PACKAGE_PIN AF21 [get_ports i2c_scl]
 # SCL: VBv1 AE23 - VBv2 AF21
 set_property IOSTANDARD LVCMOS25 [get_ports i2c_scl]
 
-#set_property PACKAGE_PIN AG22 [get_ports tx_p]
-## VBv1 : TX_LVDS_1_N AG22 (P and N have been reversed)
-#set_property IOSTANDARD LVDS_25 [get_ports tx_p]
 
-#set_property PACKAGE_PIN AH22 [get_ports tx_n]
-## VBv1 : TX_LVDS_1_P AH22 
-#set_property IOSTANDARD LVDS_25 [get_ports tx_n]
 
-#set_property PACKAGE_PIN AG30 [get_ports rx_p]
-## VBv1 : RX_LVDS_1_N AG30 (P and N have been reversed)
-#set_property IOSTANDARD LVDS_25 [get_ports rx_p]
 
-#set_property PACKAGE_PIN AH30 [get_ports rx_n]
-## VBv1 : RX_LVDS_1_P AH30 
-#set_property IOSTANDARD LVDS_25 [get_ports rx_n]
+
+# VBv1 : TX_LVDS_1_N AG22 (P and N have been reversed)
+set_property IOSTANDARD LVDS_25 [get_ports tx_p]
+
+set_property PACKAGE_PIN AG22 [get_ports tx_p]
+set_property PACKAGE_PIN AH22 [get_ports tx_n]
+# VBv1 : TX_LVDS_1_P AH22
+set_property IOSTANDARD LVDS_25 [get_ports tx_n]
+
+# VBv1 : RX_LVDS_1_N AG30 (P and N have been reversed)
+set_property IOSTANDARD LVDS_25 [get_ports rx_p]
+
+set_property PACKAGE_PIN AG30 [get_ports rx_p]
+set_property PACKAGE_PIN AH30 [get_ports rx_n]
+# VBv1 : RX_LVDS_1_P AH30
+set_property IOSTANDARD LVDS_25 [get_ports rx_n]
+

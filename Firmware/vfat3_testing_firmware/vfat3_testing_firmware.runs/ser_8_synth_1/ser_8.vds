@@ -1,0 +1,50 @@
+#-----------------------------------------------------------
+# Vivado v2016.3 (64-bit)
+# SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+# IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+# Start of session at: Mon May 01 10:46:32 2017
+# Process ID: 7204
+# Current directory: C:/Users/Jason/Dropbox/ULB/MA2/Memoire/JRFirmware/JRFirmware/firmware_v2016.2/firmware_v2016.2.runs/ser_8_synth_1
+# Command line: vivado.exe -log ser_8.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ser_8.tcl
+# Log file: C:/Users/Jason/Dropbox/ULB/MA2/Memoire/JRFirmware/JRFirmware/firmware_v2016.2/firmware_v2016.2.runs/ser_8_synth_1/ser_8.vds
+# Journal file: C:/Users/Jason/Dropbox/ULB/MA2/Memoire/JRFirmware/JRFirmware/firmware_v2016.2/firmware_v2016.2.runs/ser_8_synth_1\vivado.jou
+#-----------------------------------------------------------
+source ser_8.tcl -notrace
+Starting RTL Elaboration : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 338.844 ; gain = 129.555
+INFO: [Synth 8-638] synthesizing module 'ser_8' [c:/Users/Jason/Dropbox/ULB/MA2/Memoire/JRFirmware/JRFirmware/firmware_v2016.2/firmware_v2016.2.srcs/sources_1/ip/ser_8/ser_8.v:58]
+INFO: [Synth 8-638] synthesizing module 'ser_8_selectio_wiz' [c:/Users/Jason/Dropbox/ULB/MA2/Memoire/JRFirmware/JRFirmware/firmware_v2016.2/firmware_v2016.2.srcs/sources_1/ip/ser_8/ser_8_selectio_wiz.v:56]
+INFO: [Synth 8-638] synthesizing module 'OBUF' [D:/Xilinx/Vivado/2016.3/scripts/rt/data/unisim_comp.v:21927]
+INFO: [Synth 8-256] done synthesizing module 'OBUF' (1#1) [D:/Xilinx/Vivado/2016.3/scripts/rt/data/unisim_comp.v:21927]
+INFO: [Synth 8-638] synthesizing module 'OSERDESE2' [D:/Xilinx/Vivado/2016.3/scripts/rt/data/unisim_comp.v:25878]
+INFO: [Synth 8-256] done synthesizing module 'OSERDESE2' (2#1) [D:/Xilinx/Vivado/2016.3/scripts/rt/data/unisim_comp.v:25878]
+INFO: [Synth 8-256] done synthesizing module 'ser_8_selectio_wiz' (3#1) [c:/Users/Jason/Dropbox/ULB/MA2/Memoire/JRFirmware/JRFirmware/firmware_v2016.2/firmware_v2016.2.srcs/sources_1/ip/ser_8/ser_8_selectio_wiz.v:56]
+INFO: [Synth 8-256] done synthesizing module 'ser_8' (4#1) [c:/Users/Jason/Dropbox/ULB/MA2/Memoire/JRFirmware/JRFirmware/firmware_v2016.2/firmware_v2016.2.srcs/sources_1/ip/ser_8/ser_8.v:58]
+Finished RTL Elaboration : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 376.059 ; gain = 166.770
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 376.059 ; gain = 166.770
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.051 . Memory (MB): peak = 630.934 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:01:14 ; elapsed = 00:01:21 . Memory (MB): peak = 630.934 ; gain = 421.645
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:14 ; elapsed = 00:01:21 . Memory (MB): peak = 630.934 ; gain = 421.645
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:14 ; elapsed = 00:01:21 . Memory (MB): peak = 630.934 ; gain = 421.645
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:14 ; elapsed = 00:01:22 . Memory (MB): peak = 630.934 ; gain = 421.645
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:15 ; elapsed = 00:01:23 . Memory (MB): peak = 630.934 ; gain = 421.645
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:52 ; elapsed = 00:02:00 . Memory (MB): peak = 645.363 ; gain = 436.074
+Finished Timing Optimization : Time (s): cpu = 00:01:52 ; elapsed = 00:02:00 . Memory (MB): peak = 645.363 ; gain = 436.074
+Finished Technology Mapping : Time (s): cpu = 00:01:52 ; elapsed = 00:02:00 . Memory (MB): peak = 654.941 ; gain = 445.652
+Finished IO Insertion : Time (s): cpu = 00:01:55 ; elapsed = 00:02:02 . Memory (MB): peak = 654.941 ; gain = 445.652
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:55 ; elapsed = 00:02:02 . Memory (MB): peak = 654.941 ; gain = 445.652
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:55 ; elapsed = 00:02:03 . Memory (MB): peak = 654.941 ; gain = 445.652
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:55 ; elapsed = 00:02:03 . Memory (MB): peak = 654.941 ; gain = 445.652
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:55 ; elapsed = 00:02:03 . Memory (MB): peak = 654.941 ; gain = 445.652
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:55 ; elapsed = 00:02:03 . Memory (MB): peak = 654.941 ; gain = 445.652
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |OSERDESE2 |     1|
+|2     |OBUF      |     1|
++------+----------+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:55 ; elapsed = 00:02:03 . Memory (MB): peak = 654.941 ; gain = 445.652
+get_clocks: Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1086.980 ; gain = 399.102
+synth_design: Time (s): cpu = 00:01:59 ; elapsed = 00:02:04 . Memory (MB): peak = 1086.980 ; gain = 828.980

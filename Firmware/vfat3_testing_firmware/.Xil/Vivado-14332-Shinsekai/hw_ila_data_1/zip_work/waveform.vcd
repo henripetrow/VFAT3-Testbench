@@ -1,0 +1,35 @@
+$date
+        2017-May-03 10:14:50
+$end
+$version
+        Vivado v2016.3 (64-bit)
+$end
+$timescale
+        1ps
+$end
+$scope module dut $end
+$var reg 1 " slaves/slave_vfat3/fifo_out_w_en $end
+$var reg 1 # slaves/slave_vfat3/fifo_in_w_en $end
+$var reg 1 $ slaves/slave_vfat3/fifo_out_r_en $end
+$var reg 1 % slaves/slave_vfat3/fifo_in_r_en $end
+$var reg 1 & slaves/slave_vfat3/fifo_out_valid $end
+$var reg 1 ' slaves/slave_vfat3/fifo_in_valid $end
+$var reg 32 ( slaves/slave_vfat3/fifo_out_data_in [31:0] $end
+$var reg 32 H slaves/slave_vfat3/fifo_out_data_out [31:0] $end
+$var reg 32 h slaves/slave_vfat3/fifo_in_data_in [31:0] $end
+$var reg 32 *" slaves/slave_vfat3/fifo_in_data_out [31:0] $end
+$var reg 1 J" slaves/slave_vfat3/fifo_out_empty $end
+$var reg 1 K" slaves/slave_vfat3/fifo_in_empty $end
+$var reg 1 L" slaves/slave_vfat3/fifo_out_full $end
+$var reg 1 M" slaves/slave_vfat3/fifo_in_full $end
+$var reg 8 N" slaves/slave_vfat3/ser_d_in [7:0] $end
+$var reg 1 V" slaves/slave_vfat3/reset $end
+$var reg 1 W" slaves/slave_vfat3/rst40 $end
+$var reg 1 X" slaves/slave_vfat3/reset_fifo $end
+$var reg 8 Y" slaves/slave_vfat3/data_bus_in [7:0] $end
+$var reg 8 a" slaves/slave_vfat3/d_sync [7:0] $end
+$var reg 1 i" _TRIGGER $end
+$var reg 1 j" _WINDOW $end
+$var reg 1 k" _GAP $end
+$upscope $end
+$enddefinitions $end
