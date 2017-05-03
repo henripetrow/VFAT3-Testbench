@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date         : Wed May 03 09:39:24 2017
+| Date         : Wed May 03 10:31:42 2017
 | Host         : Shinsekai running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
@@ -30,8 +30,8 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 3884 |     0 |    203800 |  1.91 |
-|   LUT as Logic             | 3764 |     0 |    203800 |  1.85 |
+| Slice LUTs*                | 3883 |     0 |    203800 |  1.91 |
+|   LUT as Logic             | 3763 |     0 |    203800 |  1.85 |
 |   LUT as Memory            |  120 |     0 |     64000 |  0.19 |
 |     LUT as Distributed RAM |   28 |     0 |           |       |
 |     LUT as Shift Register  |   92 |     0 |           |       |
@@ -159,10 +159,10 @@ Table of Contents
 +------------+------+---------------------+
 | FDRE       | 4235 |        Flop & Latch |
 | LUT6       | 1258 |                 LUT |
-| LUT5       |  836 |                 LUT |
-| LUT3       |  660 |                 LUT |
+| LUT5       |  835 |                 LUT |
+| LUT3       |  659 |                 LUT |
 | LUT2       |  579 |                 LUT |
-| LUT4       |  528 |                 LUT |
+| LUT4       |  529 |                 LUT |
 | LUT1       |  442 |                 LUT |
 | FDSE       |  413 |        Flop & Latch |
 | CARRY4     |  181 |          CarryLogic |

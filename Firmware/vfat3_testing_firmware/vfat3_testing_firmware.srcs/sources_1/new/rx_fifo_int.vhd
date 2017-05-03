@@ -49,8 +49,8 @@ architecture rtl of rx_fifo_int is
 	signal cnt_n, cnt_p : std_logic_vector(5 downto 0);
 	constant F1 : std_logic_vector(7 downto 0) := X"7e";
 	constant F2 : std_logic_vector(7 downto 0) := X"aa";
-	constant FCC_A : std_logic_vector(7 downto 0) := X"00";-- to remove, only for loopback
-	constant FCC_P : std_logic_vector(7 downto 0) := X"ff"; -- to remove, only for loopback
+--	constant FCC_A : std_logic_vector(7 downto 0) := X"00";-- to remove, only for loopback
+--	constant FCC_P : std_logic_vector(7 downto 0) := X"ff"; -- to remove, only for loopback
 	constant H0A : std_logic_vector(7 downto 0) := X"a1";
 	constant H0B : std_logic_vector(7 downto 0) := X"a2";
 	constant H1A : std_logic_vector(7 downto 0) := X"a3";
@@ -72,7 +72,7 @@ architecture rtl of rx_fifo_int is
 		
 		case(state_p) is 
 			when FILTER_DATA =>
-				if((d_in_p /= F1) and (d_in_p /= F2) and (d_in_p /= FCC_A) and (d_in_p /= FCC_P)) then
+				if((d_in_p /= F1) and (d_in_p /= F2)) then --  and (d_in_p /= FCC_A) and (d_in_p /= FCC_P) for loopback
 					dv <= '1';
 					if ( (d_in_p = H0A) or (d_in_p = H0B) or (d_in_p = H1A)  or (d_in_p = H1B) ) then
 						state_n <= SEND_PACKET;

@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date             : Wed May 03 10:10:15 2017
+| Date             : Wed May 03 11:00:21 2017
 | Host             : Shinsekai running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.526 |
-| Dynamic (W)              | 0.362 |
+| Total On-Chip Power (W)  | 0.528 |
+| Dynamic (W)              | 0.363 |
 | Device Static (W)        | 0.164 |
 | Total Off-Chip Power (W) | 0.001 |
 | Effective TJA (C/W)      | 1.8   |
@@ -50,21 +50,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.037 |       12 |       --- |             --- |
-| Slice Logic              |     0.007 |    14195 |       --- |             --- |
-|   LUT as Logic           |     0.006 |     4696 |    203800 |            2.30 |
+| Clocks                   |     0.038 |       12 |       --- |             --- |
+| Slice Logic              |     0.007 |    14194 |       --- |             --- |
+|   LUT as Logic           |     0.006 |     4689 |    203800 |            2.30 |
 |   Register               |    <0.001 |     7176 |    407600 |            1.76 |
 |   CARRY4                 |    <0.001 |      268 |     50950 |            0.53 |
 |   LUT as Shift Register  |    <0.001 |      347 |     64000 |            0.54 |
 |   LUT as Distributed RAM |    <0.001 |       32 |     64000 |            0.05 |
 |   F7/F8 Muxes            |    <0.001 |       67 |    203800 |            0.03 |
 |   Others                 |     0.000 |      629 |       --- |             --- |
-| Signals                  |     0.009 |    10352 |       --- |             --- |
+| Signals                  |     0.010 |    10348 |       --- |             --- |
 | Block RAM                |     0.020 |       26 |       445 |            5.84 |
 | MMCM                     |     0.211 |        2 |        10 |           20.00 |
 | I/O                      |     0.077 |       41 |       500 |            8.20 |
 | Static Power             |     0.164 |          |           |                 |
-| Total                    |     0.526 |          |           |                 |
+| Total                    |     0.528 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.146 |       0.076 |      0.071 |
+| Vccint    |       1.000 |     0.148 |       0.077 |      0.071 |
 | Vccaux    |       1.800 |     0.154 |       0.125 |      0.028 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.025 |       0.024 |      0.001 |
@@ -153,7 +153,7 @@ Table of Contents
 +----------------------------------------------------------------------------------------------------+-----------+
 | Name                                                                                               | Power (W) |
 +----------------------------------------------------------------------------------------------------+-----------+
-| top                                                                                                |     0.362 |
+| top                                                                                                |     0.363 |
 |   clocks                                                                                           |     0.220 |
 |     clk_wiz                                                                                        |     0.105 |
 |       inst                                                                                         |     0.105 |
@@ -161,7 +161,7 @@ Table of Contents
 |   dbg_hub                                                                                          |     0.002 |
 |     inst                                                                                           |     0.002 |
 |       CORE_XSDB.UUT_MASTER                                                                         |     0.001 |
-|         U_ICON_INTERFACE                                                                           |     0.001 |
+|         U_ICON_INTERFACE                                                                           |    <0.001 |
 |           U_CMD1                                                                                   |    <0.001 |
 |           U_CMD2                                                                                   |    <0.001 |
 |           U_CMD3                                                                                   |    <0.001 |
@@ -238,7 +238,7 @@ Table of Contents
 |         U_SYNC                                                                                     |    <0.001 |
 |       SWITCH_N_EXT_BSCAN.bscan_inst                                                                |    <0.001 |
 |       SWITCH_N_EXT_BSCAN.bscan_switch                                                              |    <0.001 |
-|   eth                                                                                              |     0.017 |
+|   eth                                                                                              |     0.018 |
 |     emac0                                                                                          |     0.005 |
 |       U0/trimac_top/TRI_SPEED.TRIMAC_INST                                                          |     0.005 |
 |     fifo                                                                                           |     0.002 |
@@ -247,11 +247,11 @@ Table of Contents
 |       U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM22 |    <0.001 |
 |       U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM23 |    <0.001 |
 |       U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM24 |    <0.001 |
-|   ipbus                                                                                            |     0.044 |
+|   ipbus                                                                                            |     0.045 |
 |     trans                                                                                          |     0.003 |
 |       iface                                                                                        |     0.001 |
 |       sm                                                                                           |     0.002 |
-|     udp_if                                                                                         |     0.041 |
+|     udp_if                                                                                         |     0.042 |
 |       ARP                                                                                          |    <0.001 |
 |       IPADDR                                                                                       |    <0.001 |
 |       RARP_block                                                                                   |    <0.001 |
@@ -261,7 +261,7 @@ Table of Contents
 |       internal_ram_shim                                                                            |    <0.001 |
 |       ipbus_rx_ram                                                                                 |     0.008 |
 |       ipbus_tx_ram                                                                                 |     0.007 |
-|       payload                                                                                      |     0.002 |
+|       payload                                                                                      |     0.003 |
 |       ping                                                                                         |     0.001 |
 |       resend                                                                                       |    <0.001 |
 |       rx_byte_sum                                                                                  |    <0.001 |
@@ -276,7 +276,7 @@ Table of Contents
 |       tx_main                                                                                      |     0.002 |
 |       tx_ram_selector                                                                              |    <0.001 |
 |       tx_transactor                                                                                |     0.002 |
-|   slaves                                                                                           |     0.015 |
+|   slaves                                                                                           |     0.016 |
 |     fabric                                                                                         |    <0.001 |
 |     slave0                                                                                         |    <0.001 |
 |     slave1                                                                                         |    <0.001 |
@@ -284,7 +284,7 @@ Table of Contents
 |     slave3                                                                                         |    <0.001 |
 |     slave4                                                                                         |    <0.001 |
 |     slave5                                                                                         |    <0.001 |
-|     slave_vfat3                                                                                    |     0.014 |
+|     slave_vfat3                                                                                    |     0.015 |
 |       chipscope                                                                                    |     0.007 |
 |         U0                                                                                         |     0.007 |
 |           ila_core_inst                                                                            |     0.007 |
