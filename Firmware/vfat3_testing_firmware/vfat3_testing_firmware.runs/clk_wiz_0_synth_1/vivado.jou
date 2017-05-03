@@ -1,12 +1,12 @@
 #-----------------------------------------------------------
-# Vivado v2016.2 (64-bit)
-# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
-# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Tue Apr 18 20:14:51 2017
-# Process ID: 4880
-# Current directory: C:/Users/midabrow/Jason/VFAT3-Testbench-master/Firmware/firmware_v2016.2/firmware_v2016.2.runs/clk_wiz_0_synth_1
-# Command line: vivado.exe -log clk_wiz_0.vds -mode batch -messageDb vivado.pb -notrace -source clk_wiz_0.tcl
-# Log file: C:/Users/midabrow/Jason/VFAT3-Testbench-master/Firmware/firmware_v2016.2/firmware_v2016.2.runs/clk_wiz_0_synth_1/clk_wiz_0.vds
-# Journal file: C:/Users/midabrow/Jason/VFAT3-Testbench-master/Firmware/firmware_v2016.2/firmware_v2016.2.runs/clk_wiz_0_synth_1\vivado.jou
+# Vivado v2016.3 (64-bit)
+# SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+# IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+# Start of session at: Wed May 03 13:21:26 2017
+# Process ID: 15804
+# Current directory: C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/clk_wiz_0_synth_1
+# Command line: vivado.exe -log clk_wiz_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_wiz_0.tcl
+# Log file: C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/clk_wiz_0_synth_1/clk_wiz_0.vds
+# Journal file: C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/clk_wiz_0_synth_1\vivado.jou
 #-----------------------------------------------------------
 source clk_wiz_0.tcl -notrace

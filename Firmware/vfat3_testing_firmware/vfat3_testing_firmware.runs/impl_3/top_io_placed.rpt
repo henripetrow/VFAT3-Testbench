@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date         : Wed May 03 10:42:02 2017
+| Date         : Wed May 03 14:38:34 2017
 | Host         : Shinsekai running 64-bit major release  (build 9200)
 | Command      : report_io -file top_io_placed.rpt
 | Design       : top
@@ -112,7 +112,7 @@ Table of Contents
 | AB17       |              | High Performance | IO_L18P_T2_32                | User IO       |             |      32 |            |      |                      |                      |           |            |           |          |      |                  |
 | AB18       |              | High Performance | IO_L16N_T2_32                | User IO       |             |      32 |            |      |                      |                      |           |            |           |          |      |                  |
 | AB19       |              | High Performance | IO_L17P_T2_32                | User IO       |             |      32 |            |      |                      |                      |           |            |           |          |      |                  |
-| AB20       | bor_disable  | High Range       | IO_L6N_T0_VREF_12            | TRISTATE      | LVCMOS25    |      12 |         12 | SLOW |                      |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
+| AB20       | bor_disable  | High Range       | IO_L6N_T0_VREF_12            | OUTPUT        | LVCMOS25    |      12 |         12 | SLOW |                      |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
 | AB21       |              |                  | GND                          | GND           |             |         |            |      |                      |                      |       0.0 |            |           |          |      |                  |
 | AB22       |              | High Range       | IO_L3P_T0_DQS_12             | User IO       |             |      12 |            |      |                      |                      |           |            |           |          |      |                  |
 | AB23       |              | High Range       | IO_L3N_T0_DQS_12             | User IO       |             |      12 |            |      |                      |                      |           |            |           |          |      |                  |
@@ -207,7 +207,7 @@ Table of Contents
 | AE22       |              |                  | GND                          | GND           |             |         |            |      |                      |                      |       0.0 |            |           |          |      |                  |
 | AE23       |              | High Range       | IO_L11P_T1_SRCC_12           | User IO       |             |      12 |            |      |                      |                      |           |            |           |          |      |                  |
 | AE24       |              | High Range       | IO_L12N_T1_MRCC_12           | User IO       |             |      12 |            |      |                      |                      |           |            |           |          |      |                  |
-| AE25       | por_disable  | High Range       | IO_L16P_T2_12                | TRISTATE      | LVCMOS25    |      12 |         12 | SLOW |                      |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
+| AE25       | por_disable  | High Range       | IO_L16P_T2_12                | OUTPUT        | LVCMOS25    |      12 |         12 | SLOW |                      |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
 | AE26       | leds[4]      | High Range       | IO_25_13                     | TRISTATE      | LVCMOS25    |      13 |         12 | SLOW |                      |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
 | AE27       |              | High Range       | VCCO_13                      | VCCO          |             |      13 |            |      |                      |                      |      2.50 |            |           |          |      |                  |
 | AE28       |              | High Range       | IO_L14P_T2_SRCC_13           | User IO       |             |      13 |            |      |                      |                      |           |            |           |          |      |                  |
@@ -237,7 +237,7 @@ Table of Contents
 | AF22       |              | High Range       | IO_L13P_T2_MRCC_12           | User IO       |             |      12 |            |      |                      |                      |           |            |           |          |      |                  |
 | AF23       |              | High Range       | IO_L11N_T1_SRCC_12           | User IO       |             |      12 |            |      |                      |                      |           |            |           |          |      |                  |
 | AF24       |              | High Range       | VCCO_12                      | VCCO          |             |      12 |            |      |                      |                      |      2.50 |            |           |          |      |                  |
-| AF25       | vfat_reset   | High Range       | IO_L16N_T2_12                | TRISTATE      | LVCMOS25    |      12 |         12 | SLOW |                      |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
+| AF25       | vfat_reset   | High Range       | IO_L16N_T2_12                | OUTPUT        | LVCMOS25    |      12 |         12 | SLOW |                      |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
 | AF26       |              | High Range       | IO_L23P_T3_13                | User IO       |             |      13 |            |      |                      |                      |           |            |           |          |      |                  |
 | AF27       |              | High Range       | IO_L23N_T3_13                | User IO       |             |      13 |            |      |                      |                      |           |            |           |          |      |                  |
 | AF28       |              | High Range       | IO_L14N_T2_SRCC_13           | User IO       |             |      13 |            |      |                      |                      |           |            |           |          |      |                  |

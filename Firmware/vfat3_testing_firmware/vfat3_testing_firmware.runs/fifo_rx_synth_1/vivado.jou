@@ -2,11 +2,11 @@
 # Vivado v2016.3 (64-bit)
 # SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
 # IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
-# Start of session at: Thu Apr 27 14:21:04 2017
-# Process ID: 16508
-# Current directory: C:/Users/Jason/Dropbox/ULB/MA2/Memoire/JRFirmware/JRFirmware/firmware_v2016.2/firmware_v2016.2.runs/fifo_rx_synth_1
+# Start of session at: Wed May 03 13:21:26 2017
+# Process ID: 18420
+# Current directory: C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/fifo_rx_synth_1
 # Command line: vivado.exe -log fifo_rx.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fifo_rx.tcl
-# Log file: C:/Users/Jason/Dropbox/ULB/MA2/Memoire/JRFirmware/JRFirmware/firmware_v2016.2/firmware_v2016.2.runs/fifo_rx_synth_1/fifo_rx.vds
-# Journal file: C:/Users/Jason/Dropbox/ULB/MA2/Memoire/JRFirmware/JRFirmware/firmware_v2016.2/firmware_v2016.2.runs/fifo_rx_synth_1\vivado.jou
+# Log file: C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/fifo_rx_synth_1/fifo_rx.vds
+# Journal file: C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/fifo_rx_synth_1\vivado.jou
 #-----------------------------------------------------------
 source fifo_rx.tcl -notrace

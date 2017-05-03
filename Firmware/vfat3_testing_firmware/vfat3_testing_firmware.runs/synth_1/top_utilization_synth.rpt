@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date         : Wed May 03 10:31:42 2017
+| Date         : Wed May 03 14:30:42 2017
 | Host         : Shinsekai running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
@@ -30,15 +30,15 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 3883 |     0 |    203800 |  1.91 |
-|   LUT as Logic             | 3763 |     0 |    203800 |  1.85 |
+| Slice LUTs*                | 3859 |     0 |    203800 |  1.89 |
+|   LUT as Logic             | 3739 |     0 |    203800 |  1.83 |
 |   LUT as Memory            |  120 |     0 |     64000 |  0.19 |
 |     LUT as Distributed RAM |   28 |     0 |           |       |
 |     LUT as Shift Register  |   92 |     0 |           |       |
-| Slice Registers            | 4744 |     0 |    407600 |  1.16 |
-|   Register as Flip Flop    | 4736 |     0 |    407600 |  1.16 |
+| Slice Registers            | 4741 |     0 |    407600 |  1.16 |
+|   Register as Flip Flop    | 4733 |     0 |    407600 |  1.16 |
 |   Register as Latch        |    8 |     0 |    407600 | <0.01 |
-| F7 Muxes                   |   11 |     0 |    101900 |  0.01 |
+| F7 Muxes                   |   24 |     0 |    101900 |  0.02 |
 | F8 Muxes                   |    0 |     0 |     50950 |  0.00 |
 +----------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -59,7 +59,7 @@ Table of Contents
 | 30    |          Yes |           - |          Set |
 | 66    |          Yes |           - |        Reset |
 | 413   |          Yes |         Set |            - |
-| 4235  |          Yes |       Reset |            - |
+| 4232  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -157,27 +157,27 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       | 4235 |        Flop & Latch |
-| LUT6       | 1258 |                 LUT |
-| LUT5       |  835 |                 LUT |
-| LUT3       |  659 |                 LUT |
-| LUT2       |  579 |                 LUT |
-| LUT4       |  529 |                 LUT |
-| LUT1       |  442 |                 LUT |
+| FDRE       | 4232 |        Flop & Latch |
+| LUT6       | 1293 |                 LUT |
+| LUT5       |  755 |                 LUT |
+| LUT3       |  670 |                 LUT |
+| LUT2       |  577 |                 LUT |
+| LUT4       |  550 |                 LUT |
+| LUT1       |  441 |                 LUT |
 | FDSE       |  413 |        Flop & Latch |
 | CARRY4     |  181 |          CarryLogic |
 | SRL16E     |   87 |  Distributed Memory |
 | FDCE       |   66 |        Flop & Latch |
+| MUXF7      |   24 |               MuxFx |
 | FDPE       |   22 |        Flop & Latch |
 | RAMB36E1   |   19 |        Block Memory |
 | RAMD64E    |   16 |  Distributed Memory |
+| OBUF       |   16 |                  IO |
 | RAMD32     |   14 |  Distributed Memory |
-| OBUF       |   13 |                  IO |
 | IBUF       |   12 |                  IO |
-| MUXF7      |   11 |               MuxFx |
-| OBUFT      |   10 |                  IO |
 | IDELAYE2   |   10 |                  IO |
 | LDPE       |    8 |        Flop & Latch |
+| OBUFT      |    7 |                  IO |
 | SRLC32E    |    5 |  Distributed Memory |
 | BUFG       |    3 |               Clock |
 | RAMS32     |    2 |  Distributed Memory |

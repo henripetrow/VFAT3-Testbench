@@ -28,8 +28,8 @@ architecture rtl of dser_sync is
 	
 	type state_type is (INIT, CHECK, ADJUST, WAITING, VALIDATE, SYNC_IN);
 	
-	constant F1 : std_logic_vector(cmd_w - 1 downto 0) := X"7e"; -- 7e for vfat3 filler, 00 only for loopback
-	constant F2 : std_logic_vector(cmd_w - 1 downto 0) := X"81"; -- 81 for vfat3 filler, ff only for loopback
+	constant F1 : std_logic_vector(cmd_w - 1 downto 0) := X"00"; -- 7e for vfat3 filler, 00 only for loopback
+	constant F2 : std_logic_vector(cmd_w - 1 downto 0) := X"ff"; -- 81 for vfat3 filler, ff only for loopback
 	
 	signal state_n, state_p : state_type;
 	signal cnt_n, cnt_p: std_logic_vector(fifo_w - 1 downto 0);

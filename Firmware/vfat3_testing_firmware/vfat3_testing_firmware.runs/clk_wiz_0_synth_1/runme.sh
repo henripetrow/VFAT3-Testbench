@@ -11,9 +11,9 @@ echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executi
 exit
 
 if [ -z "$PATH" ]; then
-  PATH=C:/EDA/Xilinx/v2016_2/SDK/2016.2/bin;C:/EDA/Xilinx/v2016_2/Vivado/2016.2/ids_lite/ISE/bin/nt64;C:/EDA/Xilinx/v2016_2/Vivado/2016.2/ids_lite/ISE/lib/nt64:C:/EDA/Xilinx/v2016_2/Vivado/2016.2/bin
+  PATH=D:/Xilinx/SDK/2016.3/bin;D:/Xilinx/Vivado/2016.3/ids_lite/ISE/bin/nt64;D:/Xilinx/Vivado/2016.3/ids_lite/ISE/lib/nt64:D:/Xilinx/Vivado/2016.3/bin
 else
-  PATH=C:/EDA/Xilinx/v2016_2/SDK/2016.2/bin;C:/EDA/Xilinx/v2016_2/Vivado/2016.2/ids_lite/ISE/bin/nt64;C:/EDA/Xilinx/v2016_2/Vivado/2016.2/ids_lite/ISE/lib/nt64:C:/EDA/Xilinx/v2016_2/Vivado/2016.2/bin:$PATH
+  PATH=D:/Xilinx/SDK/2016.3/bin;D:/Xilinx/Vivado/2016.3/ids_lite/ISE/bin/nt64;D:/Xilinx/Vivado/2016.3/ids_lite/ISE/lib/nt64:D:/Xilinx/Vivado/2016.3/bin:$PATH
 fi
 export PATH
 
@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/midabrow/Jason/VFAT3-Testbench-master/Firmware/firmware_v2016.2/firmware_v2016.2.runs/clk_wiz_0_synth_1'
+HD_PWD='C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/clk_wiz_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log clk_wiz_0.vds -m64 -mode batch -messageDb vivado.pb -notrace -source clk_wiz_0.tcl
+EAStep vivado -log clk_wiz_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_wiz_0.tcl
