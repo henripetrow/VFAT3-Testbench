@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Vivado/ipbus/newtest/top.ncd
-OUTFILE=/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Vivado/ipbus/newtest/top.bit
-FAMILY=Kintex7
-PART=xc7k325t-2ffg900
-WORKINGDIR=/home/goldenfleece/Dropbox/ULB/MA2/Memoire/Vivado/ipbus/newtest
-LICENSE=ISE
-USER_INFO=210713503_174110358_210646257_365
