@@ -66,3 +66,24 @@ display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices
 reset_run synth_1
 launch_runs impl_3 -to_step write_bitstream -jobs 4
 wait_on_run impl_3
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+place_ports tx_p AB29
+place_ports rx_p AC29
+place_ports por_disable AG25
+place_ports vfat_reset AH25
+save_constraints
+launch_runs impl_3 -to_step write_bitstream -jobs 4
+wait_on_run impl_3
+set_property PROBES.FILE {C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
