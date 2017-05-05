@@ -279,3 +279,5 @@ INFO: [Labtools 27-3164] End of startup status: HIGH
 program_hw_devices: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2034.609 ; gain = 0.000
 refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
 INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed May 03 16:56:15 2017...
