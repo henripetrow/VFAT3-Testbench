@@ -80,18 +80,11 @@ architecture rtl of slave_vfat3 is
 	signal data_bus_in			: std_logic_vector(cmd_o_w - 1 downto 0);
 	signal data_buf_received	: std_logic;
 	
-	signal fw_st				: std_logic_vector(fw_st_w - 1 downto 0);
-	signal fw_st_wr, fw_st_rd	: std_logic_vector(fw_st_w - 1 downto 0);
-	signal fw_st_p				: std_logic_vector(fw_st_w - 1 downto 0);
-	signal fw_st_wr_en 			: std_logic;
-	signal fw_st_latch 			: std_logic;
-	signal ack_to_sw			: std_logic;
+	signal firmware_status		: std_logic_vector(3 downto 0);
 	
 	signal bitslip				: std_logic;
-	signal ser_d_in             : std_logic_vector(cmd_o_w - 1 downto 0);
-	signal d_sync				: std_logic_vector(cmd_o_w - 1 downto 0);
-	
-	
+	signal ser_d_in             : std_logic_vector(7 downto 0);
+	signal d_sync				: std_logic_vector(7 downto 0);
 	
 	component fifo_generator_0 is
 		PORT (
@@ -177,9 +170,7 @@ architecture rtl of slave_vfat3 is
           fifo_dv 		: IN std_logic;
           fifo_empty 	: IN std_logic;
           rd_en 		: OUT std_logic;
-          d_out 		: OUT std_logic_vector(cmd_o_w - 1 DOWNTO 0);
-          fw_st			: IN std_logic_vector(fw_st_w - 1 DOWNTO 0);
-          ack_to_sw		: OUT std_logic
+          d_out 		: OUT std_logic_vector(7 DOWNTO 0)
       );
       end component;
 	  
@@ -224,9 +215,7 @@ begin
 		data_from_fifo 	=> fifo_out_data_out,
 		fifo_underflow	=> fifo_out_underflow,
 		fifo_out_empty  => fifo_out_empty,
-		fw_st_wr	 	=> fw_st_wr,
-		fw_st_rd		=> fw_st_rd,
-		fw_st_wr_en 	=> fw_st_wr_en
+		firmware_status => firmware_status
 	);
 		
 -- #### INPUT FIFO
@@ -254,9 +243,7 @@ begin
             fifo_dv 	=> fifo_in_valid,
             fifo_empty 	=> fifo_in_empty,
             rd_en 		=> fifo_in_r_en,
-            d_out 		=> ser_d_in,
-            fw_st		=> fw_st_rd,
-            ack_to_sw	=> ack_to_sw
+            d_out 		=> ser_d_in
         );
         
     ser: ser_8
@@ -355,51 +342,4 @@ begin
             end if;
         end if;
     end process;
-    
-    fw_status: process(clk, reset, fifo_out_empty, ack_to_sw, fw_st, fw_st_p)
-    begin
-    	if rising_edge(clk) then
-    		if fw_st_latch = '1' then
-    			fw_st <= fw_st_p;
-    		end if;
-    		
-    		case(fw_st) is
-    			when "0000" =>
-    			
-    			when "0001" =>
-    				if ack_to_sw = '1' then
-    					fw_st <= "0010";
-    				end if;
-    			when "0010" =>
-    				if fifo_out_empty = '0' then
-    					fw_st <= "0011";
-    				end if;
-    			when "0011" =>
-    				if fifo_out_empty = '1' then
-    					fw_st <= "0010";
-    				end if;
-    			when others =>
-    				fw_st <= "0000";
-    		end case;
-    	end if;
-    end process;
-    
-    fw_st_bidir: process(clk, reset)
-    
-    begin
-    	if rising_edge(clk) then
-    		if reset = '1' then
-    			fw_st_p <= "0000";
-    		else
-    			if fw_st_wr_en = '1' then
-    				fw_st_p <= fw_st_wr; 
-    				fw_st_latch <= '1';
-    			else 
-    				fw_st_latch <= '0';
-    			end if;
-    			fw_st_rd <= fw_st;
-    		end if;
-    	end if;
-    end process;
-
 end rtl;

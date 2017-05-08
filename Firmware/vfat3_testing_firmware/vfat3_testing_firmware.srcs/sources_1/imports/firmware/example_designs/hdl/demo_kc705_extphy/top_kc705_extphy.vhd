@@ -25,9 +25,9 @@ entity top is port(
 	phy_rstb 								: out STD_LOGIC;
 	tx_p, tx_n								: out std_logic;
 	rx_p, rx_n 								: in std_logic;
-	por_disable 							: buffer std_logic;
-	bor_disable 							: buffer std_logic;
-	vfat_reset 								: buffer std_logic;
+	por_disable 							: inout std_logic;
+	bor_disable 							: inout std_logic;
+	vfat_reset 								: inout std_logic;
 --	clk320_p, clk320_n                      : out std_logic; -- to check on the VB how signals are behaving
 --	clk40_p, clk40_n                        : out std_logic;
 --    clk320_back_p, clk320_back_n            : in std_logic;
@@ -52,7 +52,9 @@ architecture rtl of top is
 begin
 
 --	DCM clock generation for internal bus, ethernet
-
+	
+	vfat_reset <= '1'; -- force reset to 1. Reset is active low
+	
 	clocks: entity work.clocks_7s_extphy
 		port map(
 			sysclk_p => sysclk_p,

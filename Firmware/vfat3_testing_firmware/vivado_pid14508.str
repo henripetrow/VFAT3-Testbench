@@ -1,0 +1,1017 @@
+/*
+
+Vivado v2016.3 (64-bit)
+SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+Process ID: 14508
+
+Current time: 	5/5/17 5:20:56 PM CEST
+Time zone: 	Central European Time (Europe/Paris)
+
+OS: Windows 10
+Version: 10.0
+Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1536x864
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Tahoma,name=Tahoma,style=plain,size=11
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	D:/Xilinx/Vivado/2016.3/tps/win64/jre
+
+User name: 	Jason
+User home directory: C:/Users/Jason
+User working directory: C:/backup loopback/vfat3_testing_firmware
+User country: 	BE
+User language: 	fr
+User locale: 	fr_BE
+
+RDI base root directory: D:/Xilinx/Vivado
+RDI data directory: D:/Xilinx/Vivado/2016.3/data
+RDI bin directory: D:/Xilinx/Vivado/2016.3/bin
+
+Vivado preferences path: C:/Users/Jason/AppData/Roaming/Xilinx/Vivado/2016.3/vivado.ini
+Vivado layouts directory: C:/Users/Jason/AppData/Roaming/Xilinx/Vivado/2016.3/layouts
+
+GUI allocated memory:	228 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 439 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 55 MB (+55384kb) [00:00:10]
+// [Engine Memory]: 391 MB (+258181kb) [00:00:10]
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: C:\backup loopback\vfat3_testing_firmware\vfat3_testing_firmware.xpr. Version: Vivado v2016.3 
+// bt:g (cd:JFrame):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.xpr} 
+// [Engine Memory]: 430 MB (+21020kb) [00:00:12]
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: MSGMGR_REFRESH_MSG
+// HMemoryUtils.trashcanNow. Engine heap size: 450 MB. GUI used memory: 27 MB. Current time: 5/5/17 5:20:59 PM CEST
+// [Engine Memory]: 457 MB (+5078kb) [00:00:17]
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 481 MB (+1078kb) [00:00:22]
+// [Engine Memory]: 508 MB (+3049kb) [00:00:27]
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 542 MB (+9348kb) [00:00:32]
+// [Engine Memory]: 591 MB (+22864kb) [00:00:34]
+// [GUI Memory]: 63 MB (+4811kb) [00:00:38]
+// Tcl Message: open_project {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.xpr} 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2016.3/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 606 MB. GUI used memory: 40 MB. Current time: 5/5/17 5:21:25 PM CEST
+// Tcl Message: open_project: Time (s): cpu = 00:00:49 ; elapsed = 00:00:29 . Memory (MB): peak = 894.938 ; gain = 199.246 
+// Project name: vfat3_testing_firmware; location: C:/backup loopback/vfat3_testing_firmware; part: xc7k325tffg900-2
+dismissDialog("Open Project"); // bt:g (cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
+// [Engine Memory]: 650 MB (+30875kb) [00:02:32]
+// HMemoryUtils.trashcanNow. Engine heap size: 650 MB. GUI used memory: 41 MB. Current time: 5/5/17 5:23:19 PM CEST
+// Elapsed time: 141 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 25, false); // v:K (u:D, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// y:aO (cd:JFrame): No Implementation Results Available: addNotify
+selectCheckBox(RDIResource.MessageWithOptionDialog_DONT_SHOW_THIS_DIALOG_AGAIN, "Don't show this dialog again", true); // g:JCheckBox (JPanel:JComponent, y:aO): TRUE
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, y:aO)
+// bt:g (cd:JFrame):  Resetting Runs : addNotify
+dismissDialog("No Implementation Results Available"); // y:aO (cd:JFrame)
+dismissDialog("Resetting Runs"); // bt:g (cd:JFrame)
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// bt:g (cd:JFrame):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_3 -to_step write_bitstream -jobs 4 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Fri May 05 17:23:52 2017] Launched impl_3... Run output will be captured here: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/runme.log 
+// [GUI Memory]: 69 MB (+3202kb) [00:03:09]
+dismissDialog("Generate Bitstream"); // bt:g (cd:JFrame)
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 3000 ms.
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 4000 ms.
+// [GUI Memory]: 74 MB (+1947kb) [00:07:48]
+// [GUI Memory]: 79 MB (+1478kb) [00:08:43]
+// HMemoryUtils.trashcanNow. Engine heap size: 657 MB. GUI used memory: 42 MB. Current time: 5/6/17 8:47:51 AM CEST
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking too long to process. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking too long to process. Increasing delay to 3000 ms.
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 5000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 657 MB. GUI used memory: 44 MB. Current time: 5/6/17 3:05:09 PM CEST
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 6000 ms.
+// [GUI Memory]: 84 MB (+676kb) [21:48:04]
+// [GUI Memory]: 88 MB (+92kb) [22:02:18]
+// [GUI Memory]: 93 MB (+833kb) [22:03:41]
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 7000 ms.
+// [GUI Memory]: 98 MB (+144kb) [22:06:20]
+// TclEventType: RUN_COMPLETED
+// WARNING: HTimer (ExpRunMgr Pending Runs Timer) is taking too long to process. Increasing delay to 3000 ms.
+// ah:y (cd:JFrame): Bitstream Generation Completed: addNotify
+// [GUI Memory]: 105 MB (+1935kb) [22:14:26]
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 76 MB. Current time: 5/6/17 3:35:11 PM CEST
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking too long to process. Increasing delay to 4000 ms.
+// [GUI Memory]: 111 MB (+382kb) [22:26:16]
+// Elapsed time: 81168 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER, "Open Hardware Manager"); // a:JRadioButton (JPanel:JComponent, ah:y)
+selectRadioButton(PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER, "Open Hardware Manager"); // a:JRadioButton (JPanel:JComponent, ah:y)
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, ah:y)
+dismissDialog("Bitstream Generation Completed"); // ah:y (cd:JFrame)
+// [GUI Memory]: 116 MB (+254kb) [22:37:48]
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 95 MB. Current time: 5/6/17 4:05:11 PM CEST
+// [GUI Memory]: 123 MB (+1099kb) [23:00:31]
+// [GUI Memory]: 130 MB (+429kb) [23:02:47]
+// Elapsed time: 1615 seconds
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "IP Sources", 1); // g:JideTabbedPane (L:aE, cd:JFrame)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Libraries", 2); // g:JideTabbedPane (L:aE, cd:JFrame)
+// Elapsed time: 14 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, work, ipbus_addr_decode.vhd]", 29, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, work, ipbus_addr_decode.vhd]", 29, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+// [GUI Memory]: 138 MB (+1397kb) [23:13:50]
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 102 MB. Current time: 5/6/17 4:35:11 PM CEST
+// Elapsed time: 1759 seconds
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Hierarchy", 0); // g:JideTabbedPane (L:aE, cd:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd)]", 1); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd)]", 5, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave5 - ipbus_pkt_ctr - rtl (ipbus_pkt_ctr.vhd)]", 10, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+// Elapsed time: 17 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave_por - slave_por - Behavioral (slave_por.vhd)]", 14); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave_por - slave_por - Behavioral (slave_por.vhd)]", 14, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave_por - slave_por - Behavioral (slave_por.vhd)]", 14, true, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave_por - slave_por - Behavioral (slave_por.vhd)]", 14); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave_por - slave_por - Behavioral (slave_por.vhd), control_por - control_por - Behavioral (control_por.vhd)]", 15, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave_por - slave_por - Behavioral (slave_por.vhd), control_por - control_por - Behavioral (control_por.vhd)]", 15, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ipbus_addr_decode.vhd", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+// [GUI Memory]: 145 MB (+206kb) [23:33:02]
+// Elapsed time: 12 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "slave_por.vhd", 3); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "control_por.vhd", 4); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+// Elapsed time: 47 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave4 - ipbus_peephole_ram - rtl (ipbus_peephole_ram.vhd)]", 12, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave4 - ipbus_peephole_ram - rtl (ipbus_peephole_ram.vhd)]", 12, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+// Elapsed time: 29 seconds
+selectCodeEditor("ipbus_peephole_ram.vhd", 201, 215); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("ipbus_peephole_ram.vhd", 201, 215, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// Elapsed time: 31 seconds
+selectCodeEditor("ipbus_peephole_ram.vhd", 239, 145); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("ipbus_peephole_ram.vhd", 239, 145, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "slaves.vhd", 2); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+// [GUI Memory]: 157 MB (+4574kb) [23:35:12]
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ipbus_peephole_ram.vhd", 5); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+// Elapsed time: 19 seconds
+selectCodeEditor("ipbus_peephole_ram.vhd", 94, 127); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("ipbus_peephole_ram.vhd", 94, 127, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// Elapsed time: 32 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "slaves.vhd", 2); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectCodeEditor("slaves.vhd", 93, 174); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("slaves.vhd", 93, 174, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("slaves.vhd", 191, 129); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("slaves.vhd", 191, 129, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// [GUI Memory]: 165 MB (+408kb) [23:36:33]
+// Elapsed time: 15 seconds
+selectCodeEditor("slaves.vhd", 193, 114); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("slaves.vhd", 193, 114, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("slaves.vhd", 87, 229); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("slaves.vhd", 87, 229, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// Elapsed time: 18 seconds
+selectCodeEditor("slaves.vhd", 187, 192); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("slaves.vhd", 187, 192, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// Elapsed time: 10 seconds
+selectCodeEditor("slaves.vhd", 99, 249); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("slaves.vhd", 99, 249, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("slaves.vhd", 101, 198); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("slaves.vhd", 101, 198, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// Elapsed time: 52 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ipbus_addr_decode.vhd", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t:aE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ipbus_addr_decode.vhd", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "slaves.vhd", 0); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectCodeEditor("ipbus_addr_decode.vhd", 90, 247); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("ipbus_addr_decode.vhd", 90, 247, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// [GUI Memory]: 174 MB (+1261kb) [23:38:38]
+// Elapsed time: 12 seconds
+selectCodeEditor("ipbus_addr_decode.vhd", 114, 95); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("ipbus_addr_decode.vhd", 114, 95, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ipbus_addr_decode.vhd", 1, true, false); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame) - Popup Trigger
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ipbus_addr_decode.vhd", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+// [GUI Memory]: 184 MB (+894kb) [23:38:44]
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "slaves.vhd", 0); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // U:JideMenu (CommandMenuBar:CommandBar, cd:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_FIND_IN_FILES, "Find in Files..."); // ac:JMenuItem (JPopupMenu:JComponent, cd:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // U:JideMenu (CommandMenuBar:CommandBar, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_FIND_IN_FILES
+// Find in Files: addNotify
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_FIND, "Find"); // f:a (ButtonPanel:JPanel, a:FindAndReplaceDialog)
+// bt:g (cd:JFrame):  Find in Files : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 119 MB. Current time: 5/6/17 4:59:39 PM CEST
+// 'f' command handler elapsed time: 3 seconds
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 105 MB. Current time: 5/6/17 4:59:40 PM CEST
+dismissDialog("Find in Files"); // bt:g (cd:JFrame)
+expandTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 1); // F:i (JViewport:JComponent, cd:JFrame)
+collapseTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 1); // F:i (JViewport:JComponent, cd:JFrame)
+expandTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 2); // F:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 2, true); // F:i (JViewport:JComponent, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 2, true, false, false, false, false, true); // F:i (JViewport:JComponent, cd:JFrame) - Double Click - Node
+selectTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 2, true); // F:i (JViewport:JComponent, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT]", 2, true, false, false, false, false, true); // F:i (JViewport:JComponent, cd:JFrame) - Double Click - Node
+selectTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT, [840, 854]]", 3, false); // F:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceEtoH.FindInFilesView_ROOT, "[ROOT, [840, 854]]", 3, false, false, false, false, false, true); // F:i (JViewport:JComponent, cd:JFrame) - Double Click
+// Elapsed time: 11 seconds
+selectCodeEditor("ipbus_fabric.vhd", 64, 218); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("ipbus_fabric.vhd", 64, 218, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// Elapsed time: 23 seconds
+selectCodeEditor("ipbus_fabric.vhd", 243, 246); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("ipbus_fabric.vhd", 243, 246, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ipbus_fabric.vhd", 2); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "slave_por.vhd", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+// Elapsed time: 15 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "slaves.vhd", 5); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectCodeEditor("ipbus_fabric.vhd", 91, 167); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("ipbus_fabric.vhd", 91, 167, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// Elapsed time: 30 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ipbus_fabric.vhd", 3); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+// Elapsed time: 11 seconds
+selectCodeEditor("control_por.vhd", 408, 179); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("control_por.vhd", 408, 179, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// Elapsed time: 14 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "control_por.vhd", 5); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ipbus_fabric.vhd", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "slaves.vhd", 5); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectCodeEditor("ipbus_fabric.vhd", 51, 319); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("ipbus_fabric.vhd", 51, 319, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// Elapsed time: 93 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ipbus_fabric.vhd", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave_vfat3 - slave_vfat3 - rtl (slave_vfat3.vhd)]", 13, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave_vfat3 - slave_vfat3 - rtl (slave_vfat3.vhd), dsersync - dser_sync - rtl (dser_sync.vhd)]", 20, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave_vfat3 - slave_vfat3 - rtl (slave_vfat3.vhd), control_block - control - rtl (control.vhd)]", 14, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave_vfat3 - slave_vfat3 - rtl (slave_vfat3.vhd), control_block - control - rtl (control.vhd)]", 14, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+selectCodeEditor("control.vhd", 408, 197); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("control.vhd", 408, 197, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "control.vhd", 2); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "slave_por.vhd", 0); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectCodeEditor("ipbus_addr_decode.vhd", 239, 296); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("ipbus_addr_decode.vhd", 436, 264); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("ipbus_addr_decode.vhd", 440, 265); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 208 seconds
+selectCodeEditor("ipbus_addr_decode.vhd", 540, 143); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 48 seconds
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B:b
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "slaves.vhd", 4); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectCodeEditor("ipbus_fabric.vhd", 65, 214); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("ipbus_fabric.vhd", 65, 214, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// Elapsed time: 11 seconds
+selectCodeEditor("ipbus_fabric.vhd", 164, 154); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("ipbus_fabric.vhd", 164, 154, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("ipbus_fabric.vhd", 370, 250); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("ipbus_fabric.vhd", 370, 250, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// Elapsed time: 390 seconds
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B:b
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B:b
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B:b
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B:b
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "control_por.vhd", 0); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+// Elapsed time: 408 seconds
+selectCodeEditor("slaves.vhd", 240, 161); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("slaves.vhd", 240, 161, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("slaves.vhd", 240, 161); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("slaves.vhd", 240, 161); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("slaves.vhd", 240, 161, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("slaves.vhd", 240, 179); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("slaves.vhd", 240, 179, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("slaves.vhd", 221, 202); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("slaves.vhd", 221, 202, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("slaves.vhd", 222, 174); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("slaves.vhd", 222, 174, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("slaves.vhd", 227, 162); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("slaves.vhd", 227, 162, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// Elapsed time: 60 seconds
+selectCodeEditor("slaves.vhd", 187, 337); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("slaves.vhd", 187, 337, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// Elapsed time: 15 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave3 - ipbus_ctrlreg - rtl (ipbus_ctrlreg.vhd)]", 9, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave3 - ipbus_ctrlreg - rtl (ipbus_ctrlreg.vhd)]", 9, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave3 - ipbus_ctrlreg - rtl (ipbus_ctrlreg.vhd)]", 9, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+// Elapsed time: 282 seconds
+selectCodeEditor("ipbus_ctrlreg.vhd", 169, 230); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("ipbus_ctrlreg.vhd", 169, 230, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// Elapsed time: 17 seconds
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B:b
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 106 MB. Current time: 5/6/17 5:29:41 PM CEST
+// Elapsed time: 73 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "control_por.vhd", 0); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave2 - ipbus_ram - rtl (ipbus_ram.vhd)]", 11, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave2 - ipbus_ram - rtl (ipbus_ram.vhd)]", 11, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave5 - ipbus_pkt_ctr - rtl (ipbus_pkt_ctr.vhd)]", 10, false); // y:i (D:JPanel, cd:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd), slaves - slaves - rtl (slaves.vhd), slave5 - ipbus_pkt_ctr - rtl (ipbus_pkt_ctr.vhd)]", 10, false, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click
+selectCodeEditor("ipbus_pkt_ctr.vhd", 480, 298); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("ipbus_pkt_ctr.vhd", 480, 298, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// Elapsed time: 309 seconds
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B:b
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B:b
+// Elapsed time: 61 seconds
+selectCodeEditor("control_por.vhd", 263, 197); // bF:I (JPanel:JComponent, cd:JFrame)
+// Elapsed time: 23 seconds
+selectCodeEditor("control_por.vhd", 480, 113); // bF:I (JPanel:JComponent, cd:JFrame)
+typeControlKey((HResource) null, "control_por.vhd", 'v'); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 363 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "control_por.vhd", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+// Elapsed time: 55 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "slave_por.vhd", 2); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectCodeEditor("control_por.vhd", 164, 134); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("control_por.vhd", 164, 134, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("control_por.vhd", 167, 151); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("control_por.vhd", 167, 151, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("control_por.vhd", 157, 164); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("control_por.vhd", 157, 164, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 487 seconds
+selectCodeEditor("control_por.vhd", 329, 58); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("control_por.vhd", 249, 160); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 82 MB. Current time: 5/6/17 5:59:41 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 59 MB. Current time: 5/6/17 6:29:41 PM CEST
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
+// Elapsed time: 3201 seconds
+selectCodeEditor("control_por.vhd", 505, 188); // bF:I (JPanel:JComponent, cd:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 58 MB. Current time: 5/6/17 6:59:41 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 57 MB. Current time: 5/6/17 7:29:42 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 58 MB. Current time: 5/6/17 7:59:42 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 58 MB. Current time: 5/6/17 8:29:42 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 58 MB. Current time: 5/6/17 8:59:42 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 58 MB. Current time: 5/6/17 9:29:42 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 58 MB. Current time: 5/6/17 9:59:43 PM CEST
+// Elapsed time: 11796 seconds
+typeControlKey(null, null, 'z');
+// Elapsed time: 115 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 25, false); // v:K (u:D, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// y:aO (cd:JFrame): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, y:aO)
+// bt:g (cd:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // y:aO (cd:JFrame)
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bt:g (cd:JFrame)
+// Tcl Message: launch_runs impl_3 -to_step write_bitstream -jobs 4 
+// bt:g (cd:JFrame):  Generate Bitstream : addNotify
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat May 06 22:04:46 2017] Launched synth_1... Run output will be captured here: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/runme.log [Sat May 06 22:04:46 2017] Launched impl_3... Run output will be captured here: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/runme.log 
+dismissDialog("Generate Bitstream"); // bt:g (cd:JFrame)
+// TclEventType: RUN_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 3000 ms.
+// TclEventType: RUN_COMPLETED
+// ah:y (cd:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 1227 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, ah:y)
+dismissDialog("Bitstream Generation Completed"); // ah:y (cd:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 61 MB. Current time: 5/6/17 10:29:43 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 58 MB. Current time: 5/6/17 10:59:43 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 57 MB. Current time: 5/6/17 11:29:43 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 57 MB. Current time: 5/7/17 8:44:33 AM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 57 MB. Current time: 5/7/17 9:14:33 AM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 58 MB. Current time: 5/7/17 5:55:02 PM CEST
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking too long to process. Increasing delay to 5000 ms.
+// Elapsed time: 70783 seconds
+selectView(PAResourceOtoP.PAViews_FLOW_NAVIGATOR, "Flow Navigator", 75, 75, 233, 725, false, false, false, true, false); // E:aE (JPanel:JComponent, cd:JFrame) - Popup Trigger
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 57 MB. Current time: 5/7/17 6:25:03 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 57 MB. Current time: 5/7/17 6:55:03 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 58 MB. Current time: 5/7/17 7:25:03 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 58 MB. Current time: 5/7/17 7:55:03 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 58 MB. Current time: 5/7/17 8:25:04 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 57 MB. Current time: 5/7/17 8:55:04 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 59 MB. Current time: 5/7/17 9:25:04 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 59 MB. Current time: 5/7/17 9:55:04 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 58 MB. Current time: 5/7/17 10:25:04 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 662 MB. GUI used memory: 59 MB. Current time: 5/8/17 8:29:20 AM CEST
+// Elapsed time: 52067 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 26, true); // v:K (u:D, cd:JFrame) - Node
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw 
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h:k (JPanel:JComponent, cd:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ac:JMenuItem (ai:JPopupMenu, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// bt:g (cd:JFrame):  Auto Connect : addNotify
+// Tcl Message: connect_hw_server 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 4000 ms.
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2016.3   **** Build date : Oct 10 2016-19:47:06     ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   
+// TclEventType: HW_SERVER_UPDATE
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210203A02B7DA 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0] 
+// Tcl Message: current_hw_device [lindex [get_hw_devices xc7k325t_0] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7k325t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// [Engine Memory]: 738 MB (+58010kb) [63:12:16]
+// HMemoryUtils.trashcanNow. Engine heap size: 751 MB. GUI used memory: 61 MB. Current time: 5/8/17 8:33:01 AM CEST
+dismissDialog("Auto Connect"); // bt:g (cd:JFrame)
+// Elapsed time: 1018 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h:k (JPanel:JComponent, cd:JFrame)
+selectMenuItem((HResource) null, "xc7k325t_0"); // ac:JMenuItem (ai:JPopupMenu, cd:JFrame)
+// PAPropertyPanels.initPanels (xc7k325t_0) elapsed time: 0.2s
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// be:aj (cd:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_SPECIFY_BITSTREAM_FILE, (String) null); // q:a (ag:JPanel, be:aj)
+// HMemoryUtils.trashcanNow. Engine heap size: 778 MB. GUI used memory: 62 MB. Current time: 5/8/17 8:50:06 AM CEST
+// [Engine Memory]: 778 MB (+4085kb) [63:29:27]
+setFileChooser("C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/backup bitstream/slave_por_original.bit");
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, be:aj)
+// bt:g (cd:JFrame):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // be:aj (cd:JFrame)
+// Tcl Message: set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/backup bitstream/slave_por_original.bit} [lindex [get_hw_devices xc7k325t_0] 0] 
+// Tcl Message: program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// Tcl Message: program_hw_devices: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1038.867 ; gain = 0.000 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_ILA_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s). 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: DEBUG_PROBE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: HW_ILA_CHANGE
+// Tcl Message: refresh_hw_device: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 1038.867 ; gain = 0.000 
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Waveform: addNotify
+// Tcl Message: display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]] 
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// Waveform: addNotify
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// Waveform: addNotify
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// Tcl Message: INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data. 
+// 'B' command handler elapsed time: 29 seconds
+// Elapsed time: 15 seconds
+dismissDialog("Program Device"); // bt:g (cd:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 790 MB. GUI used memory: 73 MB. Current time: 5/8/17 8:53:41 AM CEST
+// WARNING: HTimer (B:b Update Status Timer) is taking too long to process. Increasing delay to 6000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 811 MB. GUI used memory: 71 MB. Current time: 5/8/17 8:54:16 AM CEST
+// Elapsed time: 421 seconds
+selectButton(PAResourceItoN.IlaProbeTablePanel_ADD_PROBE, "IlaProbeTablePanel_new"); // y:JideButton (g:CommandBar, cd:JFrame)
+// Add Probes: show
+// PAPropertyPanels.initPanels (slaves/slave_vfat3/fifo_in_w_en) elapsed time: 0.2s
+selectTree(PAResourceOtoP.ProbesView_PROBES_TREE, "[root, slaves/slave_vfat3/fifo_in_w_en]", 8, false); // M:i (JViewport:JComponent, ResizableWindow:JWindow)
+// [Engine Memory]: 818 MB (+1094kb) [63:36:53]
+// Add Probes: hide
+selectTable(PAResourceTtoZ.TriggerSetupPanel_TABLE, "slaves/slave_vfat3/fifo_in_w_en ; ==   ; [B]   ; X ; probe1[0]", 1, "X", 3); // z:r (JViewport:JComponent, cd:JFrame)
+editTable(PAResourceTtoZ.TriggerSetupPanel_TABLE, "X", 1, "Value", 3); // z:r (JViewport:JComponent, cd:JFrame)
+// TclEventType: DEBUG_PROBE_CHANGE
+// Tcl Message: set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes slaves/slave_vfat3/fifo_in_w_en -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]] 
+// Waveform: addNotify
+// Waveform: addNotify
+// Waveform: addNotify
+floatView(PAResourceOtoP.PAViews_DASHBOARD, "hw_ila_1"); // as:DockableFrame (aA:FrameContainer, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// PAResourceOtoP.PAViews_DASHBOARD: hw_ila_1: float view
+// HMemoryUtils.trashcanNow. Engine heap size: 818 MB. GUI used memory: 72 MB. Current time: 5/8/17 8:57:46 AM CEST
+maximizeFrame(PAResourceOtoP.PAViews_DASHBOARD, "hw_ila_1"); // as:DockableFrame (aA:FrameContainer, FrameFloatingContainer:ResizableFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(PAResourceTtoZ.TriggerStatusPanel_RUN_TRIGGER_FOR_THIS_ILA_CORE, "ILA_run_trigger"); // y:JideButton (g:CommandBar, FrameFloatingContainer:ResizableFrame)
+// PAPropertyPanels.initPanels (hw_ila_1) elapsed time: 0.2s
+// Run Command: PAResourceCommand.PACommandNames_RUN_TRIGGER
+// TclEventType: HW_ILA_CHANGE
+// Tcl Message: run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] 
+// Tcl Message: INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 08:57:50 
+// TclEventType: HW_ILA_CHANGE
+// Tcl Message: wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] 
+// TclEventType: HW_ILA_CHANGE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Tcl Message: display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]] 
+// Tcl Message: INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 08:57:56 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// HMemoryUtils.trashcanNow. Engine heap size: 818 MB. GUI used memory: 112 MB. Current time: 5/8/17 8:57:57 AM CEST
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// Tcl Message: INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data. 
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 358, 112); // l:a (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 818 MB. GUI used memory: 77 MB. Current time: 5/8/17 8:57:59 AM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 825 MB. GUI used memory: 102 MB. Current time: 5/8/17 8:58:12 AM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 825 MB. GUI used memory: 80 MB. Current time: 5/8/17 8:58:13 AM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 825 MB. GUI used memory: 77 MB. Current time: 5/8/17 8:58:14 AM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 825 MB. GUI used memory: 76 MB. Current time: 5/8/17 8:58:15 AM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 825 MB. GUI used memory: 76 MB. Current time: 5/8/17 8:58:16 AM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 825 MB. GUI used memory: 76 MB. Current time: 5/8/17 8:58:16 AM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 825 MB. GUI used memory: 76 MB. Current time: 5/8/17 8:58:16 AM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 825 MB. GUI used memory: 76 MB. Current time: 5/8/17 8:58:20 AM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 98 seconds
+selectCodeEditor("control_por.vhd", 353, 224); // bF:I (JPanel:JComponent, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "control_por.vhd", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Hardware Manager]", 26, true); // v:K (u:D, cd:JFrame) - Node
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xc7k325t_0 (2) ; Programmed", 2, "xc7k325t_0 (2)", 0, true, false, false, false, true, false); // t:ab (JViewport:JComponent, cd:JFrame) - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_PROGRAM_FPGA, "Program Device..."); // ac:JMenuItem (ai:JPopupMenu, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// be:aj (cd:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_SPECIFY_BITSTREAM_FILE, (String) null); // q:a (ag:JPanel, be:aj)
+setFileChooser("C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit");
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, be:aj)
+// bt:g (cd:JFrame):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // be:aj (cd:JFrame)
+// Tcl Message: set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0] 
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_DEVICE_UPDATE
+// Tcl Message: program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// Tcl Message: program_hw_devices: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 1075.719 ; gain = 0.000 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0] 
+// TclEventType: HW_ILA_CHANGE
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 5000 ms.
+// TclEventType: HW_ILA_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s). 
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: HW_ILA_CHANGE
+// 'B' command handler elapsed time: 19 seconds
+// Elapsed time: 10 seconds
+dismissDialog("Program Device"); // bt:g (cd:JFrame)
+// Elapsed time: 38 seconds
+selectCodeEditor("slave_por.vhd", 337, 209); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("slave_por.vhd", 125, 173); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("slave_por.vhd", 125, 151); // bF:I (JPanel:JComponent, cd:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "slave_por.vhd", 0); // k:TdiGroup (j:CodeEditorDocumentPane, cd:JFrame)
+selectCodeEditor("slaves.vhd", 120, 95); // bF:I (JPanel:JComponent, cd:JFrame)
+selectButton(RDIResourceCommand.RDICommands_LINE_COMMENT, (String) null); // y:JideButton (g:CommandBar, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
+// Elapsed time: 23 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 25, false); // v:K (u:D, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// y:aO (cd:JFrame): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, y:aO)
+// bt:g (cd:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // y:aO (cd:JFrame)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bt:g (cd:JFrame)
+// Tcl Message: launch_runs impl_3 -to_step write_bitstream -jobs 4 
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// bt:g (cd:JFrame):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Mon May 08 09:01:28 2017] Launched synth_1... Run output will be captured here: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/runme.log [Mon May 08 09:01:28 2017] Launched impl_3... Run output will be captured here: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/runme.log 
+dismissDialog("Generate Bitstream"); // bt:g (cd:JFrame)
+// TclEventType: RUN_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 3000 ms.
+// Elapsed time: 647 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager]", 0, true); // v:K (u:D, cd:JFrame) - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_PROJECT_MANAGER
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 359, 111); // l:a (JViewport:JComponent, cd:JFrame)Waveform: addNotify
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 359, 111); // l:a (JViewport:JComponent, cd:JFrame)Waveform: addNotify
+dockFrame(PAResourceOtoP.PAViews_DASHBOARD, "hw_ila_1"); // as:DockableFrame (aA:FrameContainer, FrameFloatingContainer:ResizableFrame)
+maximizeFrame(PAResourceOtoP.PAViews_DASHBOARD, "hw_ila_1"); // as:DockableFrame (aA:FrameContainer, FrameFloatingContainer:ResizableFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd)]", 1, true); // y:i (D:JPanel, cd:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top - rtl (top_kc705_extphy.vhd)]", 1, true, false, false, false, false, true); // y:i (D:JPanel, cd:JFrame) - Double Click - Node
+// Elapsed time: 19 seconds
+selectCodeEditor("top_kc705_extphy.vhd", 108, 228); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("top_kc705_extphy.vhd", 107, 239); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
+// Elapsed time: 19 seconds
+selectCodeEditor("top_kc705_extphy.vhd", 343, 87); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("top_kc705_extphy.vhd", 343, 87, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("top_kc705_extphy.vhd", 337, 63); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("top_kc705_extphy.vhd", 337, 63, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+selectCodeEditor("top_kc705_extphy.vhd", 340, 63); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("top_kc705_extphy.vhd", 340, 63, false, false, false, false, true); // bF:I (JPanel:JComponent, cd:JFrame) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
+// Elapsed time: 16 seconds
+selectButton(PAResourceQtoS.StateMonitor_CANCEL, "Cancel"); // a:JButton (p:JPanel, cd:JFrame)
+// aO:g (cd:JFrame): Cancel Implementation: addNotify
+selectButton(PAResourceQtoS.StateMonitor_RESET_RUN, "Reset Run"); // a:JButton (JPanel:JComponent, aO:g)
+// bt:g (cd:JFrame):  Resetting Runs : addNotify
+dismissDialog("Cancel Implementation"); // aO:g (cd:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run impl_3 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bt:g (cd:JFrame)
+selectCodeEditor("top_kc705_extphy.vhd", 206, 253); // bF:I (JPanel:JComponent, cd:JFrame)
+selectCodeEditor("top_kc705_extphy.vhd", 195, 261); // bF:I (JPanel:JComponent, cd:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking too long to process. Increasing delay to 3000 ms.
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
+// Elapsed time: 33 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 25, false); // v:K (u:D, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// y:aO (cd:JFrame): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, y:aO)
+// bt:g (cd:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // y:aO (cd:JFrame)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+dismissDialog("Resetting Runs"); // bt:g (cd:JFrame)
+// Tcl Message: launch_runs impl_3 -to_step write_bitstream -jobs 4 
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// bt:g (cd:JFrame):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Mon May 08 09:14:04 2017] Launched synth_1... Run output will be captured here: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/runme.log [Mon May 08 09:14:04 2017] Launched impl_3... Run output will be captured here: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/runme.log 
+dismissDialog("Generate Bitstream"); // bt:g (cd:JFrame)
+// TclEventType: RUN_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 3000 ms.
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 4000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 826 MB. GUI used memory: 82 MB. Current time: 5/8/17 9:28:22 AM CEST
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 5000 ms.
+// TclEventType: RUN_COMPLETED
+// ah:y (cd:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 2213 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ah:y)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 359, 111); // l:a (JViewport:JComponent, cd:JFrame)Waveform: addNotify
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 359, 111); // l:a (JViewport:JComponent, cd:JFrame)Waveform: addNotify
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 359, 111); // l:a (JViewport:JComponent, cd:JFrame)Waveform: addNotify
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 359, 111); // l:a (JViewport:JComponent, cd:JFrame)Waveform: addNotify
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 359, 111); // l:a (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)Waveform: addNotify
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 359, 111); // l:a (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)Waveform: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 826 MB. GUI used memory: 78 MB. Current time: 5/8/17 9:51:00 AM CEST
+floatView(PAResourceOtoP.PAViews_DASHBOARD, "hw_ila_1"); // as:DockableFrame (aA:FrameContainer, cd:JFrame)
+dismissDialog("Bitstream Generation Completed"); // ah:y (cd:JFrame)
+// Elapsed time: 10 seconds
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xc7k325t_0 (2) ; Programmed", 2, "xc7k325t_0 (2)", 0, true, false, false, false, true, false); // t:ab (JViewport:JComponent, cd:JFrame) - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_PROGRAM_FPGA, "Program Device..."); // ac:JMenuItem (ai:JPopupMenu, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// be:aj (cd:JFrame): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a:JButton (JPanel:JComponent, be:aj)
+// bt:g (cd:JFrame):  Program Device : addNotify
+dismissDialog("Program Device"); // be:aj (cd:JFrame)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0] 
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_DEVICE_UPDATE
+// Tcl Message: program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// Tcl Message: program_hw_devices: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 1075.719 ; gain = 0.000 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_ILA_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s). 
+// TclEventType: HW_ILA_CHANGE
+// 'B' command handler elapsed time: 10 seconds
+dismissDialog("Program Device"); // bt:g (cd:JFrame)
+// Elapsed time: 19 seconds
+selectButton(PAResourceTtoZ.TriggerStatusPanel_RUN_TRIGGER_FOR_THIS_ILA_CORE, "ILA_run_trigger"); // y:JideButton (g:CommandBar, FrameFloatingContainer:ResizableFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_TRIGGER
+// Tcl Message: run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] 
+// TclEventType: HW_ILA_CHANGE
+// Tcl Message: INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 09:51:43 
+// TclEventType: HW_ILA_CHANGE
+// Tcl Message: wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] 
+// TclEventType: HW_ILA_CHANGE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Message: display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]] 
+// Tcl Message: INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 09:51:48 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// Tcl Message: INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data. 
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 559, 176); // l:a (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 826 MB. GUI used memory: 78 MB. Current time: 5/8/17 9:51:51 AM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 79, 224); // l:a (JViewport:JComponent, FrameFloatingContainer:ResizableFrame)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 826 MB. GUI used memory: 78 MB. Current time: 5/8/17 9:51:55 AM CEST
+// Elapsed time: 15 seconds
+selectButton(PAResourceTtoZ.TriggerStatusPanel_RUN_TRIGGER_IMMEDIATE_FOR_THIS_ILA_CORE, "ILA_trigger_immediate"); // y:JideButton (g:CommandBar, FrameFloatingContainer:ResizableFrame)
+// Run Command: PAResourceCommand.PACommandNames_TRIGGER_IMMEDIATE
+// TclEventType: HW_ILA_CHANGE
+// Tcl Message: run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now 
+// Tcl Message: INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 09:52:11 
+// Tcl Message: wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] 
+// TclEventType: HW_ILA_CHANGE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Tcl Message: display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]] 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Message: INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 09:52:11 
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// Tcl Message: INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data. 
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 826 MB. GUI used memory: 87 MB. Current time: 5/8/17 9:52:18 AM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 826 MB. GUI used memory: 78 MB. Current time: 5/8/17 9:52:19 AM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 826 MB. GUI used memory: 78 MB. Current time: 5/8/17 9:52:19 AM CEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Elapsed time: 11 seconds
+selectButton(PAResourceTtoZ.TriggerStatusPanel_RUN_TRIGGER_IMMEDIATE_FOR_THIS_ILA_CORE, "ILA_trigger_immediate"); // y:JideButton (g:CommandBar, FrameFloatingContainer:ResizableFrame)
+// Run Command: PAResourceCommand.PACommandNames_TRIGGER_IMMEDIATE
+// TclEventType: HW_ILA_CHANGE
+// Tcl Message: run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now 
+// Tcl Message: INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 09:52:22 
+// Tcl Message: wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] 
+// TclEventType: HW_ILA_CHANGE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// HMemoryUtils.trashcanNow. Engine heap size: 826 MB. GUI used memory: 79 MB. Current time: 5/8/17 9:52:23 AM CEST
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// Tcl Message: display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]] 
+// Tcl Message: INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 09:52:22 
+// Tcl Message: INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data. 
+selectButton(PAResourceTtoZ.TriggerStatusPanel_RUN_TRIGGER_IMMEDIATE_FOR_THIS_ILA_CORE, "ILA_trigger_immediate"); // y:JideButton (g:CommandBar, FrameFloatingContainer:ResizableFrame)
+// Run Command: PAResourceCommand.PACommandNames_TRIGGER_IMMEDIATE
+// TclEventType: HW_ILA_CHANGE
+// Tcl Message: run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now 
+// Tcl Message: INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 09:52:29 
+// Tcl Message: wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] 
+// TclEventType: HW_ILA_CHANGE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// HMemoryUtils.trashcanNow. Engine heap size: 826 MB. GUI used memory: 79 MB. Current time: 5/8/17 9:52:30 AM CEST
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// Tcl Message: display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]] 
+// Tcl Message: INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 09:52:29 
+// Tcl Message: INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data. 
+selectButton(PAResourceTtoZ.TriggerStatusPanel_RUN_TRIGGER_IMMEDIATE_FOR_THIS_ILA_CORE, "ILA_trigger_immediate"); // y:JideButton (g:CommandBar, FrameFloatingContainer:ResizableFrame)
+// Run Command: PAResourceCommand.PACommandNames_TRIGGER_IMMEDIATE
+// TclEventType: HW_ILA_CHANGE
+// Tcl Message: run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now 
+// Tcl Message: INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 09:52:31 
+// Tcl Message: wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] 
+// TclEventType: HW_ILA_CHANGE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// Tcl Message: display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]] 
+// Tcl Message: INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 09:52:31 
+// Tcl Message: INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data. 

@@ -172,16 +172,17 @@ begin
 			sw_button => sw_button
 		);
 		
-		slave_por: entity work.slave_por
-		port map(
-			clk => ipb_clk,
-			rst => ipb_rst,
-			ipbus_in => ipbw(7),
-			ipbus_out => ipbr(7),
-			por_disable => por_disable,
-			bor_disable => bor_disable,
-			vfat_reset => vfat_reset
-		);
+--		slave_por: entity work.slave_por
+--		port map(
+--			clk => ipb_clk,
+--			rst => ipb_rst,
+--			ipbus_in => ipbw(7),
+--			ipbus_out => ipbr(7),
+--			por_disable => por_disable,
+--			bor_disable => bor_disable,
+--			vfat_reset => vfat_reset,
+--			leds => leds
+--		);
 		
 --		slave_i2c: entity work.slave_i2c
 --			port map(

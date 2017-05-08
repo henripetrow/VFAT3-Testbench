@@ -61,31 +61,3 @@ INFO: [Labtools 27-3164] End of startup status: HIGH
 program_hw_devices: Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 1006.332 ; gain = 0.000
 refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
 INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
-reset_run synth_1
-launch_runs impl_3 -to_step write_bitstream -jobs 4
-WARNING: [Runs 36-115] Could not delete directory 'C:/Users/Jason/Dropbox/ULB/MA2/Memoire/JRFirmware/JRFirmware/vfat3_testing_firmware/.Xil/Vivado-14332-Shinsekai/dcp'.
-[Wed May 03 10:26:00 2017] Launched synth_1...
-Run output will be captured here: C:/Users/Jason/Dropbox/ULB/MA2/Memoire/JRFirmware/JRFirmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/runme.log
-[Wed May 03 10:26:00 2017] Launched impl_3...
-Run output will be captured here: C:/Users/Jason/Dropbox/ULB/MA2/Memoire/JRFirmware/JRFirmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/runme.log
-set_property PROBES.FILE {C:/Users/Jason/Dropbox/ULB/MA2/Memoire/JRFirmware/JRFirmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
-set_property PROGRAM.FILE {C:/Users/Jason/Dropbox/ULB/MA2/Memoire/JRFirmware/JRFirmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-program_hw_devices: Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 1088.254 ; gain = 0.000
-refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
-INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-03 11:25:49
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-03 11:25:49
-ERROR: [Labtoolstcl 44-504] Project directory 'C:/Users/Jason/Dropbox/ULB/MA2/Memoire/JRFirmware/JRFirmware/vfat3_testing_firmware/vfat3_testing_firmware.hw' is not writeable. This command requires a writeable project.
-run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
-INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-03 11:26:17
-wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
-display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
-INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-03 11:26:17
-INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/Users/Jason/Dropbox/ULB/MA2/Memoire/JRFirmware/JRFirmware/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
-exit
-INFO: [Common 17-206] Exiting Vivado at Wed May 03 11:27:33 2017...
