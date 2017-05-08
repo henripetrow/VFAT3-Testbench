@@ -2,8 +2,8 @@
 # Vivado v2016.3 (64-bit)
 # SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
 # IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
-# Start of session at: Mon May 08 09:14:09 2017
-# Process ID: 11052
+# Start of session at: Mon May 08 16:58:02 2017
+# Process ID: 9972
 # Current directory: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/top.vds
@@ -15,18 +15,18 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 13272 
+INFO: Helper process launched with PID 24176 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 325.281 ; gain = 115.609
+Starting RTL Elaboration : Time (s): cpu = 00:00:22 ; elapsed = 00:00:27 . Memory (MB): peak = 325.383 ; gain = 115.344
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-2040] formal port por_disable of mode buffer cannot be associated with actual port por_disable of mode inout [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:224]
-WARNING: [Synth 8-2040] formal port bor_disable of mode buffer cannot be associated with actual port bor_disable of mode inout [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:225]
-WARNING: [Synth 8-2040] formal port vfat_reset of mode buffer cannot be associated with actual port vfat_reset of mode inout [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:227]
+WARNING: [Synth 8-2040] formal port por_disable of mode buffer cannot be associated with actual port por_disable of mode inout [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:228]
+WARNING: [Synth 8-2040] formal port bor_disable of mode buffer cannot be associated with actual port bor_disable of mode inout [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:229]
+WARNING: [Synth 8-2040] formal port vfat_reset of mode buffer cannot be associated with actual port vfat_reset of mode inout [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:231]
 WARNING: [Synth 8-2551] possible infinite loop; process does not have a wait statement [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/fifo_tx.vhd:85]
 WARNING: [Synth 8-2551] possible infinite loop; process does not have a wait statement [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/fifo_tx.vhd:109]
 WARNING: [Synth 8-2551] possible infinite loop; process does not have a wait statement [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/rx_fifo_int.vhd:66]
 WARNING: [Synth 8-2551] possible infinite loop; process does not have a wait statement [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/dser_sync.vhd:44]
-INFO: [Synth 8-638] synthesizing module 'top' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:39]
+INFO: [Synth 8-638] synthesizing module 'top' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:40]
 INFO: [Synth 8-638] synthesizing module 'clocks_7s_extphy' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/clocks_7s_extphy.vhd:35]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter DIFF_TERM bound to: 0 - type: bool 
@@ -70,8 +70,8 @@ INFO: [Synth 8-638] synthesizing module 'clock_div' [C:/backup loopback/vfat3_te
 	Parameter INIT bound to: 16'b0000000000000000 
 INFO: [Synth 8-113] binding component instance 'reset_gen' to cell 'SRL16' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/clock_div.vhd:31]
 INFO: [Synth 8-256] done synthesizing module 'clock_div' (1#1) [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/clock_div.vhd:25]
-INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'clk_wiz' of component 'clk_wiz_0' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/clocks_7s_extphy.vhd:99]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/realtime/clk_wiz_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'clk_wiz' of component 'clk_wiz_0' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/clocks_7s_extphy.vhd:99]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/realtime/clk_wiz_0_stub.vhdl:16]
 INFO: [Synth 8-256] done synthesizing module 'clocks_7s_extphy' (2#1) [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/clocks_7s_extphy.vhd:35]
 INFO: [Synth 8-638] synthesizing module 'eth_7s_gmii' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/ethernet/hdl/eth_7s_gmii.vhd:45]
 	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
@@ -418,7 +418,11 @@ INFO: [Synth 8-256] done synthesizing module 'ipbus_ctrl' (31#1) [C:/backup loop
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IOSTANDARD bound to: LVDS_25 - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-113] binding component instance 'tx_obufds' to cell 'OBUFDS' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:142]
+INFO: [Synth 8-113] binding component instance 'tx_obufds' to cell 'OBUFDS' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:146]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IOSTANDARD bound to: LVDS_25 - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'clk320_obufds' to cell 'OBUFDS' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:166]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter DIFF_TERM bound to: 1 - type: bool 
 	Parameter DQS_BIAS bound to: FALSE - type: string 
@@ -426,7 +430,7 @@ INFO: [Synth 8-113] binding component instance 'tx_obufds' to cell 'OBUFDS' [C:/
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
 	Parameter IOSTANDARD bound to: LVDS_25 - type: string 
-INFO: [Synth 8-113] binding component instance 'rx_ibufds' to cell 'IBUFDS' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:174]
+INFO: [Synth 8-113] binding component instance 'rx_ibufds' to cell 'IBUFDS' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:178]
 INFO: [Synth 8-638] synthesizing module 'slaves' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/slaves.vhd:39]
 INFO: [Synth 8-638] synthesizing module 'ipbus_fabric' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/ipbus_core/hdl/ipbus_fabric.vhd:27]
 	Parameter NSLV bound to: 10 - type: integer 
@@ -461,8 +465,8 @@ INFO: [Synth 8-638] synthesizing module 'control' [C:/backup loopback/vfat3_test
 	Parameter fifo_w bound to: 32 - type: integer 
 	Parameter fw_st_w bound to: 4 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'control' (38#1) [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/control.vhd:50]
-INFO: [Synth 8-3491] module 'fifo_generator_0' declared at 'C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/realtime/fifo_generator_0_stub.vhdl:5' bound to instance 'fifo_in' of component 'fifo_generator_0' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/slave_vfat3.vhd:222]
-INFO: [Synth 8-638] synthesizing module 'fifo_generator_0' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/realtime/fifo_generator_0_stub.vhdl:23]
+INFO: [Synth 8-3491] module 'fifo_generator_0' declared at 'C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/realtime/fifo_generator_0_stub.vhdl:5' bound to instance 'fifo_in' of component 'fifo_generator_0' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/slave_vfat3.vhd:222]
+INFO: [Synth 8-638] synthesizing module 'fifo_generator_0' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/realtime/fifo_generator_0_stub.vhdl:23]
 INFO: [Synth 8-3491] module 'fifo_tx' declared at 'C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/fifo_tx.vhd:32' bound to instance 'ftx' of component 'fifo_tx' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/slave_vfat3.vhd:238]
 INFO: [Synth 8-638] synthesizing module 'fifo_tx' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/fifo_tx.vhd:53]
 	Parameter BCd_w bound to: 12 - type: integer 
@@ -470,11 +474,11 @@ INFO: [Synth 8-638] synthesizing module 'fifo_tx' [C:/backup loopback/vfat3_test
 	Parameter cmd_i_w bound to: 4 - type: integer 
 	Parameter cmd_o_w bound to: 8 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'fifo_tx' (39#1) [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/fifo_tx.vhd:53]
-INFO: [Synth 8-3491] module 'ser_8' declared at 'C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/realtime/ser_8_stub.vhdl:5' bound to instance 'ser' of component 'ser_8' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/slave_vfat3.vhd:249]
-INFO: [Synth 8-638] synthesizing module 'ser_8' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/realtime/ser_8_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'ser_8' declared at 'C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/realtime/ser_8_stub.vhdl:5' bound to instance 'ser' of component 'ser_8' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/slave_vfat3.vhd:249]
+INFO: [Synth 8-638] synthesizing module 'ser_8' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/realtime/ser_8_stub.vhdl:16]
 WARNING: [Synth 8-5640] Port 'overflow' is missing in component declaration [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/slave_vfat3.vhd:106]
-INFO: [Synth 8-3491] module 'fifo_rx' declared at 'C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/realtime/fifo_rx_stub.vhdl:5' bound to instance 'fifo_out' of component 'fifo_rx' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/slave_vfat3.vhd:259]
-INFO: [Synth 8-638] synthesizing module 'fifo_rx' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/realtime/fifo_rx_stub.vhdl:24]
+INFO: [Synth 8-3491] module 'fifo_rx' declared at 'C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/realtime/fifo_rx_stub.vhdl:5' bound to instance 'fifo_out' of component 'fifo_rx' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/slave_vfat3.vhd:259]
+INFO: [Synth 8-638] synthesizing module 'fifo_rx' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/realtime/fifo_rx_stub.vhdl:24]
 INFO: [Synth 8-3491] module 'rx_fifo_int' declared at 'C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/rx_fifo_int.vhd:28' bound to instance 'filter' of component 'rx_fifo_int' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/slave_vfat3.vhd:275]
 INFO: [Synth 8-638] synthesizing module 'rx_fifo_int' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/rx_fifo_int.vhd:43]
 	Parameter cmd_w bound to: 8 - type: integer 
@@ -486,10 +490,10 @@ INFO: [Synth 8-638] synthesizing module 'dser_sync' [C:/backup loopback/vfat3_te
 	Parameter fifo_w bound to: 32 - type: integer 
 	Parameter cmd_w bound to: 8 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'dser_sync' (41#1) [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/dser_sync.vhd:27]
-INFO: [Synth 8-3491] module 'dser_8' declared at 'C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/realtime/dser_8_stub.vhdl:5' bound to instance 'des' of component 'dser_8' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/slave_vfat3.vhd:294]
-INFO: [Synth 8-638] synthesizing module 'dser_8' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/realtime/dser_8_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'ila_0' declared at 'C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/realtime/ila_0_stub.vhdl:5' bound to instance 'chipscope' of component 'ila_0' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/slave_vfat3.vhd:304]
-INFO: [Synth 8-638] synthesizing module 'ila_0' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/realtime/ila_0_stub.vhdl:32]
+INFO: [Synth 8-3491] module 'dser_8' declared at 'C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/realtime/dser_8_stub.vhdl:5' bound to instance 'des' of component 'dser_8' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/slave_vfat3.vhd:294]
+INFO: [Synth 8-638] synthesizing module 'dser_8' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/realtime/dser_8_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'ila_0' declared at 'C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/realtime/ila_0_stub.vhdl:5' bound to instance 'chipscope' of component 'ila_0' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/slave_vfat3.vhd:304]
+INFO: [Synth 8-638] synthesizing module 'ila_0' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/realtime/ila_0_stub.vhdl:32]
 INFO: [Synth 8-256] done synthesizing module 'slave_vfat3' (42#1) [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/slave_vfat3.vhd:52]
 WARNING: [Synth 8-3848] Net por_disable in module/entity slaves does not have driver. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/slaves.vhd:26]
 WARNING: [Synth 8-3848] Net bor_disable in module/entity slaves does not have driver. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/slaves.vhd:27]
@@ -506,12 +510,17 @@ WARNING: [Synth 8-3848] Net ipbr[7][ipb_rdata] in module/entity slaves does not 
 WARNING: [Synth 8-3848] Net ipbr[7][ipb_ack] in module/entity slaves does not have driver. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/slaves.vhd:43]
 WARNING: [Synth 8-3848] Net ipbr[7][ipb_err] in module/entity slaves does not have driver. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/slaves.vhd:43]
 INFO: [Synth 8-256] done synthesizing module 'slaves' (43#1) [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/slaves.vhd:39]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net vfat_reset with 1st driver pin 'top:/vfat_reset' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:18]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net vfat_reset with 2nd driver pin 'VCC' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:18]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net vfat_reset is connected to constant driver, other driver is ignored [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:18]
-INFO: [Synth 8-256] done synthesizing module 'top' (44#1) [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:39]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net por_disable with 1st driver pin 'top:/por_disable' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:18]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net por_disable with 2nd driver pin 'VCC' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:18]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net por_disable is connected to constant driver, other driver is ignored [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:18]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bor_disable with 1st driver pin 'top:/bor_disable' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:18]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net bor_disable with 2nd driver pin 'VCC' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:18]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net bor_disable is connected to constant driver, other driver is ignored [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'top' (44#1) [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/demo_kc705_extphy/top_kc705_extphy.vhd:40]
 WARNING: [Synth 8-3917] design top has port phy_rstb driven by constant 1
-WARNING: [Synth 8-3917] design top has port vfat_reset driven by constant 1
+WARNING: [Synth 8-3917] design top has port por_disable driven by constant 1
+WARNING: [Synth 8-3917] design top has port bor_disable driven by constant 1
+WARNING: [Synth 8-3917] design top has port mon_clk_en driven by constant 1
 WARNING: [Synth 8-3331] design fifo_tx has unconnected port fifo_d[15]
 WARNING: [Synth 8-3331] design fifo_tx has unconnected port fifo_d[14]
 WARNING: [Synth 8-3331] design fifo_tx has unconnected port fifo_d[13]
@@ -614,7 +623,7 @@ WARNING: [Synth 8-3331] design ipbus_pkt_ctr has unconnected port ipbus_in[ipb_w
 WARNING: [Synth 8-3331] design ipbus_pkt_ctr has unconnected port ipbus_in[ipb_wdata][22]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:32 ; elapsed = 00:00:38 . Memory (MB): peak = 393.156 ; gain = 183.484
+Finished RTL Elaboration : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 393.266 ; gain = 183.227
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -725,7 +734,7 @@ WARNING: [Synth 8-3295] tying undriven pin fabric:ipb_from_slaves[7][ipb_rdata][
 WARNING: [Synth 8-3295] tying undriven pin fabric:ipb_from_slaves[7][ipb_rdata][0] to constant 0 [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/slaves.vhd:70]
 INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 393.156 ; gain = 183.484
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 393.266 ; gain = 183.227
 ---------------------------------------------------------------------------------
 WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'clk_wiz_0' instantiated as 'clocks/clk_wiz' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/example_designs/hdl/clocks_7s_extphy.vhd:99]
 WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'dser_8' instantiated as 'slaves/slave_vfat3/des' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/slave_vfat3.vhd:294]
@@ -735,36 +744,34 @@ WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'ila_0' 
 WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'mac_fifo_axi4' instantiated as 'eth/fifo' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/ethernet/hdl/eth_7s_gmii.vhd:273]
 WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'ser_8' instantiated as 'slaves/slave_vfat3/ser' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/new/slave_vfat3.vhd:249]
 WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'tri_mode_eth_mac_v5_4' instantiated as 'eth/emac0' [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/ethernet/hdl/eth_7s_gmii.vhd:227]
-INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Device 21-403] Loading part xc7k325tffg900-2
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/dcp/clk_wiz_0_in_context.xdc] for cell 'clocks/clk_wiz'
-Finished Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/dcp/clk_wiz_0_in_context.xdc] for cell 'clocks/clk_wiz'
-Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/dcp_2/fifo_generator_0_in_context.xdc] for cell 'slaves/slave_vfat3/fifo_in'
-Finished Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/dcp_2/fifo_generator_0_in_context.xdc] for cell 'slaves/slave_vfat3/fifo_in'
-Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/dcp_3/fifo_rx_in_context.xdc] for cell 'slaves/slave_vfat3/fifo_out'
-Finished Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/dcp_3/fifo_rx_in_context.xdc] for cell 'slaves/slave_vfat3/fifo_out'
-Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/dcp_4/ila_0_in_context.xdc] for cell 'slaves/slave_vfat3/chipscope'
-Finished Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/dcp_4/ila_0_in_context.xdc] for cell 'slaves/slave_vfat3/chipscope'
-Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/dcp_5/ser_8_in_context.xdc] for cell 'slaves/slave_vfat3/ser'
-Finished Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/dcp_5/ser_8_in_context.xdc] for cell 'slaves/slave_vfat3/ser'
-Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/dcp_6/dser_8_in_context.xdc] for cell 'slaves/slave_vfat3/des'
-Finished Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-11052-Shinsekai/dcp_6/dser_8_in_context.xdc] for cell 'slaves/slave_vfat3/des'
+Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/dcp/clk_wiz_0_in_context.xdc] for cell 'clocks/clk_wiz'
+Finished Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/dcp/clk_wiz_0_in_context.xdc] for cell 'clocks/clk_wiz'
+Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/dcp_2/fifo_generator_0_in_context.xdc] for cell 'slaves/slave_vfat3/fifo_in'
+Finished Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/dcp_2/fifo_generator_0_in_context.xdc] for cell 'slaves/slave_vfat3/fifo_in'
+Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/dcp_3/fifo_rx_in_context.xdc] for cell 'slaves/slave_vfat3/fifo_out'
+Finished Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/dcp_3/fifo_rx_in_context.xdc] for cell 'slaves/slave_vfat3/fifo_out'
+Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/dcp_4/ila_0_in_context.xdc] for cell 'slaves/slave_vfat3/chipscope'
+Finished Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/dcp_4/ila_0_in_context.xdc] for cell 'slaves/slave_vfat3/chipscope'
+Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/dcp_5/ser_8_in_context.xdc] for cell 'slaves/slave_vfat3/ser'
+Finished Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/dcp_5/ser_8_in_context.xdc] for cell 'slaves/slave_vfat3/ser'
+Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/dcp_6/dser_8_in_context.xdc] for cell 'slaves/slave_vfat3/des'
+Finished Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/.Xil/Vivado-9972-Shinsekai/dcp_6/dser_8_in_context.xdc] for cell 'slaves/slave_vfat3/des'
 Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc]
 WARNING: [Constraints 18-96] Setting input delay on a clock pin 'gmii_rx_clk' is not supported, ignoring it [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:128]
 WARNING: [Constraints 18-96] Setting input delay on a clock pin 'gmii_rx_clk' is not supported, ignoring it [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:129]
-WARNING: [Vivado 12-584] No ports matched 'clk320_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:234]
-WARNING: [Vivado 12-584] No ports matched 'clk320_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:235]
-WARNING: [Vivado 12-584] No ports matched 'clk40_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:236]
-WARNING: [Vivado 12-584] No ports matched 'clk40_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:237]
-WARNING: [Vivado 12-584] No ports matched 'clk40_back_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:239]
-WARNING: [Vivado 12-584] No ports matched 'clk40_back_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:240]
-WARNING: [Vivado 12-584] No ports matched 'clk320_back_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:241]
-WARNING: [Vivado 12-584] No ports matched 'clk320_back_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:242]
+WARNING: [Vivado 12-584] No ports matched 'clk40_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:234]
+WARNING: [Vivado 12-584] No ports matched 'clk40_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:235]
+WARNING: [Vivado 12-584] No ports matched 'clk40_back_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:237]
+WARNING: [Vivado 12-584] No ports matched 'clk40_back_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:238]
+WARNING: [Vivado 12-584] No ports matched 'clk320_back_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:239]
+WARNING: [Vivado 12-584] No ports matched 'clk320_back_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:240]
 Finished Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc]
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/top_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
@@ -778,24 +785,24 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   MMCME2_BASE => MMCME2_ADV: 1 instances
   SRL16 => SRL16E: 3 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 750.527 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 750.223 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'slaves/slave_vfat3/des' at clock pin 'clk_in' is different from the actual clock period '3.125', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'slaves/slave_vfat3/ser' at clock pin 'clk_in' is different from the actual clock period '3.125', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:23 ; elapsed = 00:01:30 . Memory (MB): peak = 750.527 ; gain = 540.855
+Finished Constraint Validation : Time (s): cpu = 00:01:23 ; elapsed = 00:01:30 . Memory (MB): peak = 750.223 ; gain = 540.184
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k325tffg900-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:23 ; elapsed = 00:01:30 . Memory (MB): peak = 750.527 ; gain = 540.855
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:23 ; elapsed = 00:01:30 . Memory (MB): peak = 750.223 ; gain = 540.184
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:23 ; elapsed = 00:01:30 . Memory (MB): peak = 750.527 ; gain = 540.855
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:23 ; elapsed = 00:01:30 . Memory (MB): peak = 750.223 ; gain = 540.184
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "tick_int" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "set_addr_int" won't be mapped to RAM because it is too sparse
@@ -961,7 +968,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'd_out_reg_n_reg' [C:/backup
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_p_reg' using encoding 'sequential' in module 'dser_sync'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:37 ; elapsed = 00:01:46 . Memory (MB): peak = 750.527 ; gain = 540.855
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:37 ; elapsed = 00:01:44 . Memory (MB): peak = 750.223 ; gain = 540.184
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1684,7 +1691,9 @@ INFO: [Synth 8-5544] ROM "p_0_out" won't be mapped to Block RAM because address 
 INFO: [Synth 8-5545] ROM "slave3/reg_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "slave3/reg_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 WARNING: [Synth 8-3917] design top has port phy_rstb driven by constant 1
-WARNING: [Synth 8-3917] design top has port vfat_reset driven by constant 1
+WARNING: [Synth 8-3917] design top has port por_disable driven by constant 1
+WARNING: [Synth 8-3917] design top has port bor_disable driven by constant 1
+WARNING: [Synth 8-3917] design top has port mon_clk_en driven by constant 1
 INFO: [Synth 8-4652] Swapped enable and write-enable on 1 RAM instances of RAM internal_ram/ram_reg to conserve power
 INFO: [Synth 8-4652] Swapped enable and write-enable on 8 RAM instances of RAM ipbus_tx_ram/ram_reg to conserve power
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ipbus/udp_if /RARP_block/\data_buffer_reg[0] )
@@ -1991,7 +2000,7 @@ WARNING: [Synth 8-3332] Sequential element (header_reg[66]) is unused and will b
 WARNING: [Synth 8-3332] Sequential element (header_reg[65]) is unused and will be removed from module udp_status_buffer.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:46 ; elapsed = 00:02:56 . Memory (MB): peak = 750.527 ; gain = 540.855
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:37 ; elapsed = 00:03:47 . Memory (MB): peak = 750.223 ; gain = 540.184
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2036,10 +2045,10 @@ WARNING: [Synth 8-3321] set_false_path : Empty through list for constraint at li
 WARNING: [Synth 8-3321] set_false_path : Empty through list for constraint at line 33 of {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc}. [{C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc}:33]
 INFO: [Synth 8-5819] Moved 3 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:56 ; elapsed = 00:03:05 . Memory (MB): peak = 750.527 ; gain = 540.855
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:04:14 ; elapsed = 00:04:24 . Memory (MB): peak = 750.223 ; gain = 540.184
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:57 ; elapsed = 00:03:07 . Memory (MB): peak = 750.527 ; gain = 540.855
+Finished Timing Optimization : Time (s): cpu = 00:04:20 ; elapsed = 00:04:31 . Memory (MB): peak = 750.223 ; gain = 540.184
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2070,7 +2079,7 @@ INFO: [Synth 8-4480] The timing for the instance ipbus/udp_if/ipbus_tx_ram/ram_r
 INFO: [Synth 8-4480] The timing for the instance slaves/slave2/reg_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance slaves/slave4/reg_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:02 ; elapsed = 00:03:12 . Memory (MB): peak = 800.992 ; gain = 591.320
+Finished Technology Mapping : Time (s): cpu = 00:04:35 ; elapsed = 00:04:46 . Memory (MB): peak = 800.484 ; gain = 590.445
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2094,7 +2103,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:03 ; elapsed = 00:03:13 . Memory (MB): peak = 800.992 ; gain = 591.320
+Finished IO Insertion : Time (s): cpu = 00:04:39 ; elapsed = 00:04:50 . Memory (MB): peak = 800.484 ; gain = 590.445
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2107,7 +2116,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:03 ; elapsed = 00:03:13 . Memory (MB): peak = 800.992 ; gain = 591.320
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:39 ; elapsed = 00:04:50 . Memory (MB): peak = 800.484 ; gain = 590.445
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2119,25 +2128,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:04 ; elapsed = 00:03:14 . Memory (MB): peak = 800.992 ; gain = 591.320
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:41 ; elapsed = 00:04:52 . Memory (MB): peak = 800.484 ; gain = 590.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:04 ; elapsed = 00:03:14 . Memory (MB): peak = 800.992 ; gain = 591.320
+Finished Renaming Generated Ports : Time (s): cpu = 00:04:41 ; elapsed = 00:04:52 . Memory (MB): peak = 800.484 ; gain = 590.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:05 ; elapsed = 00:03:14 . Memory (MB): peak = 800.992 ; gain = 591.320
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:43 ; elapsed = 00:04:53 . Memory (MB): peak = 800.484 ; gain = 590.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:05 ; elapsed = 00:03:14 . Memory (MB): peak = 800.992 ; gain = 591.320
+Finished Renaming Generated Nets : Time (s): cpu = 00:04:43 ; elapsed = 00:04:53 . Memory (MB): peak = 800.484 ; gain = 590.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2218,9 +2227,9 @@ Report Cell Usage:
 |15    |LUT1                       |   314|
 |16    |LUT2                       |   487|
 |17    |LUT3                       |   479|
-|18    |LUT4                       |   402|
+|18    |LUT4                       |   401|
 |19    |LUT5                       |   701|
-|20    |LUT6                       |  1006|
+|20    |LUT6                       |  1007|
 |21    |MMCME2_BASE                |     1|
 |22    |MUXF7                      |     2|
 |23    |ODDR                       |     1|
@@ -2237,8 +2246,8 @@ Report Cell Usage:
 |34    |IBUF                       |    12|
 |35    |IBUFDS                     |     1|
 |36    |IBUFGDS                    |     1|
-|37    |OBUF                       |    14|
-|38    |OBUFDS                     |     1|
+|37    |OBUF                       |    16|
+|38    |OBUFDS                     |     2|
 |39    |OBUFT                      |     7|
 +------+---------------------------+------+
 
@@ -2246,7 +2255,7 @@ Report Instance Areas:
 +------+----------------------------+------------------------------------+------+
 |      |Instance                    |Module                              |Cells |
 +------+----------------------------+------------------------------------+------+
-|1     |top                         |                                    |  7519|
+|1     |top                         |                                    |  7522|
 |2     |  clocks                    |clocks_7s_extphy                    |    68|
 |3     |    clkdiv                  |clock_div                           |    46|
 |4     |  eth                       |eth_7s_gmii                         |   165|
@@ -2294,11 +2303,11 @@ Report Instance Areas:
 |46    |    slave5                  |ipbus_pkt_ctr                       |   158|
 +------+----------------------------+------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:05 ; elapsed = 00:03:14 . Memory (MB): peak = 800.992 ; gain = 591.320
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:43 ; elapsed = 00:04:53 . Memory (MB): peak = 800.484 ; gain = 590.445
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 480 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:55 ; elapsed = 00:02:20 . Memory (MB): peak = 800.992 ; gain = 189.664
-Synthesis Optimization Complete : Time (s): cpu = 00:03:05 ; elapsed = 00:03:14 . Memory (MB): peak = 800.992 ; gain = 591.320
+Synthesis finished with 0 errors, 0 critical warnings and 481 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:32 ; elapsed = 00:04:00 . Memory (MB): peak = 800.484 ; gain = 189.805
+Synthesis Optimization Complete : Time (s): cpu = 00:04:43 ; elapsed = 00:04:54 . Memory (MB): peak = 800.484 ; gain = 590.445
 INFO: [Project 1-571] Translating synthesized netlist
 Release 14.7 - ngc2edif P_INT.20160902 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
@@ -2319,7 +2328,7 @@ WARNING:NetListWriters:306 - Signal bus TXGEN/TX_SM1/PREAMBLE_PIPE[13 : 0] on
    signals.
   finished :Prep
 Writing EDIF netlist file tri_mode_eth_mac_v5_4.edif ...
-ngc2edif: Total memory usage is 86604 kilobytes
+ngc2edif: Total memory usage is 86412 kilobytes
 
 Reading core file 'C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/ipcore_dir/tri_mode_eth_mac_v5_4.ngc' for (cell view 'tri_mode_eth_mac_v5_4', library 'work')
 Parsing EDIF File [./.ngc2edfcache/tri_mode_eth_mac_v5_4_ngc_2c6e5d67.edif]
@@ -2334,13 +2343,13 @@ Processing design ...
    Preping design's macros ...
   finished :Prep
 Writing EDIF netlist file mac_fifo_axi4.edif ...
-ngc2edif: Total memory usage is 82124 kilobytes
+ngc2edif: Total memory usage is 82316 kilobytes
 
 Reading core file 'C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/ipcore_dir/mac_fifo_axi4.ngc' for (cell view 'mac_fifo_axi4', library 'work')
 Parsing EDIF File [./.ngc2edfcache/mac_fifo_axi4_ngc_2c6e5d67.edif]
 Finished Parsing EDIF File [./.ngc2edfcache/mac_fifo_axi4_ngc_2c6e5d67.edif]
-INFO: [Netlist 29-17] Analyzing 983 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-17] Analyzing 984 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-479] Netlist was created with Xilinx ngc2edif P_INT.20160902
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -2367,9 +2376,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   SRLC32E => SRL16E: 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-692 Infos, 353 Warnings, 3 Critical Warnings and 0 Errors encountered.
+693 Infos, 355 Warnings, 6 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:58 ; elapsed = 00:03:06 . Memory (MB): peak = 803.266 ; gain = 559.664
+synth_design: Time (s): cpu = 00:04:45 ; elapsed = 00:05:01 . Memory (MB): peak = 802.871 ; gain = 559.277
 INFO: [Common 17-1381] The checkpoint 'C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/top.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.095 . Memory (MB): peak = 803.266 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Mon May 08 09:17:34 2017...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.354 . Memory (MB): peak = 802.871 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon May 08 17:03:25 2017...

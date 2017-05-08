@@ -62,3 +62,240 @@ display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices
 run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
 wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
 display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+reset_run synth_1
+launch_runs impl_3 -to_step write_bitstream -jobs 4
+wait_on_run impl_3
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+place_ports clk320_p Y30
+save_constraints
+launch_runs impl_3 -to_step write_bitstream -jobs 4
+wait_on_run impl_3
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+place_ports por_disable AG25
+place_ports vfat_reset AH25
+place_ports tx_p AB29
+place_ports rx_p AC29
+save_constraints
+reset_run impl_3
+launch_runs impl_3 -to_step write_bitstream -jobs 4
+wait_on_run impl_3
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+reset_run synth_1
+launch_runs impl_3 -to_step write_bitstream -jobs 4
+wait_on_run impl_3
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes slaves/slave_vfat3/fifo_in_w_en -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+set_property TRIGGER_COMPARE_VALUE eq8'hC3 [get_hw_probes slaves/slave_vfat3/ser_d_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+set_property IOSTANDARD LVCMOS25 [get_ports [list mon_clk_en]]
+place_ports mon_clk_en AC25
+save_constraints
+launch_runs impl_3 -to_step write_bitstream -jobs 4
+wait_on_run impl_3
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property TRIGGER_COMPARE_VALUE eq8'b1100_0011 [get_hw_probes slaves/slave_vfat3/ser_d_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property TRIGGER_COMPARE_VALUE eq8'b1110_1000 [get_hw_probes slaves/slave_vfat3/ser_d_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+set_property TRIGGER_COMPARE_VALUE eq8'b0001_0111 [get_hw_probes slaves/slave_vfat3/ser_d_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property TRIGGER_COMPARE_VALUE eq8'h7E [get_hw_probes slaves/slave_vfat3/d_sync -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property TRIGGER_COMPARE_VALUE eq8'hAA [get_hw_probes slaves/slave_vfat3/data_bus_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property TRIGGER_COMPARE_VALUE eq8'hXX [get_hw_probes slaves/slave_vfat3/ser_d_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+set_property TRIGGER_COMPARE_VALUE eq8'hXX [get_hw_probes slaves/slave_vfat3/d_sync -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property TRIGGER_COMPARE_VALUE neq8'hAA [get_hw_probes slaves/slave_vfat3/data_bus_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property TRIGGER_COMPARE_VALUE neq8'hFF [get_hw_probes slaves/slave_vfat3/data_bus_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property package_pin "" [get_ports [list  rx_p]]
+place_ports tx_p AC29
+place_ports rx_p AB29
+save_constraints
+reset_run impl_3
+launch_runs impl_3 -to_step write_bitstream -jobs 4
+wait_on_run impl_3
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+reset_run synth_1
+launch_runs impl_3 -to_step write_bitstream -jobs 4
+wait_on_run impl_3
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property TRIGGER_COMPARE_VALUE neq8'h00 [get_hw_probes slaves/slave_vfat3/data_bus_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property TRIGGER_COMPARE_VALUE eq8'h7E [get_hw_probes slaves/slave_vfat3/d_sync -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property TRIGGER_COMPARE_VALUE eq8'h00 [get_hw_probes slaves/slave_vfat3/data_bus_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property TRIGGER_COMPARE_VALUE eq8'hXX [get_hw_probes slaves/slave_vfat3/data_bus_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {slaves/slave_vfat3/fifo_in_data_in} {slaves/slave_vfat3/fifo_in_data_out} {slaves/slave_vfat3/fifo_in_empty} {slaves/slave_vfat3/fifo_in_full} {slaves/slave_vfat3/fifo_in_r_en} {slaves/slave_vfat3/fifo_in_valid} {slaves/slave_vfat3/fifo_in_w_en} {slaves/slave_vfat3/fifo_out_data_in} {slaves/slave_vfat3/fifo_out_data_out} {slaves/slave_vfat3/fifo_out_empty} {slaves/slave_vfat3/fifo_out_full} {slaves/slave_vfat3/fifo_out_r_en} {slaves/slave_vfat3/fifo_out_valid} {slaves/slave_vfat3/fifo_out_w_en} {slaves/slave_vfat3/reset} {slaves/slave_vfat3/reset_fifo} {slaves/slave_vfat3/rst40} {slaves/slave_vfat3/ser_d_in} }
+write_hw_ila_data {C:\backup loopback\vfat3_testing_firmware\vfat3_testing_firmware.runs\impl_3\sleep_fillers.ila} hw_ila_data_1
+write_hw_ila_data -csv_file {C:\backup loopback\vfat3_testing_firmware\vfat3_testing_firmware.runs\impl_3\sleep_fillers.csv} hw_ila_data_1

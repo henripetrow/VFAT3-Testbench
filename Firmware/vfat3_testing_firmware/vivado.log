@@ -130,3 +130,650 @@ wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CEL
 display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
 INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 09:52:31
 INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+reset_run synth_1
+launch_runs impl_3 -to_step write_bitstream -jobs 4
+[Mon May 08 10:03:14 2017] Launched synth_1...
+Run output will be captured here: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/runme.log
+[Mon May 08 10:03:14 2017] Launched impl_3...
+Run output will be captured here: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/runme.log
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 1104.250 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 11:02:41
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 11:02:41
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Mon May 08 11:04:15 2017] Launched synth_1...
+Run output will be captured here: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7k325tffg900-2
+INFO: [Project 1-454] Reading design checkpoint 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.dcp' for cell 'clocks/clk_wiz'
+INFO: [Project 1-454] Reading design checkpoint 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ila_0/ila_0.dcp' for cell 'slaves/slave_vfat3/chipscope'
+INFO: [Project 1-454] Reading design checkpoint 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/dser_8/dser_8.dcp' for cell 'slaves/slave_vfat3/des'
+INFO: [Project 1-454] Reading design checkpoint 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.dcp' for cell 'slaves/slave_vfat3/fifo_in'
+INFO: [Project 1-454] Reading design checkpoint 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_rx/fifo_rx.dcp' for cell 'slaves/slave_vfat3/fifo_out'
+INFO: [Project 1-454] Reading design checkpoint 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ser_8/ser_8.dcp' for cell 'slaves/slave_vfat3/ser'
+INFO: [Netlist 29-17] Analyzing 468 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 2 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.3
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. clocks/clk_wiz/inst/clkin1_ibufg 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-35] Removing redundant IBUF, slaves/slave_vfat3/des/inst/pins[0].ibuf_inst, from the path connected to top-level port: rx_p 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. slaves/slave_vfat3/ser/inst/pins[0].obuf_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'clocks/clk_wiz/clk_in1' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [C:/backup loopback/vfat3_testing_firmware/.Xil/Vivado-14508-Shinsekai/dcp_2/clk_wiz_0.edf:317]
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'slaves/slave_vfat3/des/data_in_from_pins[0]' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [C:/backup loopback/vfat3_testing_firmware/.Xil/Vivado-14508-Shinsekai/dcp_7/dser_8.edf:310]
+WARNING: [Constraints 18-550] Could not create 'IOSTANDARD' constraint because net 'slaves/slave_vfat3/des/data_in_from_pins[0]' is not directly connected to top level port. 'IOSTANDARD' is ignored by Vivado but preserved for implementation tool. [C:/backup loopback/vfat3_testing_firmware/.Xil/Vivado-14508-Shinsekai/dcp_7/dser_8.edf:311]
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'slaves/slave_vfat3/ser/data_out_to_pins[0]' is not directly connected to top level port. 'DRIVE' is ignored by Vivado but preserved for implementation tool. [C:/backup loopback/vfat3_testing_firmware/.Xil/Vivado-14508-Shinsekai/dcp_6/ser_8.edf:326]
+WARNING: [Constraints 18-550] Could not create 'IOSTANDARD' constraint because net 'slaves/slave_vfat3/ser/data_out_to_pins[0]' is not directly connected to top level port. 'IOSTANDARD' is ignored by Vivado but preserved for implementation tool. [C:/backup loopback/vfat3_testing_firmware/.Xil/Vivado-14508-Shinsekai/dcp_6/ser_8.edf:327]
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'slaves/slave_vfat3/ser/data_out_to_pins[0]' is not directly connected to top level port. 'SLEW' is ignored by Vivado but preserved for implementation tool. [C:/backup loopback/vfat3_testing_firmware/.Xil/Vivado-14508-Shinsekai/dcp_6/ser_8.edf:328]
+Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0_board.xdc] for cell 'clocks/clk_wiz/inst'
+Finished Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0_board.xdc] for cell 'clocks/clk_wiz/inst'
+Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc] for cell 'clocks/clk_wiz/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc:57]
+get_clocks: Time (s): cpu = 00:01:02 ; elapsed = 00:00:56 . Memory (MB): peak = 1990.168 ; gain = 558.117
+Finished Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc] for cell 'clocks/clk_wiz/inst'
+Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0.xdc] for cell 'slaves/slave_vfat3/fifo_in/U0'
+Finished Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0.xdc] for cell 'slaves/slave_vfat3/fifo_in/U0'
+Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_rx/fifo_rx/fifo_rx.xdc] for cell 'slaves/slave_vfat3/fifo_out/U0'
+Finished Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_rx/fifo_rx/fifo_rx.xdc] for cell 'slaves/slave_vfat3/fifo_out/U0'
+Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'slaves/slave_vfat3/chipscope/U0'
+Finished Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'slaves/slave_vfat3/chipscope/U0'
+Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ser_8/ser_8.xdc] for cell 'slaves/slave_vfat3/ser/inst'
+Finished Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ser_8/ser_8.xdc] for cell 'slaves/slave_vfat3/ser/inst'
+Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/dser_8/dser_8.xdc] for cell 'slaves/slave_vfat3/des/inst'
+Finished Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/dser_8/dser_8.xdc] for cell 'slaves/slave_vfat3/des/inst'
+Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc]
+WARNING: [Constraints 18-96] Setting input delay on a clock pin 'gmii_rx_clk' is not supported, ignoring it [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:128]
+WARNING: [Constraints 18-96] Setting input delay on a clock pin 'gmii_rx_clk' is not supported, ignoring it [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:129]
+WARNING: [Vivado 12-584] No ports matched 'clk40_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:236]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:236]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk40_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:237]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:237]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk40_back_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:239]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:239]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk40_back_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:240]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:240]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk320_back_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:241]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:241]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk320_back_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:242]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:242]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc]
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_rx/fifo_rx.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ila_0/ila_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ser_8/ser_8.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/dser_8/dser_8.dcp'
+Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'slaves/slave_vfat3/fifo_in/U0'
+INFO: [Timing 38-2] Deriving generated clocks [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_clocks.xdc:53]
+Finished Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'slaves/slave_vfat3/fifo_in/U0'
+Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_rx/fifo_rx/fifo_rx_clocks.xdc] for cell 'slaves/slave_vfat3/fifo_out/U0'
+Finished Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_rx/fifo_rx/fifo_rx_clocks.xdc] for cell 'slaves/slave_vfat3/fifo_out/U0'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 177 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 164 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 1 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 4 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 8 instances
+
+open_run: Time (s): cpu = 00:02:28 ; elapsed = 00:02:02 . Memory (MB): peak = 2028.176 ; gain = 923.926
+place_ports clk320_p Y30
+save_constraints
+launch_runs impl_3 -to_step write_bitstream -jobs 4
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.241 . Memory (MB): peak = 2037.070 ; gain = 0.000
+[Mon May 08 11:20:26 2017] Launched impl_3...
+Run output will be captured here: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/runme.log
+launch_runs: Time (s): cpu = 00:00:19 ; elapsed = 00:00:11 . Memory (MB): peak = 2037.070 ; gain = 0.000
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2037.070 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 11:48:26
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 11:48:26
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+place_ports por_disable AG25
+place_ports vfat_reset AH25
+place_ports tx_p AB29
+place_ports rx_p AC29
+save_constraints
+reset_run impl_3
+launch_runs impl_3 -to_step write_bitstream -jobs 4
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.306 . Memory (MB): peak = 2037.070 ; gain = 0.000
+[Mon May 08 11:54:41 2017] Launched impl_3...
+Run output will be captured here: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/runme.log
+launch_runs: Time (s): cpu = 00:00:18 ; elapsed = 00:00:11 . Memory (MB): peak = 2037.070 ; gain = 0.000
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2037.070 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 12:54:05
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 12:54:05
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 12:54:11
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 12:54:11
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 12:54:15
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 12:54:15
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+reset_run synth_1
+launch_runs impl_3 -to_step write_bitstream -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_3'
+[Mon May 08 12:54:39 2017] Launched synth_1...
+Run output will be captured here: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/runme.log
+[Mon May 08 12:54:39 2017] Launched impl_3...
+Run output will be captured here: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/runme.log
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2042.145 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 13:57:56
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 13:58:02
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes slaves/slave_vfat3/fifo_in_w_en -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 13:58:51
+set_property TRIGGER_COMPARE_VALUE eq8'hC3 [get_hw_probes slaves/slave_vfat3/ser_d_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1965] The ILA core 'hw_ila_1' trigger was stopped by user at 2017-May-08 13:59:31
+WARNING: [Labtools 27-157] hw_ila [hw_ila_1] stopped. No data to upload.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 13:59:33
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 13:59:36
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Mon May 08 14:06:00 2017] Launched synth_1...
+Run output will be captured here: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/runme.log
+close_design
+close_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2052.855 ; gain = 0.000
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7k325tffg900-2
+INFO: [Project 1-454] Reading design checkpoint 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.dcp' for cell 'clocks/clk_wiz'
+INFO: [Project 1-454] Reading design checkpoint 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ila_0/ila_0.dcp' for cell 'slaves/slave_vfat3/chipscope'
+INFO: [Project 1-454] Reading design checkpoint 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/dser_8/dser_8.dcp' for cell 'slaves/slave_vfat3/des'
+INFO: [Project 1-454] Reading design checkpoint 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.dcp' for cell 'slaves/slave_vfat3/fifo_in'
+INFO: [Project 1-454] Reading design checkpoint 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_rx/fifo_rx.dcp' for cell 'slaves/slave_vfat3/fifo_out'
+INFO: [Project 1-454] Reading design checkpoint 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ser_8/ser_8.dcp' for cell 'slaves/slave_vfat3/ser'
+INFO: [Netlist 29-17] Analyzing 468 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.3
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. clocks/clk_wiz/inst/clkin1_ibufg 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-35] Removing redundant IBUF, slaves/slave_vfat3/des/inst/pins[0].ibuf_inst, from the path connected to top-level port: rx_p 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. slaves/slave_vfat3/ser/inst/pins[0].obuf_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'clocks/clk_wiz/clk_in1' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [C:/backup loopback/vfat3_testing_firmware/.Xil/Vivado-14508-Shinsekai/dcp_2/clk_wiz_0.edf:317]
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'slaves/slave_vfat3/des/data_in_from_pins[0]' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [C:/backup loopback/vfat3_testing_firmware/.Xil/Vivado-14508-Shinsekai/dcp_7/dser_8.edf:310]
+WARNING: [Constraints 18-550] Could not create 'IOSTANDARD' constraint because net 'slaves/slave_vfat3/des/data_in_from_pins[0]' is not directly connected to top level port. 'IOSTANDARD' is ignored by Vivado but preserved for implementation tool. [C:/backup loopback/vfat3_testing_firmware/.Xil/Vivado-14508-Shinsekai/dcp_7/dser_8.edf:311]
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'slaves/slave_vfat3/ser/data_out_to_pins[0]' is not directly connected to top level port. 'DRIVE' is ignored by Vivado but preserved for implementation tool. [C:/backup loopback/vfat3_testing_firmware/.Xil/Vivado-14508-Shinsekai/dcp_6/ser_8.edf:326]
+WARNING: [Constraints 18-550] Could not create 'IOSTANDARD' constraint because net 'slaves/slave_vfat3/ser/data_out_to_pins[0]' is not directly connected to top level port. 'IOSTANDARD' is ignored by Vivado but preserved for implementation tool. [C:/backup loopback/vfat3_testing_firmware/.Xil/Vivado-14508-Shinsekai/dcp_6/ser_8.edf:327]
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'slaves/slave_vfat3/ser/data_out_to_pins[0]' is not directly connected to top level port. 'SLEW' is ignored by Vivado but preserved for implementation tool. [C:/backup loopback/vfat3_testing_firmware/.Xil/Vivado-14508-Shinsekai/dcp_6/ser_8.edf:328]
+Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0_board.xdc] for cell 'clocks/clk_wiz/inst'
+Finished Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0_board.xdc] for cell 'clocks/clk_wiz/inst'
+Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc] for cell 'clocks/clk_wiz/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc:57]
+Finished Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc] for cell 'clocks/clk_wiz/inst'
+Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0.xdc] for cell 'slaves/slave_vfat3/fifo_in/U0'
+Finished Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0.xdc] for cell 'slaves/slave_vfat3/fifo_in/U0'
+Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_rx/fifo_rx/fifo_rx.xdc] for cell 'slaves/slave_vfat3/fifo_out/U0'
+Finished Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_rx/fifo_rx/fifo_rx.xdc] for cell 'slaves/slave_vfat3/fifo_out/U0'
+Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'slaves/slave_vfat3/chipscope/U0'
+Finished Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'slaves/slave_vfat3/chipscope/U0'
+Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ser_8/ser_8.xdc] for cell 'slaves/slave_vfat3/ser/inst'
+Finished Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ser_8/ser_8.xdc] for cell 'slaves/slave_vfat3/ser/inst'
+Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/dser_8/dser_8.xdc] for cell 'slaves/slave_vfat3/des/inst'
+Finished Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/dser_8/dser_8.xdc] for cell 'slaves/slave_vfat3/des/inst'
+Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc]
+WARNING: [Constraints 18-96] Setting input delay on a clock pin 'gmii_rx_clk' is not supported, ignoring it [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:128]
+WARNING: [Constraints 18-96] Setting input delay on a clock pin 'gmii_rx_clk' is not supported, ignoring it [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:129]
+WARNING: [Vivado 12-584] No ports matched 'clk40_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:236]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:236]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk40_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:237]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:237]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk40_back_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:239]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:239]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk40_back_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:240]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:240]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk320_back_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:241]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:241]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk320_back_p'. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:242]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc:242]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/constrs_1/new/kc705_VBv1.xdc]
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_rx/fifo_rx.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ila_0/ila_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ser_8/ser_8.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/dser_8/dser_8.dcp'
+Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'slaves/slave_vfat3/fifo_in/U0'
+INFO: [Timing 38-2] Deriving generated clocks [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_clocks.xdc:53]
+Finished Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'slaves/slave_vfat3/fifo_in/U0'
+Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_rx/fifo_rx/fifo_rx_clocks.xdc] for cell 'slaves/slave_vfat3/fifo_out/U0'
+Finished Parsing XDC File [c:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_rx/fifo_rx/fifo_rx_clocks.xdc] for cell 'slaves/slave_vfat3/fifo_out/U0'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 177 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 164 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 1 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 4 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 8 instances
+
+open_run: Time (s): cpu = 00:01:04 ; elapsed = 00:00:48 . Memory (MB): peak = 2115.137 ; gain = 62.281
+set_property IOSTANDARD LVCMOS25 [get_ports [list mon_clk_en]]
+place_ports mon_clk_en AC25
+save_constraints
+launch_runs impl_3 -to_step write_bitstream -jobs 4
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.347 . Memory (MB): peak = 2115.137 ; gain = 0.000
+[Mon May 08 14:38:30 2017] Launched impl_3...
+Run output will be captured here: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/runme.log
+launch_runs: Time (s): cpu = 00:00:18 ; elapsed = 00:00:11 . Memory (MB): peak = 2115.137 ; gain = 0.000
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 15:10:53
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 15:11:06
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 15:11:30
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 15:11:30
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 15:11:36
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 15:11:36
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 15:20:13
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 15:20:13
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 15:22:50
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 15:22:50
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq8'b1100_0011 [get_hw_probes slaves/slave_vfat3/ser_d_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property TRIGGER_COMPARE_VALUE eq8'b1110_1000 [get_hw_probes slaves/slave_vfat3/ser_d_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 15:23:27
+set_property TRIGGER_COMPARE_VALUE eq8'b0001_0111 [get_hw_probes slaves/slave_vfat3/ser_d_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1965] The ILA core 'hw_ila_1' trigger was stopped by user at 2017-May-08 15:24:26
+WARNING: [Labtools 27-157] hw_ila [hw_ila_1] stopped. No data to upload.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 15:24:28
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 15:24:33
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq8'h7E [get_hw_probes slaves/slave_vfat3/d_sync -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property TRIGGER_COMPARE_VALUE eq8'hAA [get_hw_probes slaves/slave_vfat3/data_bus_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 15:25:38
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 15:25:55
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq8'hXX [get_hw_probes slaves/slave_vfat3/ser_d_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 15:26:05
+set_property TRIGGER_COMPARE_VALUE eq8'hXX [get_hw_probes slaves/slave_vfat3/d_sync -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property TRIGGER_COMPARE_VALUE neq8'hAA [get_hw_probes slaves/slave_vfat3/data_bus_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property TRIGGER_COMPARE_VALUE neq8'hFF [get_hw_probes slaves/slave_vfat3/data_bus_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1965] The ILA core 'hw_ila_1' trigger was stopped by user at 2017-May-08 15:26:45
+WARNING: [Labtools 27-157] hw_ila [hw_ila_1] stopped. No data to upload.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 15:26:45
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 15:26:46
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 15:26:50
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 15:29:05
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210203A02B7DA.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210203A02B7DA
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210203A02B7DA
+INFO: [Labtools 27-1434] Device xc7k325t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtools 27-1974] Mismatch between the design programmed into the device xc7k325t_0 and the probes file(s) C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx.
+The device design has 0 ILA core(s) and 0 VIO core(s). The probes file(s) have 1 ILA core(s) and 0 VIO core(s).
+Resolution: 
+1. Reprogram device with the correct programming file and associated probes file(s) OR
+2. Goto device properties and associate the correct probes file(s) with the programming file already programmed in the device.
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2115.137 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 15:55:35
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1965] The ILA core 'hw_ila_1' trigger was stopped by user at 2017-May-08 15:55:40
+WARNING: [Labtools 27-157] hw_ila [hw_ila_1] stopped. No data to upload.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 15:55:41
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 15:55:41
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 15:57:36
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 15:57:36
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 16:03:06
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 16:03:06
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property package_pin "" [get_ports [list  rx_p]]
+place_ports tx_p AC29
+place_ports rx_p AB29
+save_constraints
+reset_run impl_3
+launch_runs impl_3 -to_step write_bitstream -jobs 4
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.343 . Memory (MB): peak = 2115.137 ; gain = 0.000
+[Mon May 08 16:09:50 2017] Launched impl_3...
+Run output will be captured here: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/runme.log
+launch_runs: Time (s): cpu = 00:00:17 ; elapsed = 00:00:11 . Memory (MB): peak = 2115.137 ; gain = 0.000
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 16:47:06
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 16:47:07
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 16:47:24
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1965] The ILA core 'hw_ila_1' trigger was stopped by user at 2017-May-08 16:47:38
+WARNING: [Labtools 27-157] hw_ila [hw_ila_1] stopped. No data to upload.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 16:47:38
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 16:47:38
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 16:50:55
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 16:50:55
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 16:51:01
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 16:51:01
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 16:51:54
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 16:51:54
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 16:52:18
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2115.137 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 16:54:36
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 16:54:36
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+reset_run synth_1
+launch_runs impl_3 -to_step write_bitstream -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_3'
+[Mon May 08 16:57:57 2017] Launched synth_1...
+Run output will be captured here: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/runme.log
+[Mon May 08 16:57:57 2017] Launched impl_3...
+Run output will be captured here: C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/runme.log
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2115.137 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 17:48:13
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 17:48:13
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 17:50:01
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 17:50:01
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 17:50:04
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 17:50:04
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE neq8'h00 [get_hw_probes slaves/slave_vfat3/data_bus_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 17:50:13
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 17:50:22
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 17:51:11
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 17:51:11
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq8'h7E [get_hw_probes slaves/slave_vfat3/d_sync -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property TRIGGER_COMPARE_VALUE eq8'h00 [get_hw_probes slaves/slave_vfat3/data_bus_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+set_property TRIGGER_COMPARE_VALUE eq8'hXX [get_hw_probes slaves/slave_vfat3/data_bus_in -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 17:52:05
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2115.137 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 19:03:46
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1965] The ILA core 'hw_ila_1' trigger was stopped by user at 2017-May-08 19:03:48
+WARNING: [Labtools 27-157] hw_ila [hw_ila_1] stopped. No data to upload.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 19:03:48
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 19:03:48
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 19:04:13
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 19:04:13
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 19:04:49
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1965] The ILA core 'hw_ila_1' trigger was stopped by user at 2017-May-08 19:04:52
+WARNING: [Labtools 27-157] hw_ila [hw_ila_1] stopped. No data to upload.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 19:04:52
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 19:04:52
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 19:05:18
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 19:05:18
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 19:05:22
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2115.137 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 19:05:43
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1965] The ILA core 'hw_ila_1' trigger was stopped by user at 2017-May-08 19:05:46
+WARNING: [Labtools 27-157] hw_ila [hw_ila_1] stopped. No data to upload.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 19:05:46
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 19:05:46
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210203A02B7DA.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210203A02B7DA
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210203A02B7DA
+INFO: [Labtools 27-1434] Device xc7k325t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtools 27-1974] Mismatch between the design programmed into the device xc7k325t_0 and the probes file(s) C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx.
+The device design has 0 ILA core(s) and 0 VIO core(s). The probes file(s) have 1 ILA core(s) and 0 VIO core(s).
+Resolution: 
+1. Reprogram device with the correct programming file and associated probes file(s) OR
+2. Goto device properties and associate the correct probes file(s) with the programming file already programmed in the device.
+set_property PROBES.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/debug_nets.ltx} [lindex [get_hw_devices xc7k325t_0] 0]
+set_property PROGRAM.FILE {C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/top.bit} [lindex [get_hw_devices xc7k325t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2115.137 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7k325t_0] 0]
+INFO: [Labtools 27-2302] Device xc7k325t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-May-08 19:07:12
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7k325t_0] -filter {CELL_NAME=~"slaves/slave_vfat3/chipscope"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-May-08 19:07:12
+INFO: [Labtools 27-3304] ILA Waveform data saved to file C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {slaves/slave_vfat3/fifo_in_data_in} {slaves/slave_vfat3/fifo_in_data_out} {slaves/slave_vfat3/fifo_in_empty} {slaves/slave_vfat3/fifo_in_full} {slaves/slave_vfat3/fifo_in_r_en} {slaves/slave_vfat3/fifo_in_valid} {slaves/slave_vfat3/fifo_in_w_en} {slaves/slave_vfat3/fifo_out_data_in} {slaves/slave_vfat3/fifo_out_data_out} {slaves/slave_vfat3/fifo_out_empty} {slaves/slave_vfat3/fifo_out_full} {slaves/slave_vfat3/fifo_out_r_en} {slaves/slave_vfat3/fifo_out_valid} {slaves/slave_vfat3/fifo_out_w_en} {slaves/slave_vfat3/reset} {slaves/slave_vfat3/reset_fifo} {slaves/slave_vfat3/rst40} {slaves/slave_vfat3/ser_d_in} }
+write_hw_ila_data {C:\backup loopback\vfat3_testing_firmware\vfat3_testing_firmware.runs\impl_3\sleep_fillers.ila} hw_ila_data_1
+C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/sleep_fillers.ila
+write_hw_ila_data -csv_file {C:\backup loopback\vfat3_testing_firmware\vfat3_testing_firmware.runs\impl_3\sleep_fillers.csv} hw_ila_data_1
+C:/backup loopback/vfat3_testing_firmware/vfat3_testing_firmware.runs/impl_3/sleep_fillers.csv
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210203A02B7DA
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon May 08 19:50:46 2017...

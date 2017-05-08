@@ -48,13 +48,13 @@ architecture rtl of rx_fifo_int is
 	signal BCd_n, BCd_p : std_logic_vector(BCd_w - 1 downto 0);
 	signal cnt_n, cnt_p : std_logic_vector(5 downto 0);
 	constant F1 : std_logic_vector(7 downto 0) := X"7e";
-	constant F2 : std_logic_vector(7 downto 0) := X"aa";
+	constant F2 : std_logic_vector(7 downto 0) := X"81";
 --	constant FCC_A : std_logic_vector(7 downto 0) := X"00";-- to remove, only for loopback
 --	constant FCC_P : std_logic_vector(7 downto 0) := X"ff"; -- to remove, only for loopback
-	constant H0A : std_logic_vector(7 downto 0) := X"a1";
-	constant H0B : std_logic_vector(7 downto 0) := X"a2";
-	constant H1A : std_logic_vector(7 downto 0) := X"a3";
-	constant H1B : std_logic_vector(7 downto 0) := X"a4";
+	constant H0A : std_logic_vector(7 downto 0) := X"1e";
+	constant H0B : std_logic_vector(7 downto 0) := X"5e";
+	constant H1A : std_logic_vector(7 downto 0) := X"1a";
+	constant H1B : std_logic_vector(7 downto 0) := X"56";
 	constant NUM_BYTES : std_logic_vector(4 downto 0) := "11001";
 	
 	begin

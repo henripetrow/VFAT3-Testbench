@@ -188,7 +188,7 @@ set_property IOSTANDARD LVCMOS25 [get_ports phy_rstb]
 
 
 
-set_property PACKAGE_PIN AE25 [get_ports por_disable]
+set_property PACKAGE_PIN AG25 [get_ports por_disable]
 # POR_DISABLE: AG25 for VBv2+TBv1.4, B25 for VBv2+TBv1.3
 set_property IOSTANDARD LVCMOS25 [get_ports por_disable]
 
@@ -196,7 +196,7 @@ set_property PACKAGE_PIN AB20 [get_ports bor_disable]
 # BOR_DISABLE: AB20 for VBv2+TBv1.4, H24 for VBv2+TBv1.3
 set_property IOSTANDARD LVCMOS25 [get_ports bor_disable]
 
-set_property PACKAGE_PIN AF25 [get_ports vfat_reset]
+set_property PACKAGE_PIN AH25 [get_ports vfat_reset]
 # EXT_RST: AH25 for VBv2+TBv1.4, C25 for VBv2+TBv1.3
 set_property IOSTANDARD LVCMOS25 [get_ports vfat_reset]
 
@@ -216,8 +216,8 @@ set_property IOSTANDARD LVCMOS25 [get_ports vfat_reset]
 # VBv1 : TX_LVDS_1_N AG22 (P and N have been reversed)
 set_property IOSTANDARD LVDS_25 [get_ports tx_p]
 
-set_property PACKAGE_PIN AG22 [get_ports tx_p]
-set_property PACKAGE_PIN AH22 [get_ports tx_n]
+set_property PACKAGE_PIN AC29 [get_ports tx_p]
+set_property PACKAGE_PIN AC30 [get_ports tx_n]
 # VBv1 : TX_LVDS_1_P AH22
 set_property IOSTANDARD LVDS_25 [get_ports tx_n]
 
@@ -225,13 +225,11 @@ set_property IOSTANDARD LVDS_25 [get_ports tx_n]
 # VBv1 : RX_LVDS_1_N AG30 (P and N have been reversed)
 set_property IOSTANDARD LVDS_25 [get_ports rx_p]
 
-set_property PACKAGE_PIN AG30 [get_ports rx_p]
-set_property PACKAGE_PIN AH30 [get_ports rx_n]
 # VBv1 : RX_LVDS_1_P AH30
 set_property IOSTANDARD LVDS_25 [get_ports rx_n]
 
 
-set_property PACKAGE_PIN AH21 [get_ports clk320_p]
+set_property PACKAGE_PIN Y30 [get_ports clk320_p]
 set_property IOSTANDARD LVDS_25 [get_ports clk320_p]
 set_property PACKAGE_PIN AG25 [get_ports clk40_p]
 set_property IOSTANDARD LVDS_25 [get_ports clk40_p]
@@ -243,6 +241,11 @@ set_property IOSTANDARD LVDS_25 [get_ports clk320_back_p]
 
 set_property IOSTANDARD LVCMOS18 [get_ports sw_button]
 set_property PACKAGE_PIN AB12 [get_ports sw_button]
+
+
+set_property IOSTANDARD LVCMOS25 [get_ports mon_clk_en]
+set_property PACKAGE_PIN AC25 [get_ports mon_clk_en]
+set_property PACKAGE_PIN AB29 [get_ports rx_p]
 set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
 set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
 set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]

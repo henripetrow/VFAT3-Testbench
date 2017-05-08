@@ -28,7 +28,8 @@ entity top is port(
 	por_disable 							: inout std_logic;
 	bor_disable 							: inout std_logic;
 	vfat_reset 								: inout std_logic;
---	clk320_p, clk320_n                      : out std_logic; -- to check on the VB how signals are behaving
+	mon_clk_en								: inout std_logic;
+	clk320_p, clk320_n                      : out std_logic; -- to check on the VB how signals are behaving
 --	clk40_p, clk40_n                        : out std_logic;
 --    clk320_back_p, clk320_back_n            : in std_logic;
 --    clk40_back_p, clk40_back_n              : in std_logic;
@@ -53,7 +54,10 @@ begin
 
 --	DCM clock generation for internal bus, ethernet
 	
-	vfat_reset <= '1'; -- force reset to 1. Reset is active low
+	--vfat_reset <= '1'; -- force reset to 1. Reset is active low
+	bor_disable <= '1';
+	por_disable <= '1';
+	mon_clk_en <= '1';
 	
 	clocks: entity work.clocks_7s_extphy
 		port map(
@@ -159,15 +163,15 @@ begin
 --        i => clk40
 --    );    
 
---    clk320_obufds: OBUFDS -- to check on the VB how signals are behaving
---    generic map (
---            IOSTANDARD => "LVDS_25"    
---    )
---    port map(
---        o => clk320_p,
---        ob => clk320_n,
---        i => clk320
---    );
+    clk320_obufds: OBUFDS -- to check on the VB how signals are behaving
+    generic map (
+            IOSTANDARD => "LVDS_25"    
+    )
+    port map(
+        o => clk320_p,
+        ob => clk320_n,
+        i => clk320
+    );
     
     -- ## INPUT DIFFERENTIAL BUFFERS ## --
     
