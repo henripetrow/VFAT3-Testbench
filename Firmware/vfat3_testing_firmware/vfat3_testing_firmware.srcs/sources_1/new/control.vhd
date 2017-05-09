@@ -38,7 +38,9 @@ entity control is
 		fifo_out_valid 	: in std_logic;
 		fifo_underflow  : in std_logic;
 		data_from_fifo 	: in std_logic_vector (fifo_w - 1 downto 0);
-		firmware_status : inout std_logic_vector(fw_st_w - 1 downto 0);
+		fw_st_rd 		: in std_logic_vector(fw_st_w - 1 downto 0);
+		fw_st_wr		: out std_logic_vector(fw_st_w - 1 downto 0);
+		fw_st_wr_en		: out std_logic;
 		ipbus_out 		: out ipb_rbus;
 		data_to_fifo 	: out std_logic_vector (fifo_w - 1 downto 0);
 		fifo_in_w_en 	: out std_logic;
@@ -69,7 +71,8 @@ begin
 					when IDLE =>
 						if ipbus_in.ipb_strobe = '1' and ipbus_in.ipb_write = '1' then
 							if ipbus_in.ipb_addr = X"00003001" then
-								firmware_status <= ipbus_in.ipb_wdata(fw_st_w - 1 downto 0);
+								fw_st_wr <= ipbus_in.ipb_wdata(fw_st_w - 1 downto 0);
+								fw_st_wr_en <= '1';
 								ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => (others => '0'));
 								state <= RESET;
 							else
@@ -77,7 +80,7 @@ begin
 							end if;
 						elsif ipbus_in.ipb_strobe = '1' and ipbus_in.ipb_write = '0' then
 							if ipbus_in.ipb_addr = X"00003001" then
-								read_fw_st <= X"0000000" & firmware_status;
+								read_fw_st <= X"0000000" & fw_st_rd;
 								ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => read_fw_st);
 							else
 								if fifo_out_empty = '1' then
@@ -85,14 +88,12 @@ begin
 									ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => (others => '0'));
 								else
 									state <= R;
-									firmware_status <= "0011";
 									fifo_out_r_en <= '1';
 								end if;
 							end if;
 						end if;
 					when W =>
 						data_to_fifo <= ipbus_in.ipb_wdata(fifo_w - 1 downto 0);
-						firmware_status <= "0010";
 						fifo_in_w_en <= '1';
 						ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => (others => '0')); 
 						
@@ -114,6 +115,7 @@ begin
 					when RESET =>
 						data_to_fifo <= (others => '0');
 						fifo_in_w_en <= '0';
+						fw_st_wr_en <= '0';
 						ipbus_out.ipb_ack <= '0';
 						ipbus_out.ipb_rdata <= (others => '0');
 						state <= IDLE;

@@ -35,7 +35,8 @@ entity fifo_tx is
 		BCd_w	: natural := BCD_I_W;
         d_w  	: natural := D_I_W;
         cmd_i_w : natural := CMD_SW_W;
-		cmd_o_w	: natural := CMD_VFAT_W
+		cmd_o_w	: natural := CMD_VFAT_W;
+		fwst_w  : natural := FW_ST_W
 	);
 	
 	port(
@@ -45,7 +46,9 @@ entity fifo_tx is
 		fifo_dv		: in std_logic;
 		fifo_empty	: in std_logic;
 		d_out 		: out std_logic_vector(cmd_o_w - 1 downto 0);
-		rd_en	    : out std_logic
+		rd_en	    : out std_logic;
+		fw_st_rd	: in std_logic_vector(fwst_w - 1 downto 0);
+		ack_to_sw	: out std_logic
 	);
 	
 end fifo_tx;
@@ -117,9 +120,12 @@ begin
 		
 		case(state_p) is
 			when IDLE =>
-				if(fifo_empty = '0') then
+				if(fifo_empty = '0' and fw_st_rd /= "0000") then
+					ack_to_sw <= '1';
 					rd_en <= '1';
 					state_n <= READ;
+				else
+					ack_to_sw <= '0';
 				end if;
 			when READ =>
 				if(fifo_dv = '1') then
