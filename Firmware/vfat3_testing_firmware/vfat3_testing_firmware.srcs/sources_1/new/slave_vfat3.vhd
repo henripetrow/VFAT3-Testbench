@@ -181,31 +181,41 @@ architecture rtl of slave_vfat3 is
       );
       end component;
 	  
-	  component ila_0 is -- debugging purpose
-	  	port(
-	  		clk 	: IN std_logic;
-	  		probe0 	: IN std_logic;
-	  		probe1 	: IN std_logic;
-	  		probe2 	: IN std_logic;
-	  		probe3 	: IN std_logic;
-	  		probe4 	: IN std_logic;
-	  		probe5 	: IN std_logic;
-	  		probe6 	: IN std_logic_vector(fifo_w - 1 downto 0);
-	  		probe7 	: IN std_logic_vector(fifo_w - 1 downto 0);
-	  		probe8 	: IN std_logic_vector(fifo_w - 1 downto 0);
-	  		probe9 	: IN std_logic_vector(fifo_w - 1 downto 0);
-	  		probe10 : IN std_logic;
-	  		probe11 : IN std_logic;
-	  		probe12 : IN std_logic;
-	  		probe13 : IN std_logic;
-	  		probe14 : IN std_logic_vector(cmd_o_w - 1 DOWNTO 0);
-	  		probe15 : IN std_logic;
-	  		probe16 : IN std_logic;
-	  		probe17 : IN std_logic;
-	  		probe18 : IN std_logic_vector(cmd_o_w - 1 DOWNTO 0);
-	  		probe19 : IN std_logic_vector(cmd_o_w - 1 DOWNTO 0)
-	  	);
-	  end component;
+	component ila_0 is -- debugging purpose
+	port(
+		clk 	: IN std_logic;
+		probe0 	: IN std_logic;
+		probe1 	: IN std_logic;
+		probe2 	: IN std_logic;
+		probe3 	: IN std_logic;
+		probe4 	: IN std_logic;
+		probe5 	: IN std_logic;
+		probe6 	: IN std_logic_vector(fifo_w - 1 downto 0);
+		probe7 	: IN std_logic_vector(fifo_w - 1 downto 0);
+		probe8 	: IN std_logic_vector(fifo_w - 1 downto 0);
+		probe9 	: IN std_logic_vector(fifo_w - 1 downto 0);
+		probe10 : IN std_logic;
+		probe11 : IN std_logic;
+		probe12 : IN std_logic;
+		probe13 : IN std_logic;
+		probe14 : IN std_logic_vector(cmd_o_w - 1 DOWNTO 0);
+		probe15 : IN std_logic;
+		probe16 : IN std_logic;
+		probe17 : IN std_logic;
+		probe18 : IN std_logic_vector(cmd_o_w - 1 DOWNTO 0);
+		probe19 : IN std_logic_vector(cmd_o_w - 1 DOWNTO 0)
+	);
+	end component;
+	  
+	function reverse_vector (a: in std_logic_vector) return std_logic_vector is
+		variable result: std_logic_vector(a'RANGE);
+		alias aa: std_logic_vector(a'REVERSE_RANGE) is a;
+	begin
+		for i in aa'RANGE loop
+			result(i) := aa(i);
+		end loop;
+		return result;
+	end; -- function reverse_vector
 	  
 begin
 	
@@ -296,8 +306,8 @@ begin
 		port map(
 			clk40 	=> clk40,
 			rst 	=> rst40,
-			re_sync => sw_button, -- south gpio button to resync
-			d_in 	=> data_bus_in,
+			re_sync => '0', -- south gpio button to resync
+			d_in 	=> reverse_vector(data_bus_in),
 			bslip 	=> bitslip,
 			in_sync => d_sync			
 		);

@@ -35,11 +35,12 @@ architecture rtl of dser_sync is
 	signal cnt_n, cnt_p: std_logic_vector(fifo_w - 1 downto 0);
 	signal in_sync_n, in_sync_p : std_logic_vector(cmd_w - 1 downto 0 );
 	signal d_valid : std_logic;
+	signal sync_done : std_logic;
 	
 begin
 
 	in_sync <= in_sync_p;
-	d_valid <= '1' when (d_in = F1 or d_in = F2) else '0';
+	d_valid <= '1' when (d_in = F1 or d_in = F2 or sync_done = '1') else '0';
 	
 	fsm: process
 	
@@ -94,8 +95,10 @@ begin
 				if re_sync = '1' then
 					state_n <= INIT;
 					cnt_n <= (others => '0');
+					sync_done <= '0';
 				else
 						in_sync_n <= d_in;
+						sync_done <= '1';
 				end if;
 		end case;
 	end process;
@@ -109,6 +112,7 @@ begin
 				state_p <= INIT;
 				cnt_p <= (others => '0');
 				in_sync_p <= (others => '0');
+				sync_done <= '0';
 			else
 				state_p <= state_n;
 				cnt_p <= cnt_n;
