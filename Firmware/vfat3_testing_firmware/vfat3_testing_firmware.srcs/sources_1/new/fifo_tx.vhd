@@ -83,7 +83,7 @@ begin
 	FCC_cnt_n <= FCC_cnt_p when (dv_int_p = '1') else not FCC_cnt_p;
 	
 	fifo_d_int <= fifo_d(cmd_i_w - 1 downto 0);
-	fifo_BCd_int <= fifo_d(BCd_w - 1 downto 0);
+	fifo_BCd_int <= fifo_d(d_w - 1 downto cmd_i_w);
 	
 	conv4b8b: process
 	
