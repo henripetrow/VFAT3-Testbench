@@ -10,14 +10,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="14281fs"></ZoomEndTime>
-      <Cursor1Time time="6000fs"></Cursor1Time>
+      <ZoomEndTime time="14571fs"></ZoomEndTime>
+      <Cursor1Time time="3000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="224"></NameColumnWidth>
-      <ValueColumnWidth column_width="123"></ValueColumnWidth>
+      <ValueColumnWidth column_width="129"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="9" />
+   <WVObjectSize size="14" />
    <wave_markers>
    </wave_markers>
    <wvobject fp_name="slaves/slave_vfat3/data_bus_in" type="array">
@@ -79,5 +79,34 @@
       <obj_property name="ElementShortName">slaves/slave_vfat3/fifo_in_r_en</obj_property>
       <obj_property name="ObjectShortName">fifo_in_r_en</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="slaves/slave_vfat3/fifo_out_empty" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">slaves/slave_vfat3/fifo_out_empty</obj_property>
+      <obj_property name="ObjectShortName">fifo_out_empty</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="slaves/slave_vfat3/fifo_out_full" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">slaves/slave_vfat3/fifo_out_full</obj_property>
+      <obj_property name="ObjectShortName">fifo_out_full</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="slaves/slave_vfat3/fifo_out_r_en" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">slaves/slave_vfat3/fifo_out_r_en</obj_property>
+      <obj_property name="ObjectShortName">fifo_out_r_en</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="slaves/slave_vfat3/fifo_out_w_en" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">slaves/slave_vfat3/fifo_out_w_en</obj_property>
+      <obj_property name="ObjectShortName">fifo_out_w_en</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="slaves/slave_vfat3/fifo_out_data_out" type="array">
+      <obj_property name="ElementShortName">slaves/slave_vfat3/fifo_out_data_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_out_data_out[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
 </wave_config>
