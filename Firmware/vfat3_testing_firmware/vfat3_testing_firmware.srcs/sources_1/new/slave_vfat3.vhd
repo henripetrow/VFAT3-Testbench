@@ -306,7 +306,7 @@ begin
 		port map(
 			clk40 	=> clk40,
 			rst 	=> rst40,
-			re_sync => '0', -- south gpio button to resync
+			re_sync => sw_button, -- south gpio button to resync
 			d_in 	=> reverse_vector(data_bus_in),
 			bslip 	=> bitslip,
 			in_sync => d_sync			
