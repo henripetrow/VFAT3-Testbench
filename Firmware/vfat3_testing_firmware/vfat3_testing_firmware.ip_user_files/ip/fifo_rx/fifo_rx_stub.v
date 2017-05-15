@@ -1,10 +1,10 @@
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-// Date        : Thu Apr 27 14:26:16 2017
+// Date        : Fri May 05 15:17:32 2017
 // Host        : Shinsekai running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/Users/Jason/Dropbox/ULB/MA2/Memoire/JRFirmware/JRFirmware/firmware_v2016.2/firmware_v2016.2.srcs/sources_1/ip/fifo_rx/fifo_rx_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top fifo_rx -prefix
+//               fifo_rx_ fifo_rx_stub.v
 // Design      : fifo_rx
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7k325tffg900-2

@@ -40,7 +40,8 @@ architecture rtl of dser_sync is
 begin
 
 	in_sync <= in_sync_p;
-	d_valid <= '1' when (d_in = F1 or d_in = F2 or sync_done = '1') else '0';
+
+	d_valid <= '1' when (d_in = F1 or d_in = F2 or sync_done = '1') else '0'; --  or sync_done = '1'
 	
 	fsm: process
 	
@@ -48,12 +49,13 @@ begin
 		
 		state_n <= state_p;
 		cnt_n <= cnt_p;
+		
 		bslip <= '0';
 		in_sync_n <= in_sync_p;
 		
 		case(state_p) is
 			when INIT => 
-				
+				-- wait 1s
 				if (cnt_p >= X"02634a0") then
 					state_n <= CHECK;
 					cnt_n <= (others => '0');
@@ -97,8 +99,13 @@ begin
 					cnt_n <= (others => '0');
 					sync_done <= '0';
 				else
+--					if (cnt_p >= X"02634a0") then
 						in_sync_n <= d_in;
+--						cnt_n <= (others => '0');
 						sync_done <= '1';
+--					else
+--						cnt_n <= cnt_p+1; 
+--					end if;
 				end if;
 		end case;
 	end process;
@@ -112,7 +119,7 @@ begin
 				state_p <= INIT;
 				cnt_p <= (others => '0');
 				in_sync_p <= (others => '0');
-				sync_done <= '0';
+--				sync_done <= '0';
 			else
 				state_p <= state_n;
 				cnt_p <= cnt_n;

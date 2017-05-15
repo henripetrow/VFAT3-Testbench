@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2016.3 (64-bit)
+# SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+# IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+# Start of session at: Mon May 15 17:21:53 2017
+# Process ID: 16720
+# Current directory: C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11668 C:\Users\Jason\Dropbox\VFAT3-Testbench\Firmware\vfat3_testing_firmware\vfat3_testing_firmware.xpr
+# Log file: C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vivado.log
+# Journal file: C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.xpr
+Scanning sources...
+Finished scanning sources
+****** Webtalk v2016.3 (64-bit)
+  **** SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+  **** IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.hw/webtalk/labtool_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.hw/webtalk/usage_statistics_ext_labtool.xml' has been successfully sent to Xilinx on Mon May 15 17:22:31 2017. For additional details about this file, please refer to the WebTalk help file at D:/Xilinx/Vivado/2016.3/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Mon May 15 17:22:31 2017...
+ERROR: [Project 1-510] Parsing generated run data failed
+INFO: [Common 17-206] Exiting Vivado at Mon May 15 17:22:37 2017...

@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date             : Fri May 12 11:30:03 2017
+| Date             : Mon May 15 19:21:42 2017
 | Host             : Shinsekai running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.561 |
+| Total On-Chip Power (W)  | 0.562 |
 | Dynamic (W)              | 0.397 |
 | Device Static (W)        | 0.164 |
 | Total Off-Chip Power (W) | 0.002 |
@@ -51,20 +51,20 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.036 |       12 |       --- |             --- |
-| Slice Logic              |     0.007 |    14203 |       --- |             --- |
-|   LUT as Logic           |     0.006 |     4699 |    203800 |            2.31 |
-|   Register               |    <0.001 |     7191 |    407600 |            1.76 |
+| Slice Logic              |     0.007 |    14219 |       --- |             --- |
+|   LUT as Logic           |     0.006 |     4708 |    203800 |            2.31 |
+|   Register               |    <0.001 |     7192 |    407600 |            1.76 |
 |   CARRY4                 |    <0.001 |      268 |     50950 |            0.53 |
 |   LUT as Shift Register  |    <0.001 |      347 |     64000 |            0.54 |
 |   LUT as Distributed RAM |    <0.001 |       32 |     64000 |            0.05 |
 |   F7/F8 Muxes            |    <0.001 |       67 |    203800 |            0.03 |
-|   Others                 |     0.000 |      630 |       --- |             --- |
-| Signals                  |     0.010 |    10365 |       --- |             --- |
+|   Others                 |     0.000 |      632 |       --- |             --- |
+| Signals                  |     0.010 |    10386 |       --- |             --- |
 | Block RAM                |     0.020 |       26 |       445 |            5.84 |
 | MMCM                     |     0.211 |        2 |        10 |           20.00 |
 | I/O                      |     0.114 |       43 |       500 |            8.60 |
 | Static Power             |     0.164 |          |           |                 |
-| Total                    |     0.561 |          |           |                 |
+| Total                    |     0.562 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.145 |       0.075 |      0.071 |
+| Vccint    |       1.000 |     0.146 |       0.075 |      0.071 |
 | Vccaux    |       1.800 |     0.154 |       0.126 |      0.028 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.040 |       0.039 |      0.001 |
@@ -252,7 +252,7 @@ Table of Contents
 |       iface                                                                                        |     0.001 |
 |       sm                                                                                           |     0.002 |
 |     udp_if                                                                                         |     0.041 |
-|       ARP                                                                                          |    <0.001 |
+|       ARP                                                                                          |     0.001 |
 |       IPADDR                                                                                       |    <0.001 |
 |       RARP_block                                                                                   |    <0.001 |
 |       clock_crossing_if                                                                            |    <0.001 |

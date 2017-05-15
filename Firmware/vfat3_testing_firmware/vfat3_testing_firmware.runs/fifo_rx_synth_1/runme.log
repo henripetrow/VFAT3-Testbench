@@ -9,44 +9,4 @@
     ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 source fifo_rx.tcl -notrace
-Starting RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 341.973 ; gain = 132.547
-INFO: [Synth 8-638] synthesizing module 'fifo_rx' [c:/Users/Jason/Desktop/backup loopback/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_rx/synth/fifo_rx.vhd:77]
-INFO: [Synth 8-256] done synthesizing module 'fifo_rx' (28#1) [c:/Users/Jason/Desktop/backup loopback/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_rx/synth/fifo_rx.vhd:77]
-Finished RTL Elaboration : Time (s): cpu = 00:01:22 ; elapsed = 00:01:29 . Memory (MB): peak = 553.234 ; gain = 343.809
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:23 ; elapsed = 00:01:29 . Memory (MB): peak = 553.234 ; gain = 343.809
-INFO: [Device 21-403] Loading part xc7k325tffg900-2
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 676.785 ; gain = 0.000
-Finished Constraint Validation : Time (s): cpu = 00:01:38 ; elapsed = 00:01:46 . Memory (MB): peak = 676.785 ; gain = 467.359
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:38 ; elapsed = 00:01:46 . Memory (MB): peak = 676.785 ; gain = 467.359
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:38 ; elapsed = 00:01:46 . Memory (MB): peak = 676.785 ; gain = 467.359
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:39 ; elapsed = 00:01:47 . Memory (MB): peak = 676.785 ; gain = 467.359
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:40 ; elapsed = 00:01:48 . Memory (MB): peak = 676.785 ; gain = 467.359
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:54 ; elapsed = 00:02:02 . Memory (MB): peak = 676.785 ; gain = 467.359
-Finished Timing Optimization : Time (s): cpu = 00:01:54 ; elapsed = 00:02:02 . Memory (MB): peak = 689.824 ; gain = 480.398
-Finished Technology Mapping : Time (s): cpu = 00:01:54 ; elapsed = 00:02:02 . Memory (MB): peak = 697.781 ; gain = 488.355
-Finished IO Insertion : Time (s): cpu = 00:01:55 ; elapsed = 00:02:03 . Memory (MB): peak = 697.781 ; gain = 488.355
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:55 ; elapsed = 00:02:03 . Memory (MB): peak = 697.781 ; gain = 488.355
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:55 ; elapsed = 00:02:03 . Memory (MB): peak = 697.781 ; gain = 488.355
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:55 ; elapsed = 00:02:03 . Memory (MB): peak = 697.781 ; gain = 488.355
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:55 ; elapsed = 00:02:03 . Memory (MB): peak = 697.781 ; gain = 488.355
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:55 ; elapsed = 00:02:03 . Memory (MB): peak = 697.781 ; gain = 488.355
-
-Report Cell Usage: 
-+------+---------+------+
-|      |Cell     |Count |
-+------+---------+------+
-|1     |LUT1     |     2|
-|2     |LUT2     |    34|
-|3     |LUT3     |    10|
-|4     |LUT4     |    29|
-|5     |LUT5     |    11|
-|6     |LUT6     |    10|
-|7     |MUXCY    |    20|
-|8     |RAMB36E1 |     1|
-|9     |FDCE     |   129|
-|10    |FDPE     |    22|
-|11    |FDRE     |     6|
-+------+---------+------+
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:55 ; elapsed = 00:02:03 . Memory (MB): peak = 697.781 ; gain = 488.355
-get_clocks: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1161.746 ; gain = 443.539
-synth_design: Time (s): cpu = 00:01:54 ; elapsed = 00:01:59 . Memory (MB): peak = 1161.746 ; gain = 904.074
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP fifo_rx, cache-ID = eb7f9b8aa7887ae4.

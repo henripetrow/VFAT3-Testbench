@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="fifo_rx_synth_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1493990107">
+<GenRun Id="fifo_rx_synth_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1494862817">
   <File Type="RDS-PROPCONSTRS" Name="fifo_rx_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="fifo_rx.tcl"/>
   <File Type="RDS-RDS" Name="fifo_rx.vds"/>

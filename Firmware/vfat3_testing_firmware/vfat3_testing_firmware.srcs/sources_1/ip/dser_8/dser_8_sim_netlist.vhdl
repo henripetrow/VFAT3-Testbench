@@ -1,10 +1,10 @@
 -- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
--- Date        : Fri May 05 15:18:50 2017
+-- Date        : Fri May 05 15:18:49 2017
 -- Host        : Shinsekai running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim {C:/Users/Jason/Desktop/backup
---               loopback/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/dser_8/dser_8_sim_netlist.vhdl}
+-- Command     : write_vhdl -force -mode funcsim -rename_top dser_8 -prefix
+--               dser_8_ dser_8_sim_netlist.vhdl
 -- Design      : dser_8
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -25,8 +25,6 @@ entity dser_8_dser_8_selectio_wiz is
   );
   attribute DEV_W : integer;
   attribute DEV_W of dser_8_dser_8_selectio_wiz : entity is 8;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of dser_8_dser_8_selectio_wiz : entity is "dser_8_selectio_wiz";
   attribute SYS_W : integer;
   attribute SYS_W of dser_8_dser_8_selectio_wiz : entity is 1;
   attribute num_serial_bits : integer;

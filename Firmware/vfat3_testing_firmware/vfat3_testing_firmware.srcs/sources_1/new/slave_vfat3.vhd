@@ -216,6 +216,15 @@ architecture rtl of slave_vfat3 is
 		end loop;
 		return result;
 	end; -- function reverse_vector
+	
+	function inverse_vector (a: in std_logic_vector) return std_logic_vector is
+		variable result: std_logic_vector(a'RANGE);
+	begin
+		for i in a'RANGE loop
+			result(i) := not(a(i));
+		end loop;
+		return result;
+	end; -- function inverse_vector
 	  
 begin
 	
@@ -273,7 +282,7 @@ begin
 		clk_div_in 				=> clk40,
 		io_reset 				=> '0', -- ?
 		data_out_to_pins 		=> tx,
-		data_out_from_device 	=> ser_d_in
+		data_out_from_device 	=> reverse_vector(inverse_vector(ser_d_in))
 	);
     
 -- #### OUTPUT FIFO	

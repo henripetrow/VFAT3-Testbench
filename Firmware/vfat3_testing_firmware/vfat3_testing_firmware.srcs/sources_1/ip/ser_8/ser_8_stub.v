@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
 // Date        : Fri May 05 15:17:17 2017
 // Host        : Shinsekai running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub {C:/Users/Jason/Desktop/backup
-//               loopback/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ser_8/ser_8_stub.v}
+// Command     : write_verilog -force -mode synth_stub -rename_top ser_8 -prefix
+//               ser_8_ ser_8_stub.v
 // Design      : ser_8
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7k325tffg900-2
