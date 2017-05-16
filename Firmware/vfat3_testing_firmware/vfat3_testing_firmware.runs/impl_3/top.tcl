@@ -63,18 +63,18 @@ set rc [catch {
   add_files -quiet C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/top.dcp
   read_edif C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/ipcore_dir/mac_fifo_axi4.ngc
   read_edif C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/imports/firmware/ipcore_dir/tri_mode_eth_mac_v5_4.ngc
-  add_files -quiet C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.dcp
-  set_property netlist_only true [get_files C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.dcp]
+  add_files -quiet c:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.dcp
+  set_property netlist_only true [get_files c:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.dcp]
   add_files -quiet C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.dcp
   set_property netlist_only true [get_files C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.dcp]
   add_files -quiet C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_rx/fifo_rx.dcp
   set_property netlist_only true [get_files C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/fifo_rx/fifo_rx.dcp]
-  add_files -quiet C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ila_0/ila_0.dcp
-  set_property netlist_only true [get_files C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ila_0/ila_0.dcp]
-  add_files -quiet C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ser_8/ser_8.dcp
-  set_property netlist_only true [get_files C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ser_8/ser_8.dcp]
-  add_files -quiet C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/dser_8/dser_8.dcp
-  set_property netlist_only true [get_files C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/dser_8/dser_8.dcp]
+  add_files -quiet c:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ila_0/ila_0.dcp
+  set_property netlist_only true [get_files c:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ila_0/ila_0.dcp]
+  add_files -quiet c:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ser_8/ser_8.dcp
+  set_property netlist_only true [get_files c:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ser_8/ser_8.dcp]
+  add_files -quiet c:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/dser_8/dser_8.dcp
+  set_property netlist_only true [get_files c:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/dser_8/dser_8.dcp]
   read_xdc -mode out_of_context -ref clk_wiz_0 -cells inst c:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0_ooc.xdc
   set_property processing_order EARLY [get_files c:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0_ooc.xdc]
   read_xdc -prop_thru_buffers -ref clk_wiz_0 -cells inst c:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0_board.xdc

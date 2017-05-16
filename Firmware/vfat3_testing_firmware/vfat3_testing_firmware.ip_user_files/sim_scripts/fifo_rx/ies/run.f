@@ -15,7 +15,7 @@
   "../../../ipstatic/hdl/fifo_generator_v13_1_rfs.v" \
 -endlib
 -makelib ies/work \
-  "../../../../firmware_v2016.2.srcs/sources_1/ip/fifo_rx/sim/fifo_rx.v" \
+  "../../../../vfat3_testing_firmware.srcs/sources_1/ip/fifo_rx/sim/fifo_rx.v" \
 -endlib
 -makelib ies/xil_defaultlib \
   glbl.v

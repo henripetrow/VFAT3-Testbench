@@ -28,7 +28,7 @@ vlog -work fifo_generator_v13_1_2  -v2k5 \
 "../../../ipstatic/hdl/fifo_generator_v13_1_rfs.v" \
 
 vlog -work work  -v2k5 \
-"../../../../firmware_v2016.2.srcs/sources_1/ip/fifo_generator_0/sim/fifo_generator_0.v" \
+"../../../../vfat3_testing_firmware.srcs/sources_1/ip/fifo_generator_0/sim/fifo_generator_0.v" \
 
 vlog -work work "glbl.v"
 

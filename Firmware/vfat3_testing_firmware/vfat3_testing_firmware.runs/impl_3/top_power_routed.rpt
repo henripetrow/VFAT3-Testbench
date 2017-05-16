@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date             : Mon May 15 19:21:42 2017
+| Date             : Tue May 16 13:17:19 2017
 | Host             : Shinsekai running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,13 +30,13 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.562 |
-| Dynamic (W)              | 0.397 |
-| Device Static (W)        | 0.164 |
+| Total On-Chip Power (W)  | 0.597 |
+| Dynamic (W)              | 0.418 |
+| Device Static (W)        | 0.178 |
 | Total Off-Chip Power (W) | 0.002 |
 | Effective TJA (C/W)      | 1.8   |
-| Max Ambient (C)          | 84.0  |
-| Junction Temperature (C) | 26.0  |
+| Max Ambient (C)          | 83.9  |
+| Junction Temperature (C) | 26.1  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -50,21 +50,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.036 |       12 |       --- |             --- |
-| Slice Logic              |     0.007 |    14219 |       --- |             --- |
-|   LUT as Logic           |     0.006 |     4708 |    203800 |            2.31 |
-|   Register               |    <0.001 |     7192 |    407600 |            1.76 |
-|   CARRY4                 |    <0.001 |      268 |     50950 |            0.53 |
+| Clocks                   |     0.046 |       12 |       --- |             --- |
+| Slice Logic              |     0.008 |    16569 |       --- |             --- |
+|   LUT as Logic           |     0.007 |     5673 |    203800 |            2.78 |
+|   Register               |    <0.001 |     7680 |    407600 |            1.88 |
+|   CARRY4                 |    <0.001 |      296 |     50950 |            0.58 |
 |   LUT as Shift Register  |    <0.001 |      347 |     64000 |            0.54 |
 |   LUT as Distributed RAM |    <0.001 |       32 |     64000 |            0.05 |
-|   F7/F8 Muxes            |    <0.001 |       67 |    203800 |            0.03 |
-|   Others                 |     0.000 |      632 |       --- |             --- |
-| Signals                  |     0.010 |    10386 |       --- |             --- |
-| Block RAM                |     0.020 |       26 |       445 |            5.84 |
+|   F7/F8 Muxes            |    <0.001 |      283 |    203800 |            0.14 |
+|   Others                 |     0.000 |     1270 |       --- |             --- |
+| Signals                  |     0.015 |    13358 |       --- |             --- |
+| Block RAM                |     0.025 |      256 |       445 |           57.53 |
 | MMCM                     |     0.211 |        2 |        10 |           20.00 |
 | I/O                      |     0.114 |       43 |       500 |            8.60 |
-| Static Power             |     0.164 |          |           |                 |
-| Total                    |     0.562 |          |           |                 |
+| Static Power             |     0.178 |          |           |                 |
+| Total                    |     0.597 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.146 |       0.075 |      0.071 |
+| Vccint    |       1.000 |     0.172 |       0.095 |      0.077 |
 | Vccaux    |       1.800 |     0.154 |       0.126 |      0.028 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.040 |       0.039 |      0.001 |
@@ -83,7 +83,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.004 |       0.002 |      0.002 |
+| Vccbram   |       1.000 |     0.012 |       0.002 |      0.010 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -153,14 +153,14 @@ Table of Contents
 +----------------------------------------------------------------------------------------------------+-----------+
 | Name                                                                                               | Power (W) |
 +----------------------------------------------------------------------------------------------------+-----------+
-| top                                                                                                |     0.397 |
+| top                                                                                                |     0.418 |
 |   clocks                                                                                           |     0.220 |
 |     clk_wiz                                                                                        |     0.105 |
 |       inst                                                                                         |     0.105 |
 |     clkdiv                                                                                         |     0.003 |
 |   dbg_hub                                                                                          |     0.002 |
 |     inst                                                                                           |     0.002 |
-|       CORE_XSDB.UUT_MASTER                                                                         |     0.001 |
+|       CORE_XSDB.UUT_MASTER                                                                         |     0.002 |
 |         U_ICON_INTERFACE                                                                           |     0.001 |
 |           U_CMD1                                                                                   |    <0.001 |
 |           U_CMD2                                                                                   |    <0.001 |
@@ -238,7 +238,7 @@ Table of Contents
 |         U_SYNC                                                                                     |    <0.001 |
 |       SWITCH_N_EXT_BSCAN.bscan_inst                                                                |    <0.001 |
 |       SWITCH_N_EXT_BSCAN.bscan_switch                                                              |    <0.001 |
-|   eth                                                                                              |     0.017 |
+|   eth                                                                                              |     0.019 |
 |     emac0                                                                                          |     0.005 |
 |       U0/trimac_top/TRI_SPEED.TRIMAC_INST                                                          |     0.005 |
 |     fifo                                                                                           |     0.002 |
@@ -247,19 +247,19 @@ Table of Contents
 |       U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM22 |    <0.001 |
 |       U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM23 |    <0.001 |
 |       U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM24 |    <0.001 |
-|   ipbus                                                                                            |     0.044 |
-|     trans                                                                                          |     0.003 |
+|   ipbus                                                                                            |     0.045 |
+|     trans                                                                                          |     0.004 |
 |       iface                                                                                        |     0.001 |
-|       sm                                                                                           |     0.002 |
+|       sm                                                                                           |     0.003 |
 |     udp_if                                                                                         |     0.041 |
-|       ARP                                                                                          |     0.001 |
+|       ARP                                                                                          |    <0.001 |
 |       IPADDR                                                                                       |    <0.001 |
 |       RARP_block                                                                                   |    <0.001 |
 |       clock_crossing_if                                                                            |    <0.001 |
 |       internal_ram                                                                                 |     0.003 |
 |       internal_ram_selector                                                                        |    <0.001 |
 |       internal_ram_shim                                                                            |    <0.001 |
-|       ipbus_rx_ram                                                                                 |     0.008 |
+|       ipbus_rx_ram                                                                                 |     0.007 |
 |       ipbus_tx_ram                                                                                 |     0.007 |
 |       payload                                                                                      |     0.002 |
 |       ping                                                                                         |     0.001 |
@@ -273,10 +273,10 @@ Table of Contents
 |       status                                                                                       |     0.002 |
 |       status_buffer                                                                                |     0.004 |
 |       tx_byte_sum                                                                                  |    <0.001 |
-|       tx_main                                                                                      |     0.002 |
+|       tx_main                                                                                      |     0.003 |
 |       tx_ram_selector                                                                              |    <0.001 |
 |       tx_transactor                                                                                |     0.002 |
-|   slaves                                                                                           |     0.013 |
+|   slaves                                                                                           |     0.032 |
 |     fabric                                                                                         |    <0.001 |
 |     slave0                                                                                         |    <0.001 |
 |     slave1                                                                                         |    <0.001 |
@@ -284,10 +284,10 @@ Table of Contents
 |     slave3                                                                                         |    <0.001 |
 |     slave4                                                                                         |    <0.001 |
 |     slave5                                                                                         |    <0.001 |
-|     slave_vfat3                                                                                    |     0.012 |
-|       chipscope                                                                                    |     0.007 |
-|         U0                                                                                         |     0.007 |
-|           ila_core_inst                                                                            |     0.007 |
+|     slave_vfat3                                                                                    |     0.030 |
+|       chipscope                                                                                    |     0.011 |
+|         U0                                                                                         |     0.011 |
+|           ila_core_inst                                                                            |     0.011 |
 |             ila_trace_memory_inst                                                                  |     0.001 |
 |               SUBCORE_RAM_BLK_MEM_1.trace_block_memory                                             |     0.001 |
 |                 inst_blk_mem_gen                                                                   |     0.001 |
@@ -356,7 +356,7 @@ Table of Contents
 |                           u_srlB                                                                   |    <0.001 |
 |                           u_srlC                                                                   |    <0.001 |
 |                           u_srlD                                                                   |    <0.001 |
-|             u_ila_regs                                                                             |     0.003 |
+|             u_ila_regs                                                                             |     0.005 |
 |               MU_SRL[0].mu_srl_reg                                                                 |    <0.001 |
 |               MU_SRL[10].mu_srl_reg                                                                |    <0.001 |
 |               MU_SRL[11].mu_srl_reg                                                                |    <0.001 |
@@ -429,7 +429,7 @@ Table of Contents
 |               asyncrounous_transfer.halt_in_transfer_inst                                          |    <0.001 |
 |               asyncrounous_transfer.halt_out_transfer_inst                                         |    <0.001 |
 |               halt_detection_inst                                                                  |    <0.001 |
-|             u_trig                                                                                 |     0.001 |
+|             u_trig                                                                                 |     0.002 |
 |               N_DDR_TC.N_DDR_TC_INST[0].U_TC                                                       |    <0.001 |
 |                 allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst                            |    <0.001 |
 |                   DUT                                                                              |    <0.001 |
@@ -448,7 +448,7 @@ Table of Contents
 |                       u_srlB                                                                       |    <0.001 |
 |                       u_srlC                                                                       |    <0.001 |
 |                       u_srlD                                                                       |    <0.001 |
-|               U_TM                                                                                 |     0.001 |
+|               U_TM                                                                                 |     0.002 |
 |                 N_DDR_MODE.G_NMU[0].U_M                                                            |    <0.001 |
 |                   allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst                          |    <0.001 |
 |                     DUT                                                                            |    <0.001 |
@@ -674,11 +674,11 @@ Table of Contents
 |       des                                                                                          |     0.001 |
 |         inst                                                                                       |     0.001 |
 |       dsersync                                                                                     |    <0.001 |
-|       fifo_in                                                                                      |    <0.001 |
-|         U0                                                                                         |    <0.001 |
-|           inst_fifo_gen                                                                            |    <0.001 |
-|             gconvfifo.rf                                                                           |    <0.001 |
-|               grf.rf                                                                               |    <0.001 |
+|       fifo_in                                                                                      |     0.006 |
+|         U0                                                                                         |     0.006 |
+|           inst_fifo_gen                                                                            |     0.006 |
+|             gconvfifo.rf                                                                           |     0.006 |
+|               grf.rf                                                                               |     0.006 |
 |                 gntv_or_sync_fifo.gcx.clkx                                                         |    <0.001 |
 |                   gnxpm_cdc.gsync_stage[1].rd_stg_inst                                             |    <0.001 |
 |                   gnxpm_cdc.gsync_stage[1].wr_stg_inst                                             |    <0.001 |
@@ -695,23 +695,234 @@ Table of Contents
 |                     c1                                                                             |    <0.001 |
 |                     c2                                                                             |    <0.001 |
 |                   wpntr                                                                            |    <0.001 |
-|                 gntv_or_sync_fifo.mem                                                              |    <0.001 |
-|                   gbm.gbmg.gbmga.ngecc.bmg                                                         |    <0.001 |
-|                     inst_blk_mem_gen                                                               |    <0.001 |
-|                       gnbram.gnativebmg.native_blk_mem_gen                                         |    <0.001 |
-|                         valid.cstr                                                                 |    <0.001 |
+|                 gntv_or_sync_fifo.mem                                                              |     0.003 |
+|                   gbm.gbmg.gbmga.ngecc.bmg                                                         |     0.003 |
+|                     inst_blk_mem_gen                                                               |     0.003 |
+|                       gnbram.gnativebmg.native_blk_mem_gen                                         |     0.003 |
+|                         valid.cstr                                                                 |     0.003 |
+|                           has_mux_b.B                                                              |    <0.001 |
 |                           ramloop[0].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[100].ram.r                                                       |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[101].ram.r                                                       |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[102].ram.r                                                       |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[103].ram.r                                                       |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[104].ram.r                                                       |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[105].ram.r                                                       |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[10].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[11].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[12].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[13].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[14].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[15].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[16].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[17].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[18].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[19].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[1].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[20].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[21].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[22].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[23].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[24].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[25].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[26].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[27].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[28].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[29].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[2].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[30].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[31].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[32].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[33].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[34].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[35].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[36].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[37].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[38].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[39].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[3].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[40].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[41].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[42].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[43].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[44].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[45].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[46].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[47].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[48].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[49].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[4].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[50].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[51].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[52].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[53].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[54].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[55].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[56].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[57].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[58].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[59].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[5].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[60].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[61].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[62].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[63].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[64].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[65].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[66].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[67].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[68].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[69].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[6].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[70].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[71].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[72].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[73].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[74].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[75].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[76].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[77].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[78].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[79].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[7].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[80].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[81].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[82].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[83].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[84].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[85].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[86].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[87].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[88].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[89].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[8].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[90].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[91].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[92].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[93].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[94].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[95].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[96].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[97].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[98].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[99].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[9].ram.r                                                         |    <0.001 |
 |                             prim_noinit.ram                                                        |    <0.001 |
 |                 rstblk                                                                             |    <0.001 |
 |                   ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[1].rrst_inst                         |    <0.001 |
 |                   ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[1].wrst_inst                         |    <0.001 |
 |                   ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].rrst_inst                         |    <0.001 |
 |                   ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].wrst_inst                         |    <0.001 |
-|       fifo_out                                                                                     |     0.001 |
-|         U0                                                                                         |     0.001 |
-|           inst_fifo_gen                                                                            |     0.001 |
-|             gconvfifo.rf                                                                           |     0.001 |
-|               grf.rf                                                                               |     0.001 |
+|       fifo_out                                                                                     |     0.008 |
+|         U0                                                                                         |     0.008 |
+|           inst_fifo_gen                                                                            |     0.008 |
+|             gconvfifo.rf                                                                           |     0.008 |
+|               grf.rf                                                                               |     0.008 |
 |                 gntv_or_sync_fifo.gcx.clkx                                                         |    <0.001 |
 |                   gnxpm_cdc.gsync_stage[1].rd_stg_inst                                             |    <0.001 |
 |                   gnxpm_cdc.gsync_stage[1].wr_stg_inst                                             |    <0.001 |
@@ -728,12 +939,223 @@ Table of Contents
 |                     c1                                                                             |    <0.001 |
 |                     c2                                                                             |    <0.001 |
 |                   wpntr                                                                            |    <0.001 |
-|                 gntv_or_sync_fifo.mem                                                              |    <0.001 |
-|                   gbm.gbmg.gbmga.ngecc.bmg                                                         |    <0.001 |
-|                     inst_blk_mem_gen                                                               |    <0.001 |
-|                       gnbram.gnativebmg.native_blk_mem_gen                                         |    <0.001 |
-|                         valid.cstr                                                                 |    <0.001 |
+|                 gntv_or_sync_fifo.mem                                                              |     0.006 |
+|                   gbm.gbmg.gbmga.ngecc.bmg                                                         |     0.006 |
+|                     inst_blk_mem_gen                                                               |     0.006 |
+|                       gnbram.gnativebmg.native_blk_mem_gen                                         |     0.006 |
+|                         valid.cstr                                                                 |     0.006 |
+|                           has_mux_b.B                                                              |    <0.001 |
 |                           ramloop[0].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[100].ram.r                                                       |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[101].ram.r                                                       |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[102].ram.r                                                       |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[103].ram.r                                                       |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[104].ram.r                                                       |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[105].ram.r                                                       |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[10].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[11].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[12].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[13].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[14].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[15].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[16].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[17].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[18].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[19].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[1].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[20].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[21].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[22].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[23].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[24].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[25].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[26].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[27].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[28].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[29].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[2].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[30].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[31].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[32].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[33].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[34].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[35].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[36].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[37].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[38].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[39].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[3].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[40].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[41].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[42].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[43].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[44].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[45].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[46].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[47].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[48].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[49].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[4].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[50].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[51].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[52].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[53].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[54].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[55].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[56].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[57].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[58].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[59].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[5].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[60].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[61].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[62].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[63].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[64].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[65].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[66].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[67].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[68].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[69].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[6].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[70].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[71].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[72].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[73].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[74].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[75].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[76].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[77].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[78].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[79].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[7].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[80].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[81].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[82].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[83].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[84].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[85].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[86].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[87].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[88].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[89].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[8].ram.r                                                         |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[90].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[91].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[92].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[93].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[94].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[95].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[96].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[97].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[98].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[99].ram.r                                                        |    <0.001 |
+|                             prim_noinit.ram                                                        |    <0.001 |
+|                           ramloop[9].ram.r                                                         |    <0.001 |
 |                             prim_noinit.ram                                                        |    <0.001 |
 |                 rstblk                                                                             |    <0.001 |
 |                   ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[1].rrst_inst                         |    <0.001 |
