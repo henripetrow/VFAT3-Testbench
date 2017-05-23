@@ -54,7 +54,6 @@ begin
 
 --	DCM clock generation for internal bus, ethernet
 	
-	--vfat_reset <= '1'; -- force reset to 1. Reset is active low
 	bor_disable <= '1';
 	por_disable <= '1';
 	mon_clk_en <= '1';
@@ -225,8 +224,6 @@ begin
 		pkt_tx => pkt_tx,
 		tx => tx,
 		rx => rx,
-		por_disable => por_disable,
-		bor_disable => bor_disable,
 		leds => leds_slave,
 		vfat_reset => vfat_reset,
 		sw_button => sw_button

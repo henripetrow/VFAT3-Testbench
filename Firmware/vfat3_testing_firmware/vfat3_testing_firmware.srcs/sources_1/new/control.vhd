@@ -41,6 +41,8 @@ entity control is
 		fw_st_rd 		: in std_logic_vector(fw_st_w - 1 downto 0);
 		fw_st_wr		: out std_logic_vector(fw_st_w - 1 downto 0);
 		fw_st_wr_en		: out std_logic;
+		vfat_rst_wr_en	: out std_logic;
+		vfat_rst_wr		: out std_logic;
 		ipbus_out 		: out ipb_rbus;
 		data_to_fifo 	: out std_logic_vector (fifo_w - 1 downto 0);
 		fifo_in_w_en 	: out std_logic;
@@ -73,6 +75,11 @@ begin
 							if ipbus_in.ipb_addr = X"00003001" then
 								fw_st_wr <= ipbus_in.ipb_wdata(fw_st_w - 1 downto 0);
 								fw_st_wr_en <= '1';
+								ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => (others => '0'));
+								state <= RESET;
+							elsif ipbus_in.ipb_addr = X"00004000" then
+								vfat_rst_wr <= ipbus_in.ipb_wdata(0);
+								vfat_rst_wr_en <= '1';
 								ipbus_out <= (ipb_ack => '1', ipb_err => '0', ipb_rdata => (others => '0'));
 								state <= RESET;
 							else
@@ -116,6 +123,7 @@ begin
 						data_to_fifo <= (others => '0');
 						fifo_in_w_en <= '0';
 						fw_st_wr_en <= '0';
+						vfat_rst_wr_en <= '0';
 						ipbus_out.ipb_ack <= '0';
 						ipbus_out.ipb_rdata <= (others => '0');
 						state <= IDLE;

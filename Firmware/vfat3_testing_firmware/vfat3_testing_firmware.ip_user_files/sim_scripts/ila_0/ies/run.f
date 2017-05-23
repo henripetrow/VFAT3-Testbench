@@ -6,7 +6,7 @@
   "D:/Xilinx/Vivado/2016.3/data/ip/xpm/xpm_VCOMP.vhd" \
 -endlib
 -makelib ies/work \
-  "../../../../firmware_v2016.2.srcs/sources_1/ip/ila_0/sim/ila_0.vhd" \
+  "../../../../vfat3_testing_firmware.srcs/sources_1/ip/ila_0/sim/ila_0.vhd" \
 -endlib
 -makelib ies/xil_defaultlib \
   glbl.v

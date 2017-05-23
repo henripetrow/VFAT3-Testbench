@@ -1,10 +1,10 @@
 -- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
--- Date        : Fri May 05 15:19:58 2017
+-- Date        : Wed May 17 15:14:02 2017
 -- Host        : Shinsekai running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub -rename_top ila_0 -prefix
---               ila_0_ ila_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub
+--               C:/Users/Jason/Dropbox/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.srcs/sources_1/ip/ila_0/ila_0_stub.vhdl
 -- Design      : ila_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7k325tffg900-2
@@ -34,7 +34,15 @@ entity ila_0 is
     probe16 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe17 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe18 : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    probe19 : in STD_LOGIC_VECTOR ( 7 downto 0 )
+    probe19 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    probe20 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe21 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe22 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe23 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe24 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe25 : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    probe26 : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    probe27 : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
 
 end ila_0;
@@ -43,7 +51,7 @@ architecture stub of ila_0 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clk,probe0[0:0],probe1[0:0],probe2[0:0],probe3[0:0],probe4[0:0],probe5[0:0],probe6[31:0],probe7[31:0],probe8[31:0],probe9[31:0],probe10[0:0],probe11[0:0],probe12[0:0],probe13[0:0],probe14[7:0],probe15[0:0],probe16[0:0],probe17[0:0],probe18[7:0],probe19[7:0]";
+attribute black_box_pad_pin of stub : architecture is "clk,probe0[0:0],probe1[0:0],probe2[0:0],probe3[0:0],probe4[0:0],probe5[0:0],probe6[31:0],probe7[31:0],probe8[31:0],probe9[31:0],probe10[0:0],probe11[0:0],probe12[0:0],probe13[0:0],probe14[7:0],probe15[0:0],probe16[0:0],probe17[0:0],probe18[7:0],probe19[7:0],probe20[0:0],probe21[0:0],probe22[0:0],probe23[0:0],probe24[0:0],probe25[3:0],probe26[3:0],probe27[0:0]";
 attribute x_core_info : string;
 attribute x_core_info of stub : architecture is "ila,Vivado 2016.3";
 begin

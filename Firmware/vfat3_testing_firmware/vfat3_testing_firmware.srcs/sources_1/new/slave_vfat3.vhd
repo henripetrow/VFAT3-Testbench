@@ -43,6 +43,7 @@ entity slave_vfat3 is
 		rst320 		: in STD_LOGIC;
 		ipbus_in	: in ipb_wbus;
 		ipbus_out	: out ipb_rbus;
+		vfat_rst	: out STD_LOGIC;
 		tx    		: out STD_LOGIC;
 		rx    		: in STD_LOGIC;
 		sw_button	: in STD_LOGIC
@@ -90,6 +91,10 @@ architecture rtl of slave_vfat3 is
 	signal bitslip				: std_logic;
 	signal ser_d_in             : std_logic_vector(cmd_o_w - 1 downto 0);
 	signal d_sync				: std_logic_vector(cmd_o_w - 1 downto 0);
+	signal sync_flag			: std_logic;
+	signal d_out_valid			: std_logic;
+	
+	signal vfat_rst_wr_en, vfat_rst_wr : std_logic;
 	
 	component fifo_generator_0 is
 		PORT (
@@ -142,7 +147,8 @@ architecture rtl of slave_vfat3 is
 	  		re_sync : IN std_logic;
 	  		d_in 	: IN std_logic_vector(cmd_o_w - 1 downto 0);
 	  		bslip 	: OUT std_logic;
-	  		in_sync : OUT std_logic_vector(cmd_o_w - 1 downto 0)
+	  		in_sync : OUT std_logic_vector(cmd_o_w - 1 downto 0);
+	  		sync_o 	: OUT std_logic
 	  	);
 	  end component;
 	  
@@ -203,7 +209,15 @@ architecture rtl of slave_vfat3 is
 		probe16 : IN std_logic;
 		probe17 : IN std_logic;
 		probe18 : IN std_logic_vector(cmd_o_w - 1 DOWNTO 0);
-		probe19 : IN std_logic_vector(cmd_o_w - 1 DOWNTO 0)
+		probe19 : IN std_logic_vector(cmd_o_w - 1 DOWNTO 0);
+		probe20 : IN std_logic;
+		probe21 : IN std_logic;
+		probe22 : IN std_logic;
+		probe23 : IN std_logic;
+		probe24 : IN std_logic;
+		probe25 : IN std_logic_vector(fwst_w - 1 DOWNTO 0);
+		probe26 : IN std_logic_vector(fwst_w - 1 DOWNTO 0);
+		probe27 : IN std_logic		
 	);
 	end component;
 	  
@@ -302,13 +316,15 @@ begin
 		    underflow 	=> fifo_out_underflow
 		);
 		
+		fifo_out_w_en <= d_out_valid;
+		
 	filter: rx_fifo_int
 		port map(
 			clk 	=> clk40,
 			rst 	=> rst40,
 			d_in 	=> d_sync,
 			d_out 	=> fifo_out_data_in,
-			dv 		=> fifo_out_w_en
+			dv 		=> d_out_valid
 		);
 		
 	dsersync: dser_sync
@@ -318,7 +334,8 @@ begin
 			re_sync => sw_button, -- south gpio button to resync
 			d_in 	=> reverse_vector(data_bus_in),
 			bslip 	=> bitslip,
-			in_sync => d_sync			
+			in_sync => d_sync,
+			sync_o => sync_flag			
 		);
 
     des: dser_8
@@ -358,7 +375,18 @@ begin
 			probe17 => reset_fifo,
 			
 			probe18 => data_bus_in,
-			probe19 => d_sync
+			probe19 => d_sync,
+			
+			probe20 => sync_flag,
+			probe21 => bitslip,
+			probe22 => rx,
+			probe23 => sw_button,
+			
+			probe24 => ack_to_sw,
+			probe25 => fw_st_rd,
+			probe26 => fw_st_wr,
+			probe27 => fw_st_wr_en
+			
 		);
 	
     process(clk, reset) 
@@ -417,5 +445,16 @@ begin
     			fw_st_rd <= fw_st;
     		end if;
     	end if;
+    end process;
+    
+    vfat_reset: process(clk, vfat_rst_wr, vfat_rst_wr_en)
+    begin
+       	if rising_edge(clk) then
+       		if vfat_rst_wr_en = '1' then
+       			vfat_rst <= vfat_rst_wr;
+       		else
+       			vfat_rst <= '0';
+       		end if;
+       	end if;
     end process;
 end rtl;

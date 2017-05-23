@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date         : Tue May 16 12:40:09 2017
+| Date         : Tue May 23 14:51:45 2017
 | Host         : Shinsekai running 64-bit major release  (build 9200)
 | Command      : report_drc -file top_drc_opted.rpt
 | Design       : top
@@ -24,14 +24,14 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 25
+             Violations found: 26
 +-----------+----------+-----------------------------------------------------+------------+
 | Rule      | Severity | Description                                         | Violations |
 +-----------+----------+-----------------------------------------------------+------------+
 | CFGBVS-1  | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
 | CHECK-3   | Warning  | Report rule limit reached                           | 1          |
 | REQP-1839 | Warning  | RAMB36 async control check                          | 20         |
-| RPBF-3    | Warning  | IO port buffering is incomplete                     | 3          |
+| RPBF-3    | Warning  | IO port buffering is incomplete                     | 4          |
 +-----------+----------+-----------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -167,6 +167,11 @@ Related violations: <none>
 RPBF-3#3 Warning
 IO port buffering is incomplete  
 Device port por_disable expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#4 Warning
+IO port buffering is incomplete  
+Device port vfat_reset expects both input and output buffering but the buffers are incomplete.
 Related violations: <none>
 
 

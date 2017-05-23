@@ -23,9 +23,7 @@ entity slaves is
 		eth_err_stat: in std_logic_vector(47 downto 0) := X"000000000000";
 		pkt_rx: in std_logic := '0';
 		pkt_tx: in std_logic := '0';
-		por_disable : buffer std_logic;
-		bor_disable : buffer std_logic;
-		vfat_reset : buffer std_logic;
+		vfat_reset : out std_logic;
 		tx : out std_logic;
 		rx : in std_logic;	
 		scl : out std_logic;
@@ -167,20 +165,19 @@ begin
 			rst320 => rst320,
 			ipbus_in => ipbw(6),
 			ipbus_out => ipbr(6),
+			vfat_rst => vfat_reset,
 			tx => tx,
 			rx => rx,
 			sw_button => sw_button
 		);
 		
---		slave_por: entity work.slave_por
+--		slave_rst: entity work.slave_rst
 --		port map(
 --			clk => ipb_clk,
 --			rst => ipb_rst,
 --			ipbus_in => ipbw(7),
 --			ipbus_out => ipbr(7),
---			por_disable => por_disable,
---			bor_disable => bor_disable,
---			vfat_reset => vfat_reset,
+--			vfat_rst => vfat_reset,
 --			leds => leds
 --		);
 		
