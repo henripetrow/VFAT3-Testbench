@@ -25,6 +25,7 @@ entity top is port(
 	phy_rstb 								: out STD_LOGIC;
 	tx_p, tx_n								: out std_logic;
 	rx_p, rx_n 								: in std_logic;
+	rx_back									: out std_logic;
 	por_disable 							: inout std_logic;
 	bor_disable 							: inout std_logic;
 	vfat_reset 								: inout std_logic;
@@ -184,6 +185,8 @@ begin
         ib => rx_n,
         o => rx
     );
+    
+    rx_back <= rx;
     
 --	clk40_ibufds: IBUFDS -- to check on the VB how signals are behaving
 --	generic map(

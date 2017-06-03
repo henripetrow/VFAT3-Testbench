@@ -21,6 +21,7 @@
 library IEEE;
 library work;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use ieee.numeric_std.all;
 use work.ipbus.all;
 use work.cst_pkg.all;
@@ -95,6 +96,8 @@ architecture rtl of slave_vfat3 is
 	signal d_out_valid			: std_logic;
 	
 	signal vfat_rst_wr_en, vfat_rst_wr : std_logic;
+	signal cnt 					: std_logic_vector(fifo_w - 1 downto 0);
+	signal vfat_rst_int			: std_logic;
 	
 	component fifo_generator_0 is
 		PORT (
@@ -217,7 +220,10 @@ architecture rtl of slave_vfat3 is
 		probe24 : IN std_logic;
 		probe25 : IN std_logic_vector(fwst_w - 1 DOWNTO 0);
 		probe26 : IN std_logic_vector(fwst_w - 1 DOWNTO 0);
-		probe27 : IN std_logic		
+		probe27 : IN std_logic;
+		probe28 : IN std_logic;
+		probe29 : IN std_logic;
+		probe30 : IN std_logic		
 	);
 	end component;
 	  
@@ -385,7 +391,11 @@ begin
 			probe24 => ack_to_sw,
 			probe25 => fw_st_rd,
 			probe26 => fw_st_wr,
-			probe27 => fw_st_wr_en
+			probe27 => fw_st_wr_en,
+			probe28 => vfat_rst_int,
+			probe29 => vfat_rst_wr_en,
+			probe30 => vfat_rst_wr
+			
 			
 		);
 	
@@ -452,8 +462,15 @@ begin
        	if rising_edge(clk) then
        		if vfat_rst_wr_en = '1' then
        			vfat_rst <= vfat_rst_wr;
+       			vfat_rst_int <= vfat_rst_wr;
+       			cnt <= (others => '0');
        		else
-       			vfat_rst <= '0';
+       			if cnt >=  X"02634a0" then
+	       			vfat_rst <= '0';
+	       			vfat_rst_int <= '0';
+	       		else
+	       			cnt <= cnt + 1;
+	       		end if;
        		end if;
        	end if;
     end process;

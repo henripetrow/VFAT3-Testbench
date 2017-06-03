@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="ser_8_synth_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1494862822">
-  <File Type="PA-TCL" Name="ser_8.tcl"/>
+<GenRun Id="ser_8_synth_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1495640623">
   <File Type="RDS-PROPCONSTRS" Name="ser_8_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="ser_8.tcl"/>
   <File Type="RDS-RDS" Name="ser_8.vds"/>
   <File Type="RDS-UTIL" Name="ser_8_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="ser_8_utilization_synth.pb"/>
