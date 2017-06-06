@@ -2,11 +2,11 @@
 # Vivado v2016.3 (64-bit)
 # SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
 # IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
-# Start of session at: Sat Jun 03 12:59:56 2017
-# Process ID: 11912
-# Current directory: C:/Users/Jason/Dropbox/ULB/MA2/Memoire/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1
+# Start of session at: Tue Jun 06 14:00:56 2017
+# Process ID: 9424
+# Current directory: C:/backup/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: C:/Users/Jason/Dropbox/ULB/MA2/Memoire/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/top.vds
-# Journal file: C:/Users/Jason/Dropbox/ULB/MA2/Memoire/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1\vivado.jou
+# Log file: C:/backup/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1/top.vds
+# Journal file: C:/backup/VFAT3-Testbench/Firmware/vfat3_testing_firmware/vfat3_testing_firmware.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source top.tcl -notrace
